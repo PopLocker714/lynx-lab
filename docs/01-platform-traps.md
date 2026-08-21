@@ -218,3 +218,107 @@ Gradle-плагин прокидывает `-Alynx.library.packageName=...`, н�
 Отдельно: `kapt` ломается на JDK 17+ без семи флагов `--add-exports`, задокументированного
 пути на KSP нет, официальной страницы траблшутинга тоже. Единственный разбор
 у Software Mansion, и он датирован декабрём 2025 против Lynx 3.4.1/3.5.1.
+
+---
+
+## T14–T18 · Найдено при первой реальной сборке на устройстве
+
+Дата: 2026-08-21. Устройство: Pixel 9, Android 17, API 37, arm64-v8a.
+Проверялось на `@lynx-lab/crypto@1.0.1` в приложении, созданном
+`create-sparkling-app@2.0.1`.
+
+### T14 · Lynx Autolink несовместим со стоковым Sparkling
+
+**Статус: открыт (обходится) · Severity: Блокер**
+
+Плагин Autolink генерирует `LynxAutolinkGenerated.java`, который зовёт
+`com.lynx.tasm.library.LynxLibraryRegistry`. Этот класс **появился только
+в `lynx-4.0.1.aar`** (проверено распаковкой артефактов из кеша Gradle).
+
+А `com.tiktok.sparkling:sparkling:2.0.1` тянет **`org.lynxsdk.lynx:lynx:3.6.0`**
+транзитивно, и эта версия перебивает любой апгрейд в `libs.versions.toml`.
+
+Симптом: сборка падает на `compileDebugJavaWithJavac` с
+`cannot find symbol: variable LynxLibraryRegistry` **в сгенерированном файле**,
+то есть выглядит как баг Lynx, а на деле это конфликт версий.
+
+**Обход**, проверен и работает:
+```kotlin
+configurations.all {
+    resolutionStrategy {
+        force("org.lynxsdk.lynx:lynx:4.0.1")
+        force("org.lynxsdk.lynx:lynx-jssdk:4.0.1")
+        force("org.lynxsdk.lynx:lynx-trace:4.0.1")
+        force("org.lynxsdk.lynx:lynx-base:4.0.1")
+        force("org.lynxsdk.lynx:service-api:4.0.1")
+        force("org.lynxsdk.lynx:primjs:4.0.0")   // см. T16
+    }
+}
+```
+
+### T15 · Шаблон Sparkling не подключает плагины Lynx Autolink вообще
+
+**Статус: открыт (обходится) · Severity: Важно**
+
+В `settings.gradle.kts` есть только блок `// BEGIN SPARKLING AUTOLINK`, и он
+покрывает исключительно пакеты Sparkling Method. Плагинов
+`org.lynxsdk.lynx.library-settings` и `library-build` там нет.
+
+Значит **`bun add` любой Autolink-библиотеки Lynx сам по себе не сработает**:
+автор приложения обязан добавить их руками.
+
+```kotlin
+// android/settings.gradle.kts
+plugins { id("org.lynxsdk.lynx.library-settings") version "4.0.1" }
+
+// android/app/build.gradle.kts
+plugins { id("org.lynxsdk.lynx.library-build") }
+dependencies { kapt(libs.lynx.processor) }   // в шаблоне закомментирован
+```
+
+### T16 · `primjs` версионируется отдельно от `lynx`
+
+**Статус: открыт (факт) · Severity: Мелочь**
+
+Версии `lynx` и `primjs` **не совпадают**. `primjs:4.0.1` не существует:
+на Maven Central после `4.0.0` идут только альфы `4.0.1-alpha.2..4`.
+Форсирование `primjs:4.0.1` роняет резолв.
+
+### T17 · Стоковый шаблон требует полного апгрейда тулчейна
+
+**Статус: открыт (факт) · Severity: Важно**
+
+`create-sparkling-app@2.0.1` везёт: AGP **7.4.2**, Kotlin **1.8.10**,
+Gradle wrapper **8.2**, `jvmToolchain(11)`, `forcedKotlinVersion = "1.8.10"`,
+`compileSdk`/`targetSdk` **34**. Современная библиотека (Java 17, Kotlin 2.x)
+не собирается против этого ничем.
+
+Минимальный набор правок, проверенный до зелёной сборки:
+
+| Что | Было | Стало |
+|---|---|---|
+| Gradle wrapper | 8.2 | **8.9** (AGP 8.7 требует ≥8.9) |
+| AGP | 7.4.2 | 8.7.0 |
+| Kotlin, включая `forcedKotlinVersion` | 1.8.10 | 2.0.21 |
+| `jvmToolchain` и все `VERSION_11` | 11 | 17 |
+| compileSdk / targetSdk | 34 | 35 |
+| `buildFeatures { buildConfig = true }` | отсутствует | **обязателен** |
+
+Последнее не очевидно: AGP 8 выключил генерацию `BuildConfig` по умолчанию,
+а `SparklingApplication.kt` из шаблона на него ссылается. Симптом
+`Unresolved reference 'BuildConfig'` в коде, который ты не писал.
+
+### T18 · Диагностическое сообщение окупилось на первом же запуске
+
+**Статус: подтверждено практикой**
+
+Проба вызвала библиотеку с обоих потоков. С фонового всё сработало,
+а с главного пришло ровно наше сообщение вместо `undefined`:
+
+```
+LYNXCRYPTO RESULT=OK   same-object=true | bytes=f4e88a0a…  | differs=true | uuid=8d6cf892-…
+[main-thread.js] LYNXCRYPTO RESULT=FAIL  NativeModules недоступен … обязан выполняться на фоновом потоке (BTS)
+```
+
+Вывод для всех будущих пакетов: **текст ошибки в фасаде это функциональность,
+а не украшение.** Стоит писать его до того, как код поедет на устройство.
