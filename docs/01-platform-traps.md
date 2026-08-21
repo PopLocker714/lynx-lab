@@ -322,3 +322,109 @@ LYNXCRYPTO RESULT=OK   same-object=true | bytes=f4e88a0a…  | differs=true | uu
 
 Вывод для всех будущих пакетов: **текст ошибки в фасаде это функциональность,
 а не украшение.** Стоит писать его до того, как код поедет на устройство.
+
+---
+
+## T19–T22 · Найдено при первой реальной сборке под iOS
+
+Дата: 2026-08-21. Xcode 26.6, CocoaPods 1.17.0, `cocoapods-lynx-library` 4.0.1.
+
+### T19 · Поды Lynx 4.x на CocoaPods не резолвятся
+
+**Статус: открыт · Severity: Блокер**
+
+`pod 'Lynx', '4.0.1'` и `'4.0.0'` оба падают:
+
+```
+There are only pre-release versions available satisfying the following requirements:
+	'LynxServiceAPI', '>= 0'
+	'LynxServiceAPI', '= 4.0.0'
+```
+
+При этом сам `LynxServiceAPI` 4.0.0 и 4.0.1 **опубликованы и не отозваны**
+(проверено через `trunk.cocoapods.org/api/v1/pods/LynxServiceAPI`), и
+локальный CDN-индекс их содержит. Конфликт возникает на субспеке `/Core`.
+
+Проверено, что дело **не в нашей библиотеке**: конфликт воспроизводится
+после полного удаления нашего пода из Podfile.
+
+Дополнительно: стабильные версии пода `Lynx` на CocoaPods заканчиваются
+на **4.0.0**, дальше только nightly. То есть **4.0.1 существует на Maven Central,
+но не на CocoaPods**. Версии Android и iOS у Lynx расходятся.
+
+Резолвится только **3.6.0**.
+
+### T20 · Макрос `LynxNativeModule` появился только в 4.x
+
+**Статус: открыт (обходится) · Severity: Блокер**
+
+В `Lynx/LynxModule.h` версии **3.6.0 макроса нет вообще** (проверено grep
+по установленному поду). Значит `@LynxNativeModule("Имя")` разбирается как
+`@` плюс неизвестный идентификатор:
+
+```
+error: unexpected '@' in program
+error: 'LynxCryptoModule' cannot use 'super' because it is a root class
+```
+
+Второе следствие первого: `@interface` после сломанного `@` парсится неверно.
+
+Вместе с **T19** это деадлок: маркер требует 4.x, а 4.x не ставится.
+
+**Обход, проверен и работает.** Объявить макрос самим, ровно тем же, чем
+это делает Lynx 4.x:
+
+```objc
+#ifndef LynxNativeModule
+#define LynxNativeModule(module_name) class LynxNativeModuleMarker;
+#endif
+```
+
+Раскрывается в `@class LynxNativeModuleMarker;`, а нужен исключительно для
+того, чтобы регулярка гема нашла маркер. Сгенерированный реестр использует
+`NSClassFromString`, которому версия Lynx безразлична.
+
+**Это должно быть в каждом нашем пакете.**
+
+### T21 · Пин версии Lynx в podspec ломает резолв
+
+**Статус: открыт (правило) · Severity: Важно**
+
+`s.dependency "Lynx", ">= 3.9"` делает установку невозможной: работает
+только 3.6.0. Но и убрать зависимость нельзя, тогда не находится
+`<Lynx/LynxModule.h>`.
+
+**Правило: `s.dependency "Lynx"` без ограничения версии.** Версию выбирает хост.
+
+### T22 · Sparkling 2.0.1 не компилируется под Xcode 26.6
+
+**Статус: открыт · Severity: Блокер для проверки на iOS**
+
+Собственный Swift Sparkling падает:
+
+```
+SPKLynxService.swift:11:129:     error: unsupported type in a constant expression
+SPKResourceLoaderImpl.swift:47:143: error: unsupported type in a constant expression
+```
+
+Наша библиотека к этому моменту уже компилируется чисто. То есть на iOS
+**рантайм-проверка через Sparkling сейчас невозможна** независимо от
+качества нашего кода.
+
+Что при этом **подтверждено**:
+
+- гем нашёл наш под и поставил его: `Installing LynxCrypto (1.0.1)`
+- сгенерировал `ios/generated/lynx-library/LynxGeneratedLibraryRegistry.m`
+  ровно с нашим модулем:
+  ```objc
+  if (NSClassFromString(@"LynxCryptoModule")) {
+    [config registerModule:NSClassFromString(@"LynxCryptoModule") withName:@"LynxCryptoModule"];
+  }
+  ```
+- наш Objective-C компилируется после обхода из T20
+
+Не подтверждено: регистрация и вызов в рантайме, и переживает ли класс
+dead stripping при `use_frameworks!` без `:linkage => :static`.
+
+**Следующий шаг для iOS:** минимальный нативный хост на голом Lynx,
+без Sparkling.
