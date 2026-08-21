@@ -428,3 +428,71 @@ dead stripping при `use_frameworks!` без `:linkage => :static`.
 
 **Следующий шаг для iOS:** минимальный нативный хост на голом Lynx,
 без Sparkling.
+
+---
+
+## T23 · Решение iOS: rc-линия Sparkling, а не latest
+
+**Статус: РЕШЕНО** · дата: 2026-08-21
+
+Блокер **T22** (Sparkling 2.0.1 не компилируется под Xcode 26.6) снимается
+переходом на rc-линию. Это задокументированный и **закрытый** баг апстрима:
+
+> **tiktok/sparkling#36** — «[Bug]: Latest rc iOS app has multiple regressions
+> on Xcode 26.4 (build failures + missing globalProps/queryItems)».
+> Закрыт 2026-04-15 как COMPLETED.
+
+В теле issue среди прочего: «The iOS SDK failed to compile because of
+`unsupported type in a constant expression` in the generated Sparkling pod
+sources» — дословно наша ошибка.
+
+Причина в исходниках: `@_section("__DATA, SPK_PRE_SVC")` над
+`private let spkRegister… : UnsafePointer<CChar>? = UnsafeRawPointer(...)`.
+Новый Swift не принимает такое выражение как константное.
+
+### Как брать rc
+
+```sh
+bunx create-sparkling-app@rc <имя> --template-version rc
+```
+
+npm dist-tags у `sparkling-app-template`: `latest = 2.0.1`, `rc = 2.1.0-rc.36`.
+
+### Поправки к T15 и T17 для rc-линии
+
+rc **уже подключает Lynx Autolink на обеих платформах**, в отличие от `latest`:
+
+| Что | latest 2.0.1 | rc 2.1.0-rc.36 |
+|---|---|---|
+| `ios/Gemfile` с `cocoapods-lynx-library` | нет вообще | **есть**, версия 3.9.0 |
+| Плагины Autolink в Android | нет | **есть**: `apply(plugin = "org.lynxsdk.library-settings")` и `"org.lynxsdk.library-build"` |
+| Пин Lynx | 3.6.0 | **3.9.0** |
+| PrimJS | 3.6.1 | 3.8.0-alpha.6 |
+
+⚠️ Идентификаторы плагинов в rc это **`org.lynxsdk.library-*`**, а не
+`org.lynxsdk.lynx.library-*`, как в документации Lynx. Написание разное.
+
+Что осталось прежним: `kapt(libs.lynx.processor)` по-прежнему закомментирован,
+AGP 7.4.2, Kotlin 1.8.10, compileSdk 34, `platform :ios, '12.0'`.
+
+### Итог проверки на iOS
+
+Симулятор iPhone 17 Pro, Xcode 26.6, Sparkling 2.1.0-rc.36, Lynx 3.9.0,
+`@lynx-lab/crypto@1.0.2` поставлен из npm:
+
+```
+LYNXCRYPTO same-object=true | bytes=6afb5970daa0b2b80c699a05d66f27ca
+           differs=true | uuid=0c040b8d-c552-4b8b-a051-13d8c5347a65 | RESULT=OK
+```
+
+Плюс в нативном логе `LynxModule, module: LynxCryptoModule registered` и по паре
+`will invokeMethod` / `did invokeMethod` на каждый вызов.
+
+**Dead stripping класс пережил** при `use_frameworks!` без `:linkage => :static`,
+то есть опасение из раздела про обнаружение не подтвердилось на этой конфигурации.
+
+### Побочно подтверждено ещё раз
+
+Проба, случайно уехавшая в `setTimeout`, выполнилась на **главном** потоке
+и вернула наше же сообщение об ошибке вместо `undefined`. То есть контракт
+«NativeModules только на BTS» держится и на iOS, и диагностика работает.
