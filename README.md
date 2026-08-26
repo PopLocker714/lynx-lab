@@ -80,6 +80,7 @@ Lynx движется быстро: месячные релизы, 300+ комм
 - [docs/03-ecosystem.md](docs/03-ecosystem.md) — что в экосистеме есть и чего нет
 - [docs/04-risk.md](docs/04-risk.md) — риск ставки и дистрибуция
 - [docs/05-shop.md](docs/05-shop.md) — интернет-магазин на Lynx
+- [docs/packages/back-and-calls.md](docs/packages/back-and-calls.md) — жест «назад» с предпросмотром и звонки на WebRTC
 - [docs/spikes.md](docs/spikes.md) — спайки
 - [DECISIONS.md](DECISIONS.md) — лог решений
 - [SOURCES.md](SOURCES.md) — все проверенные источники с датами
