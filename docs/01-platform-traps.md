@@ -589,3 +589,97 @@ T20 фиксировал, что в Lynx **3.6.0** макроса `LynxNativeMod
   пишутся на Objective-C. Ровно поэтому `tamer-webview` это `.m`.
 - Первый элемент стоит закладывать на день, ожидая две-три из этих граблей.
 - В Lynx есть первопартийный `<video>`, его исходник — лучший образец для своего элемента.
+
+---
+
+## T28–T30 · Из первой сборки `@lynx-lab/app-lifecycle` на устройствах
+
+Дата: 2026-08-28. Pixel 9 (Android 17) и iPhone 11 (iOS 18.4.1), плюс симулятор.
+
+### T28 · На iOS есть `LynxContextModule`, и он единственный путь к `sendGlobalEvent`
+
+**Статус: открыт (важнейшее) · Severity: Блокер для любого пакета с push в JS**
+
+`CommonModuleCreator::getModule` (`common_module_creator.mm:68-74`):
+
+```objc
+if ([instance conformsToProtocol:@protocol(LynxContextModule)]) {
+  LynxContext* context = context_finder_ ? context_finder_->FindContext("") : nil;
+  instance = [(id<LynxContextModule>)instance initWithLynxContext:context];
+} else if (param != nil && [instance respondsToSelector:@selector(initWithParam:)]) {
+  ...
+}
+```
+
+То есть при conform к `LynxContextModule` Lynx **сам подставляет контекст**.
+А `initWithParam:` вызывается **только когда param не nil**, и autolink регистрирует
+модули **без param** (в логе видно `registered with param (address): 0x0`).
+
+**Следствие: без этого протокола нативный модуль на iOS не может отправить
+ничего в JS.** Ни `sendGlobalEvent`, ни `getJSModule`. В документации этого нет.
+
+Симметрично Android-овскому `LynxContextModule`, но с другим именем инициализатора.
+
+### T29 · Java 17 в библиотеке ломает установку в стоковый шаблон
+
+**Статус: открыт (правило) · Severity: Важно**
+
+Шаблон Sparkling везёт **Java 11 и Kotlin 1.8.10** (обе линии, latest и rc).
+Библиотека, собранная под Java 17, туда не встаёт: bytecode 61 не читается
+компилятором, таргетящим 11.
+
+**Правило: наши пакеты собираются под Java 11**, старым DSL
+`kotlinOptions { jvmTarget = "11" }`, а не `kotlin { compilerOptions { } }`
+(последний стабилен только с KGP 1.9).
+
+Проверено: после понижения сборка на **стоковом rc-шаблоне** проходит, и из правок
+нужна ровно одна — раскомментировать `kapt(libs.lynx.processor)`.
+
+Это надо **портировать в `@lynx-lab/crypto`**: там сейчас Java 17, и он проверялся
+только на шаблоне, который я апгрейдил целиком.
+
+### T30 · `bun add file:` ломает iOS-автолинк
+
+**Статус: открыт (методическое) · Severity: Мелочь, но стоит часа**
+
+`bun add file:../path` делает **симлинк**, а гем `cocoapods-lynx-library` резолвит
+realpath и отказывается:
+
+```
+[!] Invalid `Podfile` file: iOS podspecPath 'ios/X.podspec' must stay within
+    package directory for .../node_modules/@scope/pkg/lynx.lib.json.
+```
+
+Для локальной проверки пакета ставить **из тарбола**: `npm pack`, затем
+`bun add /путь/к/pkg.tgz`. Заодно ближе к тому, что получит реальный потребитель.
+
+### Попутно: тулчейн Java 11 надо уметь достать
+
+Шаблон просит **тулчейн** Java 11, а не просто таргет. Если на машине только JDK 17,
+сборка падает с `No matching toolchains found`. Лечится одной строкой в
+`settings.gradle.kts`, **после** блока `pluginManagement`:
+
+```kotlin
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
+}
+```
+
+Блок `plugins` до `pluginManagement` Gradle отвергает явной ошибкой.
+
+---
+
+## Итог проверки `@lynx-lab/app-lifecycle` на устройствах
+
+| | Android | iOS |
+|---|---|---|
+| Устройство | Pixel 9, Android 17 | iPhone 11, iOS 18.4.1 (переходы сняты на симуляторе, код тот же) |
+| Хост | стоковый rc-шаблон, только `kapt` раскомментирован | стоковый rc-шаблон |
+| Регистрация модуля | да | да, через `LynxContextModule` |
+| `getState()` нативно | да | да |
+| Начальное состояние | `active gen=0` | `active gen=0` |
+| Сворачивание | `CHANGE state=background gen=1 missed=false` | `CHANGE state=background gen=1 missed=false` |
+| Возврат | `CHANGE state=active gen=2 missed=false` | `CHANGE state=active gen=2 missed=false` |
+| Видимость страницы | `PAGE visible` / `PAGE hidden` | `PAGE visible` |
+
+Поколения растут монотонно, пропусков нет, поведение платформ **совпадает**.

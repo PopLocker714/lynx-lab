@@ -24,7 +24,7 @@
 | `lynx-notify` (локальные) | 📋 спека готова | 8–9 нед | 10 | [docs/packages/lynx-notify.md](docs/packages/lynx-notify.md) |
 | `lynx-notify` (провайдеры) | 📋 спека готова | +7 нед | — | там же |
 | `@lynx-lab/edge-to-edge` | 📋 спека готова | 9–10 дней | — | [docs/packages/lynx-edge-to-edge.md](docs/packages/lynx-edge-to-edge.md) |
-| `lynx-app-lifecycle` | 🗒 набросок | 3 дня | — | [docs/packages/lynx-app-lifecycle.md](docs/packages/lynx-app-lifecycle.md) |
+| `@lynx-lab/app-lifecycle` | 🔨 **готов, ждёт релиза** | 1 день | — | [репозиторий](https://github.com/PopLocker714/lynx-app-lifecycle) · [спека](docs/packages/lynx-app-lifecycle.md) |
 | `lynx-browser-handoff` | 🗒 набросок | 1.5–2 нед | — | [docs/packages/lynx-browser-handoff.md](docs/packages/lynx-browser-handoff.md) |
 | `@lynx-lab/crypto` | 🔨 **в работе** | 3–4 дня | — | [репозиторий](https://github.com/PopLocker714/lynx-crypto) · [спека](docs/packages/lynx-crypto.md) |
 | `lynx-deeplinks` | 🗒 набросок | 2 нед | — | [docs/packages/lynx-deeplinks.md](docs/packages/lynx-deeplinks.md) |
