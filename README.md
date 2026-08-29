@@ -24,9 +24,9 @@
 | `lynx-notify` (локальные) | 📋 спека готова | 8–9 нед | 10 | [docs/packages/lynx-notify.md](docs/packages/lynx-notify.md) |
 | `lynx-notify` (провайдеры) | 📋 спека готова | +7 нед | — | там же |
 | `@lynx-lab/edge-to-edge` | 📋 спека готова | 9–10 дней | — | [docs/packages/lynx-edge-to-edge.md](docs/packages/lynx-edge-to-edge.md) |
-| `@lynx-lab/app-lifecycle` | 🔨 **готов, ждёт релиза** | 1 день | — | [репозиторий](https://github.com/PopLocker714/lynx-app-lifecycle) · [спека](docs/packages/lynx-app-lifecycle.md) |
+| `@lynx-lab/app-lifecycle` | ✅ **выпущен 1.0.0** | — | 0 | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [репозиторий](https://github.com/PopLocker714/lynx-app-lifecycle) |
 | `lynx-browser-handoff` | 🗒 набросок | 1.5–2 нед | — | [docs/packages/lynx-browser-handoff.md](docs/packages/lynx-browser-handoff.md) |
-| `@lynx-lab/crypto` | 🔨 **в работе** | 3–4 дня | — | [репозиторий](https://github.com/PopLocker714/lynx-crypto) · [спека](docs/packages/lynx-crypto.md) |
+| `@lynx-lab/crypto` | ✅ **выпущен 1.0.3** | — | 0 | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [репозиторий](https://github.com/PopLocker714/lynx-crypto) |
 | `lynx-deeplinks` | 🗒 набросок | 2 нед | — | [docs/packages/lynx-deeplinks.md](docs/packages/lynx-deeplinks.md) |
 | `lynx-websocket` | 🗒 набросок | 3–4 нед | — | [docs/packages/lynx-websocket.md](docs/packages/lynx-websocket.md) |
 | `lynx-webview-plus` | 🗒 набросок | 3–4 нед | — | [docs/packages/lynx-webview-plus.md](docs/packages/lynx-webview-plus.md) |
