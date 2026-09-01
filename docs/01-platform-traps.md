@@ -219,6 +219,38 @@ Gradle-плагин прокидывает `-Alynx.library.packageName=...`, н�
 пути на KSP нет, официальной страницы траблшутинга тоже. Единственный разбор
 у Software Mansion, и он датирован декабрём 2025 против Lynx 3.4.1/3.5.1.
 
+
+---
+
+## T7–T13 · Найдено при первой сборке `@lynx-lab/crypto`
+
+Записи перенесены сюда из спеки crypto, чтобы реестр ловушек был один.
+
+- **T7** — Gradle-плагин Lynx прокидывает `-Alynx.library.packageName` только внутри
+  `project.plugins.withId('kotlin-kapt')` и сам плагин **не применяет**. Без
+  `id("org.jetbrains.kotlin.kapt")` и `kapt("org.lynxsdk.lynx:lynx-processor:4.0.1")`
+  в библиотеке `LynxLibraryProcessor.getProviderPackageName()` возвращает `""`
+  и процессор выходит, не записав ни файла. Без ошибки.
+- **T8** — конструктор Kotlin-модуля обязан быть **ровно** `(Context)` или
+  `(Context, Object)`: `CommonModuleCreator.createModuleWrapper` делает
+  `Context.class.equals(types[0])`, точное сравнение классов, наследники не подходят.
+  Конструктор с `LynxContext` работает, только если наследоваться от `LynxContextModule`.
+- **T9** — экспортируемые методы должны быть объявлены **на конкретном классе**:
+  `findMethods()` зовёт `getDeclaredMethods()`, а не `getMethods()`, поэтому
+  унаследованные `@LynxMethod` невидимы.
+- **T10** — имя экспортируемого метода не должно начинаться с ARC selector family
+  (`new*`, `copy*`, `init*`, `alloc*`, `mutableCopy*`): `PerformMethodInvocation`
+  делает `[inv getReturnValue:&rawResult]` и `(__bridge id)` без передачи владения,
+  поэтому +1 возврат утечёт или пере-освободится.
+- **T11** — один плохой тип возврата **молча убивает весь модуль**, а не один метод:
+  `LynxModuleWrapper.findMethods()` строит подписи в цикле по всем `@LynxMethod`.
+- **T12** — `create-lynx-library@0.5.2` эмитит версии артефактов `0.0.1-alpha.1`,
+  которых **не существует** на Maven Central (список версий начинается с `3.2.0-alpha.3`).
+  Gradle их не разрешит. Если скаффолдить, это первое, что надо чинить.
+- **T13** — `create-lynx-library@0.5.2` эмитит маркер `@LynxNativeModuleRegister`,
+  которого в `lynx-family/lynx` не существует. Правильное написание `@LynxNativeModule`,
+  и именно его ищет сканер гема.
+
 ---
 
 ## T14–T18 · Найдено при первой реальной сборке на устройстве
