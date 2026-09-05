@@ -113,10 +113,10 @@ Lynx 3.9.0), library-модуль `:spike` с `ContentProvider` в собств�
 `predraw` (дизайн спеки), `earliest` (пуш при первом появлении LynxView), `none` (контроль).
 Код, логи и скриншоты: [docs/spikes/s6/](spikes/s6/), пробник `apps/probe-e2e`.
 
-**Где гоняли.** Эмулятор AVD `twowe` (профиль Pixel 7, Android 36, arm64-v8a,
-плотность 420), потому что Pixel 9 в этот заход не был подключён. **На реальном
-Pixel 9 не прогонялось**, это хвост. Порядок событий от железа не зависит, зависят
-только миллисекунды.
+**Где гоняли.** Сначала эмулятор AVD `twowe` (профиль Pixel 7, Android 36, arm64-v8a,
+плотность 420), затем **Pixel 9 (Android 17, API 37, плотность 420)** в тех же трёх
+режимах, debug и release. Порядок событий совпал полностью, см. `pixel-*.log`
+и `pixel9-release-earliest.png`.
 
 **Результат: ДА, буферизуется, но не с того хука, что в спеке.**
 
@@ -193,10 +193,18 @@ source: windowMetrics`, в режиме `predraw` показывает `null`.
 `Object.assign(lynx.__globalProps, data)` плюс `GlobalEventEmitter.emit('onGlobalPropsChanged')`
 (`@lynx-js/react/runtime/lib/lynx/tt.js:219-229`). См. D8.
 
-**Не проверено и остаётся:** прогон на Pixel 9; поведение `currentWindowMetrics` для
-Activity до attach на реальных OEM; iOS целиком (день 6).
+**Pixel 9 (`pixel-earliest.log`, debug):** `onActivityPostStarted` 608 мс, пуш 616 мс
+(`windowMetrics=Insets{0,173,0,63}` → top 65.9dp, bottom 24dp), module scope MTS/BTS
+~668 мс с `generation=1`, `onRuntimeReady` 709 мс. Запас те же ~50 мс.
+**`pixel-predraw.log`:** MTS стартовал на **1 мс раньше** первого pre-draw
+(`05.174` против `05.175`), первый рендер обоих потоков с `null`, поправка событием.
+На железе гонка ещё туже, чем на эмуляторе. Release на Pixel: скриншот с
+`initial={... hook: postStarted, source: windowMetrics}`.
 
-**Результат:** _пройден 2026-09-05, эмулятор_
+**Не проверено и остаётся:** поведение `currentWindowMetrics` до attach на OEM-прошивках
+(MIUI/HyperOS/ColorOS); iOS целиком (день 6).
+
+**Результат:** _пройден 2026-09-05 на эмуляторе и 2026-09-05 на Pixel 9_
 
 ## Что проверять НЕ надо
 

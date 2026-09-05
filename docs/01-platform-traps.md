@@ -703,7 +703,7 @@ plugins {
 
 ---
 
-## T31–T34 · Из спайка S6 для `@lynx-lab/edge-to-edge`
+## T31–T35 · Из спайка S6 для `@lynx-lab/edge-to-edge`
 
 Дата: 2026-09-05. Эмулятор AVD (Pixel 7 профиль, Android 36, arm64), стоковый
 rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и логи в
@@ -714,8 +714,8 @@ rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и л�
 **Статус: открыт (архитектурное) · Severity: Блокер для всего, что хочет попасть в первый кадр**
 
 Пуш на первом `OnPreDrawListener` декора проигрывает `LoadApp` на 80–120 мс
-(`emu-predraw.log`: MTS-рендер 627 мс, pre-draw 706 мс). В release иногда выигрывает,
-иногда нет: это гонка. Первый экран рисуется с тем, что было в `__globalProps`
+(`emu-predraw.log`: MTS-рендер 627 мс, pre-draw 706 мс; на Pixel 9 `pixel-predraw.log`:
+MTS на 1 мс раньше pre-draw). В release иногда выигрывает, иногда нет: это гонка. Первый экран рисуется с тем, что было в `__globalProps`
 на момент `LoadApp`, обновление приезжает через `__NotifyGlobalPropsUpdated` и
 BTS-ре-рендер спустя ~100 мс.
 
@@ -766,6 +766,31 @@ BTS-ре-рендер спустя ~100 мс.
 
 **Правильно:** выводить проверяемое значение на экран (`<text>`) и снимать
 `adb exec-out screencap`, как сделано в S6. `lynx.reportError` в release не проверялся.
+
+### T35 · rc-шаблон Sparkling собирает APK без выравнивания по 16 КБ
+
+**Статус: открыт (шаблон) · Severity: Важно для публикации в Play**
+
+На Pixel 9 (Android 17) поверх release-сборки пробника вылез системный диалог
+«Совместимость приложений Android: приложение не поддерживает страницы памяти 16 КБ»
+со списком `liblynxbase.so`, `libwasm.so`, `liblynx_v8_bridge.so`, `liblynxtrace.so`,
+`libnapi_v8.so` и других как «несжатая библиотека не выровнена».
+
+Виноват не Lynx. `llvm-readelf -l` по `.so` из `lynx-3.9.0.aar` и `lynx-4.0.1.aar`
+(`liblynx`, `liblynxbase`, `liblynx_v8_bridge`, `liblynxtrace`, `libnapi*`, `libquick`,
+`libwasm`) показывает `LOAD` с `Align 0x4000`, то есть ELF выровнен как надо.
+Fresco и вовсе `0x10000`. А `zipalign -c -P 16 -v 4 app-release.apk` из build-tools 36
+даёт `Verification FAILED`: `liblynx.so (BAD - 4096)`, `liblynxbase.so (BAD - 12288)`
+и так далее. Это **раскладка внутри zip**, её делает AGP, а шаблон везёт AGP 7.4.2
+(`gradle/libs.versions.toml`), который кладёт несжатые `.so` с шагом 4 КБ.
+
+**Следствие:** любое приложение на стоковом шаблоне получит этот диалог на устройствах
+с 16 КБ страницами и, по политике Google Play для targetSdk 35+, не пройдёт загрузку
+(`verified-secondary`, дата требования в эту сессию не проверялась).
+
+**Как чинить:** апгрейд AGP до версии с 16 КБ zip-выравниванием (T17 уже описывает
+апгрейд до 8.7.0 и его цену), либо прогонять `zipalign -P 16` по готовому APK.
+Пакетов `@lynx-lab/*` это не касается: своих `.so` у них нет.
 
 ---
 

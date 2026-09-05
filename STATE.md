@@ -24,7 +24,7 @@ bun: 1.4.0
 
 ## Если читать только одно
 
-**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать четыре ловушки.**
+**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать пять ловушек.**
 Почти каждая выглядит как рабочий код и молча не работает. Ни одна не выводится
 из документации Lynx: все найдены сборкой, чтением исходников или прогоном
 на устройстве.
@@ -98,8 +98,8 @@ provenance. Всё, что ломалось по дороге, ломалось 
 
 | | Результат |
 |---|---|
-| Где | эмулятор AVD `twowe` (Pixel 7, Android 36, arm64), Pixel 9 не был подключён |
-| Пуш с первого pre-draw | **проигрывает** `LoadApp` на 80–120 мс, первый экран с `null` ~100 мс (T31) |
+| Где | эмулятор AVD `twowe` (Pixel 7, Android 36) и **Pixel 9 (Android 17, API 37)**, результат совпал |
+| Пуш с первого pre-draw | **проигрывает** `LoadApp`: на эмуляторе на 80–120 мс, на Pixel 9 на 1 мс. Первый экран с `null` (T31) |
 | Пуш из `onActivityPostStarted` | **становится начальным значением** на MTS и BTS, запас ~50 мс |
 | Инсеты в этот момент | `getRootWindowInsets` = `null`, `currentWindowMetrics` даёт верные (T32) |
 | Ключи Sparkling после нашего пуша | уцелели, мерж делает `LynxTemplateRender` в Java (T33) |
@@ -170,9 +170,6 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
       Первая версия опубликована локально, потому что npm не даёт настроить его
       до существования пакета. Поля: `PopLocker714`, `lynx-app-lifecycle`,
       `release.yml`, allowed actions `npm publish`
-- [ ] **S6 на реальном Pixel 9.** Спайк пройден на эмуляторе; порядок событий от железа
-      не зависит, но числа `currentWindowMetrics` до attach и запас до MTS надо снять
-      на устройстве: `cd apps/probe-e2e && ./run-spike.sh earliest pixel <release.apk>`
 - [ ] **Trusted publisher для `app-lifecycle` упёрся в логин.** Профиль Chrome, которым
       управляет Interceptor (`interceptor-test`), не залогинен в npmjs.com, поэтому даже
       прочитать страницу `/access` нельзя. Либо Илья логинится в этом профиле один раз,
@@ -193,7 +190,7 @@ Android-код писать по D8, а не по исходному текст�
 `onActivityPostStarted`, инсеты из `WindowMetrics`, pre-draw только для обновлений.
 `docs/spikes/s6/Spike.kt` это готовая заготовка `EdgeToEdge.kt`.
 
-Перед днём 3 прогнать S6 на Pixel 9, когда он появится по USB.
+S6 на Pixel 9 прогнан, результат совпал с эмулятором.
 
 ## Карта репозитория
 
