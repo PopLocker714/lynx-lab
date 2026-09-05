@@ -13,18 +13,18 @@ bun: 1.4.0
 ## Коротко
 
 Пишем недостающие нативные пакеты для **Lynx** под скоупом `@lynx-lab`.
-Два выпущены и проверены на живых устройствах, у третьего пройден спайк дня 1.
+Два выпущены и проверены на живых устройствах, третий собран и доставляет инсеты на первый кадр на Pixel 9.
 
 | Пакет | Состояние | Где |
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🧪 **спайк дня 1 пройден** (S6, эмулятор), дальше день 2: скелет в `packages/lynx-edge-to-edge` | [docs/packages/lynx-edge-to-edge.md](docs/packages/lynx-edge-to-edge.md) · [docs/spikes.md](docs/spikes.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: дни 1–5 и JS-слой сделаны, проверены на Pixel 9; остались поворот, модуль (refresh/бары), iOS, README | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
 
 ## Если читать только одно
 
-**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать пять ловушек.**
+**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать шесть ловушек.**
 Почти каждая выглядит как рабочий код и молча не работает. Ни одна не выводится
 из документации Lynx: все найдены сборкой, чтением исходников или прогоном
 на устройстве.
@@ -90,6 +90,17 @@ provenance. Всё, что ломалось по дороге, ломалось 
    `onEnterForeground()` из `onshow(params:)`, а на `UIApplication` не подписан никто.
    Проверено на устройстве: **ноль** событий при настоящем сворачивании.
 
+## edge-to-edge: дни 2–5 (2026-09-05)
+
+Пакет в `packages/lynx-edge-to-edge`, три коммита, приватный репозиторий на GitHub,
+CI запущен. На Pixel 9 через стоковый rc-шаблон и тарбол: первый кадр с верными
+инсетами на обоих потоках, трёхкнопочная навигация меняет `bottom` 24 → 48 → 24,
+CSS-переменные наследуются. Полная таблица в спеке, раздел «Результат дней 2–5».
+
+Две вещи, которые стоили по циклу сборки каждая, теперь в реестре: **T36** (React-вход
+библиотеки обязан шипиться TSX-исходником, иначе `Snapshot not found: view`) и
+bun-кеш тарболов (см. команды ниже). Решение D9.
+
 ## Спайк S6: edge-to-edge, день 1 (2026-09-05)
 
 Вопрос, на котором держалась вся спека: успевает ли ранний `updateGlobalProps` стать
@@ -149,6 +160,10 @@ bunx create-sparkling-app@rc <имя> --template-version rc
 
 # ставить пакет для проверки ТОЛЬКО из тарбола: bun add file: ломает iOS-автолинк (T30)
 npm pack && bun add /путь/pkg.tgz
+# ...но bun кеширует тарбол по name@version: повторный npm pack с той же версией
+# в node_modules НЕ попадает (стоило одного цикла сборки 2026-09-05). Обновлять так:
+rm -rf node_modules/@lynx-lab/<pkg> && mkdir -p node_modules/@lynx-lab/<pkg> \
+  && tar xzf /путь/pkg.tgz --strip-components=1 -C node_modules/@lynx-lab/<pkg>
 
 # логи жизненного цикла на iOS: --console-pty отваливается при сворачивании
 xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage CONTAINS "МАРКЕР"'
@@ -184,13 +199,18 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 ## Следующий шаг
 
-**`@lynx-lab/edge-to-edge`, день 2: скелет пакета** в `packages/lynx-edge-to-edge`
-по шаблону `packages/lynx-app-lifecycle` (он новее crypto и уже на Java 11).
-Android-код писать по D8, а не по исходному тексту спеки: пуш из
-`onActivityPostStarted`, инсеты из `WindowMetrics`, pre-draw только для обновлений.
-`docs/spikes/s6/Spike.kt` это готовая заготовка `EdgeToEdge.kt`.
+**`@lynx-lab/edge-to-edge`, хвосты Android и iOS.** По порядку:
 
-S6 на Pixel 9 прогнан, результат совпал с эмулятором.
+1. Поворот на Pixel: понять, почему контейнер Sparkling не крутится
+   (`SparklingActivity.requestedOrientation` берётся из `screenOrientation` схемы;
+   `SplashActivity` в манифесте `portrait`), затем проверить `left/right` в альбомной.
+2. В пробник добавить кнопки на `refreshSafeArea()`, `setSystemBarStyle`,
+   `setSystemBarHidden` и поле ввода для клавиатуры: модуль на устройстве ещё не вызывался.
+3. Release-сборка с пакетом под R8 (в спайке провайдер выжил, пакет ещё не гоняли).
+4. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
+5. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
+
+Правило для всех будущих пакетов с элементами: T36, шипить TSX-исходник.
 
 ## Карта репозитория
 
@@ -204,6 +224,7 @@ S6 на Pixel 9 прогнан, результат совпал с эмулят�
 | [docs/05-shop.md](docs/05-shop.md) | интернет-магазин: вчетверо дешевле мессенджера |
 | [docs/packages/back-and-calls.md](docs/packages/back-and-calls.md) | predictive back и WebRTC-звонки |
 | [docs/spikes.md](docs/spikes.md) | спайки S1–S6 и их результаты |
+| `apps/probe-e2e/run-pkg.sh` | прогон пакета на устройстве по сценариям: cold, rotate, threebutton, background |
 | `docs/spikes/s6/` | логи, скриншоты и код спайка S6 |
 | `packages/`, `apps/`, `upstream/` | вложенные клоны пакетов, пробники, исходники апстрима на тегах. Не в git, см. `CLAUDE.md` «Раскладка на диске» |
 | [DECISIONS.md](DECISIONS.md) | лог решений с обоснованием и условием пересмотра |

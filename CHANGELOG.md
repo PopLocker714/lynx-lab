@@ -47,4 +47,8 @@
   shallow-клоны `lynx` (4.0.1, 3.9.0) и `sparkling` в `upstream/`. Всё в `.gitignore`,
   правило в `CLAUDE.md`.
 - Хвост «trusted publisher для app-lifecycle» упёрся в незалогиненный профиль браузера.
+- **S6 подтверждён на Pixel 9**, T35 про 16 КБ zip-выравнивание в rc-шаблоне (AGP 7.4.2).
+- **`@lynx-lab/edge-to-edge` собран**: дни 2–5 и JS-слой, проверен на Pixel 9 через
+  autolink из тарбола. Репозиторий создан приватным. T36 и D9: React-вход
+  библиотеки шипится TSX-исходником. Спека переведена в `status: building`.
 

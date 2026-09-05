@@ -703,7 +703,7 @@ plugins {
 
 ---
 
-## T31–T35 · Из спайка S6 для `@lynx-lab/edge-to-edge`
+## T31–T36 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
 
 Дата: 2026-09-05. Эмулятор AVD (Pixel 7 профиль, Android 36, arm64), стоковый
 rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и логи в
@@ -791,6 +791,45 @@ Fresco и вовсе `0x10000`. А `zipalign -c -P 16 -v 4 app-release.apk` из
 **Как чинить:** апгрейд AGP до версии с 16 КБ zip-выравниванием (T17 уже описывает
 апгрейд до 8.7.0 и его цену), либо прогонять `zipalign -P 16` по готовому APK.
 Пакетов `@lynx-lab/*` это не касается: своих `.so` у них нет.
+
+### T36 · Компоненты для ReactLynx нельзя шипить скомпилированными
+
+**Статус: открыт (архитектурное) · Severity: Блокер для любой библиотеки с `<view>`**
+
+Библиотека, которая собрала `src/react/index.tsx` в `dist/react/index.js`
+(обычный `tsc` с `jsx: react-jsx`), на устройстве падает целиком:
+`main-thread.js exception: Snapshot not found: view` на MTS и
+`BackgroundSnapshot not found: view` на BTS, `LoadApp fail: call load_app_func fail!`,
+пустой экран и тост «loadCard failed». Проверено на Pixel 9 с `@lynx-lab/edge-to-edge`.
+
+Причина в компиляторе ReactLynx: JSX превращается не в `jsx("view", props)`, а в
+снапшоты (`createSnapshot("__snapshot_<hash>", …)`, регистрация в `snapshotCreatorMap`),
+и рантайм на обоих потоках ищет vnode по id снапшота. `new SnapshotInstance(type)` в
+`@lynx-js/react` бросает, когда `type` это строка `view`, а не id
+(`runtime/lib/snapshot.js`, «Snapshot not found: » + type). Уже скомпилированный
+`jsx("view")` из `@lynx-js/react/jsx-runtime` лоадер не трогает: он работает с JSX-AST.
+
+**Правильно:** шипить React-вход **исходником** и указывать на него в `exports`:
+
+```json
+"./react": { "types": "./dist/react/index.d.ts", "import": "./src/react/index.tsx", "default": "./src/react/index.tsx" }
+```
+
+Rsbuild по умолчанию включает `.ts/.tsx/.jsx` из `node_modules` в JS-правило
+(`@rsbuild/core/dist/131.js`: `rule.include.add(/\.(?:ts|tsx|jsx|mts|cts)$/)`),
+rspeedy добавляет `/\.(?:js|mjs|cjs)$/`, а лоадеры ReactLynx висят на этом правиле как
+`oneOf` для слоёв `react:background` и `react:main-thread`
+(`@lynx-js/react-rsbuild-plugin/dist/208.js`, `applyLoaders`). Значит TSX из
+`node_modules` проходит через тот же трансформ, что и код приложения. Проверено:
+`__snapshot_f89b0_ba622_1` для `SafeAreaProvider` появился в бандле, оба потока отрисовали.
+
+Два следствия. Импорты внутри такого файла только через имя пакета
+(`from '@lynx-lab/edge-to-edge'`), иначе ядро соберётся дважды, из `dist` и из `src`,
+с двумя разными кешами. И `files` в `package.json` обязан включать `src/**/*.tsx`,
+а `check-publishable` обязан это проверять.
+
+Методическое: бандл лежит в assets APK. После `bun run build` нужен `assembleDebug`
+и переустановка, иначе прогон идёт на старом JS. Стоило трёх прогонов подряд.
 
 ---
 
