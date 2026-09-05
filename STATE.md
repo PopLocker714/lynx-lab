@@ -24,7 +24,7 @@ bun: 1.4.0
 
 ## Если читать только одно
 
-**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать шесть ловушек.**
+**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать семь ловушек.**
 Почти каждая выглядит как рабочий код и молча не работает. Ни одна не выводится
 из документации Lynx: все найдены сборкой, чтением исходников или прогоном
 на устройстве.
@@ -95,7 +95,7 @@ provenance. Всё, что ломалось по дороге, ломалось 
 Пакет в `packages/lynx-edge-to-edge`, три коммита, приватный репозиторий на GitHub,
 CI запущен. На Pixel 9 через стоковый rc-шаблон и тарбол: первый кадр с верными
 инсетами на обоих потоках, трёхкнопочная навигация меняет `bottom` 24 → 48 → 24,
-CSS-переменные наследуются. Полная таблица в спеке, раздел «Результат дней 2–5».
+CSS-переменные наследуются, поворот даёт `left=65.9` от выреза на первом кадре. Полная таблица в спеке, раздел «Результат дней 2–5», скриншоты в `docs/evidence/edge-to-edge/`.
 
 Две вещи, которые стоили по циклу сборки каждая, теперь в реестре: **T36** (React-вход
 библиотеки обязан шипиться TSX-исходником, иначе `Snapshot not found: view`) и
@@ -171,6 +171,9 @@ xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage C
 # пробнику нужен local.properties с sdk.dir и foojay-резолвер в settings.gradle.kts
 printf 'sdk.dir=%s/Library/Android/sdk\n' "$HOME" > android/local.properties
 
+# пробник: для теста поворота в DebugDevUrlSupport.kt заменить screen_orientation=portrait на unspecified (T37)
+# затем: adb shell wm user-rotation lock 1 … adb shell wm user-rotation free
+
 # спайк S6 заново (Pixel или эмулятор): режимы predraw | earliest | none
 cd apps/probe-e2e && ./run-spike.sh earliest pixel android/app/build/outputs/apk/release/app-arm64-v8a-release.apk
 
@@ -201,14 +204,11 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 **`@lynx-lab/edge-to-edge`, хвосты Android и iOS.** По порядку:
 
-1. Поворот на Pixel: понять, почему контейнер Sparkling не крутится
-   (`SparklingActivity.requestedOrientation` берётся из `screenOrientation` схемы;
-   `SplashActivity` в манифесте `portrait`), затем проверить `left/right` в альбомной.
-2. В пробник добавить кнопки на `refreshSafeArea()`, `setSystemBarStyle`,
+1. В пробник добавить кнопки на `refreshSafeArea()`, `setSystemBarStyle`,
    `setSystemBarHidden` и поле ввода для клавиатуры: модуль на устройстве ещё не вызывался.
-3. Release-сборка с пакетом под R8 (в спайке провайдер выжил, пакет ещё не гоняли).
-4. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
-5. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
+2. Release-сборка с пакетом под R8 (в спайке провайдер выжил, пакет ещё не гоняли).
+3. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
+4. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
 
 Правило для всех будущих пакетов с элементами: T36, шипить TSX-исходник.
 

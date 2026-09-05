@@ -703,7 +703,7 @@ plugins {
 
 ---
 
-## T31–T36 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
+## T31–T37 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
 
 Дата: 2026-09-05. Эмулятор AVD (Pixel 7 профиль, Android 36, arm64), стоковый
 rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и логи в
@@ -830,6 +830,17 @@ rspeedy добавляет `/\.(?:js|mjs|cjs)$/`, а лоадеры ReactLynx в
 
 Методическое: бандл лежит в assets APK. После `bun run build` нужен `assembleDebug`
 и переустановка, иначе прогон идёт на старом JS. Стоило трёх прогонов подряд.
+
+### T37 · Debug-схема rc-шаблона запирает портрет
+
+**Статус: открыт (шаблон) · Severity: Мелочь, но тест поворота молча не идёт**
+
+`android/app/src/debug/java/.../DebugDevUrlSupport.kt:39,41` строит схему главной
+страницы с `&screen_orientation=portrait`, а `SparklingActivity.initSparklingFragment`
+превращает это в `requestedOrientation = SCREEN_ORIENTATION_PORTRAIT`. Ни
+`settings put system user_rotation 1`, ни `wm user-rotation lock 1` экран не поворачивают,
+и в логе тишина. Для тестов поворота в пробнике менять на `screen_orientation=unspecified`.
+В release-схеме (`SparklingVariantHooksImpl` из `src/release`) параметр смотреть отдельно.
 
 ---
 
