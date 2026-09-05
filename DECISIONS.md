@@ -86,3 +86,48 @@ Autolink на чём-то, что не завязано на чужие SDK.
 и до JS не доводит ничего. Значит `NSException` как способ громко сообщить о проблеме
 не работает: приложение получает `undefined` вместо статуса. Все проверки конфигурации
 делаем в TS и бросаем оттуда. См. дефект `T3`.
+
+---
+
+## D7 · Пакеты, пробники и апстрим лежат внутри lynx-lab как вложенные клоны
+
+**2026-09-04 · принято**
+
+До этого `lynx-crypto` и `lynx-app-lifecycle` лежали россыпью в `~/Documents/dev`,
+и сессия, открытая в пакете, не видела ни `STATE.md`, ни реестр ловушек. Теперь:
+
+- `packages/<name>/` — собственный git-репозиторий каждого пакета, в `.gitignore` этого репо
+- `apps/<name>/` — одноразовые пробники `create-sparkling-app`, тоже в `.gitignore`
+- `upstream/lynx`, `upstream/sparkling` — shallow-клоны на тегах, чтобы правило
+  «ни одного утверждения без источника» выполнялось по `git grep`, а не по памяти
+
+Почему вложение, а не соседняя папка `~/Documents/dev/libs`: Claude Code подхватывает
+`CLAUDE.md` из родительских папок, значит любая сессия внутри `packages/*` автоматически
+получает правила этого репозитория. Симметрия `docs/packages/<name>.md` ↔ `packages/<name>/`
+идёт бонусом. `react-native-nitro-xray-core` не Lynx и остаётся у VPN-проекта.
+
+**Передумаем, если** понадобится единая CI-проверка всех пакетов разом (тогда submodules
+или workspace), либо если набор пакетов перестанет быть только про Lynx.
+
+---
+
+## D8 · edge-to-edge: пуш инсетов из `onActivityPostStarted`, значения из `WindowMetrics`
+
+**2026-09-05 · принято по результату спайка S6**
+
+Спека ставила пуш `updateGlobalProps` на первый pre-draw декора. На устройстве
+pre-draw приходит после `LoadApp` (T31), и первый экран получает `safeArea=null`
+на ~100 мс. Пуш из `onActivityPostStarted` приходит до старта MTS с запасом ~50 мс
+и становится начальным значением через `init_global_props_`
+(`bts_runtime.cc:1123-1135` @4.0.1). Так же доставляет свои globalProps сам Sparkling.
+
+Значения в этот момент берутся из `WindowManager.currentWindowMetrics.windowInsets`
+(API 30+), потому что `getRootWindowInsets` до attach окна `null` (T32).
+
+Заодно убран канал C (`sendGlobalEvent`): обновления и так приезжают через
+`__NotifyGlobalPropsUpdated` → `onGlobalPropsChanged` в ReactLynx.
+
+**Передумаем, если** на реальном Pixel 9 или OEM-прошивке `currentWindowMetrics`
+до attach вернёт не те инсеты, что потом `getRootWindowInsets`, либо если Sparkling
+перенесёт создание LynxView в `onCreate`.
+

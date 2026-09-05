@@ -31,3 +31,20 @@
   подняты в `docs/01-platform-traps.md`. Теперь там все тридцать.
 - В `CLAUDE.md` добавлено правило: первое действие в новой сессии это STATE.md
   плюс реестр ловушек, и STATE.md обновляется в конце каждого захода.
+
+## 2026-09-05
+
+- **Спайк S6 пройден** (эмулятор, Sparkling 2.1.0-rc.36, Lynx 3.9.0): ранний
+  `updateGlobalProps` буферизуется в `init_global_props_` и становится начальным
+  значением `lynx.__globalProps`, но только если пушить из `onActivityPostStarted`.
+  Пуш с pre-draw проигрывает `LoadApp`. Подтверждено `bts_runtime.cc:1123-1135`
+  и `template_assembler.cc:251-270` на теге 4.0.1, плюс исходниками Sparkling.
+- Заведены **T31–T34**: pre-draw после старта JS, `getRootWindowInsets` до attach,
+  мерж globalProps живёт в Java, JS-консоль в release молчит.
+- **D8**: точка пуша и источник инсетов для edge-to-edge изменены. Спека поправлена
+  разделом «Результат спайка дня 1», риск №1 и риск R8 закрыты.
+- **D7 и новая раскладка**: пакеты переехали в `packages/`, пробники в `apps/`,
+  shallow-клоны `lynx` (4.0.1, 3.9.0) и `sparkling` в `upstream/`. Всё в `.gitignore`,
+  правило в `CLAUDE.md`.
+- Хвост «trusted publisher для app-lifecycle» упёрся в незалогиненный профиль браузера.
+

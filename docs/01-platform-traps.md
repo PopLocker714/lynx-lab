@@ -1,12 +1,13 @@
 ---
-verified: 2026-08-21
+verified: 2026-09-05
 lynx_version: 4.0.1
+sparkling_version: 2.1.0-rc.36
 status: spec
 ---
 
 # Ловушки платформы
 
-Читать перед любой строкой нативного кода. Каждая из шести выглядит как рабочий код
+Читать перед любой строкой нативного кода. Каждая выглядит как рабочий код
 и молча не работает. Пространство ID `T` общее для всех пакетов: если ловушка вскрылась
 в одном пакете, она поднимается сюда.
 
@@ -698,6 +699,73 @@ plugins {
 ```
 
 Блок `plugins` до `pluginManagement` Gradle отвергает явной ошибкой.
+
+
+---
+
+## T31–T34 · Из спайка S6 для `@lynx-lab/edge-to-edge`
+
+Дата: 2026-09-05. Эмулятор AVD (Pixel 7 профиль, Android 36, arm64), стоковый
+rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и логи в
+[spikes.md](spikes.md#s6--успевает-ли-ранний-updateglobalprops-стать-init_global_props_).
+
+### T31 · Первый pre-draw декора приходит ПОСЛЕ старта JS-рантайма
+
+**Статус: открыт (архитектурное) · Severity: Блокер для всего, что хочет попасть в первый кадр**
+
+Пуш на первом `OnPreDrawListener` декора проигрывает `LoadApp` на 80–120 мс
+(`emu-predraw.log`: MTS-рендер 627 мс, pre-draw 706 мс). В release иногда выигрывает,
+иногда нет: это гонка. Первый экран рисуется с тем, что было в `__globalProps`
+на момент `LoadApp`, обновление приезжает через `__NotifyGlobalPropsUpdated` и
+BTS-ре-рендер спустя ~100 мс.
+
+**Правильно:** пушить из `Application.ActivityLifecycleCallbacks.onActivityPostStarted`.
+В Sparkling `LynxView` впервые виден в дереве именно там: фрагмент коммитится
+асинхронно из `onCreate` (`SparklingActivity.kt:99-106`) и материализуется в `onStart`
+после `super.onStart()`, поэтому `onActivityCreated`, `PostCreated` и `Started`
+видят ноль LynxView. Запас до старта MTS около 50 мс, но главное не запас, а то что
+`BTSRuntime::OnGlobalPropsUpdated` (`bts_runtime.cc:1123-1135` @4.0.1) при
+`state_ == kNotStarted` кладёт значение в `init_global_props_`, и оно уезжает
+в `LoadApp`. Sparkling доставляет свои 22 ключа тем же способом
+(`SimpleLynxKitView.kt:74-75`: `updateGlobalProps` **после** `renderTemplateUrl`).
+
+### T32 · `getRootWindowInsets` равен `null` до attach окна
+
+**Статус: открыт (факт) · Severity: Важно**
+
+В `onActivityPostStarted` и даже в `onActivityResumed` декор ещё не прикреплён
+(`isAttachedToWindow=false`), `ViewCompat.getRootWindowInsets(decor)` возвращает `null`,
+и наивный код пушит нули или `-1`. Attach и первый `dispatchApplyWindowInsets`
+случаются в первом traversal, то есть на pre-draw, а это уже T31.
+
+**Правильно:** на API 30+ читать `activity.windowManager.currentWindowMetrics.windowInsets`
+`.getInsets(systemBars() or displayCutout())`. В спайке он дал те же числа, что
+позже `getRootWindowInsets` (`Insets{0,136,0,63}` при плотности 2.625 = 51.8dp / 24dp).
+Ниже API 30 — тёплый кеш предыдущего окна, иначе нули с поправкой на pre-draw.
+
+### T33 · Мерж `updateGlobalProps` по ключам живёт в Java, а C++ заменяет
+
+**Статус: открыт (факт) · Severity: Важно для iOS**
+
+`TemplateAssembler::UpdateGlobalProps` (`template_assembler.cc:251-270` @4.0.1) делает
+`global_props_ = data`, а `BTSRuntime::OnGlobalPropsUpdated` делает
+`init_global_props_ = props`. Оба **заменяют**. То, что ключи Sparkling пережили наш
+пуш (`UpdateGlobalProps 22` → `23` в логе), заслуга Android-обвязки:
+`LynxTemplateRender.internalMergeGlobalPropsSafely(TemplateData)` (javap по AAR 3.9.0).
+
+**Следствие:** на iOS мерж надо проверить отдельно (`LynxTemplateRender.mm`), прежде
+чем полагаться на «пушим только свой ключ». Не проверено.
+
+### T34 · В release-сборке JS-консоль не попадает в logcat
+
+**Статус: открыт (методическое) · Severity: Мелочь, но ломает диагностику**
+
+`console.info` из BTS и MTS в debug виден через `lynx_console.cc(254)`, в release
+(`isMinifyEnabled=true`, тот же код) не печатается вообще. Пробник, который доказывает
+что-то только логами JS, в release слепой.
+
+**Правильно:** выводить проверяемое значение на экран (`<text>`) и снимать
+`adb exec-out screencap`, как сделано в S6. `lynx.reportError` в release не проверялся.
 
 ---
 

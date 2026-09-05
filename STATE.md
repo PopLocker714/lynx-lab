@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-01
+last_updated: 2026-09-05
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling: 2.0.1 (latest) / 2.1.0-rc.36 (rc)
 bun: 1.4.0
@@ -13,18 +13,18 @@ bun: 1.4.0
 ## Коротко
 
 Пишем недостающие нативные пакеты для **Lynx** под скоупом `@lynx-lab`.
-Два выпущены и проверены на живых устройствах, третий со спекой ждёт старта.
+Два выпущены и проверены на живых устройствах, у третьего пройден спайк дня 1.
 
 | Пакет | Состояние | Где |
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 📋 спека готова, 9–10 дней | [docs/packages/lynx-edge-to-edge.md](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🧪 **спайк дня 1 пройден** (S6, эмулятор), дальше день 2: скелет в `packages/lynx-edge-to-edge` | [docs/packages/lynx-edge-to-edge.md](docs/packages/lynx-edge-to-edge.md) · [docs/spikes.md](docs/spikes.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
 
 ## Если читать только одно
 
-**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать ловушек.**
+**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать четыре ловушки.**
 Почти каждая выглядит как рабочий код и молча не работает. Ни одна не выводится
 из документации Lynx: все найдены сборкой, чтением исходников или прогоном
 на устройстве.
@@ -90,6 +90,24 @@ provenance. Всё, что ломалось по дороге, ломалось 
    `onEnterForeground()` из `onshow(params:)`, а на `UIApplication` не подписан никто.
    Проверено на устройстве: **ноль** событий при настоящем сворачивании.
 
+## Спайк S6: edge-to-edge, день 1 (2026-09-05)
+
+Вопрос, на котором держалась вся спека: успевает ли ранний `updateGlobalProps` стать
+`init_global_props_`. **Ответ: да, но не с pre-draw.** Подробно в
+[docs/spikes.md](docs/spikes.md), логи и скриншоты в `docs/spikes/s6/`.
+
+| | Результат |
+|---|---|
+| Где | эмулятор AVD `twowe` (Pixel 7, Android 36, arm64), Pixel 9 не был подключён |
+| Пуш с первого pre-draw | **проигрывает** `LoadApp` на 80–120 мс, первый экран с `null` ~100 мс (T31) |
+| Пуш из `onActivityPostStarted` | **становится начальным значением** на MTS и BTS, запас ~50 мс |
+| Инсеты в этот момент | `getRootWindowInsets` = `null`, `currentWindowMetrics` даёт верные (T32) |
+| Ключи Sparkling после нашего пуша | уцелели, мерж делает `LynxTemplateRender` в Java (T33) |
+| ContentProvider из library-модуля | смержился, пережил R8 в release |
+| Исходники | `bts_runtime.cc:1123-1135`, `template_assembler.cc:251-270`, `js_app.cc:3085` @4.0.1; `SimpleLynxKitView.kt:74-75`, `SparklingActivity.kt:99-106` @rc.36 |
+
+Решение зафиксировано как D8, спека поправлена в разделе «Результат спайка дня 1».
+
 ## Метод, который сработал
 
 Он важнее любого отдельного факта, потому что все находки выше добыты именно так.
@@ -115,7 +133,8 @@ provenance. Всё, что ломалось по дороге, ломалось 
 | bun | 1.4.0, запинен в CI явной версией, `latest` **запрещён** |
 | JDK | только 17. Шаблон просит **тулчейн** Java 11, лечится foojay-резолвером в `settings.gradle.kts` **после** блока `pluginManagement` |
 | Android SDK | `~/Library/Android/sdk`, NDK 27, platforms 35/36/37 |
-| Устройства | Pixel 9 по USB, iPhone 11 спарен (Developer Mode включён, Apple ID в Xcode залогинен) |
+| Устройства | Pixel 9 по USB, iPhone 11 спарен (Developer Mode включён, Apple ID в Xcode залогинен). 2026-09-05 оба были offline |
+| Эмулятор | AVD `twowe` (Pixel 7 профиль, Android 36, arm64, плотность 420), запасной вариант: `~/Library/Android/sdk/emulator/emulator -avd twowe` |
 | npm | залогинен как `poplocker714`, 2FA на записи требует подтверждения в браузере |
 | Публикация | по OIDC с provenance. **Долгоживущих токенов нет ни в одном репозитории** |
 
@@ -133,6 +152,16 @@ npm pack && bun add /путь/pkg.tgz
 
 # логи жизненного цикла на iOS: --console-pty отваливается при сворачивании
 xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage CONTAINS "МАРКЕР"'
+
+# пробнику нужен local.properties с sdk.dir и foojay-резолвер в settings.gradle.kts
+printf 'sdk.dir=%s/Library/Android/sdk\n' "$HOME" > android/local.properties
+
+# спайк S6 заново (Pixel или эмулятор): режимы predraw | earliest | none
+cd apps/probe-e2e && ./run-spike.sh earliest pixel android/app/build/outputs/apk/release/app-arm64-v8a-release.apk
+
+# факты по исходникам на теге, без памяти и без агентов
+git -C upstream/lynx grep -n 'init_global_props_' 4.0.1 -- core
+git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/sparkling-sdk/android/**/*.kt'
 ```
 
 ## Незакрытые хвосты
@@ -141,9 +170,13 @@ xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage C
       Первая версия опубликована локально, потому что npm не даёт настроить его
       до существования пакета. Поля: `PopLocker714`, `lynx-app-lifecycle`,
       `release.yml`, allowed actions `npm publish`
-- [ ] **`edge-to-edge`, день 1** — не код, а проверка: успевает ли ранний
-      `updateGlobalProps` стать `init_global_props_`. Вся архитектура доставки
-      держится на этом. Узнать на десятый день вместо первого стоит неделю
+- [ ] **S6 на реальном Pixel 9.** Спайк пройден на эмуляторе; порядок событий от железа
+      не зависит, но числа `currentWindowMetrics` до attach и запас до MTS надо снять
+      на устройстве: `cd apps/probe-e2e && ./run-spike.sh earliest pixel <release.apk>`
+- [ ] **Trusted publisher для `app-lifecycle` упёрся в логин.** Профиль Chrome, которым
+      управляет Interceptor (`interceptor-test`), не залогинен в npmjs.com, поэтому даже
+      прочитать страницу `/access` нельзя. Либо Илья логинится в этом профиле один раз,
+      либо ставит сам: `PopLocker714` / `lynx-app-lifecycle` / `release.yml`
 - [ ] **Апстрим-трек** (медленный, отдельный): реализовать Android write path для
       safe-area и заменить `// TODO` на `dynamic_css_styles_manager.cc:208`.
       Правильно чинит #299 для всех, но зависеть от этого пакет не может
@@ -154,11 +187,13 @@ xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage C
 
 ## Следующий шаг
 
-**`@lynx-lab/edge-to-edge`.** Спека полная, 1643 строки с кодом обеих платформ,
-рисками и планом по дням. И это тот баг, который виден глазами: контент уезжает
-под статус-бар.
+**`@lynx-lab/edge-to-edge`, день 2: скелет пакета** в `packages/lynx-edge-to-edge`
+по шаблону `packages/lynx-app-lifecycle` (он новее crypto и уже на Java 11).
+Android-код писать по D8, а не по исходному тексту спеки: пуш из
+`onActivityPostStarted`, инсеты из `WindowMetrics`, pre-draw только для обновлений.
+`docs/spikes/s6/Spike.kt` это готовая заготовка `EdgeToEdge.kt`.
 
-Начинать со спайка дня 1, не с кода.
+Перед днём 3 прогнать S6 на Pixel 9, когда он появится по USB.
 
 ## Карта репозитория
 
@@ -171,6 +206,8 @@ xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage C
 | [docs/04-risk.md](docs/04-risk.md) | дистрибуция, Android Developer Verification |
 | [docs/05-shop.md](docs/05-shop.md) | интернет-магазин: вчетверо дешевле мессенджера |
 | [docs/packages/back-and-calls.md](docs/packages/back-and-calls.md) | predictive back и WebRTC-звонки |
-| [docs/spikes.md](docs/spikes.md) | спайки S1–S5 и их результаты |
+| [docs/spikes.md](docs/spikes.md) | спайки S1–S6 и их результаты |
+| `docs/spikes/s6/` | логи, скриншоты и код спайка S6 |
+| `packages/`, `apps/`, `upstream/` | вложенные клоны пакетов, пробники, исходники апстрима на тегах. Не в git, см. `CLAUDE.md` «Раскладка на диске» |
 | [DECISIONS.md](DECISIONS.md) | лог решений с обоснованием и условием пересмотра |
 | [CLAUDE.md](CLAUDE.md) | правила работы в этом репозитории |

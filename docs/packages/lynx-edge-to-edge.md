@@ -1,6 +1,7 @@
 ---
-verified: 2026-08-26
+verified: 2026-09-05
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
+sparkling_version: 2.1.0-rc.36
 status: spec
 estimate: 9–10 дней
 ---
@@ -99,6 +100,31 @@ like `<SafeAreaView>`» — семнадцать месяцев спустя н�
 
 Правило чтения в JS: globalProps (если `generation` не старше кеша) → нативный геттер →
 нули с одним `warn`.
+
+## Результат спайка дня 1 (2026-09-05, эмулятор)
+
+Главное допущение **подтвердилось**: ранний `updateGlobalProps` буферизуется в
+`init_global_props_` и приезжает в JS как начальное значение на обоих потоках. Но
+точка пуша в этой спеке была выбрана неверно, и код ниже надо читать с тремя поправками.
+Полный разбор с таймлайнами, логами и цитатами исходников: [spikes.md, S6](../spikes.md).
+
+1. **Пуш из `onActivityPostStarted`, не с pre-draw.** Первый pre-draw декора приходит
+   после `LoadApp` (T31), а `LynxView` появляется в дереве в `onActivityPostStarted`,
+   потому что Sparkling материализует фрагмент в `onStart`. `onActivityResumed`
+   остаётся для перепривязки после фона, pre-draw остаётся для обновлений.
+2. **Значения до attach окна берутся из `WindowManager.currentWindowMetrics.windowInsets`**
+   (API 30+), потому что `getRootWindowInsets` в этот момент `null` (T32).
+   Ниже API 30 — тёплый кеш `SafeAreaStore`, иначе нули; pre-draw поправит.
+3. **Канал C (`sendGlobalEvent`) не нужен.** Обновление после старта приезжает
+   как `__NotifyGlobalPropsUpdated`, ReactLynx делает `Object.assign(lynx.__globalProps, data)`
+   и `GlobalEventEmitter.emit('onGlobalPropsChanged')` уже в 0.116
+   (`runtime/lib/lynx/tt.js:219-229`), в 0.125 поверх этого есть `useGlobalPropsChanged`.
+   `SafeAreaStore.publish` должен дедуплицировать по значениям: в спайке второй пуш
+   с теми же числами породил лишний ре-рендер.
+
+Мерж по верхнему ключу на Android делает `LynxTemplateRender`, а не движок (T33), поэтому
+на iOS это надо проверить отдельно в день 6. ContentProvider из манифеста library-модуля
+смержился и пережил R8 в release. На реальном Pixel 9 спайк не прогонялся.
 
 ## Android: включение
 
@@ -1628,8 +1654,8 @@ NS_ASSUME_NONNULL_END
 
 ## Риски
 
-- ПЕРВЫЙ ПО ВАЖНОСТИ, НЕ ПРОВЕРЕНО НА УСТРОЙСТВЕ: успевает ли первый pre-draw вызвать updateGlobalProps раньше, чем стартует рантайм и отработает LoadApp. Вся история про «правильные инсеты на первом кадре» держится на буферизации BTSRuntime::OnGlobalPropsUpdated в init_global_props_. Если не успевает — будет один кадр с нулями, и понадобится второй механизм. Это день 1 плана, не день 8.
-- ContentProvider внутри сборки Sparkling под R8 не проверен. Шаблон релизится с isMinifyEnabled/isShrinkResources true, initOrder относительно других autolink-пакетов не наблюдался, merged manifest report не читался. consumer-rules.pro с keep на провайдер написан по рассуждению, а не по факту падения.
+- **ЗАКРЫТ 2026-09-05, см. «Результат спайка дня 1»: буферизация подтверждена, но пуш переехал с pre-draw на `onActivityPostStarted`.** Было: ПЕРВЫЙ ПО ВАЖНОСТИ, НЕ ПРОВЕРЕНО НА УСТРОЙСТВЕ: успевает ли первый pre-draw вызвать updateGlobalProps раньше, чем стартует рантайм и отработает LoadApp. Вся история про «правильные инсеты на первом кадре» держится на буферизации BTSRuntime::OnGlobalPropsUpdated в init_global_props_. Если не успевает — будет один кадр с нулями, и понадобится второй механизм. Это день 1 плана, не день 8.
+- **ЗАКРЫТ 2026-09-05 на эмуляторе: провайдер из library-модуля смержился и пережил R8 в release.** Было: ContentProvider внутри сборки Sparkling под R8 не проверен. Шаблон релизится с isMinifyEnabled/isShrinkResources true, initOrder относительно других autolink-пакетов не наблюдался, merged manifest report не читался. consumer-rules.pro с keep на провайдер написан по рассуждению, а не по факту падения.
 - Обход дерева вьюх в поисках LynxView каждый кадр — бюджет 240 кадров на attach/resume, дальше только при изменении. На глубоком дереве это заметный расход на холодном старте. Не профилировалось.
 - Ленивое создание модуля на BTS означает, что sendGlobalEvent и registerContext появляются только после первого обращения JS к NativeModules. До этого работает лишь канал globalProps. На brownfield-хосте без ContentProvider первый инсет придёт только после первого вызова getSnapshot().
 - setDecorFitsSystemWindows(false) отключает SOFT_INPUT_ADJUST_RESIZE — это в javadoc самого Window, и это старейшая незакрытая жалоба в трекере zoontek (открыта с 2022, баг Google, ответ RN — отдать проблему в react-native-keyboard-controller на 100+ kB). У Lynx такой библиотеки нет. Мы отдаём ime() и говорим в README, что избегание клавиатуры становится задачей приложения. Это не починка.
@@ -1641,7 +1667,7 @@ NS_ASSUME_NONNULL_END
 
 ## План по дням
 
-- День 1 — снять главный риск ДО написания пакета. Форк шаблона Sparkling, ContentProvider-заглушка, логирующая timestamp Application.onCreate, первого pre-draw и первого updateGlobalProps, плюс лог из JS о том, чему равен lynx.__globalProps.safeArea на самом первом рендере. Прогон на Pixel 9. Ответ на вопрос «успевает ли пуш стать init_global_props_» определяет, останется ли архитектура такой. Заодно проверить, что провайдер вообще смержился и пережил R8 в release-сборке.
+- День 1 — **сделан 2026-09-05 (S6), ответ «да, но с `onActivityPostStarted`».** Снять главный риск ДО написания пакета. Форк шаблона Sparkling, ContentProvider-заглушка, логирующая timestamp Application.onCreate, первого pre-draw и первого updateGlobalProps, плюс лог из JS о том, чему равен lynx.__globalProps.safeArea на самом первом рендере. Прогон на Pixel 9. Ответ на вопрос «успевает ли пуш стать init_global_props_» определяет, останется ли архитектура такой. Заодно проверить, что провайдер вообще смержился и пережил R8 в release-сборке.
 - День 2 — скелет пакета по шаблону lynx-crypto: package.json с тремя exports, lynx.lib.json, tsconfig, biome, vitest, semantic-release, consumer-rules.pro. types.ts, native.ts (шов setNativeModule), testing/create-fake. Юнит-тесты на fromWire/adopt/дедупликацию по generation — они не требуют устройства и написать их сейчас дешевле всего.
 - День 3 — Android, включение. EdgeToEdgeInitProvider, EdgeToEdge.install/attach/applyWindow/applyBars. Проверка на Pixel 9 при targetSdk 34: контент уезжает под бары, бары прозрачные, вырез в альбомной не летербоксит (это тест на layoutInDisplayCutoutMode). Затем бамп шаблона на targetSdk 36 и проверка, что при enforcement ничего не сломалось и вызовы выродились в no-op.
 - День 4 — Android, чтение и доставка. SafeAreaStore, OnPreDrawListener, systemBars()|displayCutout(), ime() на API 30+, поиск LynxView с бюджетом кадров, updateGlobalProps + sendGlobalEvent + generation. Тест: числа совпадают с тем, что показывает эталонное RN-приложение с react-native-safe-area-context на том же устройстве. Отдельно проверить жестовую навигацию против трёхкнопочной — это место, где ломается шаблон Sparkling.
