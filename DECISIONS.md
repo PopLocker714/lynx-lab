@@ -149,3 +149,22 @@ pre-draw приходит после `LoadApp` (T31), и первый экран
 **Передумаем, если** ReactLynx начнёт публиковать стабильный формат
 предскомпилированных снапшотов для библиотек.
 
+---
+
+## D10 · edge-to-edge на iOS: регистрация LynxView из глобального lifecycle-хука
+
+**2026-09-10 · принято по прогону на симуляторе**
+
+Спека предполагала, что iOS-модуль сам найдёт `LynxView` через `getLynxView` при
+создании. Модуль создаётся после `LoadApp`, и первый кадр получал `null`. Теперь
+`LEESafeAreaStore` ставит `LynxViewLifecycle`-клиента в `LynxEnv.lifecycleDispatcher`
+на `UIApplicationDidFinishLaunching`, и в `lynxViewDidStartLoading:` (синхронно из
+`loadTemplateFromURL:`) греет кеш из key window, регистрирует view, пушит globalProps
+и вешает observer. Модуль делает то же самое повторно, идемпотентно, как страховка (T39).
+
+Побочно: observer-вьюха больше не публикует из `didMoveToWindow`, там safe area ещё
+нулевые до первого layout; `edgeToEdge` нормализуется из `1` (T40).
+
+**Передумаем, если** Lynx даст `LynxViewBuilder`-уровневый способ задать globalProps
+до загрузки, либо если `lifecycleDispatcher` перестанет быть публичным.
+

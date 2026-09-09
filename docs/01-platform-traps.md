@@ -703,7 +703,7 @@ plugins {
 
 ---
 
-## T31–T38 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
+## T31–T40 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
 
 Дата: 2026-09-05. Эмулятор AVD (Pixel 7 профиль, Android 36, arm64), стоковый
 rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и логи в
@@ -772,6 +772,12 @@ BTS-ре-рендер спустя ~100 мс.
 
 **Правильно:** выводить проверяемое значение на экран (`<text>`) и снимать
 `adb exec-out screencap`, как сделано в S6. `lynx.reportError` в release не проверялся.
+
+**Дополнение для iOS (2026-09-10):** `lynx.reportError(new Error(line), {level:'warning'})`
+на симуляторе пробивается в `log` как `JSErrorReporter.sendError:... <line>` с обоих
+потоков, префикс `[main-thread.js]` у MTS. Читать задним числом:
+`xcrun simctl spawn booted log show --last 3m --predicate 'eventMessage CONTAINS "SPIKE"'`.
+Фоновый `log stream ... &` из harness-вызова умирает вместе с вызовом, `log show` надёжнее.
 
 ### T35 · rc-шаблон Sparkling собирает APK без выравнивания по 16 КБ
 
@@ -876,6 +882,45 @@ rspeedy добавляет `/\.(?:js|mjs|cjs)$/`, а лоадеры ReactLynx в
 каталог (или `./gradlew clean`). В README пакетов писать это в раздел установки.
 У crypto и app-lifecycle это не всплыло, потому что их пробники создавались
 уже с пакетом внутри, и первая генерация была полной.
+
+### T39 · На iOS ранний пуш в LynxView делается через `LynxEnv.lifecycleDispatcher`
+
+**Статус: открыт (архитектурное) · Severity: Блокер для всего, что хочет попасть в первый кадр на iOS**
+
+На iOS нет `ActivityLifecycleCallbacks` и обхода дерева: нативный модуль создаётся
+лениво при первом обращении JS, то есть после `LoadApp`, а `+load` не знает,
+когда и где появится `LynxView`. Первый прогон `@lynx-lab/edge-to-edge` на симуляторе
+это показал: кеш инсетов был верным с gen 1, а `lynx.__globalProps.safeArea` на первом
+кадре был `null`, потому что пушить было некуда.
+
+Решение, проверено на симуляторе iPhone 17 (iOS 26.5), Lynx 3.9.0:
+`[[LynxEnv sharedInstance].lifecycleDispatcher addLifecycleClient:hook]` — глобальный
+клиент `LynxViewLifecycle`. `LynxView.mm:113` подключает его к диспетчеру каждого view,
+а `lynxViewDidStartLoading:` вызывается **синхронно из `loadTemplateFromURL:initData:`**
+(`LynxTemplateRender.mm:591`), до декодирования шаблона и старта JS. В этом колбэке
+`updateGlobalPropsWithDictionary:` уходит в `init_global_props_` и становится
+начальным значением. Три оговорки:
+
+- ставить хук на `UIApplicationDidFinishLaunchingNotification`, а не из `+load`:
+  `LynxEnv.sharedInstance` зовёт `initDevTool` по рефлексии, и при `+load` чужие
+  образы могут быть не загружены;
+- в момент `lynxViewDidStartLoading:` у view ещё **нет окна** (`window=0x0` в логе),
+  инсеты брать из key window, они там уже верные (62/34 на iPhone 17);
+- Sparkling на iOS сам делает `updateGlobalProps` **до** `loadTemplate`
+  (`SPKWrapperLynxView.swift:365-369`), то есть тоже живёт на этой буферизации.
+
+Это iOS-пара к T31.
+
+### T40 · `@YES` через globalProps приезжает в JS числом `1`
+
+**Статус: открыт (факт) · Severity: Мелочь, но ломает дедупликацию**
+
+`updateGlobalPropsWithDictionary:@{@"flag": @YES}` на iOS даёт в `lynx.__globalProps`
+`flag: 1`, а не `true` (проверено `JSON.stringify` на симуляторе: `"edgeToEdge":1`).
+Тот же словарь, отправленный через `sendGlobalEvent:withParams:`, приходит как `true`.
+Если JS сравнивает два снимка строго, они «различаются» одним этим полем, и каждое
+обновление даёт лишний ре-рендер. Нормализовать на входе: `v === true || v === 1`.
+На Android `putBoolean` в `JavaOnlyMap` приезжает как `true`.
 
 ---
 

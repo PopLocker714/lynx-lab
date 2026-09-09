@@ -19,12 +19,12 @@ bun: 1.4.0
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: Android целиком (дни 1–5) и JS-слой сделаны и проверены; release под R8 проверен; остались iOS (день 6) и README (день 9) | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: Android (дни 1–5), JS-слой, release под R8 и iOS (день 6, симулятор) сделаны; остались проверка модуля на iPhone 11 и README (день 9) | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
 
 ## Если читать только одно
 
-**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать восемь ловушек.**
+**[docs/01-platform-traps.md](docs/01-platform-traps.md) — сорок ловушек.**
 Почти каждая выглядит как рабочий код и молча не работает. Ни одна не выводится
 из документации Lynx: все найдены сборкой, чтением исходников или прогоном
 на устройстве.
@@ -89,6 +89,16 @@ provenance. Всё, что ломалось по дороге, ломалось 
    **контейнера страницы**, а не жизненный цикл приложения: Sparkling зовёт
    `onEnterForeground()` из `onshow(params:)`, а на `UIApplication` не подписан никто.
    Проверено на устройстве: **ноль** событий при настоящем сворачивании.
+
+## edge-to-edge: день 6, iOS (2026-09-10, симулятор iPhone 17)
+
+Первый прогон показал `null` на первом кадре: кеш инсетов был верным, но `LynxView`
+некому было зарегистрировать до `LoadApp`. Решение D10: глобальный `LynxViewLifecycle`
+через `LynxEnv.lifecycleDispatcher`, `lynxViewDidStartLoading:` приходит синхронно из
+`loadTemplateFromURL:` (T39). После него `render#1` на MTS и BTS видит `top=62 bottom=34`,
+поворот даёт `l=62 r=62 b=20` и обратно. Две попутные ловушки: `@YES` в globalProps
+это `1` в JS (T40), observer публиковал нули из `didMoveToWindow`. Логи JS на iOS через
+`lynx.reportError` плюс `log show --last`. Скриншоты в `docs/evidence/edge-to-edge/ios-sim-*`.
 
 ## edge-to-edge: день 5, модуль (2026-09-10, эмулятор)
 
@@ -189,6 +199,11 @@ rm -rf android/app/build/generated/source/lynxLibraryRegistry
 # пробник: для теста поворота в DebugDevUrlSupport.kt заменить screen_orientation=portrait на unspecified (T37)
 # затем: adb shell wm user-rotation lock 1 … adb shell wm user-rotation free
 
+# iOS-пробник: bundle install && bundle exec pod install в apps/probe-e2e/ios, затем
+xcodebuild -workspace SparklingGo.xcworkspace -scheme SparklingGoInHouse -configuration Debug \
+  -destination 'id=<sim-udid>' -derivedDataPath build build CODE_SIGNING_ALLOWED=NO -quiet
+cd apps/probe-e2e && ./run-ios.sh cold    # логи через lynx.reportError, см. T24
+
 # спайк S6 заново (Pixel или эмулятор): режимы predraw | earliest | none
 cd apps/probe-e2e && ./run-spike.sh earliest pixel android/app/build/outputs/apk/release/app-arm64-v8a-release.apk
 
@@ -217,12 +232,15 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 ## Следующий шаг
 
-**`@lynx-lab/edge-to-edge`, хвосты.** По порядку:
+**`@lynx-lab/edge-to-edge`, финиш.** По порядку:
 
-1. Прогнать модуль на Pixel 9 (`apps/probe-e2e`, кнопки на месте, `./run-pkg.sh pixel <apk>`
-   плюс тапы по координатам из `docs/evidence/edge-to-edge/emu-module-*.png`).
-2. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
-3. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
+1. iPhone 11 по проводу: холодный старт, `refresh()`, поворот (`apps/probe-e2e/run-ios.sh`
+   плюс тап пальцем или `interceptor ios`). На симуляторе тапы не доставляются.
+2. Pixel 9 по проводу: повторить день 5 (`./run-pkg.sh pixel <apk>` и тапы по координатам
+   из `docs/evidence/edge-to-edge/emu-module-*.png`).
+3. README EN/RU целиком (день 9): API, миграция `env(` → `var(--`, T38 про реестр,
+   iOS-бары как no-op в v1, `<input>` для клавиатуры не в поде Lynx.
+4. 0.1.0 через `release.yml`, сразу после публикации trusted publisher.
 
 ## Карта репозитория
 

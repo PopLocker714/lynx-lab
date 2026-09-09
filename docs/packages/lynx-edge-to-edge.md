@@ -126,7 +126,7 @@ like `<SafeAreaView>`» — семнадцать месяцев спустя н�
 а не движок (T33); на iOS проверено по исходникам 2026-09-10, вложенные таблицы мержатся тоже. ContentProvider из манифеста library-модуля
 смержился и пережил R8 в release. На реальном Pixel 9 спайк не прогонялся.
 
-## Результат дней 2–5 (2026-09-05, Pixel 9)
+## Результат дней 2–6 (2026-09-05 Pixel 9, 2026-09-10 эмулятор и симулятор)
 
 Пакет живёт в `packages/lynx-edge-to-edge`, репозиторий `PopLocker714/lynx-edge-to-edge`
 (пока приватный, откроется на 0.1.0). Сделано и проверено на стоковом rc-шаблоне
@@ -148,6 +148,11 @@ like `<SafeAreaView>`» — семнадцать месяцев спустя н�
 | `setSystemBarHidden` | `true` → `statusBars visible=false`, `navigationBars visible=false`, `bottom` 24 → 0 событием; `false` → обратно. `top` остаётся 51.8: это `displayCutout`, не бар |
 | Клавиатура (`<input>` из `xelement-input`) | `keyboardHeight` 0 → 336.4 → 0 через `onGlobalPropsChanged`, поколения 1 → 2 → 3 |
 | Release под R8 (`isMinifyEnabled`, `isShrinkResources`) | 2026-09-10, эмулятор: в dex остались `EdgeToEdgeInitProvider`, `LynxEdgeToEdgeModule`, `LynxLibraryProviderImpl`, остальное обфусцировано; `hide`/`show` переключают бары, инсеты на первом кадре верные |
+| **iOS, симулятор iPhone 17 (iOS 26.5), день 6** | 2026-09-10, стоковый rc-шаблон, `pod install` через гем autolink, `LynxEdgeToEdgeModule registered with param (address): 0x0` |
+| iOS: первый кадр | после D10: `module-scope` и `render#1` на MTS видят `gen=1 top=62 bottom=34` из globalProps; до D10 было `null` (T39) |
+| iOS: поворот | альбомная `t=0 l=62 r=62 b=20` (gen 2), обратно `t=62 b=34` (gen 3), через `safeAreaInsetsDidChange` observer-вьюхи и `onGlobalPropsChanged` |
+| iOS: мерж globalProps | по исходникам (T33), ключи Sparkling не затирались, `statusBarHeight` и остальные на месте |
+| iOS: `refresh()`, бары, клавиатура | **не проверены**: тап по симулятору не доставился ни через mobile-MCP, ни через `interceptor macos click`; `<input>` в поде Lynx 3.9.0 нет (только `text`, `view`, `image`, `scroll-view`, `list`...). Проверять на iPhone 11 |
 | Регистрация модуля | **не работала четыре прогона** из-за устаревшего autolink-реестра (T38), после `rm -rf .../lynxLibraryRegistry` заработала |
 
 Три поправки к коду в этой спеке, все уже в репозитории пакета:
@@ -1713,7 +1718,7 @@ NS_ASSUME_NONNULL_END
 - День 3 — **включение сделано и проверено 2026-09-05, вырез в альбомной проверен: `left=65.9`, окно не летербоксится.** Android, включение. EdgeToEdgeInitProvider, EdgeToEdge.install/attach/applyWindow/applyBars. Проверка на Pixel 9 при targetSdk 34: контент уезжает под бары, бары прозрачные, вырез в альбомной не летербоксит (это тест на layoutInDisplayCutoutMode). Затем бамп шаблона на targetSdk 36 и проверка, что при enforcement ничего не сломалось и вызовы выродились в no-op.
 - День 4 — **доставка сделана и проверена 2026-09-05, жестовая против трёхкнопочной проверена.** Android, чтение и доставка. SafeAreaStore, OnPreDrawListener, systemBars()|displayCutout(), ime() на API 30+, поиск LynxView с бюджетом кадров, updateGlobalProps + sendGlobalEvent + generation. Тест: числа совпадают с тем, что показывает эталонное RN-приложение с react-native-safe-area-context на том же устройстве. Отдельно проверить жестовую навигацию против трёхкнопочной — это место, где ломается шаблон Sparkling.
 - День 5 — **сделан 2026-09-10 на эмуляторе: все четыре метода модуля и клавиатура проверены. На Pixel 9 повторить.** Android, модуль и бары. LynxEdgeToEdgeModule на LynxContextModule, getSnapshot/refresh/setSystemBarStyle/setSystemBarHidden, хопы через UIThreadUtils.runOnUiThread. Тест поворота (Activity пересоздаётся, configChanges не объявлены — значит проверяем, что переattach отрабатывает), split-screen, фон/передний план (не сбросил ли OEM окно).
-- День 6 — iOS. LEESafeAreaStore с +load, LEESafeAreaObserverView, LynxEdgeToEdgeModule. Podspec копируется с crypto. Прогон на iPhone 11: поворот, split view, Dynamic Island на симуляторе 15 Pro, клавиатура. Главная проверка — что инсеты ОБНОВЛЯЮТСЯ при повороте, потому что именно этого нет ни в Lynx, ни у кого в экосистеме.
+- День 6 — **сделан 2026-09-10 на симуляторе: первый кадр, поворот, регистрация. Модуль тапом не проверен.** iOS. LEESafeAreaStore с +load, LEESafeAreaObserverView, LynxEdgeToEdgeModule. Podspec копируется с crypto. Прогон на iPhone 11: поворот, split view, Dynamic Island на симуляторе 15 Pro, клавиатура. Главная проверка — что инсеты ОБНОВЛЯЮТСЯ при повороте, потому что именно этого нет ни в Lynx, ни у кого в экосистеме.
 - День 7 — **JS-слой написан и проверен на Android 2026-09-05 (T36 закрыл вопрос формата поставки).** JS-слой целиком. core.ts, system-bars.ts, react/index.tsx, globals.ts с declaration merging в GlobalProps. Прогон обеих платформ на одном экране, сверка чисел один в один. Проверка порядка чтения: с globalProps, без него, на MTS (там NativeModules нет и предупреждение обязано быть внятным).
 - День 8 — CSS-переменные и миграционная история. Демо-экран, где верстка написана через var(--safe-area-inset-top) и ничего больше, доказательство, что переменные наследуются вниз и обновляются на повороте. Плюс демо с клавиатурой на avoidKeyboard, чтобы честно понять, что мы отдаём вместо сломанного adjustResize.
 - День 9 — README (EN + RU, как в crypto), включая раздел с прямым текстом о трёх вещах: iOS system bars в v1 нет и почему, клавиатурное избегание становится задачей приложения и почему, один процесс-глобальный снимок на несколько LynxView. Диагностические сообщения об ошибках с точными командами adb logcat, как в crypto. Первая публикация под 0.1.0 с пометкой, что API может двигаться.
