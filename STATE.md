@@ -19,7 +19,7 @@ bun: 1.4.0
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: Android целиком (дни 1–5) и JS-слой сделаны и проверены; остались release под R8, iOS (день 6), README (день 9) | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: Android целиком (дни 1–5) и JS-слой сделаны и проверены; release под R8 проверен; остались iOS (день 6) и README (день 9) | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
 
 ## Если читать только одно
@@ -221,10 +221,8 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 1. Прогнать модуль на Pixel 9 (`apps/probe-e2e`, кнопки на месте, `./run-pkg.sh pixel <apk>`
    плюс тапы по координатам из `docs/evidence/edge-to-edge/emu-module-*.png`).
-2. Release-сборка с пакетом под R8: провайдер и модуль должны пережить minify
-   (в спайке S6 провайдер выжил, пакет целиком ещё не гоняли).
-3. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
-4. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
+2. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
+3. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
 
 ## Карта репозитория
 

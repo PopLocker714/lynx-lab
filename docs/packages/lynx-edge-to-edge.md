@@ -147,6 +147,7 @@ like `<SafeAreaView>`» — семнадцать месяцев спустя н�
 | `setSystemBarStyle` | `light` → `mLastAppearance` без `LIGHT_STATUS_BARS`, белые иконки; `dark` → `LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS`, тёмные. Проверено `dumpsys window` и скриншотами |
 | `setSystemBarHidden` | `true` → `statusBars visible=false`, `navigationBars visible=false`, `bottom` 24 → 0 событием; `false` → обратно. `top` остаётся 51.8: это `displayCutout`, не бар |
 | Клавиатура (`<input>` из `xelement-input`) | `keyboardHeight` 0 → 336.4 → 0 через `onGlobalPropsChanged`, поколения 1 → 2 → 3 |
+| Release под R8 (`isMinifyEnabled`, `isShrinkResources`) | 2026-09-10, эмулятор: в dex остались `EdgeToEdgeInitProvider`, `LynxEdgeToEdgeModule`, `LynxLibraryProviderImpl`, остальное обфусцировано; `hide`/`show` переключают бары, инсеты на первом кадре верные |
 | Регистрация модуля | **не работала четыре прогона** из-за устаревшего autolink-реестра (T38), после `rm -rf .../lynxLibraryRegistry` заработала |
 
 Три поправки к коду в этой спеке, все уже в репозитории пакета:
