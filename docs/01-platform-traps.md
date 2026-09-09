@@ -743,9 +743,9 @@ BTS-ре-рендер спустя ~100 мс.
 позже `getRootWindowInsets` (`Insets{0,136,0,63}` при плотности 2.625 = 51.8dp / 24dp).
 Ниже API 30 — тёплый кеш предыдущего окна, иначе нули с поправкой на pre-draw.
 
-### T33 · Мерж `updateGlobalProps` по ключам живёт в Java, а C++ заменяет
+### T33 · Мерж `updateGlobalProps` по ключам живёт в платформенном TemplateData, а движок заменяет
 
-**Статус: открыт (факт) · Severity: Важно для iOS**
+**Статус: не подтвердился как риск (мерж есть на обеих платформах) · Severity: Мелочь**
 
 `TemplateAssembler::UpdateGlobalProps` (`template_assembler.cc:251-270` @4.0.1) делает
 `global_props_ = data`, а `BTSRuntime::OnGlobalPropsUpdated` делает
@@ -753,8 +753,14 @@ BTS-ре-рендер спустя ~100 мс.
 пуш (`UpdateGlobalProps 22` → `23` в логе), заслуга Android-обвязки:
 `LynxTemplateRender.internalMergeGlobalPropsSafely(TemplateData)` (javap по AAR 3.9.0).
 
-**Следствие:** на iOS мерж надо проверить отдельно (`LynxTemplateRender.mm`), прежде
-чем полагаться на «пушим только свой ключ». Не проверено.
+**Уточнение 2026-09-10, iOS проверен по исходникам:** `LynxTemplateRender.mm:1184-1193`
+(`updateGlobalPropsWithTemplateData:` → `[_globalProps updateWithTemplateData:]`) →
+`LynxTemplateData.mm:224` → `LynxViewDataManager::UpdateData`
+(`core/renderer/data/lynx_view_data_manager.cc:27-49` @3.9.0). Это **мерж по ключам**,
+и вложенные таблицы мержатся тоже, а не заменяются. Android идёт в тот же хелпер
+через `lynx_view_data_manager_android.cc:61`. Значит «пушим только свой ключ» верно
+на обеих платформах; заменяет только сам `TemplateAssembler`, до которого доходит
+уже смерженное значение. Статус: **риск для iOS не подтвердился**.
 
 ### T34 · В release-сборке JS-консоль не попадает в logcat
 
