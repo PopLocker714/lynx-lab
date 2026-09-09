@@ -19,7 +19,7 @@ bun: 1.4.0
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: Android (дни 1–5), JS-слой, release под R8 и iOS (день 6, симулятор) сделаны; остались проверка модуля на iPhone 11 и README (день 9) | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **готов к 0.1.0 после железа**: Android (дни 1–5), JS-слой, release под R8, iOS (день 6, симулятор) и README (день 9) сделаны; остались iPhone 11 и Pixel 9 по проводу | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
 
 ## Если читать только одно
@@ -241,9 +241,9 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
    плюс тап пальцем или `interceptor ios`). На симуляторе тапы не доставляются.
 2. Pixel 9 по проводу: повторить день 5 (`./run-pkg.sh pixel <apk>` и тапы по координатам
    из `docs/evidence/edge-to-edge/emu-module-*.png`).
-3. README EN/RU целиком (день 9): API, миграция `env(` → `var(--`, T38 про реестр,
-   iOS-бары как no-op в v1, `<input>` для клавиатуры не в поде Lynx.
-4. 0.1.0 через `release.yml`, сразу после публикации trusted publisher.
+3. 0.1.0 через `release.yml` (README EN/RU уже написаны), сразу после публикации
+   trusted publisher на npmjs.com: `PopLocker714` / `lynx-edge-to-edge` / `release.yml`.
+   Репозиторий сделать публичным перед релизом.
 
 ## Карта репозитория
 

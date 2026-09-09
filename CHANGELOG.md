@@ -61,4 +61,4 @@
 - **edge-to-edge, день 6, iOS на симуляторе**: первый кадр и поворот верные после D10
   (регистрация через `LynxEnv.lifecycleDispatcher`, T39). T40 про `@YES` → `1`.
   T33 закрыт для iOS по исходникам.
-
+- README EN/RU для `edge-to-edge` (день 9), vitest 4.1.11 из-за `bun audit`.
