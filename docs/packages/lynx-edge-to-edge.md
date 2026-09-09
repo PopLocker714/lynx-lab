@@ -1,5 +1,5 @@
 ---
-verified: 2026-09-05
+verified: 2026-09-10
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling_version: 2.1.0-rc.36
 status: building
@@ -141,8 +141,13 @@ like `<SafeAreaView>`» — семнадцать месяцев спустя н�
 | Трёхкнопочная навигация | `bottom` 24 → 48 → 24 через `onGlobalPropsChanged`, ре-рендер |
 | Второй LynxView в том же процессе | получает снимок в `postStarted`, без событий |
 | CSS-переменные | `padding-top: var(--safe-area-inset-top)` применился внутри `SafeAreaProvider` |
+| Пробник: `<input>` | Sparkling не везёт `xelement-input`; для теста клавиатуры в хост добавлены `org.lynxsdk.lynx:xelement-input:3.9.0` и `Behavior("input")` через `SparklingLynxConfig.addBehaviors` |
 | Поворот | альбомная: `left=65.9` (вырез слева), `top=24`, `bottom=24`, gen=2 **на первом кадре** нового LynxView; обратно `top=65.9`, gen=3. Debug-схема шаблона несёт `screen_orientation=portrait`, для теста заменена на `unspecified` (T37) |
-| `refresh`, `setSystemBarStyle`, клавиатура | не проверены, нет UI в пробнике |
+| `refresh()` | 2026-09-10, эмулятор: `LynxModuleAndroid Create`, колбэк вернул снимок, g не растёт при тех же значениях |
+| `setSystemBarStyle` | `light` → `mLastAppearance` без `LIGHT_STATUS_BARS`, белые иконки; `dark` → `LIGHT_STATUS_BARS LIGHT_NAVIGATION_BARS`, тёмные. Проверено `dumpsys window` и скриншотами |
+| `setSystemBarHidden` | `true` → `statusBars visible=false`, `navigationBars visible=false`, `bottom` 24 → 0 событием; `false` → обратно. `top` остаётся 51.8: это `displayCutout`, не бар |
+| Клавиатура (`<input>` из `xelement-input`) | `keyboardHeight` 0 → 336.4 → 0 через `onGlobalPropsChanged`, поколения 1 → 2 → 3 |
+| Регистрация модуля | **не работала четыре прогона** из-за устаревшего autolink-реестра (T38), после `rm -rf .../lynxLibraryRegistry` заработала |
 
 Три поправки к коду в этой спеке, все уже в репозитории пакета:
 
@@ -1706,7 +1711,7 @@ NS_ASSUME_NONNULL_END
 - День 2 — **сделан 2026-09-05.** Скелет пакета по шаблону lynx-crypto: package.json с тремя exports, lynx.lib.json, tsconfig, biome, vitest, semantic-release, consumer-rules.pro. types.ts, native.ts (шов setNativeModule), testing/create-fake. Юнит-тесты на fromWire/adopt/дедупликацию по generation — они не требуют устройства и написать их сейчас дешевле всего.
 - День 3 — **включение сделано и проверено 2026-09-05, вырез в альбомной проверен: `left=65.9`, окно не летербоксится.** Android, включение. EdgeToEdgeInitProvider, EdgeToEdge.install/attach/applyWindow/applyBars. Проверка на Pixel 9 при targetSdk 34: контент уезжает под бары, бары прозрачные, вырез в альбомной не летербоксит (это тест на layoutInDisplayCutoutMode). Затем бамп шаблона на targetSdk 36 и проверка, что при enforcement ничего не сломалось и вызовы выродились в no-op.
 - День 4 — **доставка сделана и проверена 2026-09-05, жестовая против трёхкнопочной проверена.** Android, чтение и доставка. SafeAreaStore, OnPreDrawListener, systemBars()|displayCutout(), ime() на API 30+, поиск LynxView с бюджетом кадров, updateGlobalProps + sendGlobalEvent + generation. Тест: числа совпадают с тем, что показывает эталонное RN-приложение с react-native-safe-area-context на том же устройстве. Отдельно проверить жестовую навигацию против трёхкнопочной — это место, где ломается шаблон Sparkling.
-- День 5 — **поворот проверен 2026-09-05, модуль (refresh/бары) ещё не вызывался из JS.** Android, модуль и бары. LynxEdgeToEdgeModule на LynxContextModule, getSnapshot/refresh/setSystemBarStyle/setSystemBarHidden, хопы через UIThreadUtils.runOnUiThread. Тест поворота (Activity пересоздаётся, configChanges не объявлены — значит проверяем, что переattach отрабатывает), split-screen, фон/передний план (не сбросил ли OEM окно).
+- День 5 — **сделан 2026-09-10 на эмуляторе: все четыре метода модуля и клавиатура проверены. На Pixel 9 повторить.** Android, модуль и бары. LynxEdgeToEdgeModule на LynxContextModule, getSnapshot/refresh/setSystemBarStyle/setSystemBarHidden, хопы через UIThreadUtils.runOnUiThread. Тест поворота (Activity пересоздаётся, configChanges не объявлены — значит проверяем, что переattach отрабатывает), split-screen, фон/передний план (не сбросил ли OEM окно).
 - День 6 — iOS. LEESafeAreaStore с +load, LEESafeAreaObserverView, LynxEdgeToEdgeModule. Podspec копируется с crypto. Прогон на iPhone 11: поворот, split view, Dynamic Island на симуляторе 15 Pro, клавиатура. Главная проверка — что инсеты ОБНОВЛЯЮТСЯ при повороте, потому что именно этого нет ни в Lynx, ни у кого в экосистеме.
 - День 7 — **JS-слой написан и проверен на Android 2026-09-05 (T36 закрыл вопрос формата поставки).** JS-слой целиком. core.ts, system-bars.ts, react/index.tsx, globals.ts с declaration merging в GlobalProps. Прогон обеих платформ на одном экране, сверка чисел один в один. Проверка порядка чтения: с globalProps, без него, на MTS (там NativeModules нет и предупреждение обязано быть внятным).
 - День 8 — CSS-переменные и миграционная история. Демо-экран, где верстка написана через var(--safe-area-inset-top) и ничего больше, доказательство, что переменные наследуются вниз и обновляются на повороте. Плюс демо с клавиатурой на avoidKeyboard, чтобы честно понять, что мы отдаём вместо сломанного adjustResize.

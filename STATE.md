@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-09-05
+last_updated: 2026-09-10
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling: 2.0.1 (latest) / 2.1.0-rc.36 (rc)
 bun: 1.4.0
@@ -19,12 +19,12 @@ bun: 1.4.0
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: дни 1–5 и JS-слой сделаны, проверены на Pixel 9; остались поворот, модуль (refresh/бары), iOS, README | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **в работе**: Android целиком (дни 1–5) и JS-слой сделаны и проверены; остались release под R8, iOS (день 6), README (день 9) | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
 
 ## Если читать только одно
 
-**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать семь ловушек.**
+**[docs/01-platform-traps.md](docs/01-platform-traps.md) — тридцать восемь ловушек.**
 Почти каждая выглядит как рабочий код и молча не работает. Ни одна не выводится
 из документации Lynx: все найдены сборкой, чтением исходников или прогоном
 на устройстве.
@@ -89,6 +89,18 @@ provenance. Всё, что ломалось по дороге, ломалось 
    **контейнера страницы**, а не жизненный цикл приложения: Sparkling зовёт
    `onEnterForeground()` из `onshow(params:)`, а на `UIApplication` не подписан никто.
    Проверено на устройстве: **ноль** событий при настоящем сворачивании.
+
+## edge-to-edge: день 5, модуль (2026-09-10, эмулятор)
+
+Все четыре метода `LynxEdgeToEdgeModule` вызваны из JS и проверены через `dumpsys window`
+и скриншоты: `refresh`, `setSystemBarStyle` (`light` белые иконки, `dark` тёмные),
+`setSystemBarHidden` (оба бара, `bottom` 24 → 0 → 24), клавиатура через `<input>`
+(`keyboardHeight` 336.4 dp и обратно 0). Скриншоты в `docs/evidence/edge-to-edge/emu-module-*`.
+
+Главная находка дня: **T38**. Autolink-реестр Android не перегенерируется при добавлении
+библиотеки, и модуль четыре прогона подряд был не зарегистрирован, а инсеты при этом
+работали, потому что идут мимо модуля. Лечится `rm -rf app/build/generated/source/lynxLibraryRegistry`.
+Pixel 9 в этот заход не был подключён, модуль проверен только на эмуляторе.
 
 ## edge-to-edge: дни 2–5 (2026-09-05)
 
@@ -171,6 +183,9 @@ xcrun simctl spawn booted log stream --style compact --predicate 'eventMessage C
 # пробнику нужен local.properties с sdk.dir и foojay-резолвер в settings.gradle.kts
 printf 'sdk.dir=%s/Library/Android/sdk\n' "$HOME" > android/local.properties
 
+# после bun add/remove любой Lynx-библиотеки реестр autolink НЕ перегенерируется (T38):
+rm -rf android/app/build/generated/source/lynxLibraryRegistry
+
 # пробник: для теста поворота в DebugDevUrlSupport.kt заменить screen_orientation=portrait на unspecified (T37)
 # затем: adb shell wm user-rotation lock 1 … adb shell wm user-rotation free
 
@@ -202,15 +217,14 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 ## Следующий шаг
 
-**`@lynx-lab/edge-to-edge`, хвосты Android и iOS.** По порядку:
+**`@lynx-lab/edge-to-edge`, хвосты.** По порядку:
 
-1. В пробник добавить кнопки на `refreshSafeArea()`, `setSystemBarStyle`,
-   `setSystemBarHidden` и поле ввода для клавиатуры: модуль на устройстве ещё не вызывался.
-2. Release-сборка с пакетом под R8 (в спайке провайдер выжил, пакет ещё не гоняли).
+1. Прогнать модуль на Pixel 9 (`apps/probe-e2e`, кнопки на месте, `./run-pkg.sh pixel <apk>`
+   плюс тапы по координатам из `docs/evidence/edge-to-edge/emu-module-*.png`).
+2. Release-сборка с пакетом под R8: провайдер и модуль должны пережить minify
+   (в спайке S6 провайдер выжил, пакет целиком ещё не гоняли).
 3. iOS, день 6: iPhone 11 или симулятор, `pod install`, мерж globalProps на iOS (T33).
 4. README EN/RU, день 9, затем 0.1.0 и trusted publisher (сразу после первой публикации).
-
-Правило для всех будущих пакетов с элементами: T36, шипить TSX-исходник.
 
 ## Карта репозитория
 

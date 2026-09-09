@@ -1,5 +1,5 @@
 ---
-verified: 2026-09-05
+verified: 2026-09-10
 lynx_version: 4.0.1
 sparkling_version: 2.1.0-rc.36
 status: spec
@@ -703,7 +703,7 @@ plugins {
 
 ---
 
-## T31–T37 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
+## T31–T38 · Из спайка S6 и первых дней `@lynx-lab/edge-to-edge`
 
 Дата: 2026-09-05. Эмулятор AVD (Pixel 7 профиль, Android 36, arm64), стоковый
 rc-шаблон Sparkling 2.1.0-rc.36, Lynx 3.9.0. Подробности и логи в
@@ -841,6 +841,35 @@ rspeedy добавляет `/\.(?:js|mjs|cjs)$/`, а лоадеры ReactLynx в
 `settings put system user_rotation 1`, ни `wm user-rotation lock 1` экран не поворачивают,
 и в логе тишина. Для тестов поворота в пробнике менять на `screen_orientation=unspecified`.
 В release-схеме (`SparklingVariantHooksImpl` из `src/release`) параметр смотреть отдельно.
+
+### T38 · Autolink-реестр Android не перегенерируется при добавлении библиотеки
+
+**Статус: открыт (плагин Lynx) · Severity: Блокер, и он тихий**
+
+`org.lynxsdk.library-build` 3.9.0 генерирует
+`app/build/generated/source/lynxLibraryRegistry/<variant>/.../LynxAutolinkGenerated.java`
+со списком `PROVIDERS`. Задача регистрирует себя через `registerJavaGeneratingTask`
+и объявляет только выходной каталог: список библиотек в её входах не участвует
+(`LynxLibraryBuildPlugin.wireGeneratedRegistrySource`, javap по
+`lynx-library-plugin-3.9.0.jar`). Поэтому файл, сгенерированный ДО `bun add` пакета,
+остаётся с пустым `PROVIDERS = new String[] {}` навсегда, хотя settings-плагин
+библиотеку включил, она скомпилировалась и `LynxLibraryProviderImpl` лежит в dex.
+
+Симптом: в JS `NativeModules.X` это `undefined`, в logcat
+`lynx_module_manager.cc(79)] NativeModule: LynxJSIModule, try to find module: Xfailed`,
+и ни одной строки про провайдеры, потому что регистрировать нечего. Всё, что живёт
+вне модуля (наш `ContentProvider` и `updateGlobalProps`), при этом работает, и это
+маскирует проблему: `@lynx-lab/edge-to-edge` отдавал верные инсеты четыре прогона
+подряд с незарегистрированным модулем.
+
+Проверено 2026-09-10: реестр пробника датирован 4 сентября (сборка до появления
+пакета), после `rm -rf android/app/build/generated/source/lynxLibraryRegistry` и
+`assembleDebug` в нём появился `"dev.lynxlab.edgetoedge.LynxLibraryProviderImpl"`.
+
+**Правильно:** после каждого `bun add` / `bun remove` Lynx-библиотеки удалять этот
+каталог (или `./gradlew clean`). В README пакетов писать это в раздел установки.
+У crypto и app-lifecycle это не всплыло, потому что их пробники создавались
+уже с пакетом внутри, и первая генерация была полной.
 
 ---
 
