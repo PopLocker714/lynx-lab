@@ -214,13 +214,16 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 ## Незакрытые хвосты
 
+Закрыто 2026-09-10: vitest 4.1.11 во всех трёх пакетах (GHSA-82fw-gwwq-j7x9), в crypto
+ещё `js-yaml` 4.3.2 через `bun audit fix` (GHSA-2883-xcg3-v3hh). Все три CI зелёные
+на момент пуша. `bun audit` в CI падает на любой новой advisory, так что это будет
+повторяться; лечится `bun audit fix`, не отключением проверки.
+
+
 - [ ] **Включить trusted publisher** для `@lynx-lab/app-lifecycle` на npmjs.com.
       Первая версия опубликована локально, потому что npm не даёт настроить его
       до существования пакета. Поля: `PopLocker714`, `lynx-app-lifecycle`,
       `release.yml`, allowed actions `npm publish`
-- [ ] **vitest 3.x под `bun audit`**: GHSA-82fw-gwwq-j7x9 (`@vitest/mocker`, починено в 4.1.11)
-      роняет джобу «Цепочка поставок». В `edge-to-edge` поднято до `^4.1.11` 2026-09-10;
-      `crypto` и `app-lifecycle` упадут на следующем пуше, поднять так же
 - [ ] **Trusted publisher для `app-lifecycle` упёрся в логин.** Профиль Chrome, которым
       управляет Interceptor (`interceptor-test`), не залогинен в npmjs.com, поэтому даже
       прочитать страницу `/access` нельзя. Либо Илья логинится в этом профиле один раз,
