@@ -240,13 +240,26 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 **`@lynx-lab/edge-to-edge`, финиш.** По порядку:
 
-1. iPhone 11 по проводу: холодный старт, `refresh()`, поворот (`apps/probe-e2e/run-ios.sh`
-   плюс тап пальцем или `interceptor ios`). На симуляторе тапы не доставляются.
+1. iPhone 11 по проводу: сборка под устройство **уже готова** (2026-09-10, подпись
+   `REDACTED_DEVELOPMENT_TEAM`, `apps/probe-e2e/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.app`).
+   Установка упёрлась в заблокированный телефон (`devicectl`: `Failed to allocate RSD device`,
+   `passcodeRequired: true`). С разблокированным телефоном:
+   `xcrun devicectl device install app --device REDACTED_COREDEVICE_ID <.app>`,
+   `xcrun devicectl device process launch --device ... com.probe.e2e`, тапы и скриншоты через
+   `interceptor ios click --x N --y N` / `screenshot` (runner на телефоне стоит).
+   Пересобрать под устройство: та же команда `xcodebuild`, что для симулятора, но
+   `-destination 'platform=iOS,id=REDACTED_IPHONE_UDID' -derivedDataPath build-device
+   -allowProvisioningUpdates DEVELOPMENT_TEAM=REDACTED_DEVELOPMENT_TEAM` (в pbxproj шаблона стоит чужой `RL87M95CBB`).
 2. Pixel 9 по проводу: повторить день 5 (`./run-pkg.sh pixel <apk>` и тапы по координатам
    из `docs/evidence/edge-to-edge/emu-module-*.png`).
-3. 0.1.0 через `release.yml` (README EN/RU уже написаны), сразу после публикации
-   trusted publisher на npmjs.com: `PopLocker714` / `lynx-edge-to-edge` / `release.yml`.
-   Репозиторий сделать публичным перед релизом.
+3. 0.1.0. Первую версию npm через OIDC опубликовать нельзя (trusted publisher настраивается
+   только на существующем пакете), а локальный `npm whoami` даёт 401: нужен логин Ильи.
+   Порядок: `npm login` → в `packages/lynx-edge-to-edge`: `npm version 0.1.0 --no-git-tag-version`,
+   `npm publish --access public` (prepack соберёт, prepublishOnly проверит тарбол),
+   `git tag v0.1.0 && git push --tags`, вернуть `0.0.0-development` в package.json →
+   на npmjs.com включить trusted publisher (`PopLocker714` / `lynx-edge-to-edge` / `release.yml`)
+   → репозиторий сделать публичным. Дальше релизы через `release.yml` (semantic-release,
+   `feat:` даст 0.2.0, `fix:` 0.1.1).
 
 ## Карта репозитория
 
