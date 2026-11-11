@@ -20,6 +20,7 @@
 
 | Пакет | Статус | Оценка | Дефектов открыто | Спека |
 |---|---|---|---|---|
+| `@lynx-lab/secure-store` | 🔨 код написан; без сборок и тестов | не оценено | — | [спека](docs/packages/lynx-secure-store.md) · [исследование](docs/secure-store-research.md) |
 | `lynx-permissions` | 📋 спека готова | 4.5–6 нед | 9 | [docs/packages/lynx-permissions.md](docs/packages/lynx-permissions.md) |
 | `lynx-notify` (локальные) | 📋 спека готова | 8–9 нед | 10 | [docs/packages/lynx-notify.md](docs/packages/lynx-notify.md) |
 | `lynx-notify` (провайдеры) | 📋 спека готова | +7 нед | — | там же |
@@ -49,6 +50,9 @@
 4. **[docs/spikes.md](docs/spikes.md)** — что проверить руками до написания кода.
 
 ## Порядок работ
+
+`@lynx-lab/secure-store` — обязательная часть авторизации: защищённое хранение
+токенов и восстановление сессии. Исследован и написан 2026-11-09; проверки отложены.
 
 ```
 lynx-permissions              нужен всем остальным пакетам

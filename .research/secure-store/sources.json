@@ -1,0 +1,32 @@
+[
+  {
+    "file": "apple-keychain.md",
+    "url": "https://developer.apple.com/documentation/security/keychain-services.md",
+    "sha256": "ab3f36fc07fd6ee58976ba4db5cb8dfe58a1b1f8d0d35255177685bfafbf0cb2"
+  },
+  {
+    "file": "apple-accessibility.md",
+    "url": "https://developer.apple.com/documentation/security/ksecattraccessibleafterfirstunlockthisdeviceonly.md",
+    "sha256": "fb3b8740cec37d8027a1183fce658cfebb5aed5d9cacae34f12b9daf07e0aa04"
+  },
+  {
+    "file": "expo-secure-store.swift",
+    "url": "https://raw.githubusercontent.com/expo/expo/main/packages/expo-secure-store/ios/SecureStoreModule.swift",
+    "sha256": "5249d51f096a3d4ee3a536d855588c3bafde8e35408fb5d3c47c155faebe5dd7"
+  },
+  {
+    "file": "expo-aes.kt",
+    "url": "https://raw.githubusercontent.com/expo/expo/main/packages/expo-secure-store/android/src/main/java/expo/modules/securestore/encryptors/AESEncryptor.kt",
+    "sha256": "40d0f6d800718537c85bda8be145ba02f7e4321d23bddad6417b901e13b94daa"
+  },
+  {
+    "file": "rn-keychain-package.json",
+    "url": "https://raw.githubusercontent.com/oblador/react-native-keychain/master/package.json",
+    "sha256": "fd9bd938c6a30af6ae71ccb0993a6b91e8ed219ec052d8fce0cc965cb6c4a2cb"
+  },
+  {
+    "file": "rn-keychain-module.kt",
+    "url": "https://raw.githubusercontent.com/oblador/react-native-keychain/master/android/src/main/java/com/oblador/keychain/KeychainModule.kt",
+    "sha256": "0366e13a0d4b63863f61fb28f3d974973304b94627315a6753cb3c77e382c2c7"
+  }
+]

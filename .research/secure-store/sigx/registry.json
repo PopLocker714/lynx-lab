@@ -1,0 +1,107 @@
+{
+  "bugs": {
+    "url": "https://github.com/signalxjs/lynx/issues"
+  },
+  "dist": {
+    "shasum": "c56c7c476a8085357144fd053b7c2535c69bf055",
+    "tarball": "https://registry.npmjs.org/@sigx/lynx-secure-storage/-/lynx-secure-storage-0.35.0.tgz",
+    "fileCount": 14,
+    "integrity": "sha512-vhAgQcgVtkLFw4JuUuGuboaaMSFtNBuywYXQ03gjpMQmk94vwxLsNqg6j/sqoRmxsNV0d01b2wT257ADAz8r7Q==",
+    "signatures": [
+      {
+        "sig": "MEYCIQD7bCWfUXUYtaJ6sUnVhfz7sa0hmQv3gf2xnhN3xu/8VgIhANVGpIBDU614zS2uslWdSdPQrEToJLneuNEThuaKlXgA",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      },
+      {
+        "sig": "MEYCIQCLIPVqPw8tOQ5B16huezkGuIE07jkFryvhDZoY70RPRwIhAIwdEeoqihZo5feDkMmsSQ1bWzzXyLfn4CAfgq3ulPlS",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@sigx%2flynx-secure-storage@0.35.0",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 58080
+  },
+  "main": "./dist/index.js",
+  "name": "@sigx/lynx-secure-storage",
+  "type": "module",
+  "_from": "file:sigx-lynx-secure-storage-0.35.0.tgz",
+  "types": "./dist/index.d.ts",
+  "author": {
+    "name": "Andreas Ekdahl"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./signalx-module.json": "./signalx-module.json"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsgo --watch",
+    "test": "vitest run",
+    "build": "node ../../scripts/clean.mjs dist && tsgo",
+    "clean": "node ../../scripts/clean.mjs dist .turbo"
+  },
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "9459b128-9a25-49d9-b081-69c5b7ac6826"
+    }
+  },
+  "homepage": "https://sigx.dev/lynx/modules/secure-storage/overview/",
+  "keywords": [
+    "signalx",
+    "sigx",
+    "lynx",
+    "mobile",
+    "ios",
+    "android",
+    "secure-storage",
+    "keychain",
+    "keystore",
+    "encrypted-shared-preferences"
+  ],
+  "_resolved": "/tmp/fb68d3c0d1750ad1b3a815b62dc15291/sigx-lynx-secure-storage-0.35.0.tgz",
+  "_integrity": "sha512-vhAgQcgVtkLFw4JuUuGuboaaMSFtNBuywYXQ03gjpMQmk94vwxLsNqg6j/sqoRmxsNV0d01b2wT257ADAz8r7Q==",
+  "repository": {
+    "url": "git+https://github.com/signalxjs/lynx.git",
+    "type": "git",
+    "directory": "packages/lynx-secure-storage"
+  },
+  "_npmVersion": "12.2.0",
+  "description": "Encrypted at-rest key-value storage for sigx-lynx (iOS Keychain, Android Keystore + EncryptedSharedPreferences)",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "andtii",
+      "email": "andreas.ekdahl@omniaintranet.com"
+    }
+  ],
+  "sideEffects": false,
+  "_nodeVersion": "24.21.0",
+  "dependencies": {
+    "@sigx/lynx-core": "^0.35.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_hasShrinkwrap": false,
+  "devDependencies": {
+    "vitest": "^4.1.7",
+    "typescript": "^6.0.3",
+    "@typescript/native-preview": "7.0.0-dev.20260521.1"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/lynx-secure-storage_0.35.0_1791404450644_0.9045222981215204",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "@sigx/lynx-secure-storage@0.35.0",
+  "version": "0.35.0"
+}

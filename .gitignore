@@ -7,3 +7,7 @@ packages/
 apps/
 # Исходники апстрима на тегах, для проверки фактов
 upstream/
+
+# Local cleanup inventory and a duplicate of the shared journal card.
+.research/cleanup-*/
+.research/secure-store/knowledge.md

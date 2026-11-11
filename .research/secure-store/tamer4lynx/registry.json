@@ -1,0 +1,74 @@
+{
+  "bugs": {
+    "url": "https://github.com/tamer4lynx/tamer-secure-store/issues"
+  },
+  "dist": {
+    "shasum": "82aef597800313f8c91be79ddf84e5e22e82bfee",
+    "tarball": "https://registry.npmjs.org/@tamer4lynx/tamer-secure-store/-/tamer-secure-store-0.0.3.tgz",
+    "fileCount": 20,
+    "integrity": "sha512-LM9A0Ig+TrMWilgSTyYNtqpxWkp+BP5WAABxsEU3W7FglWro+E/GXp94uEm4KnGcgOqwe3pvyWokFi711ezDyA==",
+    "signatures": [
+      {
+        "sig": "MEQCIEtTFSgWZ47UvBN8tknemoj9JrOprX3GxN0gWj8xIElDAiAQOadqxAkIvh6kilG1l+H0FDrVsZa5qW5gYmvBzbXcgQ==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "unpackedSize": 45589
+  },
+  "main": "dist/src/index.js",
+  "name": "@tamer4lynx/tamer-secure-store",
+  "type": "module",
+  "types": "dist/src/index.d.ts",
+  "author": {
+    "name": "Nanofuxion"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "import": "./dist/src/index.js",
+      "default": "./dist/src/index.js"
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc"
+  },
+  "_npmUser": {
+    "name": "nanofuxion",
+    "email": "ramnadroj@gmail.com"
+  },
+  "homepage": "https://github.com/tamer4lynx/tamer-secure-store#readme",
+  "repository": {
+    "url": "git+https://github.com/tamer4lynx/tamer-secure-store.git",
+    "type": "git"
+  },
+  "_npmVersion": "11.6.2",
+  "description": "Secure key-value storage for Lynx with Android KeyStore and iOS Keychain.",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "nanofuxion",
+      "email": "ramnadroj@gmail.com"
+    }
+  ],
+  "_nodeVersion": "25.2.1",
+  "publishConfig": {
+    "tag": "prerelease",
+    "access": "public"
+  },
+  "_hasShrinkwrap": false,
+  "readmeFilename": "README.md",
+  "devDependencies": {
+    "typescript": "~5.8.0"
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/tamer-secure-store_0.0.3_1774433552041_0.7987207522994986",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "@tamer4lynx/tamer-secure-store@0.0.3",
+  "version": "0.0.3"
+}

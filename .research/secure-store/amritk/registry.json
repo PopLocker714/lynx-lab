@@ -1,0 +1,111 @@
+{
+  "bugs": {
+    "url": "https://github.com/amritk/mini/issues"
+  },
+  "dist": {
+    "shasum": "8f32c2054abf7cb3c2857e29f159f945a9faa358",
+    "tarball": "https://registry.npmjs.org/@amritk/lynx-secure-storage/-/lynx-secure-storage-0.2.0.tgz",
+    "fileCount": 53,
+    "integrity": "sha512-TbzvtTA4M+Ox+yaJNtLjDFKcawKjFMZ42ybt7LlZ1OnC1ZSlGNQFnblqKJAgBKSaKAui/hgEc0XzR+HQVSEV7Q==",
+    "signatures": [
+      {
+        "sig": "MEQCIECZgtqKZ1P+P32jcU+jka+g9xAQovtS0gc574S6hq/fAiBBujzFiWzH1DtnN7vuNFXGZ10BwF/IcM0cKHO2REUOAw==",
+        "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+      }
+    ],
+    "attestations": {
+      "url": "https://registry.npmjs.org/-/npm/v1/attestations/@amritk%2flynx-secure-storage@0.2.0",
+      "provenance": {
+        "predicateType": "https://slsa.dev/provenance/v1"
+      }
+    },
+    "unpackedSize": 142850
+  },
+  "name": "@amritk/lynx-secure-storage",
+  "type": "module",
+  "author": {
+    "name": "amritk"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./testing": {
+      "types": "./dist/testing/index.d.ts",
+      "import": "./dist/testing/index.js",
+      "default": "./dist/testing/index.js"
+    },
+    "./package.json": "./package.json",
+    "./lynx.lib.json": "./lynx.lib.json"
+  },
+  "gitHead": "c2516a9f0a935e9e8e1eda316d651ac48e0ccc71",
+  "license": "MIT",
+  "scripts": {
+    "test": "NODE_ENV=production vitest run --root ../.. packages/lynx-secure-storage/",
+    "build": "tsgo -p tsconfig.build.json && tsc-alias -p tsconfig.build.json -f && node ../../scripts/strip-comments.mjs",
+    "types:check": "tsgo -p . --noEmit",
+    "prepublishOnly": "node ../../scripts/check-publishable.mjs"
+  },
+  "_npmUser": {
+    "name": "GitHub Actions",
+    "email": "npm-oidc-no-reply@github.com",
+    "trustedPublisher": {
+      "id": "github",
+      "oidcConfigId": "oidc:0e898257-c1fa-49b8-b993-0da7ff0f6b3a"
+    }
+  },
+  "homepage": "https://github.com/amritk/mini/tree/main/packages/lynx-secure-storage#readme",
+  "keywords": [
+    "lynx",
+    "secure-storage",
+    "keychain",
+    "keystore",
+    "encrypted-shared-preferences",
+    "token",
+    "native-module",
+    "typescript",
+    "mjst"
+  ],
+  "repository": {
+    "url": "git+https://github.com/amritk/mini.git",
+    "type": "git",
+    "directory": "packages/lynx-secure-storage"
+  },
+  "_npmVersion": "12.0.2",
+  "description": "Encrypted key-value storage for Lynx: Keychain on iOS, EncryptedSharedPreferences on Android, and a promise-shaped facade that reaches them from the main thread.",
+  "directories": {},
+  "maintainers": [
+    {
+      "name": "amritk",
+      "email": "amrit+spam@hockey-community.com"
+    }
+  ],
+  "sideEffects": false,
+  "_nodeVersion": "24.19.0",
+  "dependencies": {
+    "@amritk/mini-lynx-native": "0.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "_hasShrinkwrap": false,
+  "devDependencies": {
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "peerDependenciesMeta": {
+    "typescript": {
+      "optional": true
+    }
+  },
+  "_npmOperationalInternal": {
+    "tmp": "tmp/lynx-secure-storage_0.2.0_1787514356639_0.8188005708754824",
+    "host": "s3://npm-registry-packages-npm-production"
+  },
+  "_id": "@amritk/lynx-secure-storage@0.2.0",
+  "version": "0.2.0"
+}

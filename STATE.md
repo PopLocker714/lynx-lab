@@ -1,11 +1,18 @@
 ---
-last_updated: 2026-09-10
+last_updated: 2026-11-11
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling: 2.0.1 (latest) / 2.1.0-rc.36 (rc)
 bun: 1.4.0
 ---
 
 # Состояние проекта
+
+2026-11-11: по просьбе Ильи удалены локальные node_modules, Pods, dist,
+Android build/.gradle и обе iOS build-директории пробника; освобождено около
+14 ГиБ. Исторические упоминания готовых APK/.app ниже больше не актуальны.
+Исходники, lock-файлы, evidence, локальный tarball edge-to-edge и невлитые
+worktree сохранены. Для продолжения нужны установка зависимостей и новые сборки;
+сначала проверить свободное место. Тесты/сборки по прежнему запросу отложены.
 
 **Это первый файл, который надо прочитать, возвращаясь сюда после паузы.**
 Он написан и для человека, и для модели, которая откроет репозиторий с нуля.
@@ -21,6 +28,20 @@ bun: 1.4.0
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
 | `@lynx-lab/edge-to-edge` | 🔨 **готов к 0.1.0 после железа**: Android (дни 1–5), JS-слой, release под R8, iOS (день 6, симулятор) и README (день 9) сделаны; остались iPhone 11 и Pixel 9 по проводу | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
+| `@lynx-lab/secure-store` | 🔨 **черновой код написан**, сборки и тесты отложены по запросу пользователя | [спека](docs/packages/lynx-secure-store.md) · [исследование](docs/secure-store-research.md) |
+
+2026-11-09: secure-store исследован и написан по запросу Ильи. В плане 11 библиотек:
+две выпущены, edge-to-edge и secure-store требуют проверок, семь не реализованы.
+Результаты проверок остальных пакетов остаются от 2026-09-10.
+
+Secure-store: основной локальный репозиторий `packages/lynx-secure-store`, код
+в соседнем worktree `../lynx-secure-store-implementation`, ветка `feat/secure-store`.
+Документация этой задачи — worktree `../lynx-lab-secure-store`, `docs/secure-store`.
+Код сохранён commit `9e86957` в `feat/secure-store`; документация сохранена
+в `docs/secure-store`. В main не влито; remote нового пакета не создан, публикации нет.
+DevDependencies устанавливались без lifecycle scripts и удалены при уборке 2026-11-11.
+Тесты, typecheck, нативные сборки
+и устройства по просьбе Ильи не запускались. Подробности и отложенные сценарии — в отчёте.
 
 ## Если читать только одно
 
@@ -238,7 +259,9 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 ## Следующий шаг
 
-**`@lynx-lab/edge-to-edge`, финиш.** По порядку:
+**Проверки на телефонах отложены 2026-11-09:** доступа к устройствам пока нет.
+Для secure-store следующим этапом разрешить и выполнить отложенные проверки
+из отчёта. Для `@lynx-lab/edge-to-edge` после возвращения телефонов:
 
 1. iPhone 11 по проводу: сборка под устройство **уже готова** (2026-09-10, подпись
    `REDACTED_DEVELOPMENT_TEAM`, `apps/probe-e2e/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.app`).
