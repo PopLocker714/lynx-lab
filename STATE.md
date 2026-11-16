@@ -1,5 +1,5 @@
 ---
-last_updated: 2026-11-11
+last_updated: 2026-11-16
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling: 2.0.1 (latest) / 2.1.0-rc.36 (rc)
 bun: 1.4.0
@@ -7,12 +7,31 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-16: физический Pixel 9 / Android 17 — edge-to-edge и secure-store
+проверены в debug и release с R8. Secure Store: 7 нативных тестов, по 10
+JS/native сценариев, 3 Bun regression tests; сохранность после обновления APK
+и перезапуска процесса подтверждена. Фактический runtime пробника — Lynx 3.9.0
+(Sparkling 2.1.0-rc.36); `compileOnly` библиотек — 4.0.1, это разные версии.
+Исправлены недоступный Android `Os.unlink`
+и потеря NUL при передаче строк: JSON-конверт записи и percent-encoding ответа.
+edge-to-edge: первый кадр, refresh, стили/скрытие баров, клавиатура, поворот,
+жесты ↔ три кнопки прошли. Настройки телефона восстановлены.
+Evidence: [results.json](docs/evidence/android-2026-11-16/results.json).
+Код Secure Store: `6ea2ae6`, ветка `feat/secure-store`; пробник впервые сохранён
+отдельным Git-репозиторием в `apps/probe-e2e`, рабочая ветка `test/android-libraries`
+в `/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification` (`3d9bd65`).
+iOS, locked-device, reinstall/backup/restore и callback после уничтожения Lynx view
+ещё не проверены. Оба пакета остаются private, публикации не было.
+Старый host пробника выдаёт debug-предупреждение о 16-КиБ выравнивании зависимостей;
+полный typecheck пробника имеет 3 старые ошибки, typecheck самого secure-store проходит.
+
 2026-11-11: по просьбе Ильи удалены локальные node_modules, Pods, dist,
 Android build/.gradle и обе iOS build-директории пробника; освобождено около
 14 ГиБ. Исторические упоминания готовых APK/.app ниже больше не актуальны.
 Исходники, lock-файлы, evidence, локальный tarball edge-to-edge и невлитые
 worktree сохранены. Для продолжения нужны установка зависимостей и новые сборки;
-сначала проверить свободное место. Тесты/сборки по прежнему запросу отложены.
+сначала проверить свободное место. На тот момент тесты/сборки были отложены;
+Android-проверку пользователь разрешил 2026-11-16, см. запись выше.
 
 **Это первый файл, который надо прочитать, возвращаясь сюда после паузы.**
 Он написан и для человека, и для модели, которая откроет репозиторий с нуля.
@@ -20,15 +39,16 @@ worktree сохранены. Для продолжения нужны устан
 ## Коротко
 
 Пишем недостающие нативные пакеты для **Lynx** под скоупом `@lynx-lab`.
-Два выпущены и проверены на живых устройствах, третий собран и доставляет инсеты на первый кадр на Pixel 9.
+Два выпущены; edge-to-edge и secure-store проверены на физическом Android,
+но ещё не опубликованы и требуют завершения iOS-проверок.
 
 | Пакет | Состояние | Где |
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🔨 **готов к 0.1.0 после железа**: Android (дни 1–5), JS-слой, release под R8, iOS (день 6, симулятор) и README (день 9) сделаны; остались iPhone 11 и Pixel 9 по проводу | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **Android/Pixel 9 debug+release проверены 2026-11-16**; осталась физическая проверка iPhone | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
-| `@lynx-lab/secure-store` | 🔨 **черновой код написан**, сборки и тесты отложены по запросу пользователя | [спека](docs/packages/lynx-secure-store.md) · [исследование](docs/secure-store-research.md) |
+| `@lynx-lab/secure-store` | 🔨 **Android/Pixel 9 debug+release проверены 2026-11-16**; iOS и дополнительные recovery/lifecycle сценарии впереди | [спека](docs/packages/lynx-secure-store.md) · [исследование](docs/secure-store-research.md) |
 
 2026-11-09: secure-store исследован и написан по запросу Ильи. В плане 11 библиотек:
 две выпущены, edge-to-edge и secure-store требуют проверок, семь не реализованы.

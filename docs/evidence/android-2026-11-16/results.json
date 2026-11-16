@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-16",
+  "device": {
+    "model": "Pixel 9",
+    "android": "17",
+    "physical": true
+  },
+  "source": {
+    "secureStoreCommit": "6ea2ae6",
+    "edgeToEdgeCommit": "1502c0a",
+    "probeCommit": "3d9bd65",
+    "probeWorktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification"
+  },
+  "builds": {
+    "debug": "pass",
+    "releaseR8": "pass",
+    "apkSha256": "1fd1b832c33ec99a0cfbda84a098c551b056b81e8cf9f3fdc8ed73507d2d5c2c"
+  },
+  "secureStore": {
+    "instrumentation": {
+      "passed": 7,
+      "failed": 0
+    },
+    "jsNativeDebug": {
+      "passed": 10,
+      "failed": 0
+    },
+    "jsNativeRelease": {
+      "passed": 10,
+      "failed": 0
+    },
+    "bunRegression": {
+      "passed": 3,
+      "failed": 0
+    },
+    "persistence": {
+      "debugToReleaseUpdate": "pass",
+      "releaseProcessRestart": "pass",
+      "pidBefore": 26668,
+      "pidAfter": 26952
+    }
+  },
+  "edgeToEdge": {
+    "firstFrameInsetsDp": {
+      "top": 65.9047622680664,
+      "bottom": 24
+    },
+    "refresh": "pass",
+    "barStyleLightDark": "pass",
+    "hideShowBottomDp": [
+      24,
+      0,
+      24
+    ],
+    "keyboardHeightDp": [
+      0,
+      367.6190490722656,
+      0
+    ],
+    "landscapeCutoutLeftDp": 65.9047622680664,
+    "navigationGestureThreeButtonDp": [
+      24,
+      48,
+      24
+    ],
+    "releaseRefreshAndHideShow": "pass"
+  },
+  "restoredDeviceSettings": {
+    "accelerometer_rotation": 0,
+    "user_rotation": 0,
+    "navigation": "gestural"
+  },
+  "limitations": [
+    "iOS not built or tested",
+    "Locked-device, reinstall/backup/restore, callbacks after Lynx view destruction not verified",
+    "Probe debug warned about 16 KiB alignment of third-party native libraries",
+    "Probe full typecheck has 3 pre-existing errors; secure-store typecheck/lint pass"
+  ],
+  "review": "Independent read-only reviews of initial probe and initial JSON transport; subsequent percent-encoded response fix self-reviewed and physically verified",
+  "runtime": {
+    "lynx": "3.9.0",
+    "sparkling": "2.1.0-rc.36",
+    "reactLynx": "0.116.5",
+    "libraryCompileOnlyLynx": "4.0.1"
+  }
+}

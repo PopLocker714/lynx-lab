@@ -8,6 +8,11 @@ estimate: 9–10 дней
 
 # @lynx-lab/edge-to-edge
 
+2026-11-16: физический Pixel 9 / Android 17 прошёл debug-проверки первого кадра,
+refresh, light/dark, hide/show, клавиатуры, поворота и жестов ↔ трёх кнопок;
+release с R8 прошёл проверку refresh и hide/show. Исходники `1502c0a` без изменений.
+[Evidence](../evidence/android-2026-11-16/results.json). Физическая проверка iPhone остаётся.
+
 Safe area, инсеты и системные бары. Аналог `react-native-edge-to-edge` плюс
 `react-native-safe-area-context` в одном пакете.
 
