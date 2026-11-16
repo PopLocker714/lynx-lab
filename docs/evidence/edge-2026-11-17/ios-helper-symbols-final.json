@@ -1,0 +1,42 @@
+{
+  "debug": {
+    "binaryPaths": [
+      "evidence-local/edge-standard/probe-edge-ios-debug.app/SparklingGoInHouse",
+      "evidence-local/edge-standard/probe-edge-ios-debug.app/SparklingGoInHouse.debug.dylib"
+    ],
+    "probeSymbols": [
+      "000000000000453c t +[EdgeGeometryProbe attachToHostView:prepareView:]",
+      "0000000000004e5c t +[EdgeGeometryProbe finish:overlay:result:]",
+      "00000000000052ec t +[EdgeGeometryProbe run:prepareView:]",
+      "0000000000004610 t +[EdgeGeometryProbe verify:module:name:]",
+      "00000000000044e4 t -[EdgeObservedView .cxx_destruct]",
+      "0000000000004424 t -[EdgeObservedView delivered]",
+      "0000000000004484 t -[EdgeObservedView methodPipe]",
+      "0000000000004448 t -[EdgeObservedView setDelivered:]",
+      "00000000000044a8 t -[EdgeObservedView setMethodPipe:]",
+      "0000000000004370 t -[EdgeObservedView updateGlobalPropsWithDictionary:]",
+      "0000000001647c60 S _OBJC_CLASS_$_EdgeGeometryProbe",
+      "0000000001647bc0 S _OBJC_CLASS_$_EdgeObservedView",
+      "0000000001644b98 s _OBJC_IVAR_$_EdgeObservedView._delivered",
+      "0000000001644b9c s _OBJC_IVAR_$_EdgeObservedView._methodPipe",
+      "0000000001647c38 S _OBJC_METACLASS_$_EdgeGeometryProbe",
+      "0000000001647be8 S _OBJC_METACLASS_$_EdgeObservedView",
+      "0000000001355e28 s __OBJC_$_CLASS_METHODS_EdgeGeometryProbe",
+      "000000000135a5a0 s __OBJC_$_INSTANCE_METHODS_EdgeObservedView",
+      "00000000015e80d8 s __OBJC_$_INSTANCE_VARIABLES_EdgeObservedView",
+      "00000000015e8120 s __OBJC_$_PROP_LIST_EdgeObservedView",
+      "00000000015e81d8 s __OBJC_CLASS_RO_$_EdgeGeometryProbe",
+      "00000000015e8148 s __OBJC_CLASS_RO_$_EdgeObservedView",
+      "00000000015e8190 s __OBJC_METACLASS_RO_$_EdgeGeometryProbe",
+      "00000000015e8090 s __OBJC_METACLASS_RO_$_EdgeObservedView",
+      "0000000000005b5c t ___37+[EdgeGeometryProbe run:prepareView:]_block_invoke",
+      "00000000000062bc t ___37+[EdgeGeometryProbe run:prepareView:]_block_invoke_2"
+    ]
+  },
+  "release": {
+    "binaryPaths": [
+      "evidence-local/edge-standard/probe-edge-ios-release.app/SparklingGo"
+    ],
+    "probeSymbols": []
+  }
+}

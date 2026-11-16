@@ -1,0 +1,11 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 8 nodes
+@e1 [application] "Sparkling Template"
+  @e2 [other] "lynxview"
+    @e3 [other] "Show Secure Store"
+      @e4 [button] "Show Secure Store"
+      @e5 [button] "Show edge-to-edge"
+      @e6 [button] "Show Lifecycle"
+      @e7 [button] "Run Crypto native checks"
+      @e8 [button] "Run Crypto failure injection"

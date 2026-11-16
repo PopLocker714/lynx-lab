@@ -1,0 +1,34 @@
+{
+  "androidDebug": {
+    "path": "evidence-local/edge-standard/probe-edge-android-debug.apk",
+    "sha256": "1306b6d507e0e7da1e392ed1393697006e22cc132639b913c8fed459759fc7e8",
+    "bundles": {
+      "assets/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+    }
+  },
+  "iosDebug": {
+    "path": "evidence-local/edge-standard/probe-edge-ios-debug.app",
+    "executable": "SparklingGoInHouse",
+    "executableSha256": "2e1b2d1cef745c907e34f17bef656b6f804f9c2273589781429f40f9f87d6ea5",
+    "bundles": {
+      "LynxResources/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+    },
+    "fileManifestSha256": "6c1d897d476a8db782c2bbac37140230a61d1eb478f1c73b8b00a164347034aa"
+  },
+  "androidRelease": {
+    "path": "evidence-local/edge-standard/probe-edge-android-release.apk",
+    "sha256": "1548c8ae88f83756fd0734d06626db5bbfde652300e33f107aae10fbb8fe20ff",
+    "bundles": {
+      "assets/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+    }
+  },
+  "iosRelease": {
+    "path": "evidence-local/edge-standard/probe-edge-ios-release.app",
+    "executable": "SparklingGo",
+    "executableSha256": "fd24d65309a0f8bbb9d4579c0e5b6d8201acb84e14ec5b0ed8c21ff6e6f52e5b",
+    "bundles": {
+      "LynxResources/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+    },
+    "fileManifestSha256": "e65a8cdbc996bed5a54a56f1b9fd9876ba987ca1f813e554930e6992bcd40044"
+  }
+}

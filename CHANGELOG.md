@@ -19,7 +19,12 @@
   Runtime/native файлы нового архива идентичны ранее проверенным.
 - Edge-to-edge `2ba4bc3`: per-view ownership, Android bars и React effect lifecycle
   исправлены, findings независимого review закрыты; strict/native checks проходят.
-  README сохраняет языки/бейджи; реальный consumer ещё проверяется.
+  README сохраняет языки/бейджи; physical consumer evidence `44f68fb` принят с явными
+  first-frame/Release rotation/keyboard границами. Реальные два view и late owner прошли.
+- EN/RU документы всех четырёх пакетов синхронизированы с evidence; docs-only archive
+  deltas проверены побайтно. Финальные локальные commits/архивы перечислены в STATE.md.
+  Освобождено около 13 ГиБ собственных build intermediates после проверки артефактов;
+  worktrees, приложения, evidence и защищённый ownership recording resource сохранены.
 
 ## 2026-11-16
 

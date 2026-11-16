@@ -7,6 +7,40 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-17: стандарт внедрён в рабочие ветки всех четырёх библиотек. Выполнены
+strict TS, форматирование в 4 пробела, проверки native-кода, независимое review,
+упаковка и проверки actual native source bindings в consumer. README EN/RU,
+бейджи, таблицы поддержки и отдельные документы реализации/совместимости сохранены.
+
+| Пакет | Текущий локальный commit | Проверенная граница |
+|---|---|---|
+| crypto | `2d874b4` | Physical Debug/Release и native contracts; повторный Release smoke в финальном профиле |
+| secure-store | `006eb82` | Physical Debug/Release 10/10, persistence, direct Android 7/7; остаётся private |
+| app-lifecycle | `22543e9` | Physical Debug/Release, две JS-подписки, ранний Android background и настоящее Activity recreation |
+| edge-to-edge | `1d74031` | Debug/Release builds, реальные два view/late owner, UI matrix с ограничениями ниже |
+
+Финальный consumer: ReactLynx 0.125.0 / Rsbuild 2.1.10, Sparkling 2.1.0-rc.36 /
+native Lynx 3.9.0. Probe source `6c57f33`, evidence `44f68fb`; [107 файлов evidence](docs/evidence/edge-2026-11-17/results.json).
+Parent независимо сверил четыре tarball, source hashes, четыре bundle/binary и все
+файлы двух iOS .app, matching Release dSYM; raw geometry logs и UIKit snapshots прочитаны.
+Архивы crypto `9d510aa2`, secure-store `341fba16`, lifecycle `a4b85e8d`, edge `5c235a69`
+прошли эту сборку. Последующее обновление только docs edge — архив `755956e6`;
+65 остальных файлов идентичны проверенному `5c235a69`, нового device-прогона для docs нет.
+
+Stable gate ещё открыт: first-visible-frame edge не подтверждён на обеих платформах;
+Android Release rotation tool-blocked, iOS Release keyboard не имеет host input.
+Minimum OS и remote CI не проверены. Сохраняются три старые TS-ошибки и один устаревший
+App test пробника; собственные package checks проходят. Выпуск блокируется до
+публикации именно проверенного финального архива; два dev audit exceptions имеют
+срок пересмотра/expiry в декабре. Изменения сохранены в локальных невлитых task-ветках.
+
+После проверки самодостаточности приложений удалены только воспроизводимые
+`probe-e2e-android-verification/ios/build-device` и `android/app/build`: около 13 ГиБ,
+[измерения и проверка владения](docs/evidence/edge-2026-11-17/parent-cleanup.json).
+Артефакты, rollback, Pods, зависимости и worktree сохранены. Собственные процессы QA
+завершены. Retired iOS recording state и helper bundle оставлены из-за смены ownership;
+точные пути и ограничение — [cleanup.json](docs/evidence/edge-2026-11-17/cleanup.json).
+
 2026-11-17: Secure Store migration принят для проверенного consumer-профиля.
 Package `c350fce`, tarball `35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd`:
 65 package tests, strict TS, lint, native compile/analysis и независимое review.

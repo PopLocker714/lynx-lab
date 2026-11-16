@@ -1,0 +1,51 @@
+{
+  "debug": {
+    "binaryPaths": [
+      "evidence-local/edge-standard/probe-edge-ios-debug.app/SparklingGoInHouse",
+      "evidence-local/edge-standard/probe-edge-ios-debug.app/SparklingGoInHouse.debug.dylib"
+    ],
+    "probeSymbols": [
+      "00000000000044bc t +[EdgeGeometryProbe attachToHostView:]",
+      "0000000000004da8 t +[EdgeGeometryProbe finish:overlay:result:]",
+      "0000000000005238 t +[EdgeGeometryProbe run:]",
+      "000000000000455c t +[EdgeGeometryProbe verify:module:name:]",
+      "0000000000006a64 t -[EdgeGeometryTrigger didMoveToWindow]",
+      "0000000000006d44 t -[EdgeGeometryTrigger setStarted:]",
+      "0000000000006d18 t -[EdgeGeometryTrigger started]",
+      "0000000000004484 t -[EdgeObservedView .cxx_destruct]",
+      "0000000000004424 t -[EdgeObservedView delivered]",
+      "0000000000004448 t -[EdgeObservedView setDelivered:]",
+      "0000000000004370 t -[EdgeObservedView updateGlobalPropsWithDictionary:]",
+      "0000000001647bd8 S _OBJC_CLASS_$_EdgeGeometryProbe",
+      "0000000001647b88 S _OBJC_CLASS_$_EdgeGeometryTrigger",
+      "0000000001647b38 S _OBJC_CLASS_$_EdgeObservedView",
+      "0000000001644b1c s _OBJC_IVAR_$_EdgeGeometryTrigger._started",
+      "0000000001644b18 s _OBJC_IVAR_$_EdgeObservedView._delivered",
+      "0000000001647bb0 S _OBJC_METACLASS_$_EdgeGeometryProbe",
+      "0000000001647c00 S _OBJC_METACLASS_$_EdgeGeometryTrigger",
+      "0000000001647b60 S _OBJC_METACLASS_$_EdgeObservedView",
+      "0000000001355848 s __OBJC_$_CLASS_METHODS_EdgeGeometryProbe",
+      "0000000001359f70 s __OBJC_$_INSTANCE_METHODS_EdgeGeometryTrigger",
+      "0000000001359fa0 s __OBJC_$_INSTANCE_METHODS_EdgeObservedView",
+      "00000000015e8238 s __OBJC_$_INSTANCE_VARIABLES_EdgeGeometryTrigger",
+      "00000000015e80d8 s __OBJC_$_INSTANCE_VARIABLES_EdgeObservedView",
+      "00000000015e8260 s __OBJC_$_PROP_LIST_EdgeGeometryTrigger",
+      "00000000015e8100 s __OBJC_$_PROP_LIST_EdgeObservedView",
+      "00000000015e81a8 s __OBJC_CLASS_RO_$_EdgeGeometryProbe",
+      "00000000015e8278 s __OBJC_CLASS_RO_$_EdgeGeometryTrigger",
+      "00000000015e8118 s __OBJC_CLASS_RO_$_EdgeObservedView",
+      "00000000015e8160 s __OBJC_METACLASS_RO_$_EdgeGeometryProbe",
+      "00000000015e81f0 s __OBJC_METACLASS_RO_$_EdgeGeometryTrigger",
+      "00000000015e8090 s __OBJC_METACLASS_RO_$_EdgeObservedView",
+      "0000000000005a10 t ___25+[EdgeGeometryProbe run:]_block_invoke",
+      "0000000000006170 t ___25+[EdgeGeometryProbe run:]_block_invoke_2",
+      "0000000000006c20 t ___38-[EdgeGeometryTrigger didMoveToWindow]_block_invoke"
+    ]
+  },
+  "release": {
+    "binaryPaths": [
+      "evidence-local/edge-standard/probe-edge-ios-release.app/SparklingGo"
+    ],
+    "probeSymbols": []
+  }
+}

@@ -1,0 +1,106 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 96 visible nodes
+Hint: React Native warning/error overlay detected. It overlays part of the app and should be handled before interacting.
+Run: agent-device react-native dismiss-overlay
+The command verifies the overlay is gone. Run agent-device snapshot -i afterward only when you need fresh refs for the next action.
+@e1 [application] "Sparkling Template"
+@e2 [window] "Next keyboard"
+@e3 [other] "Next keyboard"
+@e4 [other] "Typing Predictions"
+@e5 [scroll-area] [scrollable]
+@e6 [other] "I"
+@e7 [other] "The"
+@e8 [other] "I’m"
+@e9 [other] "Q"
+@e10 [keyboard] "Q"
+@e11 [key] "Q"
+@e12 [key] "W"
+@e13 [key] "E"
+@e14 [key] "R"
+@e15 [key] "T"
+@e16 [key] "Y"
+@e17 [key] "U"
+@e18 [key] "I"
+@e19 [key] "O"
+@e20 [key] "P"
+@e21 [key] "A"
+@e22 [key] "S"
+@e23 [key] "D"
+@e24 [key] "F"
+@e25 [key] "G"
+@e26 [key] "H"
+@e27 [key] "J"
+@e28 [key] "K"
+@e29 [key] "L"
+@e30 [button] "shift" [selected]
+@e31 [key] "Z"
+@e32 [key] "X"
+@e33 [key] "C"
+@e34 [key] "V"
+@e35 [key] "B"
+@e36 [key] "N"
+@e37 [key] "M"
+@e38 [key] "delete"
+@e39 [key] "numbers"
+@e40 [button] "Emoji"
+@e41 [key] "space"
+@e42 [button] "done"
+@e43 [button] "Next keyboard"
+@e44 [button] "Dictate"
+@e45 [window] "sparkling"
+@e46 [button] "sparkling"
+@e47 [window] "Sheet Grabber"
+@e48 [other] "Sheet Grabber"
+@e49 [button] "Sheet Grabber"
+@e50 [other] "Sparkling Debug Tool - main.lynx.bundle"
+@e51 [button] "Close"
+@e52 [other] "Log"
+@e53 [button] "Log"
+@e54 [button] "Sparkling Method"
+@e55 [button] "GlobalProps"
+@e56 [other] "trash"
+@e57 [button] "trash"
+@e58 [text-field] "Close" [focused] [editable]
+@e59 [button] "Close"
+@e60 [other] "All"
+@e61 [button] "All"
+@e62 [button] "Info"
+@e63 [button] "Debug"
+@e64 [button] "Warn"
+@e65 [button] "Error"
+@e66 [table] "{"type":"info","args":[{"value":"SPIKE module-scope thread=BTS wall=1794869097058 globalProps.safeArea=null pkg={\"insets\":{\"top\":48,\"right\":0,\"bottom\":34,\"left\":0},\"keyboardHeight\":0,\"generation\":1,\"edgeToEdge\":true,\"source\":\"native\"}","type":"string"}]}"
+  [content above table hidden]
+  [content below table hidden]
+@e67 [cell] "{"type":"error","args":[{"value":"Error: SPIKE render#5 thread=BTS wall=1794869125703 globalProps.safeArea={\"bottom\":34,\"generation\":1,\"keyboardHeight\":0,\"left\":0,\"top\":48,\"right\":0,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":48,\"right\":0,\"bottom\":34,\"left\":0},\"keyboardHeight\":0,\"generation\":1,\"edgeToEdge\":true,\"source\":\"native\"}\n    at rX (file://view1/.rspeedy/main/background.5371b82d.js:4:3905)\n    at nH (file://view1/.rspeedy/main/background.5371b82d.js:18:608)\n    at ed (file://view1/.rspeedy/main/background.5371b82d.js:1:9512)\n    at es (file://view1/.rspeedy/main/background.5371b82d.js:1:6717)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:2359)\n    at ei (file://view1/.rspeedy/main/background.5371b82d.js:1:2592)\n    at tryCallOne (file://shared/lynx_core.js:7076:23)\n    at <anonymous> (file://shared/lynx_core.js:7171:51)\n","type":"string"}]}"
+@e68 [text] [same label as parent]
+@e69 [button] "copy"
+@e70 [cell] "{"type":"info","args":[{"value":"SPIKE subscribe thread=BTS wall=1794869141227 globalProps.safeArea={\"bottom\":21,\"generation\":2,\"keyboardHeight\":0,\"left\":48,\"top\":0,\"right\":48,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":0,\"right\":48,\"bottom\":21,\"left\":48},\"keyboardHeight\":0,\"generation\":2,\"edgeToEdge\":true,\"source\":\"globalProps\"}","type":"string"}]}"
+@e71 [text] [same label as parent]
+@e72 [button] "copy"
+@e73 [cell] "{"type":"error","args":[{"value":"The following error occurred in the JSRuntime:","type":"string"}]}"
+@e74 [text] [same label as parent]
+@e75 [button] "copy"
+@e76 [cell] "{"type":"error","args":[{"value":"Error: SPIKE subscribe thread=BTS wall=1794869141227 globalProps.safeArea={\"bottom\":21,\"generation\":2,\"keyboardHeight\":0,\"left\":48,\"top\":0,\"right\":48,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":0,\"right\":48,\"bottom\":21,\"left\":48},\"keyboardHeight\":0,\"generation\":2,\"edgeToEdge\":true,\"source\":\"globalProps\"}\n    at rX (file://view1/.rspeedy/main/background.5371b82d.js:4:3905)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:19:70)\n    at rT (file://view1/.rspeedy/main/background.5371b82d.js:1:45097)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:4:340)\n    at apply (native)\n    at <anonymous> (file://shared/lynx_core.js:8773:50)\n    at forEach (native)\n    at emit (file://shared/lynx_core.js:8775:11)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:36434)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:36755)\n    at <anonymous> (file://shared/lynx_core.js:11388:45)\n","type":"string"}]}"
+@e77 [text] [same label as parent]
+@e78 [button] "copy"
+@e79 [cell] "{"type":"info","args":[{"value":"SPIKE render#6 thread=BTS wall=1794869141232 globalProps.safeArea={\"bottom\":21,\"generation\":2,\"keyboardHeight\":0,\"left\":48,\"top\":0,\"right\":48,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":0,\"right\":48,\"bottom\":21,\"left\":48},\"keyboardHeight\":0,\"generation\":2,\"edgeToEdge\":true,\"source\":\"globalProps\"}","type":"string"}]}"
+@e80 [text] [same label as parent]
+@e81 [button] "copy"
+@e82 [cell] "{"type":"error","args":[{"value":"The following error occurred in the JSRuntime:","type":"string"}]}"
+@e83 [text] [same label as parent]
+@e84 [button] "copy"
+@e85 [cell] "{"type":"error","args":[{"value":"Error: SPIKE render#6 thread=BTS wall=1794869141232 globalProps.safeArea={\"bottom\":21,\"generation\":2,\"keyboardHeight\":0,\"left\":48,\"top\":0,\"right\":48,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":0,\"right\":48,\"bottom\":21,\"left\":48},\"keyboardHeight\":0,\"generation\":2,\"edgeToEdge\":true,\"source\":\"globalProps\"}\n    at rX (file://view1/.rspeedy/main/background.5371b82d.js:4:3905)\n    at nH (file://view1/.rspeedy/main/background.5371b82d.js:18:608)\n    at ed (file://view1/.rspeedy/main/background.5371b82d.js:1:9512)\n    at es (file://view1/.rspeedy/main/background.5371b82d.js:1:6717)\n    at el (file://view1/.rspeedy/main/background.5371b82d.js:1:4291)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:8751)\n    at es (file://view1/.rspeedy/main/background.5371b82d.js:1:8994)\n    at el (file://view1/.rspeedy/main/background.5371b82d.js:1:4291)\n    at es (file://view1/.rspeedy/main/background.5371b82d.js:1:7080)\n    at el (file://view1/.rspeedy/main/background.5371b82d.js:1:4291)\n    at es (file://view1/.rspeedy/main/background.5371b82d.js:1:7080)\n    at el (file://view1/.rspeedy/main/background.5371b82d.js:1:4291)\n    at es (file://view1/.rspeedy/main/background.5371b82d.js:1:7080)\n    at ev (file://view1/.rspeedy/main/background.5371b82d.js:1:10056)\n    at render (file://view1/.rspeedy/main/background.5371b82d.js:1:36750)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:36652)\n    at forceRerender (file://view1/.rspeedy/main/background.5371b82d.js:1:36752)\n    at tryCallOne (file://shared/lynx_core.js:7076:23)\n    at <anonymous> (file://shared/lynx_core.js:7171:51)\n","type":"string"}]}"
+@e86 [text] [same label as parent]
+@e87 [button] "copy"
+@e88 [cell] "{"type":"info","args":[{"value":"SPIKE subscribe thread=BTS wall=1794869141239 globalProps.safeArea={\"bottom\":0,\"generation\":3,\"keyboardHeight\":0,\"left\":48,\"top\":0,\"right\":48,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":0,\"right\":48,\"bottom\":0,\"left\":48},\"keyboardHeight\":0,\"generation\":3,\"edgeToEdge\":true,\"source\":\"globalProps\"}","type":"string"}]}"
+@e89 [text] [same label as parent]
+@e90 [button] "copy"
+@e91 [cell] "{"type":"error","args":[{"value":"The following error occurred in the JSRuntime:","type":"string"}]}"
+@e92 [text] [same label as parent]
+@e93 [button] "copy"
+@e94 [cell] "{"type":"error","args":[{"value":"Error: SPIKE subscribe thread=BTS wall=1794869141239 globalProps.safeArea={\"bottom\":0,\"generation\":3,\"keyboardHeight\":0,\"left\":48,\"top\":0,\"right\":48,\"edgeToEdge\":1} pkg={\"insets\":{\"top\":0,\"right\":48,\"bottom\":0,\"left\":48},\"keyboardHeight\":0,\"generation\":3,\"edgeToEdge\":true,\"source\":\"globalProps\"}\n    at rX (file://view1/.rspeedy/main/background.5371b82d.js:4:3905)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:19:70)\n    at rT (file://view1/.rspeedy/main/background.5371b82d.js:1:45097)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:4:340)\n    at apply (native)\n    at <anonymous> (file://shared/lynx_core.js:8773:50)\n    at forEach (native)\n    at emit (file://shared/lynx_core.js:8775:11)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:36434)\n    at <anonymous> (file://view1/.rspeedy/main/background.5371b82d.js:1:36755)\n    at <anonymous> (file://shared/lynx_core.js:11388:45)\n","type":"string"}]}"
+@e95 [text] [same label as parent]
+@e96 [button] "copy"
+
+Warning: Hint: React Native warning/error overlay detected. It overlays part of the app and should be handled before interacting. Run: agent-device react-native dismiss-overlay The command verifies the overlay is gone. Run agent-device snapshot -i afterward only when you need fresh refs for the next action.

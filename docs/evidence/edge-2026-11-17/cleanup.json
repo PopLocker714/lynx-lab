@@ -1,0 +1,39 @@
+{
+  "completedSessions": [
+    "edge-android",
+    "edge-ios (retired; recording release failed)"
+  ],
+  "stoppedPids": [
+    83415,
+    97097
+  ],
+  "closedDaemonPort": 52890,
+  "method": "agent-device close then daemon stop; graceful PID/start-time verified tool cleanup",
+  "remainingOwnedPids": [],
+  "remainingOwnedPorts": [],
+  "recordingResidual": {
+    "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/edge-standard/agent-device/sessions/edge-ios/screen-recording.resource.json",
+    "request": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/edge-standard/agent-device/sessions/edge-ios/requests/b827459e890f58c7.ndjson",
+    "reason": "Apple runner session ownership changed before command dispatch. Session retired; do not retry close. No ownership bypass.",
+    "helperBundleRetained": "com.ilya.lynxqa.agentdevice.uitests.xctrunner",
+    "stateDirectoryRetained": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/edge-standard/agent-device"
+  },
+  "unrelatedUntouched": [
+    "T3 daemon56147 and simulator runner42110",
+    "Shared Bun/Gradle caches",
+    "Target com.probe.e2e apps and user data"
+  ],
+  "removedOwnedTemporaryFiles": [
+    "/tmp/probe-edge-lynx39-classes.jar"
+  ],
+  "freedBytes": 2306372,
+  "preservedBytes": {
+    "ios/build-device": 13315579904,
+    "android/app/build": 589082624,
+    "ios/Pods": 75350016,
+    "node_modules": 24002560,
+    "evidence-local/edge-standard": 562126848
+  },
+  "freeBytes": 43692941312,
+  "buildState": "Await parent artifact verification before any deletion; all baseline artifacts/worktrees preserved"
+}

@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-17",
+  "removedPaths": {
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device": 13315579904,
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build": 589082624
+  },
+  "removedAllocatedBytes": 13904662528,
+  "freeBytesBefore": 43688923136,
+  "freeBytesAfter": 57620963328,
+  "observedFreeSpaceIncreaseBytes": 13932040192,
+  "verifiedBeforeRemoval": [
+    "107 evidence hashes",
+    "4 tarballs and source hashes",
+    "4 app bundles and binary hashes",
+    "all37 Debug and15 Release app files",
+    "no external app symlinks",
+    "matching Release dSYM UUID",
+    "no tracked files or open process files in removed paths"
+  ],
+  "preserved": [
+    "all unmerged worktrees",
+    "node_modules and Pods",
+    "package archives",
+    "baseline and final artifacts/evidence",
+    "ownership-blocked iOS recording state and helper bundle"
+  ],
+  "remainingRecordingResource": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/edge-standard/agent-device/sessions/edge-ios/screen-recording.resource.json"
+}

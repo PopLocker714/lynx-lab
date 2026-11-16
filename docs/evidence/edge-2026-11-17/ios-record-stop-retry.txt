@@ -1,0 +1,4 @@
+Error (COMMAND_FAILED): Apple runner session ownership changed before command dispatch
+Hint: Retry with --debug and inspect diagnostics log for details.
+Diagnostic ID: mwjuya5g-2a3551aa
+Diagnostics Log: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/edge-standard/agent-device/sessions/edge-ios/requests/06f388353f1dac1c.ndjson

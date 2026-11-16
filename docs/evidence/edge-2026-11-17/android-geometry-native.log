@@ -1,0 +1,8 @@
+--------- beginning of main
+11-17 01:34:25.431 21279 21279 I EDGE_QA : DISCOVERY 250 frames budget=0
+11-17 01:36:29.215 21679 21679 I EDGE_QA : DISCOVERY 250 frames budget=0
+11-17 01:36:29.260 21679 21679 I EDGE_QA : OWNER registered before addView; no refresh/resume
+11-17 01:36:29.298 21679 21679 I EDGE_QA : full bounds=[0, 0] 1080x2424 expected={top=65.9047619047619, left=0.0, bottom=24.0, right=0.0} snapshot={generation=1.0, edgeToEdge=true, top=65.9047622680664, left=0.0, bottom=24.0, right=0.0, keyboardHeight=0.0} delivered={top=65.9047622680664, right=0.0, bottom=24.0, left=0.0, keyboardHeight=0.0, generation=1.0, edgeToEdge=true}
+11-17 01:36:29.298 21679 21679 I EDGE_QA : embedded bounds=[0, 315] 1080x1794 expected={top=0.0, left=0.0, bottom=0.0, right=0.0} snapshot={generation=2.0, edgeToEdge=true, top=0.0, left=0.0, bottom=0.0, right=0.0, keyboardHeight=0.0} delivered={top=0.0, right=0.0, bottom=0.0, left=0.0, keyboardHeight=0.0, generation=2.0, edgeToEdge=true}
+11-17 01:36:29.341 21679 21679 I EDGE_QA : expanded bounds=[0, 0] 1080x2424 expected={top=65.9047619047619, left=0.0, bottom=24.0, right=0.0} snapshot={generation=3.0, edgeToEdge=true, top=65.9047622680664, left=0.0, bottom=24.0, right=0.0, keyboardHeight=0.0} delivered={top=65.9047622680664, right=0.0, bottom=24.0, left=0.0, keyboardHeight=0.0, generation=3.0, edgeToEdge=true}
+11-17 01:36:29.346 21679 21679 I EDGE_QA : PASS late-owner+geometry+globalProps

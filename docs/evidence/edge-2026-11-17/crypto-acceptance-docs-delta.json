@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "2d874b4266af164f8ea89d3b823cbe915732fb5d",
+  "oldTarball": "crypto-c73335d3eb9ec10c4c25cd3513966da46995de733047ec6c0720e5bb4fa1a290.tgz",
+  "sha256": "9d510aa2e50771bdaf4625d813bd64b20809dbc91c0768ace77fb310e45f8ed8",
+  "changed": [
+    "package/README.md",
+    "package/README.ru.md",
+    "package/docs/compatibility.md",
+    "package/docs/compatibility.ru.md"
+  ],
+  "unchangedFiles": 48,
+  "runtimeNativeDeclarationsUnchanged": true
+}

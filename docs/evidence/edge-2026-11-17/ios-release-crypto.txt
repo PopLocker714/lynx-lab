@@ -1,0 +1,18 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 9 nodes
+@e1 [application] "Sparkling Template"
+  @e2 [other] "lynxview"
+    @e3 [other] "Show Secure Store"
+      @e4 [button] "Show Secure Store"
+      @e5 [button] "Show edge-to-edge"
+      @e6 [button] "Show Lifecycle"
+      @e7 [button] "Run Crypto native checks"
+      @e8 [button] "Run Crypto failure injection"
+      @e9 [text] "NATIVE: real bridge, no injection
+PASS views/offset/empty: Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, BigInt64Array, BigUint64Array
+PASS byte lengths 1/2/3/4/31/32/65536
+PASS float/DataView rejection + byte quota
+PASS 8 distinct 32-byte samples (smoke only)
+PASS 8 distinct UUIDs v4/lowercase (smoke only)
+CRYPTO NATIVE PASS; smoke does not measure entropy"

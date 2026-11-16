@@ -1,0 +1,9 @@
+src/components/SafeAreaView.tsx(26,10): error TS2352: Conversion of type 'GlobalProps' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type 'GlobalProps'.
+src/pages/main/__tests__/App.test.tsx(12,15): error TS2322: Type '{ onMounted: Mock<Procedure>; }' is not assignable to type 'IntrinsicAttributes'.
+  Property 'onMounted' does not exist on type 'IntrinsicAttributes'.
+src/utils/spike.ts(13,10): error TS2352: Conversion of type 'GlobalProps' to type 'Record<string, unknown>' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+  Index signature for type 'string' is missing in type 'GlobalProps'.
+TypeScript: 3 errors in 3 files
+Top codes: TS2352 (2x), TS2322 (1x)
+[full output: rtk recall 8cc3c3ee0172]

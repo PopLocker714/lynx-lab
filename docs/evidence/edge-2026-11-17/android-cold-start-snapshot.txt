@@ -1,0 +1,27 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 37 nodes
+@e2 [group]
+  @e3 [composeview]
+    @e6 [androidviewholder]
+      @e7 [group]
+        @e8 [group]
+          @e9 [group]
+            @e10 [group]
+              @e11 [group]
+                @e12 [composeview]
+                  @e14 [text] "01:51"
+                    @e18 [group] "com.android.systemui:id/0|com.t3tools.t3code|73001|t3-agent-activity|10366"
+                      @e19 [group] "Уведомление T3 Code: Сейчас"
+                      @e20 [androidviewholder]
+                        @e21 [image] "Уведомление T3 Code:"
+                      @e22 [text] "3 live"
+          @e23 [composeview]
+            @e24 [image] "Режим VPN включен."
+            @e25 [group] "Мобильная сеть, три деления"
+            @e26 [image] "Wi-Fi: надежный сигнал"
+            @e27 [group] "Зарядка батареи. Текущий заряд: 100 %."
+    @e31 [group]
+      @e32 [group]
+        @e34 [group]
+          @e37 [text-field] "tap to open keyboard" [editable]

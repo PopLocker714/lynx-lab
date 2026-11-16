@@ -1,0 +1,23 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 9 nodes
+@e1 [application] "Sparkling Template"
+  @e2 [other] "lynxview"
+    @e3 [other] "Show edge-to-edge"
+      @e4 [button] "Show edge-to-edge"
+      @e5 [button] "Show Crypto"
+      @e6 [button] "Show Lifecycle"
+      @e7 [other] "Run Secure Store checks"
+        @e8 [text] "Run Secure Store checks"
+      @e9 [text] "Secure Store: running
+PASS absent + idempotent delete
+PASS write/read + overwrite
+PASS empty + unicode + NUL
+PASS 16 KiB UTF-8 boundary
+PASS invalid keys + malformed UTF-16
+PASS 256-character key
+PASS concurrent independent records
+PASS ordered concurrent writes
+PASS delete + read null
+PASS seed process persistence
+SECURE STORE PASS 10/10"

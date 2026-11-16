@@ -6,7 +6,9 @@
 
 Стандарт внедрён в рабочие ветки всех четырёх пакетов. Crypto, secure-store и
 app-lifecycle прошли consumer/device QA с явно записанными профилями и ограничениями.
-Edge-to-edge прошёл code/native checks и independent review; consumer QA продолжается.
+Edge-to-edge прошёл code/native checks, independent review и доступную consumer QA;
+first-visible-frame, Android Release rotation и iOS Release keyboard остаются явными
+ограничениями проверки. Актуальная матрица и точные архивы — в STATE.md.
 Все изменения находятся в отдельных невлитых worktree. Это не означает stable
 или разрешение публикации всех четырёх пакетов.
 У этого репозитория знаний нет package.json; устанавливать зависимости здесь не нужно.

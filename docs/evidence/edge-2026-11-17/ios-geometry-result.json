@@ -1,0 +1,101 @@
+{
+  "status" : "PASS",
+  "checks" : [
+    {
+      "phase" : "unattached",
+      "snapshot" : {
+        "bottom" : 0,
+        "edgeToEdge" : true,
+        "generation" : 0,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "right" : 0,
+        "top" : 0
+      }
+    },
+    {
+      "frame" : "{{0, 0}, {414, 896}}",
+      "expected" : {
+        "left" : 0,
+        "top" : 48,
+        "right" : 0,
+        "bottom" : 34
+      },
+      "name" : "full",
+      "snapshot" : {
+        "bottom" : 34,
+        "generation" : 1,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "top" : 48,
+        "right" : 0,
+        "edgeToEdge" : true
+      },
+      "globalProps" : {
+        "bottom" : 34,
+        "generation" : 1,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "top" : 48,
+        "right" : 0,
+        "edgeToEdge" : true
+      }
+    },
+    {
+      "frame" : "{{20, 120}, {374, 656}}",
+      "expected" : {
+        "left" : 0,
+        "top" : 0,
+        "right" : 0,
+        "bottom" : 0
+      },
+      "name" : "embedded",
+      "snapshot" : {
+        "bottom" : 0,
+        "generation" : 1,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "top" : 0,
+        "right" : 0,
+        "edgeToEdge" : true
+      },
+      "globalProps" : {
+        "bottom" : 0,
+        "generation" : 1,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "top" : 0,
+        "right" : 0,
+        "edgeToEdge" : true
+      }
+    },
+    {
+      "frame" : "{{20, 120}, {374, 656}}",
+      "expected" : {
+        "left" : 0,
+        "top" : 0,
+        "right" : 0,
+        "bottom" : 0
+      },
+      "name" : "after-notification",
+      "snapshot" : {
+        "bottom" : 0,
+        "generation" : 1,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "top" : 0,
+        "right" : 0,
+        "edgeToEdge" : true
+      },
+      "globalProps" : {
+        "bottom" : 0,
+        "generation" : 1,
+        "keyboardHeight" : 0,
+        "left" : 0,
+        "top" : 0,
+        "right" : 0,
+        "edgeToEdge" : true
+      }
+    }
+  ]
+}

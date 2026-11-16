@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "1d74031c55a5d7604bb14509b26101f3d7daca92",
+  "testedTarball": "edge-to-edge-5c235a69cfcb567cd23ca15d72495ce62fea84ebe346b03044fee118f6250232.tgz",
+  "sha256": "755956e6fb47a4de153dae98832d3ecb74b3803f8e91b47cb48b9c4f264f1dae",
+  "changed": [
+    "package/README.md",
+    "package/README.ru.md",
+    "package/docs/compatibility.md",
+    "package/docs/compatibility.ru.md"
+  ],
+  "unchangedFiles": 65,
+  "runtimeNativeDeclarationsUnchanged": true
+}

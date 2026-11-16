@@ -1,0 +1,17 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 14 nodes
+@e1 [application] "Sparkling Template"
+  @e2 [other] "lynxview"
+    @e3 [other] "Show Secure Store"
+      @e4 [button] "Show Secure Store"
+      @e5 [button] "Show Crypto"
+      @e6 [button] "Show Lifecycle"
+      @e7 [button] "refresh()"
+      @e8 [text] "System bars are controlled by the iOS host. Style/visibility controls are Android-only."
+      @e9 [text] "Keyboard input is unavailable in this iOS probe."
+      @e10 [text] "PKG edge-to-edge day 5"
+      @e11 [text] "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=1 native"
+      @e12 [text] "events: g1 t48 b34 k0 native"
+      @e13 [text] "css var(--safe-area-inset-top) padding above me"
+      @e14 [text] "log:"

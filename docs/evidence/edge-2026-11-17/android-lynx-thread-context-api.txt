@@ -1,0 +1,168 @@
+Compiled from "UIThreadUtils.java"
+public class com.lynx.tasm.utils.UIThreadUtils {
+  public com.lynx.tasm.utils.UIThreadUtils();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static boolean isOnUiThread();
+    Code:
+       0: invokestatic  #5                  // Method android/os/Looper.getMainLooper:()Landroid/os/Looper;
+       3: invokevirtual #7                  // Method android/os/Looper.getThread:()Ljava/lang/Thread;
+       6: invokestatic  #8                  // Method java/lang/Thread.currentThread:()Ljava/lang/Thread;
+       9: if_acmpne     16
+      12: iconst_1
+      13: goto          17
+      16: iconst_0
+      17: ireturn
+
+  public static void assertOnUiThread();
+    Code:
+       0: invokestatic  #9                  // Method isOnUiThread:()Z
+       3: ldc           #10                 // String Expected to run on UI thread!
+       5: invokestatic  #11                 // Method com/lynx/tasm/base/Assertions.assertCondition:(ZLjava/lang/String;)V
+       8: return
+
+  public static void assertNotOnUiThread();
+    Code:
+       0: invokestatic  #9                  // Method isOnUiThread:()Z
+       3: ifne          10
+       6: iconst_1
+       7: goto          11
+      10: iconst_0
+      11: ldc           #12                 // String Expected not to run on UI thread!
+      13: invokestatic  #11                 // Method com/lynx/tasm/base/Assertions.assertCondition:(ZLjava/lang/String;)V
+      16: return
+
+  public static void runOnUiThread(java.lang.Runnable);
+    Code:
+       0: invokestatic  #13                 // Method getUiThreadHandler:()Landroid/os/Handler;
+       3: aload_0
+       4: invokevirtual #14                 // Method android/os/Handler.post:(Ljava/lang/Runnable;)Z
+       7: pop
+       8: return
+
+  public static void postAtFrontOfQueueOnUiThread(java.lang.Runnable);
+    Code:
+       0: invokestatic  #13                 // Method getUiThreadHandler:()Landroid/os/Handler;
+       3: aload_0
+       4: invokevirtual #15                 // Method android/os/Handler.postAtFrontOfQueue:(Ljava/lang/Runnable;)Z
+       7: pop
+       8: return
+
+  public static void runOnUiThreadImmediately(java.lang.Runnable);
+    Code:
+       0: invokestatic  #9                  // Method isOnUiThread:()Z
+       3: ifeq          15
+       6: aload_0
+       7: invokeinterface #16,  1           // InterfaceMethod java/lang/Runnable.run:()V
+      12: goto          19
+      15: aload_0
+      16: invokestatic  #17                 // Method runOnUiThread:(Ljava/lang/Runnable;)V
+      19: return
+
+  public static void runOnUiThreadImmediatelyWithPostAtFront(java.lang.Runnable);
+    Code:
+       0: invokestatic  #9                  // Method isOnUiThread:()Z
+       3: ifeq          15
+       6: aload_0
+       7: invokeinterface #16,  1           // InterfaceMethod java/lang/Runnable.run:()V
+      12: goto          19
+      15: aload_0
+      16: invokestatic  #18                 // Method postAtFrontOfQueueOnUiThread:(Ljava/lang/Runnable;)V
+      19: return
+
+  public static void runOnUiThread(java.lang.Runnable, long);
+    Code:
+       0: invokestatic  #13                 // Method getUiThreadHandler:()Landroid/os/Handler;
+       3: aload_0
+       4: lload_1
+       5: invokevirtual #19                 // Method android/os/Handler.postDelayed:(Ljava/lang/Runnable;J)Z
+       8: pop
+       9: return
+
+  public static void runOnUiThreadAtTime(java.lang.Runnable, java.lang.Object, long);
+    Code:
+       0: invokestatic  #13                 // Method getUiThreadHandler:()Landroid/os/Handler;
+       3: aload_0
+       4: aload_1
+       5: lload_2
+       6: invokevirtual #20                 // Method android/os/Handler.postAtTime:(Ljava/lang/Runnable;Ljava/lang/Object;J)Z
+       9: pop
+      10: return
+
+  public static void removeCallbacks(java.lang.Runnable, java.lang.Object);
+    Code:
+       0: invokestatic  #13                 // Method getUiThreadHandler:()Landroid/os/Handler;
+       3: aload_0
+       4: aload_1
+       5: invokevirtual #21                 // Method android/os/Handler.removeCallbacks:(Ljava/lang/Runnable;Ljava/lang/Object;)V
+       8: return
+}
+Compiled from "ContextUtils.java"
+public class com.lynx.tasm.utils.ContextUtils {
+  public com.lynx.tasm.utils.ContextUtils();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: return
+
+  public static com.lynx.tasm.behavior.LynxContext toLynxContext(android.content.Context);
+    Code:
+       0: aload_0
+       1: instanceof    #2                  // class android/content/ContextWrapper
+       4: ifeq          30
+       7: aload_0
+       8: instanceof    #3                  // class com/lynx/tasm/behavior/LynxContext
+      11: ifeq          19
+      14: aload_0
+      15: checkcast     #3                  // class com/lynx/tasm/behavior/LynxContext
+      18: areturn
+      19: aload_0
+      20: checkcast     #2                  // class android/content/ContextWrapper
+      23: invokevirtual #4                  // Method android/content/ContextWrapper.getBaseContext:()Landroid/content/Context;
+      26: astore_0
+      27: goto          0
+      30: aconst_null
+      31: areturn
+
+  public static android.app.Activity getActivity(android.content.Context);
+    Code:
+       0: aload_0
+       1: instanceof    #2                  // class android/content/ContextWrapper
+       4: ifeq          30
+       7: aload_0
+       8: instanceof    #5                  // class android/app/Activity
+      11: ifeq          19
+      14: aload_0
+      15: checkcast     #5                  // class android/app/Activity
+      18: areturn
+      19: aload_0
+      20: checkcast     #2                  // class android/content/ContextWrapper
+      23: invokevirtual #4                  // Method android/content/ContextWrapper.getBaseContext:()Landroid/content/Context;
+      26: astore_0
+      27: goto          0
+      30: aconst_null
+      31: areturn
+
+  public static android.view.Window getWindow(android.content.Context);
+    Code:
+       0: aload_0
+       1: instanceof    #2                  // class android/content/ContextWrapper
+       4: ifeq          33
+       7: aload_0
+       8: instanceof    #5                  // class android/app/Activity
+      11: ifeq          22
+      14: aload_0
+      15: checkcast     #5                  // class android/app/Activity
+      18: invokevirtual #6                  // Method android/app/Activity.getWindow:()Landroid/view/Window;
+      21: areturn
+      22: aload_0
+      23: checkcast     #2                  // class android/content/ContextWrapper
+      26: invokevirtual #4                  // Method android/content/ContextWrapper.getBaseContext:()Landroid/content/Context;
+      29: astore_0
+      30: goto          0
+      33: aconst_null
+      34: areturn
+}

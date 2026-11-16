@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "22543e9222da26183df0aaded0807a2741f6fd25",
+  "oldTarball": "app-lifecycle-c8cabd693d35b308b53aa166e7644b8c5b555e78fd8dc4b1daa936e452b93529.tgz",
+  "sha256": "a4b85e8da3901c5233f86ce4ac5ca6acfc483522f558cc90edbea3522cc5f1e4",
+  "changed": [
+    "package/README.md",
+    "package/README.ru.md",
+    "package/docs/compatibility.md",
+    "package/docs/compatibility.ru.md"
+  ],
+  "unchangedFiles": 54,
+  "runtimeNativeDeclarationsUnchanged": true
+}

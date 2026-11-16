@@ -1,0 +1,334 @@
+{
+  "date": "2026-11-17",
+  "status": "passed-with-documented-tool-and-host-limits",
+  "scope": "Final four-archive physical consumer matrix; real native owner/geometry integration separate from JS one-view smoke",
+  "packages": {
+    "edge-to-edge": {
+      "tarball": "vendor/edge-to-edge-5c235a69.tgz",
+      "sha256": "5c235a69cfcb567cd23ca15d72495ce62fea84ebe346b03044fee118f6250232",
+      "matchedFiles": 69,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-lab+edge-to-edge@.+vendor+edge-to-edge-5c235a69.tgz+60c2ac425c33c361/node_modules/@lynx-lab/edge-to-edge"
+    },
+    "app-lifecycle": {
+      "tarball": "vendor/app-lifecycle-a4b85e8d.tgz",
+      "sha256": "a4b85e8da3901c5233f86ce4ac5ca6acfc483522f558cc90edbea3522cc5f1e4",
+      "matchedFiles": 58,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-lab+app-lifecycle@.+vendor+app-lifecycle-a4b85e8d.tgz+60c2ac425c33c361/node_modules/@lynx-lab/app-lifecycle"
+    },
+    "crypto": {
+      "tarball": "vendor/crypto-9d510aa2.tgz",
+      "sha256": "9d510aa2e50771bdaf4625d813bd64b20809dbc91c0768ace77fb310e45f8ed8",
+      "matchedFiles": 52,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-9d510aa2.tgz+bb8e78adca66c375-4713a204209b99c9/node_modules/@lynx-lab/crypto"
+    },
+    "secure-store": {
+      "tarball": "vendor/secure-store-341fba16.tgz",
+      "sha256": "341fba1668755e0b9d74278d0e3d42224314226fa0b738435de1311799a34e2d",
+      "matchedFiles": 27,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-341fba16.tgz-0bab43388a510364/node_modules/@lynx-lab/secure-store"
+    }
+  },
+  "packageSources": {
+    "edge-to-edge": "2ba4bc3c97583f9afc1432c452c1b1e85dc27487",
+    "crypto": "2d874b4266af164f8ea89d3b823cbe915732fb5d",
+    "secure-store": "006eb826489d005d558c8f9d67ea553230056dec",
+    "app-lifecycle": "22543e9222da26183df0aaded0807a2741f6fd25"
+  },
+  "consumer": {
+    "sourceCommit": "6c57f33fe968710eaf2103ac0f53091f8ec9e15a",
+    "androidAppAndIosReleaseSource": "57e5123a923efa75e1abe7e2981d5c3ddcfb79c0",
+    "androidInstrumentationSource": "53241068dd1aa23af8804f100b9bfbf6d6787ebc",
+    "iosDebugSource": "6c57f33fe968710eaf2103ac0f53091f8ec9e15a",
+    "releaseReuseReason": "Later commits modify only androidTest synchronization and DEBUG-only iOS fixture setup; no Release runtime or bundle changes. Release binary contains no EdgeGeometryProbe/EdgeObservedView symbols.",
+    "baselineLifecycleEvidence": "51ae596b4f2fe5c97fb4ebafed5eb2068ce6ffbb",
+    "baselineSecureSource": "855fdde503a3abfc97fd929452d0b382ae82fbc6",
+    "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification",
+    "branch": "test/android-libraries",
+    "mainBundleSha256": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d",
+    "bunLockSha256": "248a66c9692cace62810007691d6fada4f61fe77dcab6dab4054149ba2eec5f6",
+    "sourceHashes": {
+      "package.json": "1531fa5d4e77bfe8fc6e7c4db92de573265777c2cad975875b80d874d5c77573",
+      "bun.lock": "248a66c9692cace62810007691d6fada4f61fe77dcab6dab4054149ba2eec5f6",
+      "app.config.ts": "282da1ae380c78fe5351a711c6476ca3b7a0edb9f842748a44001a674d9043c0",
+      "src/pages/main/App.tsx": "4c6af154d0b0c06bf338df75c0fd45defe9f518a58649d9b8069d55edfe31f5c",
+      "src/pages/main/LifecyclePanel.tsx": "9fa01a18d524dc23f6dcb6a26501f36982496a3f0f06efce43fbf4e46d6c6837",
+      "src/pages/main/cryptoChecks.ts": "74189bff7a079a56dbbfe48df57d908411a014a3c2fafc867ec5f00f32eff4d7",
+      "src/pages/main/secureStoreChecks.ts": "95b27c0f2b9e0cc361b0b5a26f2befedfe544f40225a464178ee619f0b5b682c",
+      "android/app/src/androidTest/java/com/probe/e2e/EdgeGeometryDeviceTest.kt": "10ecdca3119d42576f2fc49531ac0488f196dfdaa0d6072fc2df1993cfb4a6f5",
+      "android/app/src/debug/java/com/probe/e2e/EdgeGeometryProbeActivity.kt": "edfe24524d6aaa30b4d22796c57076f4f92b10310d23a6ab8108b97c463f2f87",
+      "android/app/src/debug/AndroidManifest.xml": "dfd1efd623a385be798e33cf25de7e5e265549ab99ac5fbcc08958fe0f4ca8bb",
+      "android/app/build.gradle.kts": "3c2d10355b000f2399bea3b0a021043740446a27385f5cb4bd3a40698c611b73",
+      "android/gradle/libs.versions.toml": "4b00d90a61cf64ae0f2656f209bc5f0d7aea7cca72876a0b68a3e0686ce5200f",
+      "ios/Podfile": "964e4f34dc63015a2b7d2f7f7ab03d81b3757c802463c55b3d941b8d5054e72e",
+      "ios/Podfile.lock": "20c28cc13ac08ac785625f0f62de263010739efe766004a48d2dbf6e8e5c3044",
+      "ios/SparklingGo.xcodeproj/project.pbxproj": "215b59275ef8b7706a575e17e97f8a4f561a3990c73543fe5ca1ebe33bca6f2b",
+      "ios/SparklingGo/SparklingGo/EdgeGeometryProbe.m": "083d909051e1c77642bffd0679b4a12f8aa216b8b5623e51ef6931620278fbd9",
+      "ios/SparklingGo/SparklingGo/EdgeGeometryProbe.h": "5188bf5f8b5768fe54ad09b03512e6a5fb3739045f8a96426add8447866d4bcb",
+      "ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift": "12175d5cd148b823c0bb7fe75af5976d3ec845a370d8dc4acb41a6c899c1a9c0",
+      "ios/SparklingGo/SparklingGo/Bridging-Header.h": "4b359b95db19e091c12f61e2cf1115cc47d002d74068087ad414ebc11f4a30be"
+    },
+    "jsProfile": {
+      "react": "0.125.0",
+      "types": "4.2.1",
+      "reactRsbuildPlugin": "0.19.1",
+      "rspeedy": "0.16.5",
+      "rsbuild": "2.1.10",
+      "rspack": "2.1.8",
+      "qrcodePlugin": "0.6.0",
+      "status": "Physical Lifecycle Debug/Release both platforms passed; Release Secure10/Crypto smoke passed",
+      "nativeHostUnchanged": "Lynx3.9.0/Sparkling2.1.0-rc.36"
+    }
+  },
+  "toolchains": {
+    "android": {
+      "gradle": "8.2",
+      "agp": "7.4.2",
+      "kotlin": "1.8.10",
+      "launcherJdk": "17.0.20",
+      "javaToolchain": "11.0.32.1+1",
+      "compileSdk": 34,
+      "targetSdk": 34,
+      "minSdk": 24,
+      "abiTested": "arm64-v8a",
+      "releaseR8AndResourceShrinking": true,
+      "releaseSigning": "local probe debug key"
+    },
+    "ios": {
+      "xcode": "27.2",
+      "xcodeBuild": "27B52",
+      "sdk": "iphoneos27.2",
+      "cocoaPods": "1.17.0",
+      "cocoaPodsLynxLibrary": "3.9.0",
+      "podfileDeclaredDeploymentTarget": "12.0",
+      "effectiveBuildDeploymentTarget": "15.6",
+      "overrideReason": "Xcode 27.2 rejects deployment targets of old host Pods below 15; does not verify iOS 12 support"
+    },
+    "agentDevice": "0.21.36"
+  },
+  "builds": {
+    "androidDebug": "passed",
+    "androidReleaseR8": "passed; R8 executed in initial combined build; subsequent instrumentation-only fix reused app/R8 output",
+    "iosDebug": "passed",
+    "iosRelease": "passed",
+    "artifacts": {
+      "androidDebug": {
+        "path": "evidence-local/edge-standard/probe-edge-android-debug.apk",
+        "sha256": "1306b6d507e0e7da1e392ed1393697006e22cc132639b913c8fed459759fc7e8",
+        "bundles": {
+          "assets/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+        }
+      },
+      "iosDebug": {
+        "path": "evidence-local/edge-standard/probe-edge-ios-debug.app",
+        "executable": "SparklingGoInHouse",
+        "executableSha256": "2e1b2d1cef745c907e34f17bef656b6f804f9c2273589781429f40f9f87d6ea5",
+        "bundles": {
+          "LynxResources/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+        },
+        "fileManifestSha256": "6c1d897d476a8db782c2bbac37140230a61d1eb478f1c73b8b00a164347034aa"
+      },
+      "androidRelease": {
+        "path": "evidence-local/edge-standard/probe-edge-android-release.apk",
+        "sha256": "1548c8ae88f83756fd0734d06626db5bbfde652300e33f107aae10fbb8fe20ff",
+        "bundles": {
+          "assets/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+        }
+      },
+      "iosRelease": {
+        "path": "evidence-local/edge-standard/probe-edge-ios-release.app",
+        "executable": "SparklingGo",
+        "executableSha256": "fd24d65309a0f8bbb9d4579c0e5b6d8201acb84e14ec5b0ed8c21ff6e6f52e5b",
+        "bundles": {
+          "LynxResources/main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d"
+        },
+        "fileManifestSha256": "e65a8cdbc996bed5a54a56f1b9fd9876ba987ca1f813e554930e6992bcd40044"
+      }
+    },
+    "releaseDsym": {
+      "path": "evidence-local/edge-standard/probe-edge-ios-release.app.dSYM",
+      "uuid": "B9D966D0-608A-3D8F-B5C1-B15BC4623F07",
+      "matchesExecutable": true
+    },
+    "debugDsym": "Not generated; Debug executable and debug.dylib retained in complete .app",
+    "compilerBaseline": "Three pre-existing TypeScript errors: SafeAreaView26, App.test12, spike13. Existing host/third-party native warnings retained.",
+    "instrumentationApk": {
+      "path": "evidence-local/edge-standard/probe-edge-android-test.apk",
+      "sha256": "db88b991e8526112a4c9323ff26377ffbfc941c404594440a80e7d3a860bb38b"
+    },
+    "r8Mapping": {
+      "path": "evidence-local/edge-standard/android-release-mapping.txt",
+      "sha256": "4cb0137b6d5546cdc85fda39b0f944b8e48ff92f3ff3a35502a4c91f6edecaa7"
+    }
+  },
+  "nativeBindings": {
+    "receipts": [
+      "edge-consumer-bindings.json",
+      "lifecycle-consumer-bindings.json",
+      "crypto-consumer-bindings.json",
+      "secure-consumer-bindings.json"
+    ],
+    "afterBuild": "bindings-postbuild.txt",
+    "recipe": "After peer/tarball changes: bun install, bun run build, pod install; explicitly generateDebugLynxLibraryRegistry and generateReleaseLynxLibraryRegistry --rerun-tasks; all four binding gates before build. Ordinary up-to-date tasks may leave stale registry.",
+    "installedArchiveEquality": true
+  },
+  "nativeRegression": {
+    "android": {
+      "status": "passed",
+      "configuration": "Debug",
+      "uniqueCases": 1,
+      "runner": "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner",
+      "class": "com.probe.e2e.EdgeGeometryDeviceTest",
+      "raw": "android-geometry-raw.txt",
+      "nativeLog": "android-geometry-native.log",
+      "assertions": [
+        "250 real Choreographer frames and discovery budget0",
+        "Actual LynxContext owner equals each real LynxView; module observes owner before addView",
+        "Separate main-queue turn respects Lynx3.9 Handler.post semantics",
+        "Full and embedded bounds use independent WindowInsets clipping oracle; actual module snapshot and updateGlobalProps match",
+        "Changing embedded bounds updates snapshot and delivered generation without refresh/resume"
+      ],
+      "fixtureFailure": "Initial immediate owner assertion ran before posted attachment; preserved as setup failure, fixed only test synchronization"
+    },
+    "ios": {
+      "status": "passed-with-normal-teardown",
+      "configuration": "Debug",
+      "raw": "ios-geometry-result-final.json",
+      "snapshot": "ios-geometry-snapshot-final.txt",
+      "assertions": [
+        "Two real LynxViews in one existing UIWindow, distinct full/embedded bounds",
+        "Actual owner context; unattached generation0 does not borrow window geometry",
+        "Actual safeAreaInsets equal module snapshot and delivered updateGlobalProps",
+        "Foreground notification preserves embedded geometry"
+      ],
+      "fixtureTeardownFailure": {
+        "raw": "ios-geometry-before-pipe-setup.json",
+        "crash": "SparklingGoInHouse-2026-11-17-013702.ips",
+        "classification": "Geometry passed; bare LynxView fixture teardown failed in Sparkling lazy pipe initialization. Not claimed package fix.",
+        "resolution": "Public MethodPipe(withLynxView:) setup while view alive, held with view lifetime, following SPKWrapperLynxView.swift:219; rerun geometry and ordinary teardown passed."
+      },
+      "releaseProbeSymbols": "ios-helper-symbols-final.json; zero matching symbols in Release"
+    }
+  },
+  "physicalRuns": [
+    {
+      "platform": "android",
+      "configuration": "Debug",
+      "device": "Pixel9 Android17 / REDACTED_PIXEL_SERIAL",
+      "initialObserved": "t65.9,b24,g1",
+      "refresh": "passed",
+      "rotation": "actual landscape captured; portrait/resume passed",
+      "styleHiddenResume": "passed, restored visible/light",
+      "keyboard": "0\u2192367.619\u21920",
+      "evidence": [
+        "android-debug-initial.png",
+        "android-debug-refresh.png",
+        "android-debug-landscape.png",
+        "android-debug-rotation-resume.png",
+        "android-debug-style-resume.png",
+        "android-debug-hidden-resume.png",
+        "android-debug-keyboard-restored.png"
+      ]
+    },
+    {
+      "platform": "android",
+      "configuration": "Release R8",
+      "device": "Pixel9 Android17 / REDACTED_PIXEL_SERIAL",
+      "initialObserved": "t65.9,b24,g1",
+      "refresh": "passed",
+      "rotation": "tool-blocked: two orientation timeouts; later delayed compositor rotation observed, no verified Release rotation oracle; portrait restored",
+      "styleHiddenResume": "passed; hidden bottom24\u21920, restored24; status cutout top remains65.9",
+      "keyboard": "0\u2192367.619\u21920",
+      "regression": "Secure10/10; Crypto native9 integer constructors and8 samples/UUID smoke; Lifecycle A/B background g2\u2192active g3 gap=false",
+      "evidence": [
+        "android-release-keyboard-restored.png",
+        "android-release-style-resume.png",
+        "android-release-hidden-resume.png",
+        "android-release-lifecycle-resume.png",
+        "android-release-secure-final.png",
+        "android-release-crypto.png"
+      ]
+    },
+    {
+      "platform": "ios",
+      "configuration": "Debug",
+      "device": "iPhone11 iOS18.4.1 / REDACTED_IPHONE_UDID",
+      "initialObserved": "t48,b34,g1",
+      "refresh": "passed",
+      "rotationResume": "landscape t0,l/r48,b21\u2192portrait t48,b34",
+      "keyboard": "Existing Sparkling DebugTool search field:0\u2192340.310\u21920; Lynx input remains gated",
+      "systemBars": "Host-owned/no-op policy preserved; Android-only controls absent",
+      "evidence": [
+        "ios-debug-initial.txt",
+        "ios-debug-refresh.txt",
+        "ios-debug-landscape.txt",
+        "ios-debug-resume.txt",
+        "ios-debug-keyboard-restored.txt"
+      ]
+    },
+    {
+      "platform": "ios",
+      "configuration": "Release",
+      "device": "iPhone11 iOS18.4.1 / REDACTED_IPHONE_UDID",
+      "initialObserved": "t48,b34,g1",
+      "refresh": "passed",
+      "rotationResume": "landscape t0,l/r48,b21,g2\u2192portrait t48,b34,g3",
+      "keyboard": "unavailable-in-host: Release has neither DebugTool nor registered Lynx input; not claimed passed",
+      "systemBars": "Host-owned/no-op policy preserved; Android-only controls absent",
+      "regression": "Secure10/10; Crypto native9 integer constructors and8 samples/UUID smoke; Lifecycle A/B background g1\u2192active g2 gap=false",
+      "evidence": [
+        "ios-release-initial.txt",
+        "ios-release-refresh.txt",
+        "ios-release-landscape.txt",
+        "ios-release-resume.txt",
+        "ios-release-lifecycle-resume.txt",
+        "ios-release-secure.txt",
+        "ios-release-crypto.txt"
+      ]
+    }
+  ],
+  "firstFrame": {
+    "status": "first-visible-frame-unverified",
+    "android": {
+      "recording": "evidence-local/edge-standard/android-release-cold-start.mp4",
+      "sha256": "cb4c97911e06e9135e7a9542d24345dcc54589cba590f2a2d15e0df9e016ae07",
+      "capturedFrames": 109,
+      "durationSeconds": 1.885178,
+      "analysis": "One bounded recording. First sampled app frames occur during window/orientation animation; first fully readable stable sampled frame at1.75s shows t65.9,b24,g1. This does not establish the earliest visible frame or absence of a zero-insets flash.",
+      "stableFrame": "android-first-captured-stable.png",
+      "firstJsRender": "Debug cold initial log has generation1; later view recreation logs include BTS generation0/native and MTS generation-1/fallback before native/globalProps recovery. JS render is not a visible frame.",
+      "rawTiming": "android-spike-native-timing.log"
+    },
+    "ios": {
+      "status": "tool-blocked/unverified",
+      "reason": "record start succeeded; stop and one retry rejected Apple runner session ownership changed before command dispatch",
+      "resource": "ios-recording-resource.json",
+      "cleanup": "Session retired by close; recording unreleased. No protection bypass or further recording attempt."
+    }
+  },
+  "knownGaps": [
+    "Minimum OS and GitHub CI unverified",
+    "First-visible-frame guarantee unverified on both platforms",
+    "Android Release rotation tool-blocked, separate from Debug actual landscape",
+    "iOS Release keyboard unavailable in this host; Debug existing method passed",
+    "No fresh physical invocation of iOS system-bar setters; no-op contract remains source/package adapter evidence and UI policy",
+    "Existing Vitest suite starts but stale App.test onMounted expectation fails as documented lifecycle baseline; not rerun or claimed passing",
+    "No minimum iOS12 proof: Xcode27.2 uses deployment15.6 override",
+    "Crypto distinct sample checks are smoke, not CSPRNG entropy proof"
+  ],
+  "preservation": {
+    "noTargetUninstallOrReset": true,
+    "iosInputGate": true,
+    "allPanelsPreserved": true,
+    "baselineArtifactsRetained": true,
+    "sharedBuildStateRetainedPendingParentAcceptance": true
+  },
+  "cleanup": "cleanup.json",
+  "commands": "commands.json",
+  "documentationFollowup": {
+    "source": "1d74031c55a5d7604bb14509b26101f3d7daca92",
+    "archiveSha256": "755956e6fb47a4de153dae98832d3ecb74b3803f8e91b47cb48b9c4f264f1dae",
+    "physicallyTestedArchiveUnchanged": "5c235a69cfcb567cd23ca15d72495ce62fea84ebe346b03044fee118f6250232",
+    "delta": "edge-acceptance-docs-delta.json",
+    "scope": "Only README EN/RU and compatibility EN/RU changed;65 other files identical. Not installed or rebuilt."
+  }
+}

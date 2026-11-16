@@ -1,0 +1,35 @@
+{
+  "envelopeVersion": 1,
+  "resourceKind": "screen-recording",
+  "sessionId": "edge-ios",
+  "device": {
+    "id": "REDACTED_IPHONE_UDID",
+    "family": "apple",
+    "appleOs": "ios",
+    "kind": "device",
+    "target": "mobile",
+    "iosPhysicalDeviceBackend": "coredevice"
+  },
+  "owner": {
+    "kind": "local-family",
+    "family": "apple"
+  },
+  "lifecycle": "open",
+  "descriptor": {
+    "version": 1,
+    "body": {
+      "backend": "runner",
+      "outputPath": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/edge-standard/ios-release-cold-start.mp4",
+      "appBundleId": "com.probe.e2e",
+      "runnerSessionId": "REDACTED_IPHONE_UDID:54355:1794868574541",
+      "runnerAuthority": "local-lease",
+      "remotePath": "tmp/agent-device-recording-1794869470722.mp4"
+    }
+  },
+  "metadata": {
+    "phase": "cleanup-pending",
+    "cleanupStatus": "cleanup-pending",
+    "cleanupPendingReason": "cleanup-unconfirmed",
+    "cleanupPendingMessage": "Apple runner session ownership changed before command dispatch"
+  }
+}

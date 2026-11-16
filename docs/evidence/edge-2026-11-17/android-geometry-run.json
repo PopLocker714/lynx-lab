@@ -1,0 +1,19 @@
+{
+  "command": [
+    "adb",
+    "-s",
+    "REDACTED_PIXEL_SERIAL",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "com.probe.e2e.EdgeGeometryDeviceTest",
+    "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "started": "2026-11-16T22:36:24.179124+00:00",
+  "ended": "2026-11-16T22:36:28.402074+00:00",
+  "processExitCode": 0
+}

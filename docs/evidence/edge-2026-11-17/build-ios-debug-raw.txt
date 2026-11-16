@@ -1,0 +1,243 @@
+        ➜ Explicit dependency on target 'Sparkling-DebugTool' in project 'Sparkling-DebugTool'
+        ➜ Explicit dependency on target 'Sparkling-Router' in project 'Sparkling-Router'
+        ➜ Explicit dependency on target 'SparklingMacro' in project 'SparklingMacro'
+        ➜ Explicit dependency on target 'SparklingMethod' in project 'SparklingMethod'
+        ➜ Explicit dependency on target 'libwebp' in project 'libwebp'
+    Target 'Sparkling-Router' in project 'Sparkling-Router'
+        ➜ Explicit dependency on target 'Mantle' in project 'Mantle'
+        ➜ Explicit dependency on target 'SparklingMethod' in project 'SparklingMethod'
+    Target 'Sparkling-DebugTool' in project 'Sparkling-DebugTool'
+        ➜ Explicit dependency on target 'DebugRouter' in project 'DebugRouter'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxDevtool' in project 'LynxDevtool'
+        ➜ Explicit dependency on target 'LynxService-Devtool-Http-Image-Log' in project 'LynxService'
+        ➜ Explicit dependency on target 'Sparkling-DebugTool-SparklingDebugToolAssets' in project 'Sparkling-DebugTool'
+    Target 'Sparkling-DebugTool-SparklingDebugToolAssets' in project 'Sparkling-DebugTool' (no dependencies)
+    Target 'Sparkling' in project 'Sparkling'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxBase' in project 'LynxBase'
+        ➜ Explicit dependency on target 'LynxServiceAPI' in project 'LynxServiceAPI'
+        ➜ Explicit dependency on target 'SnapKit' in project 'SnapKit'
+        ➜ Explicit dependency on target 'Sparkling-sparklingPageResource' in project 'Sparkling'
+        ➜ Explicit dependency on target 'SparklingMacro' in project 'SparklingMacro'
+        ➜ Explicit dependency on target 'SparklingMethod' in project 'SparklingMethod'
+    Target 'SparklingMethod' in project 'SparklingMethod'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxBase' in project 'LynxBase'
+        ➜ Explicit dependency on target 'LynxServiceAPI' in project 'LynxServiceAPI'
+        ➜ Explicit dependency on target 'Mantle' in project 'Mantle'
+        ➜ Explicit dependency on target 'PrimJS-a618e9fd' in project 'PrimJS'
+    Target 'SparklingMacro' in project 'SparklingMacro' (no dependencies)
+    Target 'Sparkling-sparklingPageResource' in project 'Sparkling' (no dependencies)
+    Target 'SnapKit' in project 'SnapKit'
+        ➜ Explicit dependency on target 'SnapKit-SnapKit_Privacy' in project 'SnapKit'
+    Target 'SnapKit-SnapKit_Privacy' in project 'SnapKit' (no dependencies)
+    Target 'Mantle' in project 'Mantle' (no dependencies)
+    Target 'LynxService-Devtool-Http-Image-Log' in project 'LynxService'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxBase' in project 'LynxBase'
+        ➜ Explicit dependency on target 'LynxDevtool' in project 'LynxDevtool'
+        ➜ Explicit dependency on target 'LynxServiceAPI' in project 'LynxServiceAPI'
+        ➜ Explicit dependency on target 'SDWebImage' in project 'SDWebImage'
+        ➜ Explicit dependency on target 'SDWebImageWebPCoder' in project 'SDWebImageWebPCoder'
+    Target 'SDWebImageWebPCoder' in project 'SDWebImageWebPCoder'
+        ➜ Explicit dependency on target 'SDWebImage' in project 'SDWebImage'
+        ➜ Explicit dependency on target 'libwebp' in project 'libwebp'
+    Target 'libwebp' in project 'libwebp' (no dependencies)
+    Target 'SDWebImage' in project 'SDWebImage' (no dependencies)
+    Target 'LynxSecureStore' in project 'LynxSecureStore'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+    Target 'LynxLibraryRegistry' in project 'LynxLibraryRegistry'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+    Target 'LynxEdgeToEdge' in project 'LynxEdgeToEdge'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+    Target 'LynxDevtool' in project 'LynxDevtool'
+        ➜ Explicit dependency on target 'BaseDevtool' in project 'BaseDevtool'
+        ➜ Explicit dependency on target 'DebugRouter' in project 'DebugRouter'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxBase' in project 'LynxBase'
+        ➜ Explicit dependency on target 'LynxDevtool-LynxDebugResources' in project 'LynxDevtool'
+        ➜ Explicit dependency on target 'PrimJS-85d3fa4e' in project 'PrimJS'
+        ➜ Explicit dependency on target 'SocketRocket' in project 'SocketRocket'
+    Target 'SocketRocket' in project 'SocketRocket' (no dependencies)
+    Target 'PrimJS-85d3fa4e' in project 'PrimJS' (no dependencies)
+    Target 'LynxDevtool-LynxDebugResources' in project 'LynxDevtool' (no dependencies)
+    Target 'LynxCrypto' in project 'LynxCrypto'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+    Target 'LynxAppLifecycle' in project 'LynxAppLifecycle'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+    Target 'BaseDevtool' in project 'BaseDevtool'
+        ➜ Explicit dependency on target 'BaseDevtool-LynxBaseDevToolResources' in project 'BaseDevtool'
+        ➜ Explicit dependency on target 'DebugRouter' in project 'DebugRouter'
+        ➜ Explicit dependency on target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxBase' in project 'LynxBase'
+    Target 'Lynx' in project 'Lynx'
+        ➜ Explicit dependency on target 'Lynx-LynxResources' in project 'Lynx'
+        ➜ Explicit dependency on target 'LynxBase' in project 'LynxBase'
+        ➜ Explicit dependency on target 'LynxServiceAPI' in project 'LynxServiceAPI'
+        ➜ Explicit dependency on target 'PrimJS-a618e9fd' in project 'PrimJS'
+    Target 'PrimJS-a618e9fd' in project 'PrimJS' (no dependencies)
+    Target 'LynxBase' in project 'LynxBase'
+        ➜ Explicit dependency on target 'LynxServiceAPI' in project 'LynxServiceAPI'
+    Target 'LynxServiceAPI' in project 'LynxServiceAPI' (no dependencies)
+    Target 'Lynx-LynxResources' in project 'Lynx' (no dependencies)
+    Target 'DebugRouter' in project 'DebugRouter' (no dependencies)
+    Target 'BaseDevtool-LynxBaseDevToolResources' in project 'BaseDevtool' (no dependencies)
+GatherProvisioningInputs
+CreateBuildDescription
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk -x c -c /dev/null
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk -x c -c /dev/null
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --version --output-format xml1
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk -x objective-c -c /dev/null
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk -x c++ -c /dev/null
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk -x objective-c++ -c /dev/null
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc --version
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/libtool -V
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/usr/bin/actool --print-asset-tag-combinations --output-format xml1 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/Preview Content/Preview Assets.xcassets /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/Assets.xcassets
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -v -E -dM -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk -x assembler-with-cpp -c /dev/null
+ExecuteExternalTool /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ld -version_details
+Build description signature: a0658e8974c1ff0f6c6af3387d935a58
+Build description path: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/XCBuildData/a0658e8974c1ff0f6c6af3387d935a58.xcbuilddata
+ClangStatCache /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang-stat-cache /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/SDKStatCaches.noindex/iphoneos27.2-24B8118-6890c9e4970e00494a266ff652f095d9.sdkstatcache
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge-d04084ebc362614fb9b1cc02a511cc4c-VFS-iphoneos/all-product-headers.yaml
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge-d04084ebc362614fb9b1cc02a511cc4c-VFS-iphoneos/all-product-headers.yaml
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto-ece68ffcdb644b2854d9ccda8300cea5-VFS-iphoneos/all-product-headers.yaml
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto-ece68ffcdb644b2854d9ccda8300cea5-VFS-iphoneos/all-product-headers.yaml
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore-1bb8a067c90a1ae768cdce03418d9b63-VFS-iphoneos/all-product-headers.yaml
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore-1bb8a067c90a1ae768cdce03418d9b63-VFS-iphoneos/all-product-headers.yaml
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle-037b6b9ad186d2291755d7dc3eb52153-VFS-iphoneos/all-product-headers.yaml
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle-037b6b9ad186d2291755d7dc3eb52153-VFS-iphoneos/all-product-headers.yaml
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/SparklingGoInHouse-project-headers.hmap (in target 'SparklingGoInHouse' from project 'SparklingGo')
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/SparklingGoInHouse-project-headers.hmap
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/SparklingGoInHouse.LinkFileList (in target 'SparklingGoInHouse' from project 'SparklingGo')
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/SparklingGoInHouse.LinkFileList
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'PrimJS-a618e9fd' from project 'PrimJS')
+    /bin/sh -c /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/PrimJS.build/Debug-iphoneos/PrimJS-a618e9fd.build/Script-3781BF85D79EB0F20BB3D9670657D1A6.sh
+    /bin/sh -c /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/DebugRouter.build/Debug-iphoneos/DebugRouter.build/Script-7A4DE96FC895FBFD78EAC764216B70BE.sh
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore.build/LynxSecureStore-all-target-headers.hmap (in target 'LynxSecureStore' from project 'LynxSecureStore')
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore.build/LynxSecureStore-all-target-headers.hmap
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/LynxEdgeToEdge-all-target-headers.hmap (in target 'LynxEdgeToEdge' from project 'LynxEdgeToEdge')
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/LynxEdgeToEdge-all-target-headers.hmap
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto.build/LynxCrypto-all-target-headers.hmap (in target 'LynxCrypto' from project 'LynxCrypto')
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto.build/LynxCrypto-all-target-headers.hmap
+WriteAuxiliaryFile /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/LynxAppLifecycle-all-target-headers.hmap (in target 'LynxAppLifecycle' from project 'LynxAppLifecycle')
+    write-file /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/LynxAppLifecycle-all-target-headers.hmap
+    /bin/sh -c /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/PrimJS.build/Debug-iphoneos/PrimJS-85d3fa4e.build/Script-1DC1E1646AE50FAF7124635B553BB608.sh
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/Objects-normal/arm64/LEESafeAreaStore.o /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-lab+edge-to-edge@.+vendor+edge-to-edge-5c235a69.tgz+60c2ac425c33c361/node_modules/@lynx-lab/edge-to-edge/ios/src/LEESafeAreaStore.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxEdgeToEdge' from project 'LynxEdgeToEdge')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore.build/Objects-normal/arm64/LynxSecureStoreModule.o /Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-341fba16.tgz-0bab43388a510364/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxSecureStore' from project 'LynxSecureStore')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto.build/Objects-normal/arm64/LynxCryptoModule.o /Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-9d510aa2.tgz+bb8e78adca66c375-4713a204209b99c9/node_modules/@lynx-lab/crypto/ios/src/LynxCryptoModule.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxCrypto' from project 'LynxCrypto')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/Objects-normal/arm64/LALAppStateStore.o /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-lab+app-lifecycle@.+vendor+app-lifecycle-a4b85e8d.tgz+60c2ac425c33c361/node_modules/@lynx-lab/app-lifecycle/ios/src/LALAppStateStore.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxAppLifecycle' from project 'LynxAppLifecycle')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxLibraryRegistry.build/Debug-iphoneos/LynxLibraryRegistry.build/Objects-normal/arm64/LynxGeneratedLibraryRegistry.o /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/generated/lynx-library/LynxGeneratedLibraryRegistry.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxLibraryRegistry' from project 'LynxLibraryRegistry')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxLibraryRegistry.build/Debug-iphoneos/LynxLibraryRegistry.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxLibraryRegistry.build/Debug-iphoneos/LynxLibraryRegistry.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/Objects-normal/arm64/LynxAppLifecycleModule.o /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-lab+app-lifecycle@.+vendor+app-lifecycle-a4b85e8d.tgz+60c2ac425c33c361/node_modules/@lynx-lab/app-lifecycle/ios/src/LynxAppLifecycleModule.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxAppLifecycle' from project 'LynxAppLifecycle')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/Objects-normal/arm64/LynxEdgeToEdgeModule.o /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-lab+edge-to-edge@.+vendor+edge-to-edge-5c235a69.tgz+60c2ac425c33c361/node_modules/@lynx-lab/edge-to-edge/ios/src/LynxEdgeToEdgeModule.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'LynxEdgeToEdge' from project 'LynxEdgeToEdge')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxAppLifecycle.build/Debug-iphoneos/LynxAppLifecycle.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxEdgeToEdge.build/Debug-iphoneos/LynxEdgeToEdge.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+Libtool /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/LynxSecureStore/LynxSecureStore.framework/LynxSecureStore normal (in target 'LynxSecureStore' from project 'LynxSecureStore')
+Libtool /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/LynxEdgeToEdge/LynxEdgeToEdge.framework/LynxEdgeToEdge normal (in target 'LynxEdgeToEdge' from project 'LynxEdgeToEdge')
+Libtool /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/LynxCrypto/LynxCrypto.framework/LynxCrypto normal (in target 'LynxCrypto' from project 'LynxCrypto')
+Libtool /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/LynxAppLifecycle/LynxAppLifecycle.framework/LynxAppLifecycle normal (in target 'LynxAppLifecycle' from project 'LynxAppLifecycle')
+Libtool /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/LynxLibraryRegistry/LynxLibraryRegistry.framework/LynxLibraryRegistry normal (in target 'LynxLibraryRegistry' from project 'LynxLibraryRegistry')
+    /bin/sh -c /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxDevtool.build/Debug-iphoneos/LynxDevtool.build/Script-0C7732C5F9938453967E3DDF73134DE8.sh
+    /bin/sh -c /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Script-0DDC3B8F8DD3FF44E7198169.sh
+SwiftDriver SparklingGoInHouse normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftGeneratePch normal arm64 Compiling\ bridging\ header (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling bridging header (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ SparklingGoApp.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingGoApp.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingGoApp.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ SparklingSwiftUIView.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingSwiftUIView.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingSwiftUIView.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ SparklingSwiftVC.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ GeneratedAssetSymbols.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/DerivedSources/GeneratedAssetSymbols.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftEmitModule normal arm64 Emitting\ module\ for\ SparklingGoInHouse (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling SparklingSwiftUIView.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ SparklingGoTrackerService.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/TrackerService/SparklingGoTrackerService.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/TrackerService/SparklingGoTrackerService.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ DebugConsoleSupport.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/DebugConsoleSupport.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/DebugConsoleSupport.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling GeneratedAssetSymbols.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling SparklingGoApp.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ ContentView.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/ContentView.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/ContentView.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling SparklingSwiftVC.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ DebugDevURLSupport.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling DebugConsoleSupport.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ RouterServiceImpl.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/MethodServices/RouterServiceImpl.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/MethodServices/RouterServiceImpl.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling SparklingGoTrackerService.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ StorageServiceImpl.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/MethodServices/StorageServiceImpl.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/MethodServices/StorageServiceImpl.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling ContentView.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ SPKServiceRegistrar.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/MethodServices/SPKServiceRegistrar.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/MethodServices/SPKServiceRegistrar.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Emitting module for SparklingGoInHouse (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriver\ Compilation\ Requirements SparklingGoInHouse normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling StorageServiceImpl.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 Compiling\ SparklingAutolink.swift /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingAutolink.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftCompile normal arm64 /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/SparklingAutolink.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+Copy /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.swiftmodule/arm64-apple-ios.swiftmodule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/SparklingGoInHouse.swiftmodule (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling RouterServiceImpl.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+Copy /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.swiftmodule/arm64-apple-ios.abi.json /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/SparklingGoInHouse.abi.json (in target 'SparklingGoInHouse' from project 'SparklingGo')
+Copy /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/SparklingGoInHouse.swiftsourceinfo (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling DebugDevURLSupport.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+ScanDependencies /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/EdgeGeometryProbe.o /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/EdgeGeometryProbe.m normal arm64 objective-c com.apple.compilers.llvm.clang.1_0.compiler (in target 'SparklingGoInHouse' from project 'SparklingGo')
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+SwiftDriverJobDiscovery normal arm64 Compiling SPKServiceRegistrar.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriverJobDiscovery normal arm64 Compiling SparklingAutolink.swift (in target 'SparklingGoInHouse' from project 'SparklingGo')
+SwiftDriver\ Compilation SparklingGoInHouse normal arm64 com.apple.xcode.tools.swift.compiler (in target 'SparklingGoInHouse' from project 'SparklingGo')
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/MachO-EAIQRLR428H3I9N8F7FOFP7VI.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_stdatomic-7OGVRP5J9I72DTINBU2RW2DOH.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/LynxServiceAPI-5S96QS9Z007E4KWE1YZQ1BPNZ.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/_Builtin_intrinsics-CK6KTKICEINZA2RT5UMB00ZO0.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/LynxBase-384ECHL0VKT9XUT5TH2FEBET3.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/os-E92NL8YKBEP7IMFVAQO93FGY.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/Accelerate-9QKULUFPUHE1DPTL3PA0CGNFZ.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/Lynx-6VODRINCF3VYG88PDQNKFHQDN.scan
+PrecompileModule /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/LynxEdgeToEdge-8257M77J6UB6RP76TF3ZYSLHA.scan
+    Using response file: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/Objects-normal/arm64/e6072d4f65d7061329687fe24e3d63a7-common-args.resp
+ConstructStubExecutorLinkFileList /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/SparklingGoInHouse-ExecutorLinkFileList-normal-arm64.txt (in target 'SparklingGoInHouse' from project 'SparklingGo')
+    construct-stub-executor-link-file-list /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.app/SparklingGoInHouse.debug.dylib /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libPreviewsJITStubExecutor_no_swift_entry_point.a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/usr/lib/libPreviewsJITStubExecutor.a --output /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SparklingGo.build/Debug-iphoneos/SparklingGoInHouse.build/SparklingGoInHouse-ExecutorLinkFileList-normal-arm64.txt
+note: Using stub executor library with Swift entry point. (in target 'SparklingGoInHouse' from project 'SparklingGo')
+ExtractAppIntentsMetadata (in target 'SparklingGoInHouse' from project 'SparklingGo')
+2026-11-17 01:33:26.875 appintentsmetadataprocessor[84696:20294579] Starting App Intents metadata extraction
+2026-11-17 01:33:26.883 appintentsmetadataprocessor[84696:20294579] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+    Signing Identity:     "REDACTED_SIGNING_IDENTITY"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (REDACTED_PROVISIONING_PROFILE_UUID)
+    Signing Identity:     "REDACTED_SIGNING_IDENTITY"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (REDACTED_PROVISIONING_PROFILE_UUID)
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.app/__preview.dylib: replacing existing signature
+    Signing Identity:     "REDACTED_SIGNING_IDENTITY"
+    Provisioning Profile: "iOS Team Provisioning Profile: *"
+                          (REDACTED_PROVISIONING_PROFILE_UUID)
+PruneExplicitPrecompiledModules /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/SDKExplicitPrecompiledModules
+PruneExplicitPrecompiledModules /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/SwiftExplicitPrecompiledModules
+PruneExplicitPrecompiledModules /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo.xcodeproj: warning: Multiple targets match implicit dependency for linker flags '-framework LynxService'. Consider adding an explicit dependency on the intended target to resolve this ambiguity. (in target 'SparklingGoInHouse' from project 'SparklingGo')
+    note: Target 'LynxService-Devtool-Http-Image-Log' (in project 'LynxService')
+    note: Target 'LynxService-Http-Image-Log' (in project 'LynxService')
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo.xcodeproj: warning: Multiple targets match implicit dependency for linker flags '-framework PrimJS'. Consider adding an explicit dependency on the intended target to resolve this ambiguity. (in target 'SparklingGoInHouse' from project 'SparklingGo')
+    note: Target 'PrimJS-85d3fa4e' (in project 'PrimJS')
+    note: Target 'PrimJS-a618e9fd' (in project 'PrimJS')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DebugRouter' from project 'DebugRouter')
+warning: no rule to process file '/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/DebugRouter/debug_router/native/BUILD.gn' of type 'text' for architecture 'arm64' (in target 'DebugRouter' from project 'DebugRouter')
+warning: no rule to process file '/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/DebugRouter/debug_router/native/base/LICENSE' of type 'text' for architecture 'arm64' (in target 'DebugRouter' from project 'DebugRouter')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'PrimJS-85d3fa4e' from project 'PrimJS')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'LynxDevtool' from project 'LynxDevtool')
+** BUILD SUCCEEDED **
