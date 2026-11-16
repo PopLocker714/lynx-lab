@@ -1,0 +1,266 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "label": "Sparkling Template",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 896
+        },
+        "hittable": false,
+        "enabled": true,
+        "index": 0,
+        "type": "Application",
+        "depth": 0,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "label": "lynxview",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 896
+        },
+        "hittable": true,
+        "parentIndex": 0,
+        "enabled": true,
+        "index": 1,
+        "type": "Other",
+        "depth": 1,
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 414,
+          "height": 896
+        },
+        "hittable": true,
+        "parentIndex": 1,
+        "enabled": true,
+        "index": 2,
+        "type": "Other",
+        "depth": 2,
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "x": 0,
+          "y": 52,
+          "width": 414,
+          "height": 39.5
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "index": 3,
+        "type": "Other",
+        "depth": 3,
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "x": 18,
+          "y": 62,
+          "width": 378,
+          "height": 19.5
+        },
+        "hittable": true,
+        "parentIndex": 3,
+        "enabled": true,
+        "index": 4,
+        "type": "StaticText",
+        "depth": 4,
+        "ref": "e5",
+        "kind": "text"
+      },
+      {
+        "label": "Run Secure Store checks",
+        "rect": {
+          "x": 12,
+          "y": 107.5,
+          "width": 390,
+          "height": 43.5
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "index": 5,
+        "type": "Other",
+        "depth": 3,
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "label": "Run Secure Store checks",
+        "rect": {
+          "x": 24,
+          "y": 119.5,
+          "width": 366,
+          "height": 19.5
+        },
+        "hittable": true,
+        "parentIndex": 5,
+        "enabled": true,
+        "index": 6,
+        "type": "StaticText",
+        "depth": 4,
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "label": "persistence: stored marker found",
+        "rect": {
+          "x": 12,
+          "y": 161,
+          "width": 390,
+          "height": 17
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "index": 7,
+        "type": "StaticText",
+        "depth": 3,
+        "ref": "e8",
+        "kind": "text"
+      },
+      {
+        "index": 8,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "x": 114.5,
+          "y": 341.5,
+          "width": 185.5,
+          "height": 28.5
+        },
+        "parentIndex": 2,
+        "label": "PKG edge-to-edge day 5",
+        "enabled": true,
+        "ref": "e9",
+        "kind": "text"
+      },
+      {
+        "index": 9,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "x": 19.5,
+          "y": 370,
+          "width": 375,
+          "height": 28.5
+        },
+        "parentIndex": 2,
+        "label": "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=5 globalProps",
+        "enabled": true,
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "index": 10,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "x": 14.5,
+          "y": 398.5,
+          "width": 385.5,
+          "height": 57
+        },
+        "parentIndex": 2,
+        "label": "events: g1 t48 b34 k0 globalProps | g2 t0 b21 k0 globalProps | g3 t48 b34 k0 globalProps | g4 t0 b21 k0 globalProps | g5 t48 b34 k0 globalProps",
+        "enabled": true,
+        "ref": "e11",
+        "kind": "text"
+      },
+      {
+        "index": 11,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "x": 34,
+          "y": 455.5,
+          "width": 346.5,
+          "height": 28.5
+        },
+        "parentIndex": 2,
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "enabled": true,
+        "ref": "e12",
+        "kind": "text"
+      },
+      {
+        "index": 12,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "x": 71.5,
+          "y": 484,
+          "width": 271.5,
+          "height": 71.5
+        },
+        "parentIndex": 2,
+        "label": "log:\nrefresh: done g=3 t=48.0 globalProps\nrefresh: called",
+        "enabled": true,
+        "ref": "e13",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 13,
+      "totalNodeCount": 13,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 131.5399408340454,
+        "presentationMs": 0.3629922866821289
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 11,
+        "p50Ms": 331,
+        "p95Ms": 4720,
+        "maxMs": 4720,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 11
+        }
+      }
+    },
+    "refsGeneration": 469388
+  }
+}

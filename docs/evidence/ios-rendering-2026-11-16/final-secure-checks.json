@@ -1,0 +1,181 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "label": "Sparkling Template",
+        "rect": {
+          "y": 0,
+          "height": 896,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": false,
+        "index": 0,
+        "enabled": true,
+        "type": "Application",
+        "depth": 0,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "label": "lynxview",
+        "rect": {
+          "y": 0,
+          "height": 896,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "parentIndex": 0,
+        "index": 1,
+        "enabled": true,
+        "type": "Other",
+        "depth": 1,
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "y": 0,
+          "height": 896,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "parentIndex": 1,
+        "index": 2,
+        "enabled": true,
+        "type": "Other",
+        "depth": 2,
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "y": 52,
+          "height": 39.5,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "index": 3,
+        "enabled": true,
+        "type": "Other",
+        "depth": 3,
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "y": 62,
+          "height": 19.5,
+          "x": 18,
+          "width": 378
+        },
+        "hittable": true,
+        "parentIndex": 3,
+        "index": 4,
+        "enabled": true,
+        "type": "StaticText",
+        "depth": 4,
+        "ref": "e5",
+        "kind": "text"
+      },
+      {
+        "label": "Run Secure Store checks",
+        "rect": {
+          "y": 107.5,
+          "height": 43.5,
+          "x": 12,
+          "width": 390
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "index": 5,
+        "enabled": true,
+        "type": "Other",
+        "depth": 3,
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "label": "Run Secure Store checks",
+        "rect": {
+          "y": 119.5,
+          "height": 19.5,
+          "x": 24,
+          "width": 366
+        },
+        "hittable": true,
+        "parentIndex": 5,
+        "index": 6,
+        "enabled": true,
+        "type": "StaticText",
+        "depth": 4,
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "label": "Secure Store: running\nPASS absent + idempotent delete\nPASS write/read + overwrite\nPASS empty + unicode + NUL\nPASS 16 KiB UTF-8 boundary\nPASS invalid keys + malformed UTF-16\nPASS 256-character key\nPASS concurrent independent records\nPASS ordered concurrent writes\nPASS delete + read null\nPASS seed process persistence\nSECURE STORE PASS 10/10",
+        "rect": {
+          "y": 161,
+          "height": 200.5,
+          "x": 12,
+          "width": 390
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "index": 7,
+        "enabled": true,
+        "type": "StaticText",
+        "depth": 3,
+        "ref": "e8",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 8,
+      "totalNodeCount": 8,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 120.02098560333252,
+        "presentationMs": 0.42808055877685547
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 31,
+        "p50Ms": 343,
+        "p95Ms": 600,
+        "maxMs": 4720,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 31
+        }
+      }
+    },
+    "refsGeneration": 469408
+  }
+}

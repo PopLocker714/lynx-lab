@@ -1,0 +1,214 @@
+{
+  "device": "REDACTED_IPHONE_UDID",
+  "runtime": "3.9.0",
+  "experiment": "Only gate unregistered input on iOS; native shell unchanged",
+  "reversal": "Original app restored stale text; rotate after panel roundtrip exposes duplicate labels",
+  "snapshots": [
+    {
+      "file": "after-refresh-rotate.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "baseline-existing.json",
+      "counts": {
+        "current:": 2,
+        "events:": 2,
+        "log:": 2
+      }
+    },
+    {
+      "file": "baseline-fresh.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "baseline-landscape.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "baseline-return.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "baseline-secure-stale.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "baseline-toggle-duplicate.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-landscape-1.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-landscape-2.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-landscape-3.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-portrait-1.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-portrait-2.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-portrait-3.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "final-secure-1.json",
+      "counts": {
+        "current:": 0,
+        "events:": 0,
+        "log:": 0
+      }
+    },
+    {
+      "file": "final-secure-2.json",
+      "counts": {
+        "current:": 0,
+        "events:": 0,
+        "log:": 0
+      }
+    },
+    {
+      "file": "final-secure-3.json",
+      "counts": {
+        "current:": 0,
+        "events:": 0,
+        "log:": 0
+      }
+    },
+    {
+      "file": "final-secure-checks.json",
+      "counts": {
+        "current:": 0,
+        "events:": 0,
+        "log:": 0
+      }
+    },
+    {
+      "file": "installed-final.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "installed-secure-checks.json",
+      "counts": {
+        "current:": 0,
+        "events:": 0,
+        "log:": 0
+      }
+    },
+    {
+      "file": "no-input-return.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "no-input-secure.json",
+      "counts": {
+        "current:": 0,
+        "events:": 0,
+        "log:": 0
+      }
+    },
+    {
+      "file": "reversal-duplicate.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    },
+    {
+      "file": "reversal-rotated.json",
+      "counts": {
+        "current:": 2,
+        "events:": 2,
+        "log:": 2
+      }
+    },
+    {
+      "file": "reversal-secure.json",
+      "counts": {
+        "current:": 1,
+        "events:": 1,
+        "log:": 1
+      }
+    }
+  ],
+  "bundle_sha256": "301e03171f2df19f719b63f4f676cc1300eef5c896c2aeb6166a94476c9279fb",
+  "tsc": "Three pre-existing errors: SafeAreaView.tsx:26, App.test.tsx:12, spike.ts:13",
+  "secure_store": "10/10",
+  "review": "Self-review; delegation prohibited",
+  "probe_commit": "aeb270696bfdf041a3125865fdd28f7e898b3760",
+  "ios_bar_docs_commit": "4fb75f1",
+  "validation_scope": {
+    "physical_device": "iPhone 11 / iOS 18.4.1",
+    "native_shell": "Existing Release app, JS bundle replaced and re-signed",
+    "native_debug_rebuilt": false,
+    "physical_android_retested": false,
+    "package_runtime_changed": false
+  },
+  "parent_review": "Raw diff and UI snapshot counts reviewed; reversal reproduces stale labels, final three cycles clear them; installed Secure Store reports 10/10."
+}

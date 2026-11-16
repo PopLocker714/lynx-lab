@@ -16,8 +16,11 @@ iPhone 11 / iOS 18.4.1: Debug/Release сборки, начальные globalPro
 refresh, поворот (left=right=48, bottom=21), возврат в portrait; в Debug события клавиатуры
 (0→346→0 pt) проверены. Клавиатура вызвана нативным полем debug-панели:
 Lynx `<input>` в старом iOS-хосте не зарегистрирован. Стиль/скрытие баров —
-документированные no-op в v1. После поворота пробник сохраняет дубли старых
-текстовых строк; текущая строка и подписка обновляются, причина дублей не установлена.
+документированные no-op в v1. Дубли старых текстовых строк устранены в probe
+`aeb2706`: незарегистрированный iOS input мешал удалению поддерева при смене панелей.
+Без него три цикла переключений/refresh/поворота прошли без дублей; возврат
+исходного bundle воспроизвёл дефект. Пакет не менялся.
+[Evidence исправления](../evidence/ios-rendering-2026-11-16/results.json).
 [iOS evidence](../evidence/ios-2026-11-16/results.json).
 
 Safe area, инсеты и системные бары. Аналог `react-native-edge-to-edge` плюс
@@ -245,17 +248,16 @@ resource from the app is used». Библиотека может подложи�
 
 **iOS — ноль шагов для инсетов**, `pod install` и всё.
 
-**iOS system bars — единственный ручной шаг, и он не в v1.** Config-плагинов у Sparkling
-нет, `Info.plist` пакет инжектить не может. В v1.1 автор добавляет руками:
-
-```xml
-<key>UIViewControllerBasedStatusBarAppearance</key>
-<false/>
-```
-
-Ровно этот ключ единственная причина, по которой `StatusBar.setBarStyle` работает
-в React Native. **В v1 iOS-методы баров это честные no-op, и README говорит это прямым
-текстом, а не молчит.**
+**iOS system bars — ответственность native host.** Для safe-area не требуется
+скрывать статус-бар или менять его стиль. В v1 setters и `<SystemBars>` управляют
+барами Android, на iOS их нативные методы — no-op. Динамическую политику iOS экрана
+задаёт владеющий контроллер через `preferredStatusBarStyle`, `prefersStatusBarHidden`
+и `setNeedsStatusBarAppearanceUpdate()`. Sparkling уже использует эти overrides.
+`UIViewControllerBasedStatusBarAppearance=NO` не является требованием пакета;
+прежнее обещание такого пути в v1.1 снято. Navigation bar приложения и системный
+Home indicator не эквивалентны Android system navigation bar.
+[Apple UIViewController](https://developer.apple.com/documentation/uikit/uiviewcontroller),
+[Home indicator](https://developer.apple.com/documentation/uikit/uiviewcontroller/prefershomeindicatorautohidden).
 
 ## Что пишет автор в коде
 

@@ -16,8 +16,16 @@ edge-to-edge: начальные globalProps top=48/bottom=34, refresh, пово
 left=right=48/bottom=21, возврат в portrait и keyboardHeight 0→346→0 pt.
 Клавиатура проверена через нативное поле debug-панели: Lynx input в старом
 iOS-хосте не подключён. Стиль/скрытие баров на iOS остаются no-op в v1.
-После поворота пробник в Debug и Release рисует дубли старых текстовых строк; текущие значения
-и подписка обновляются, причина дублей не расследована.
+Дубли текста исправлены в probe `aeb2706`: незарегистрированный iOS `<input>`
+мешал удалению поддерева при переключении панелей, поворот делал оставшиеся строки
+заметными. Контролируемый эксперимент без input и возврат исходной сборки
+подтвердили причину. Три цикла переключений/refresh/поворота без дублей,
+Secure Store 10/10 на исправленном bundle. Native Release shell не менялся;
+новая native Debug-сборка и повторный Android-прогон не выполнялись.
+[Evidence исправления](docs/evidence/ios-rendering-2026-11-16/results.json).
+iOS status bar оставлен native host: safe-area не требует его управления.
+README/JSDoc пакета уточнены в `4fb75f1`, `docs/ios-host-contract`,
+worktree `../lynx-edge-to-edge-ios-contract`; runtime API не менялся.
 Сборка Xcode 27.2 требует override `IPHONEOS_DEPLOYMENT_TARGET=15.6` для старых
 Pods; библиотечный минимум iOS 12 этим не проверен. Interceptor не подключился
 (-1009, в Local Network runner отсутствует); QA выполнена через отдельную
@@ -305,8 +313,10 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 1. Для Secure Store остаются locked-device, reinstall/backup/restore и callback
    после уничтожения Lynx view. API и код проверены на runtime 3.9.0, не на 4.0.1.
-2. Для edge-to-edge учесть iOS no-op style/hidden, отсутствие Lynx input в старом
-   iOS-пробнике и дубли текста после поворота; не считать весь host production-ready.
+2. Для edge-to-edge iOS style/hidden остаются ответственностью native host.
+   Неработающие controls и незарегистрированный iOS input заменены пояснениями
+   в probe; дубли устранены. При необходимости теста Lynx input на iOS его нужно
+   отдельно подключить в host; весь старый host не сертифицирован для production.
 3. Изменения сохранены в task-ветках, main не интегрирован. Перед релизом отдельно
    согласовать интеграцию, версии, публикацию и настройку OIDC; эта QA-задача
    не разрешает npm publish, push или изменение видимости репозиториев.

@@ -1,0 +1,310 @@
+src/pages/main/App.tsx | 133 +++++++++++++++++++++++++++++++++++--------------
+ 1 file changed, 95 insertions(+), 38 deletions(-)
+
+diff --git a/src/pages/main/App.tsx b/src/pages/main/App.tsx
+index cd7249c..6c09534 100644
+--- a/src/pages/main/App.tsx
++++ b/src/pages/main/App.tsx
+@@ -17,13 +17,18 @@ import { SecureStorePanel } from './SecureStorePanel.js'
+ 
+ import './App.css'
+ 
++const isIOS = SystemInfo.platform === 'iOS'
++
+ let renderCount = 0
+ const initialSnapshot = getSafeAreaSnapshot()
+ spike('module-scope', initialSnapshot)
+ 
+ function Btn(props: { label: string; onTap: () => void }) {
+   return (
+-    <view bindtap={props.onTap} style="margin:4px 0;padding:10px 18px;background-color:#111111;border-radius:10px;">
++    <view
++      bindtap={props.onTap}
++      style="margin:4px 0;padding:10px 18px;background-color:#111111;border-radius:10px;"
++    >
+       <text style="color:#ffffff;font-size:16px;">{props.label}</text>
+     </view>
+   )
+@@ -48,7 +53,10 @@ function Body() {
+     const off = subscribeSafeArea((s) => {
+       spike('subscribe', s)
+       setEvents((prev) =>
+-        [...prev, `g${s.generation} t${s.insets.top} b${s.insets.bottom} k${s.keyboardHeight} ${s.source}`].slice(-6)
++        [
++          ...prev,
++          `g${s.generation} t${s.insets.top} b${s.insets.bottom} k${s.keyboardHeight} ${s.source}`,
++        ].slice(-6),
+       )
+     })
+     return off
+@@ -58,42 +66,91 @@ function Body() {
+   const short = `t=${insets.top.toFixed(1)} r=${insets.right} b=${insets.bottom} l=${insets.left.toFixed(1)} kb=${keyboardHeight} g=${snapshot.generation} ${snapshot.source}`
+ 
+   return (
+-    <SafeAreaView edges={['top', 'bottom']} className="page-shell" style="flex:1;background-color:#25f4ee;">
+-      <Btn label={secure ? 'Show edge-to-edge' : 'Show Secure Store'} onTap={() => { 'background only'; setSecure(!secure) }} />
+-      {secure ? <SecureStorePanel /> :
+-      <view style="display:flex;flex-direction:column;align-items:center;padding-top:8px;">
+-        <Btn
+-          label="refresh()"
+-          onTap={() => {
+-            note('refresh: called')
+-            refreshSafeArea().then((s) => note(`refresh: done g=${s.generation} t=${s.insets.top.toFixed(1)} ${s.source}`))
+-          }}
+-        />
+-        <Btn label="style light" onTap={() => { setSystemBarStyle('light'); note('style light') }} />
+-        <Btn label="style dark" onTap={() => { setSystemBarStyle('dark'); note('style dark') }} />
+-        <Btn
+-          label={hidden ? 'bars: show' : 'bars: hide'}
+-          onTap={() => {
+-            const next = !hidden
+-            setHidden(next)
+-            setSystemBarHidden(next)
+-            note(`hidden ${next}`)
+-          }}
+-        />
+-        <input
+-          id="kb"
+-          className="eyebrow"
+-          placeholder="tap to open keyboard"
+-          style="width:80%;height:40px;background-color:#ffffff;color:#000000;border-radius:8px;padding:0 12px;margin:4px 0;"
+-        />
+-        <text className="eyebrow">PKG edge-to-edge day 5</text>
+-        <text className="eyebrow">{`current: ${short}`}</text>
+-        <text className="eyebrow">{`events: ${events.join(' | ')}`}</text>
+-        <text className="eyebrow" style="padding-top:var(--safe-area-inset-top);">
+-          {'css var(--safe-area-inset-top) padding above me'}
+-        </text>
+-        <text className="eyebrow">{`log:\n${log}`}</text>
+-      </view>}
++    <SafeAreaView
++      edges={['top', 'bottom']}
++      className="page-shell"
++      style="flex:1;background-color:#25f4ee;"
++    >
++      <Btn
++        label={secure ? 'Show edge-to-edge' : 'Show Secure Store'}
++        onTap={() => {
++          'background only'
++          setSecure(!secure)
++        }}
++      />
++      {secure ? (
++        <SecureStorePanel />
++      ) : (
++        <view style="display:flex;flex-direction:column;align-items:center;padding-top:8px;">
++          <Btn
++            label="refresh()"
++            onTap={() => {
++              note('refresh: called')
++              refreshSafeArea().then((s) =>
++                note(
++                  `refresh: done g=${s.generation} t=${s.insets.top.toFixed(1)} ${s.source}`,
++                ),
++              )
++            }}
++          />
++          {isIOS ? (
++            <text className="eyebrow">
++              System bars are controlled by the iOS host. Style/visibility
++              controls are Android-only.
++            </text>
++          ) : (
++            <>
++              <Btn
++                label="style light"
++                onTap={() => {
++                  setSystemBarStyle('light')
++                  note('style light')
++                }}
++              />
++              <Btn
++                label="style dark"
++                onTap={() => {
++                  setSystemBarStyle('dark')
++                  note('style dark')
++                }}
++              />
++              <Btn
++                label={hidden ? 'bars: show' : 'bars: hide'}
++                onTap={() => {
++                  const next = !hidden
++                  setHidden(next)
++                  setSystemBarHidden(next)
++                  note(`hidden ${next}`)
++                }}
++              />
++            </>
++          )}
++          {/* This iOS host does not register input. An unknown native element interrupts
++            subtree removal in Lynx 3.9, leaving the following text views attached. */}
++          {isIOS ? (
++            <text className="eyebrow">
++              Keyboard input is unavailable in this iOS probe.
++            </text>
++          ) : (
++            <input
++              id="kb"
++              className="eyebrow"
++              placeholder="tap to open keyboard"
++              style="width:80%;height:40px;background-color:#ffffff;color:#000000;border-radius:8px;padding:0 12px;margin:4px 0;"
++            />
++          )}
++          <text className="eyebrow">PKG edge-to-edge day 5</text>
++          <text className="eyebrow">{`current: ${short}`}</text>
++          <text className="eyebrow">{`events: ${events.join(' | ')}`}</text>
++          <text
++            className="eyebrow"
++            style="padding-top:var(--safe-area-inset-top);"
++          >
++            {'css var(--safe-area-inset-top) padding above me'}
++          </text>
++          <text className="eyebrow">{`log:\n${log}`}</text>
++        </view>
++      )}
+     </SafeAreaView>
+   )
+ }
+
+Changes:
+
+src/pages/main/App.tsx
+@@ -17,13 +17,18 @@ import { SecureStorePanel } from './SecureStorePanel.js'
+ 
+ import './App.css'
+ 
++const isIOS = SystemInfo.platform === 'iOS'
++
+ let renderCount = 0
+ const initialSnapshot = getSafeAreaSnapshot()
+ spike('module-scope', initialSnapshot)
+ 
+ function Btn(props: { label: string; onTap: () => void }) {
+   return (
+-    <view bindtap={props.onTap} style="margin:4px 0;padding:10px 18px;background-color:#111111;border-radius:10px;">
++    <view
++      bindtap={props.onTap}
++      style="margin:4px 0;padding:10px 18px;background-color:#111111;border-radius:10px;"
++    >
+       <text style="color:#ffffff;font-size:16px;">{props.label}</text>
+     </view>
+   )
+@@ -48,7 +53,10 @@ function Body() {
+     const off = subscribeSafeArea((s) => {
+       spike('subscribe', s)
+       setEvents((prev) =>
+-        [...prev, `g${s.generation} t${s.insets.top} b${s.insets.bottom} k${s.keyboardHeight} ${s.source}`].slice(-6)
++        [
++          ...prev,
++          `g${s.generation} t${s.insets.top} b${s.insets.bottom} k${s.keyboardHeight} ${s.source}`,
++        ].slice(-6),
+       )
+     })
+     return off
+@@ -58,42 +66,91 @@ function Body() {
+   const short = `t=${insets.top.toFixed(1)} r=${insets.right} b=${insets.bottom} l=${insets.left.toFixed(1)} kb=${keyboardHeight} g=${snapshot.generation} ${snapshot.source}`
+ 
+   return (
+-    <SafeAreaView edges={['top', 'bottom']} className="page-shell" style="flex:1;background-color:#25f4ee;">
+-      <Btn label={secure ? 'Show edge-to-edge' : 'Show Secure Store'} onTap={() => { 'background only'; setSecure(!secure) }} />
+-      {secure ? <SecureStorePanel /> :
+-      <view style="display:flex;flex-direction:column;align-items:center;padding-top:8px;">
+-        <Btn
+-          label="refresh()"
+-          onTap={() => {
+-            note('refresh: called')
+-            refreshSafeArea().then((s) => note(`refresh: done g=${s.generation} t=${s.insets.top.toFixed(1)} ${s.source}`))
+-          }}
+-        />
+-        <Btn label="style light" onTap={() => { setSystemBarStyle('light'); note('style light') }} />
+-        <Btn label="style dark" onTap={() => { setSystemBarStyle('dark'); note('style dark') }} />
+-        <Btn
+-          label={hidden ? 'bars: show' : 'bars: hide'}
+-          onTap={() => {
+-            const next = !hidden
+-            setHidden(next)
+-            setSystemBarHidden(next)
+-            note(`hidden ${next}`)
+-          }}
+-        />
+-        <input
+-          id="kb"
+-          className="eyebrow"
+-          placeholder="tap to open keyboard"
+-          style="width:80%;height:40px;background-color:#ffffff;color:#000000;border-radius:8px;padding:0 12px;margin:4px 0;"
+-        />
+-        <text className="eyebrow">PKG edge-to-edge day 5</text>
+-        <text className="eyebrow">{`current: ${short}`}</text>
+-        <text className="eyebrow">{`events: ${events.join(' | ')}`}</text>
+-        <text className="eyebrow" style="padding-top:var(--safe-area-inset-top);">
+-          {'css var(--safe-area-inset-top) padding above me'}
+-        </text>
+-        <text className="eyebrow">{`log:\n${log}`}</text>
+-      </view>}
++    <SafeAreaView
++      edges={['top', 'bottom']}
++      className="page-shell"
++      style="flex:1;background-color:#25f4ee;"
++    >
++      <Btn
++        label={secure ? 'Show edge-to-edge' : 'Show Secure Store'}
++        onTap={() => {
++          'background only'
++          setSecure(!secure)
++        }}
++      />
++      {secure ? (
++        <SecureStorePanel />
++      ) : (
++        <view style="display:flex;flex-direction:column;align-items:center;padding-top:8px;">
++          <Btn
++            label="refresh()"
++            onTap={() => {
++              note('refresh: called')
++              refreshSafeArea().then((s) =>
++                note(
++                  `refresh: done g=${s.generation} t=${s.insets.top.toFixed(1)} ${s.source}`,
++                ),
++              )
++            }}
++          />
++          {isIOS ? (
++            <text className="eyebrow">
++              System bars are controlled by the iOS host. Style/visibility
++              controls are Android-only.
++            </text>
++          ) : (
++            <>
++              <Btn
++                label="style light"
++                onTap={() => {
++                  setSystemBarStyle('light')
++                  note('style light')
++                }}
++              />
++              <Btn
++                label="style dark"
++                onTap={() => {
++                  setSystemBarStyle('dark')
++                  note('style dark')
++                }}
++              />
++              <Btn
++                label={hidden ? 'bars: show' : 'bars: hide'}
++                onTap={() => {
++                  const next = !hidden
++                  setHidden(next)
++                  setSystemBarHidden(next)
++                  note(`hidden ${next}`)
++                }}
++              />
++            </>
++          )}
++          {/* This iOS host does not register input. An unknown native element interrupts
++            subtree removal in Lynx 3.9, leaving the following text views attached. */}
++          {isIOS ? (
++            <text className="eyebrow">
++              Keyboard input is unavailable in this iOS probe.
+  ... (21 additions truncated)
+  +95 -38
+[full diff: rtk git diff --no-compact]

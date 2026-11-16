@@ -1,0 +1,283 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "index": 0,
+        "label": "Sparkling Template",
+        "rect": {
+          "height": 896,
+          "width": 414,
+          "x": 0,
+          "y": 0
+        },
+        "hittable": false,
+        "enabled": true,
+        "type": "Application",
+        "depth": 0,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "index": 1,
+        "label": "lynxview",
+        "parentIndex": 0,
+        "rect": {
+          "height": 896,
+          "width": 414,
+          "x": 0,
+          "y": 0
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "Other",
+        "depth": 1,
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "index": 2,
+        "label": "Show Secure Store",
+        "parentIndex": 1,
+        "rect": {
+          "height": 896,
+          "width": 414,
+          "x": 0,
+          "y": 0
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "Other",
+        "depth": 2,
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "index": 3,
+        "label": "Show Secure Store",
+        "parentIndex": 2,
+        "rect": {
+          "height": 39.5,
+          "width": 414,
+          "x": 0,
+          "y": 52
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "Other",
+        "depth": 3,
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "index": 4,
+        "label": "Show Secure Store",
+        "parentIndex": 3,
+        "rect": {
+          "height": 19.5,
+          "width": 378,
+          "x": 18,
+          "y": 62
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "StaticText",
+        "depth": 4,
+        "ref": "e5",
+        "kind": "text"
+      },
+      {
+        "index": 5,
+        "label": "refresh()",
+        "parentIndex": 2,
+        "rect": {
+          "height": 39.5,
+          "width": 99,
+          "x": 157.5,
+          "y": 107.5
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "Other",
+        "depth": 3,
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "index": 6,
+        "label": "refresh()",
+        "parentIndex": 5,
+        "rect": {
+          "height": 19.5,
+          "width": 63,
+          "x": 175.5,
+          "y": 117.5
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "StaticText",
+        "depth": 4,
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "index": 7,
+        "label": "System bars are controlled by the iOS host. Style/visibility controls are Android-only.",
+        "parentIndex": 2,
+        "rect": {
+          "height": 43,
+          "width": 410,
+          "x": 2,
+          "y": 151
+        },
+        "hittable": true,
+        "enabled": true,
+        "type": "StaticText",
+        "depth": 3,
+        "ref": "e8",
+        "kind": "text"
+      },
+      {
+        "index": 8,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "height": 28.5,
+          "width": 333.5,
+          "x": 40.5,
+          "y": 194
+        },
+        "parentIndex": 2,
+        "label": "Keyboard input is unavailable in this iOS probe.",
+        "enabled": true,
+        "ref": "e9",
+        "kind": "text"
+      },
+      {
+        "index": 9,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "height": 28.5,
+          "width": 185.5,
+          "x": 114.5,
+          "y": 222.5
+        },
+        "parentIndex": 2,
+        "label": "PKG edge-to-edge day 5",
+        "enabled": true,
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "index": 10,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "height": 28.5,
+          "width": 375,
+          "x": 19.5,
+          "y": 251
+        },
+        "parentIndex": 2,
+        "label": "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=3 globalProps",
+        "enabled": true,
+        "ref": "e11",
+        "kind": "text"
+      },
+      {
+        "index": 11,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "height": 43,
+          "width": 345,
+          "x": 34.5,
+          "y": 279.5
+        },
+        "parentIndex": 2,
+        "label": "events: g1 t48 b34 k0 globalProps | g2 t0 b21 k0 globalProps | g3 t48 b34 k0 globalProps",
+        "enabled": true,
+        "ref": "e12",
+        "kind": "text"
+      },
+      {
+        "index": 12,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "height": 28.5,
+          "width": 346.5,
+          "x": 34,
+          "y": 322.5
+        },
+        "parentIndex": 2,
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "enabled": true,
+        "ref": "e13",
+        "kind": "text"
+      },
+      {
+        "index": 13,
+        "type": "StaticText",
+        "hittable": true,
+        "depth": 3,
+        "rect": {
+          "height": 71.5,
+          "width": 270,
+          "x": 72,
+          "y": 351
+        },
+        "parentIndex": 2,
+        "label": "log:\nrefresh: done g=1 t=48.0 globalProps\nrefresh: called",
+        "enabled": true,
+        "ref": "e14",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 14,
+      "totalNodeCount": 14,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 162.73999214172363,
+        "presentationMs": 0.37992000579833984
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 20,
+        "p50Ms": 354,
+        "p95Ms": 600,
+        "maxMs": 4720,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 20
+        }
+      }
+    },
+    "refsGeneration": 469397
+  }
+}
