@@ -3,6 +3,12 @@
 Это база знаний, а не код. Её ценность в том, что ей можно доверять через три месяца.
 Поэтому правила ниже про доказуемость, а не про стиль.
 
+Общий стиль и pipeline пакетов теперь заданы в
+[docs/package-standard.md](docs/package-standard.md), политика обновлений — в
+[docs/compatibility-policy.md](docs/compatibility-policy.md), эталонные конфиги —
+[standards/README.md](standards/README.md). Эти документы применяются к последующей
+миграции пакетов; её фактическое состояние отмечается в STATE.md.
+
 ## Первое действие в новой сессии
 
 Прочитать **[STATE.md](STATE.md)**, затем **[docs/01-platform-traps.md](docs/01-platform-traps.md)**.

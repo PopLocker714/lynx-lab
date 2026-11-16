@@ -1,0 +1,45 @@
+{
+    "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+    "files": {
+        "includes": [
+            "**/*.ts",
+            "**/*.tsx",
+            "**/*.js",
+            "**/*.jsx",
+            "**/*.mjs",
+            "**/*.cjs",
+            "**/*.json",
+            "**/*.jsonc",
+            "!dist",
+            "!coverage",
+            "!android/build",
+            "!android/.gradle",
+            "!android-check/build",
+            "!android-check/.gradle",
+            "!ios/build",
+            "!ios/Pods"
+        ]
+    },
+    "formatter": {
+        "enabled": true,
+        "indentStyle": "space",
+        "indentWidth": 4,
+        "lineWidth": 100
+    },
+    "javascript": {
+        "formatter": {
+            "quoteStyle": "single",
+            "semicolons": "asNeeded",
+            "trailingCommas": "es5"
+        }
+    },
+    "linter": {
+        "enabled": true,
+        "rules": {
+            "recommended": true,
+            "suspicious": {
+                "noExplicitAny": "error"
+            }
+        }
+    }
+}

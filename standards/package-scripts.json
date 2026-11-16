@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "format": "biome format --write .",
+        "lint": "biome check . --error-on-warnings",
+        "typecheck": "tsc -p tsconfig.json --noEmit",
+        "check": "bun run lint && bun run typecheck && bun run test && bun run build && bun run check:package",
+        "check:package": "node scripts/check-publishable.mjs"
+    }
+}
