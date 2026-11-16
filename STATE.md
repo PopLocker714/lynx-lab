@@ -24,9 +24,19 @@ App-lifecycle: core `10af007`, tooling `196d912`; independent review нашло 
 публикации initial background snapshot после ранней Android initialization.
 Исправлено в `87a7b93`, Android Debug/Release/Lint/JVM checks и упаковка прошли.
 Новый tarball `c8cabd693d35b308b53aa166e7644b8c5b555e78fd8dc4b1daa936e452b93529`.
-Consumer/device QA, включая initialize без Activity, ещё впереди. Потребуется
-отдельный candidate JS profile ReactLynx 0.125.0 / types 4.2.1; старый probe 0.116.5
-не удовлетворяет опубликованным peer ranges. Edge-to-edge пока только исследован.
+Consumer/device QA ещё идёт. Пользователь выбрал отдельный candidate JS profile
+ReactLynx 0.125.0 / types 4.2.1 / Rsbuild 2; старый probe 0.116.5 сохранён как
+baseline и не удовлетворяет опубликованным peer ranges. Probe `e924fbc` собирает
+новый JS profile без изменения native Lynx 3.9 / Sparkling 2.1.0-rc.36; точные
+версии и причина — [D13](DECISIONS.md#d13--отдельный-reactlynx-0125--rsbuild-2-candidate).
+Edge-to-edge: mechanical `a263844`, core `288d60b`; 31 JS test и typecheck прошли,
+independent review и native/consumer проверки ещё не завершены.
+
+Crypto source-binding backport `6805c374`, tarball
+`c73335d3eb9ec10c4c25cd3513966da46995de733047ec6c0720e5bb4fa1a290`:
+50 tests; относительно физически проверенного `11be0db` изменились только
+CONTRIBUTING EN/RU и package.json, остальные 49 файлов идентичны. Новый candidate
+pin использует этот архив; проверка нового JS-профиля ещё не завершена.
 
 2026-11-16: согласованы цель production-пакетов Lynx, поддержка Lynx + проверяемые
 host (Sparkling первый), stable gate, 4 пробела и strict TS без усложнения архитектуры.

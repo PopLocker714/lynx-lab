@@ -10,6 +10,11 @@
   сценария сохранены отдельно. Probe `855fdde` / evidence `8dffb04`.
 - App-lifecycle core/tooling реализованы; единственный finding независимого review
   исправлен в `87a7b93`. Consumer/device acceptance ещё не выполнен.
+- По выбору пользователя probe `e924fbc` переведён в отдельный ReactLynx 0.125 /
+  Rsbuild 2 candidate; JS build проходит, native host сохранён. Старый проверенный
+  профиль остаётся baseline. Точные версии и ограничения — D13.
+- Crypto `6805c374`: reviewed source-binding helper перенесён в пакет, 50 tests.
+  Runtime/native файлы нового архива идентичны ранее проверенным.
 
 ## 2026-11-16
 

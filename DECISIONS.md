@@ -202,3 +202,16 @@ Keychain AfterFirstUnlockThisDeviceOnly, обновление через SecItem
 Эталонные конфиги — в standards; установка во все пакеты ещё не выполнена.
 Пилот последовательно уточняет инструменты; не переписывать ObjC/архитектуру ради
 одинакового вида. Пересмотр — по конкретным ограничениям host/toolchain и результатам пилота.
+
+## D13 · Отдельный ReactLynx 0.125 / Rsbuild 2 candidate
+
+2026-11-17. Для app-lifecycle пользователь выбрал обновление JS toolchain отдельного
+candidate-профиля. Проверенный probe `8dffb04` (ReactLynx 0.116 / Rsbuild 1) сохранён
+как baseline; опубликованный peer range lifecycle не расширяется до этой версии.
+Старый React plugin не поддерживает 0.125 (`Missing field removeCall`); подходящий
+plugin 0.19.1 требует Rsbuild 2. QR plugin также обновлён из-за удалённого hook.
+
+Probe `e924fbc`: ReactLynx 0.125.0, types 4.2.1, react-rsbuild-plugin 0.19.1,
+Rspeedy 0.16.5, Rsbuild 2.1.10, Rspack 2.1.8, QR plugin 0.6.0. JS build и прежние
+пути main/second bundles проверены. Native Lynx 3.9 / Sparkling 2.1.0-rc.36
+сохранены. Это candidate, не новый recommended: native/device acceptance ещё идёт.
