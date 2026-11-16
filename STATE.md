@@ -75,7 +75,8 @@ patch, 692 runtime файла идентичны. Команда test тепер
 Это подтверждено baseline; приложение и тест ради проверки не переписывались.
 Три прежние TS-ошибки probe сохраняются, собственные strict checks пакета проходят.
 После patch изменились локальные пути некоторых зависимостей: старые tested
-receipts сохранены; финальный consumer с edge будет собран отдельно.
+receipts сохранены; финальный consumer с edge затем собран и проверен отдельно,
+результаты и ограничения приведены в начале файла.
 
 Edge-to-edge: mechanical `a263844`, core/review fixes до `d1a9f15`, pipeline `5d0cdb4`,
 README repair `2ba4bc3`. 31 JS, 12 binding и 5 JVM tests; strict TS, Android
@@ -83,7 +84,8 @@ Debug/Release/Lint, actual iOS store adapters, compile/static analysis прош�
 Independent review выявило и закрыло missing declarations и регистрацию позднего
 preloaded owner. Tarball `5c235a69cfcb567cd23ca15d72495ce62fea84ebe346b03044fee118f6250232`
 повторяется детерминированно; относительно `5d0cdb4` изменены только README EN/RU
-и package description, 66 файлов идентичны. Consumer/device QA ещё идёт.
+и package description, 66 файлов идентичны. Consumer/device QA завершена с
+ограничениями из итоговой матрицы выше; последнее обновление docs — `1d74031`.
 
 Crypto source-binding backport `6805c374`, tarball
 `c73335d3eb9ec10c4c25cd3513966da46995de733047ec6c0720e5bb4fa1a290`:

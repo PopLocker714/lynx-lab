@@ -218,4 +218,6 @@ Rspeedy 0.16.5, Rsbuild 2.1.10, Rspack 2.1.8, QR plugin 0.6.0. JS build и пр�
 на обоих физических устройствах (probe evidence `51ae596`). Это проверка
 конкретных пакетов/артефактов, не сертификация всего host: старые TS-ошибки и один
 устаревший App test probe остаются. Metadata-only patch React объявляет Vitest peer
-для isolated Bun; runtime-файлы не изменены. Финальный edge consumer ещё проверяется.
+для isolated Bun; runtime-файлы не изменены. Финальный edge consumer проверен
+(evidence `44f68fb`) с явными first-frame/Release rotation/keyboard ограничениями.
+Это не завершённый stable gate и не разрешение публикации.
