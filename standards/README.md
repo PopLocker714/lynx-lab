@@ -95,6 +95,9 @@ Sparkling 2.1.0-rc.36, probe `c3e957d`; результаты в
   временных исключения, а не нулевой raw audit.
 - `check:consumer` с native build — compile gate; аппаратный сценарий требует
   отдельного результата. Чувствительность QA проверяется дефектными заглушками.
+- Проверять actual native source roots и используемую autolink registry наряду с
+  installed-file identity. Secure-store review выявило, что stale Pods/Gradle paths
+  иначе проходят gate; исправление gate внедряется в secure-store и crypto.
 - Публикация crypto заблокирована до реализации цепочки final version/changelog →
   immutable tarball → consumer QA → публикация того же tarball. Обычная повторная
   упаковка semantic-release после QA не подтверждает идентичность артефакта.

@@ -131,6 +131,13 @@ Stable требует:
 - Связи results → package commit/version → tarball hash → host lock/toolchain
   → runtime/OS/device → сценарий/результат. Проверяется именно поставляемый код.
 
+Совпадение `node_modules` с tarball не доказывает native integration. Consumer gate
+также проверяет фактически подключённые Gradle source sets/projectDir, CocoaPods
+sources и используемую регистрацию модулей; старые autolink/Pods могут продолжать
+ссылаться на другой каталог. Сохранять resolved paths и hashes исходников в evidence;
+отрицательные fixtures должны отклонять stale sources и отсутствующую регистрацию.
+Границы поддерживаемого host adapter описывать явно.
+
 Новая правка не обнуляет старые доказательства, но они не подтверждают изменённый
 код автоматически. Определить, что затронуто, и повторить эти проверки. Выпускать
 артефакт, прошедший release gate; если после проверки меняется содержимое, повторить
