@@ -1,0 +1,20 @@
+{
+  "app-lifecycle": {
+    "tarball": "app-lifecycle-c8cabd69.tgz",
+    "sha256": "c8cabd693d35b308b53aa166e7644b8c5b555e78fd8dc4b1daa936e452b93529",
+    "matchedFiles": 58,
+    "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+app-lifecycle@.+vendor+app-lifecycle-c8cabd69.tgz+60c2ac425c33c361-37e50897c828e990/node_modules/@lynx-lab/app-lifecycle"
+  },
+  "crypto": {
+    "tarball": "crypto-c73335d3.tgz",
+    "sha256": "c73335d3eb9ec10c4c25cd3513966da46995de733047ec6c0720e5bb4fa1a290",
+    "matchedFiles": 52,
+    "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-c73335d3.tgz+bb8e78adca66c375-cee2e5b4447f2674/node_modules/@lynx-lab/crypto"
+  },
+  "secure-store": {
+    "tarball": "secure-store-35c107ef.tgz",
+    "sha256": "35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd",
+    "matchedFiles": 27,
+    "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-35c107ef.tgz-1783ae239483658b/node_modules/@lynx-lab/secure-store"
+  }
+}

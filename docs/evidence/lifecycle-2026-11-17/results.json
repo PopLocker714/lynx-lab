@@ -1,0 +1,273 @@
+{
+  "date": "2026-11-17",
+  "status": "passed-with-documented-limits",
+  "scope": "Physical one-view consumer smoke; native Activity/store instrumentation is separate from real Lynx JS event delivery",
+  "packages": {
+    "app-lifecycle": {
+      "tarball": "vendor/app-lifecycle-c8cabd69.tgz",
+      "sha256": "c8cabd693d35b308b53aa166e7644b8c5b555e78fd8dc4b1daa936e452b93529",
+      "matchedFiles": 58,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+app-lifecycle@.+vendor+app-lifecycle-c8cabd69.tgz+60c2ac425c33c361-37e50897c828e990/node_modules/@lynx-lab/app-lifecycle"
+    },
+    "crypto": {
+      "tarball": "vendor/crypto-c73335d3.tgz",
+      "sha256": "c73335d3eb9ec10c4c25cd3513966da46995de733047ec6c0720e5bb4fa1a290",
+      "matchedFiles": 52,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-c73335d3.tgz+bb8e78adca66c375-cee2e5b4447f2674/node_modules/@lynx-lab/crypto"
+    },
+    "secure-store": {
+      "tarball": "vendor/secure-store-35c107ef.tgz",
+      "sha256": "35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd",
+      "matchedFiles": 27,
+      "installedRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-35c107ef.tgz-1783ae239483658b/node_modules/@lynx-lab/secure-store"
+    }
+  },
+  "packageSources": {
+    "appLifecycleSourceCommit": "87a7b9325c82974341955c3961451dacc31862fa",
+    "cryptoSourceCommit": "6805c374a37917585064b5b8f51cf34755c9cf8e",
+    "secureStoreSourceCommit": "c350fce2fcb0b5e982a4bb81eaa6c41f9e87ac18"
+  },
+  "consumer": {
+    "sourceCommit": "616c66a0e5bf8386e6d565e566e1c6c3c621f3b3",
+    "profileCommit": "e924fbc1fb81e05097384b574f70ea3937a70901",
+    "baselineSource": "855fdde503a3abfc97fd929452d0b382ae82fbc6",
+    "baselineEvidence": "8dffb0465a5bfde4cf4a32e600895b7bb952d254",
+    "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification",
+    "branch": "test/android-libraries",
+    "jsProfile": {
+      "react": "0.125.0",
+      "types": "4.2.1",
+      "reactRsbuildPlugin": "0.19.1",
+      "rspeedy": "0.16.5",
+      "rsbuild": "2.1.10",
+      "rspack": "2.1.8",
+      "qrcodePlugin": "0.6.0",
+      "status": "Physical Lifecycle Debug/Release both platforms passed; Release Secure10/Crypto smoke passed",
+      "nativeHostUnchanged": "Lynx3.9.0/Sparkling2.1.0-rc.36"
+    },
+    "mainBundleSha256": "69a1c6861341bfaf3fb7f63479ed5a2dd265eaa31ee70ad98bc44aea22c8d01d",
+    "bunLockSha256": "c9f306882d86127db1548244669f7602c5242f75b6b8e4e03ad14a870201399c",
+    "sourceHashes": {
+      "package.json": "538e7704694015f00a6ccc062594822e73f697c55c2c83e185770f8b60eb82f3",
+      "bun.lock": "c9f306882d86127db1548244669f7602c5242f75b6b8e4e03ad14a870201399c",
+      "app.config.ts": "282da1ae380c78fe5351a711c6476ca3b7a0edb9f842748a44001a674d9043c0",
+      "src/pages/main/App.tsx": "4c6af154d0b0c06bf338df75c0fd45defe9f518a58649d9b8069d55edfe31f5c",
+      "src/pages/main/LifecyclePanel.tsx": "9fa01a18d524dc23f6dcb6a26501f36982496a3f0f06efce43fbf4e46d6c6837",
+      "src/pages/main/cryptoChecks.ts": "74189bff7a079a56dbbfe48df57d908411a014a3c2fafc867ec5f00f32eff4d7",
+      "src/pages/main/secureStoreChecks.ts": "95b27c0f2b9e0cc361b0b5a26f2befedfe544f40225a464178ee619f0b5b682c",
+      "android/app/src/androidTest/java/com/probe/e2e/LifecycleDeviceTest.kt": "9ce1a0b1068f42d57508f1512bf81f931a3b46da2db406a3b9bd1794283c7f46",
+      "android/app/src/debug/java/com/probe/e2e/LifecycleProbeActivity.kt": "7951748adaa99bd7de0171728250141fa604771f58457bb79af9455596009508",
+      "android/app/src/debug/AndroidManifest.xml": "1eeaad9ab84c79b5f6ea61d39c4ea796b353c3024d4d31a6092f92d5c4a8ac88",
+      "android/gradle/libs.versions.toml": "4b00d90a61cf64ae0f2656f209bc5f0d7aea7cca72876a0b68a3e0686ce5200f",
+      "android/app/build.gradle.kts": "3c2d10355b000f2399bea3b0a021043740446a27385f5cb4bd3a40698c611b73",
+      "ios/Podfile": "964e4f34dc63015a2b7d2f7f7ab03d81b3757c802463c55b3d941b8d5054e72e",
+      "ios/Podfile.lock": "64bb6385a8dcea069e0e1c2169bc78f349c168c7a8cc101f040d1dc3dfdf8fed",
+      "ios/SparklingGo.xcodeproj/project.pbxproj": "215b59275ef8b7706a575e17e97f8a4f561a3990c73543fe5ca1ebe33bca6f2b"
+    }
+  },
+  "builds": {
+    "androidDebug": "passed",
+    "androidReleaseR8": "passed; R8 executed",
+    "iosDebug": "passed",
+    "iosRelease": "passed",
+    "artifacts": {
+      "androidDebug": {
+        "path": "evidence-local/lifecycle-standard/probe-lifecycle-android-debug.apk",
+        "sha256": "2d8831ce016037a00880d11dc5a1aa8ee7e1843083ca55cebf51863fcc9b37a2",
+        "mainBundleSha256": "69a1c6861341bfaf3fb7f63479ed5a2dd265eaa31ee70ad98bc44aea22c8d01d"
+      },
+      "iosDebug": {
+        "path": "evidence-local/lifecycle-standard/probe-lifecycle-ios-debug.app",
+        "executableSha256": "f84a352f5c0aeff7458ecc52cf97c1998051627aad1fa06eea1292fb617ab1c9",
+        "mainBundleSha256": "69a1c6861341bfaf3fb7f63479ed5a2dd265eaa31ee70ad98bc44aea22c8d01d",
+        "fileManifestSha256": "6fdfb2629b190faf31628581adb838b727a32e0764f18255d6c8ee327cb6762b"
+      },
+      "androidRelease": {
+        "path": "evidence-local/lifecycle-standard/probe-lifecycle-android-release.apk",
+        "sha256": "d7e640b70a13bdf92d440f6b5a8508adc2a693fe50c0224cd6e286bde41eb85b",
+        "mainBundleSha256": "69a1c6861341bfaf3fb7f63479ed5a2dd265eaa31ee70ad98bc44aea22c8d01d"
+      },
+      "iosRelease": {
+        "path": "evidence-local/lifecycle-standard/probe-lifecycle-ios-release.app",
+        "executableSha256": "c6489e2185a4167b36f0e215dee13d15be5de9a92c2548666b2221e891a527fc",
+        "mainBundleSha256": "69a1c6861341bfaf3fb7f63479ed5a2dd265eaa31ee70ad98bc44aea22c8d01d",
+        "fileManifestSha256": "99b9646de741c0886d092206c387e56133675640b9d87b3b037e01e361d1dc08"
+      }
+    },
+    "iosDeploymentTarget": "15.6 override for old Pods under Xcode27.2; no minimum iOS verification",
+    "compilerBaseline": "Existing host/third-party warnings retained; full tsc has exactly three baseline errors in SafeAreaView:26, App.test:12, spike:13"
+  },
+  "nativeBindings": {
+    "receipts": [
+      "consumer-bindings.json",
+      "crypto-consumer-bindings.json",
+      "secure-consumer-bindings.json"
+    ],
+    "afterBuild": "bindings-postbuild.txt",
+    "registryIssue": "Ordinary generation tasks were UP-TO-DATE with stale registry missing lifecycle; gate rejected it. Explicit generation --rerun-tasks fixed registry, then gate passed before completed native builds. An early-started build was interrupted; it is not passing evidence.",
+    "resolvedAndroidHost": "android-resolved-lynx.txt confirms Lynx3.9.0/Sparkling2.1.0-rc.36"
+  },
+  "instrumentation": {
+    "configuration": "Android Debug",
+    "status": "passed",
+    "uniqueCases": 1,
+    "class": "com.probe.e2e.LifecycleDeviceTest",
+    "runner": "androidx.test.runner.AndroidJUnitRunner",
+    "raw": "android-instrumentation-raw.txt",
+    "run": "android-instrumentation-run.json",
+    "nativeLog": "android-native-regression.log",
+    "assertions": [
+      "Provider resolves and actual store is background/0 with zero started Activity before launch",
+      "Activity start is active/1 with started count1",
+      "ActivityScenario.recreate yields new Activity instance, old instance isDestroyed, started count1",
+      "Closing Activity returns background with started count0"
+    ],
+    "doesNotClaim": "Empty Activity instrumentation does not verify JS bridge delivery"
+  },
+  "physicalRuns": [
+    {
+      "platform": "android",
+      "configuration": "Debug",
+      "device": "Pixel9 / Android17 / REDACTED_PIXEL_SERIAL",
+      "status": "passed",
+      "initial": "active g1",
+      "dualSubscribers": "A/B background g2 then active g3, gap=false",
+      "unsubscribe": "B absent for g4/g5, A receives both",
+      "resubscribe": "A/B background g6 then active g7",
+      "evidence": [
+        "android-debug-lifecycle-initial.png",
+        "android-debug-resume.png",
+        "android-debug-unsubscribed.png",
+        "android-debug-resubscribed.png"
+      ]
+    },
+    {
+      "platform": "android",
+      "configuration": "Release R8",
+      "device": "Pixel9 / Android17 / REDACTED_PIXEL_SERIAL",
+      "status": "passed",
+      "initial": "active g1",
+      "dualSubscribers": "A/B background g2 then active g3, gap=false; final snapshot active g3",
+      "secureStore": "10/10; preexisting marker found before checks",
+      "crypto": "native PASS, nine integer array constructors; distinct samples are smoke, not entropy evidence",
+      "evidence": [
+        "android-release-lifecycle.png",
+        "android-release-secure-before.png",
+        "android-release-secure.png",
+        "android-release-crypto.png"
+      ]
+    },
+    {
+      "platform": "ios",
+      "configuration": "Debug",
+      "device": "iPhone11 / iOS18.4.1 / REDACTED_IPHONE_UDID",
+      "status": "passed",
+      "initial": "active g0",
+      "dualSubscribers": "A/B background g1 then active g2, gap=false",
+      "unsubscribe": "B absent for g5/g6, A receives both",
+      "resubscribe": "A/B background g7 then active g8",
+      "evidence": [
+        "ios-debug-resume.txt",
+        "ios-debug-unsubscribed.txt",
+        "ios-debug-resubscribed.txt",
+        "ios-debug-lifecycle.png"
+      ]
+    },
+    {
+      "platform": "ios",
+      "configuration": "Release",
+      "device": "iPhone11 / iOS18.4.1 / REDACTED_IPHONE_UDID",
+      "status": "passed",
+      "initial": "active g0",
+      "dualSubscribers": "A/B background g1 then active g2, gap=false; final snapshot active g2",
+      "secureStore": "10/10; preexisting marker found before checks",
+      "crypto": "native PASS, nine integer array constructors; distinct samples are smoke, not entropy evidence",
+      "evidence": [
+        "ios-release-initial.txt",
+        "ios-release-lifecycle.txt",
+        "ios-release-marker.txt",
+        "ios-release-secure.txt",
+        "ios-release-crypto.txt"
+      ]
+    }
+  ],
+  "knownGaps": [
+    "Minimum supported OS and GitHub CI not verified",
+    "Native multi-context/weak teardown/coherent reads are package adapter-test evidence, not physical multi-view evidence here",
+    "Android Lynx AX omits panel labels; screenshots used after sparse snapshots",
+    "Debug Android host has existing 16KiB alignment warning",
+    "Earlier Secure Store Debug-test-APK-on-Release crash is not rerun or claimed passing",
+    "No iOS locked/extra reinstall scenarios; no data reset or target uninstall",
+    "Existing Vitest suite now starts but its single stale App test fails on pre-existing onMounted expectation; this suite is not passing"
+  ],
+  "preservation": {
+    "iosInputGate": true,
+    "existingPanels": true,
+    "targetDataPreserved": true,
+    "sharedIncrementalBuildStateRetained": true
+  },
+  "cleanup": "cleanup.json",
+  "commands": "commands.json",
+  "toolchains": {
+    "android": {
+      "gradle": "8.2",
+      "agp": "7.4.2",
+      "kotlin": "1.8.10",
+      "launcherJdk": "17.0.20",
+      "javaToolchain": "11.0.32.1+1",
+      "compileSdk": 34,
+      "targetSdk": 34,
+      "minSdk": 24,
+      "abiTested": "arm64-v8a",
+      "releaseR8AndResourceShrinking": true,
+      "releaseSigning": "local probe debug key"
+    },
+    "ios": {
+      "xcode": "27.2",
+      "xcodeBuild": "27B52",
+      "sdk": "iphoneos27.2",
+      "cocoaPods": "1.17.0",
+      "cocoaPodsLynxLibrary": "3.9.0",
+      "podfileDeclaredDeploymentTarget": "12.0",
+      "effectiveBuildDeploymentTarget": "15.6",
+      "overrideReason": "Xcode 27.2 rejects deployment targets of old host Pods below 15; does not verify iOS 12 support"
+    },
+    "agentDevice": "0.21.36"
+  },
+  "existingJavaScriptTests": {
+    "status": "one-pre-existing-test-failed",
+    "casesExecuted": 1,
+    "passed": 0,
+    "failed": 1,
+    "command": "bun run test",
+    "log": "existing-tests-final.txt",
+    "toolingStartup": "fixed by optional Vitest peer patch plus removal of own Bun patch staging copy and frozen relink",
+    "baselineFailure": "Unchanged App.test.tsx expects onMounted called once; App already lacks that prop in855fdde. Baseline App/test sources archived. No application/test semantics changed.",
+    "initialFailureLog": "existing-tests.txt"
+  },
+  "resources": {
+    "freeBytesAtCompletion": 60535083008,
+    "artifacts": "evidence-local/lifecycle-standard",
+    "sharedPreserved": [
+      "node_modules",
+      "dist",
+      "android/app/build",
+      "ios/Pods",
+      "ios/build-device"
+    ],
+    "remainingOwnedSessions": [],
+    "remainingOwnedPids": []
+  },
+  "toolingFollowup": {
+    "sourceCommit": "3cb55f36cbab0f99c5b1c82def7bc198b6c2af56",
+    "patch": "patches/@lynx-js%2Freact@0.125.0.patch",
+    "patchSha256": "96d0b32dce8ab55975c8c6d946b09b6e3a4aa496126ddf4ad3bf9499b3f01597",
+    "bunLockSha256": "9ae60e9a499f8d8a650b69128cc05c1fc32e6952554dd820336dedc385e9bea1",
+    "reactDelta": "react-patch-delta.json",
+    "resolution": "patched-react-resolution.json",
+    "installedIdentity": "installed-identity-postpatch.json",
+    "status": "manifest-only patch; runtime bytes equal; new local lifecycle root is not compiled/tested; tested artifact receipts above retain prior roots",
+    "pods": "pod-install-postpatch.txt updated project paths; no postpatch native build or gate claimed; next edge pin regenerates and verifies all four packages",
+    "postpatchPodfileLockSha256": "1745745d8a3e5b0e4f775c72d9fa5b08a3ec7e20f1ec842d0d6991f976276d84"
+  }
+}

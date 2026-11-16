@@ -1,0 +1,11 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 8 nodes
+@e1 [application] "Sparkling Template"
+@e2 [other] "lynxview"
+@e3 [other] "Show edge-to-edge"
+@e4 [button] "Show edge-to-edge"
+@e5 [button] "Show Crypto"
+@e6 [button] "Show Lifecycle"
+@e7 [other] "Run Secure Store checks"
+@e8 [text] "persistence: stored marker found"

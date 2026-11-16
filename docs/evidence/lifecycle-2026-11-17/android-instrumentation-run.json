@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-11-16T22:02:11.455905+00:00",
+  "finishedAt": "2026-11-16T22:02:13.437967+00:00",
+  "command": [
+    "/Users/REDACTED_LOCAL_USER/Library/Android/sdk/platform-tools/adb",
+    "-s",
+    "REDACTED_PIXEL_SERIAL",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "com.probe.e2e.LifecycleDeviceTest",
+    "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "processExitCode": 0
+}

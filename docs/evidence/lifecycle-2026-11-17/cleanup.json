@@ -1,0 +1,37 @@
+{
+  "sessionsClosed": [
+    "lifecycle-android",
+    "lifecycle-ios"
+  ],
+  "processes": [
+    {
+      "pid": 36691,
+      "remaining": ""
+    },
+    {
+      "pid": 61179,
+      "remaining": ""
+    }
+  ],
+  "daemonPort": 56452,
+  "portClosed": true,
+  "removed": [
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/lifecycle-standard/agent-device",
+    "/Users/REDACTED_LOCAL_USER/.agent-device/apple-runner/derived/ios-device/cache-7d9d4efa1533f15a/Logs/Test/Test-AgentDeviceRunner-2026.11.17_01-06-43-+0300.xcresult",
+    "/tmp/probe-react-patch-staging-01a1c041"
+  ],
+  "freedAllocatedBytes": 524288,
+  "ownIOSRunnerUninstalled": "com.ilya.lynxqa.agentdevice.uitests.xctrunner",
+  "preserved": [
+    "installed com.probe.e2e Release and data on both devices",
+    "ios/Pods",
+    "ios/build-device",
+    "android/app/build",
+    "node_modules",
+    "dist",
+    "all previous evidence-local apps/APKs",
+    "current lifecycle apps/APKs"
+  ],
+  "remainingOwnedProcesses": [],
+  "patchedReactStagingRemoval": "after verifying692 identical runtime files and semantically equal manifest; Bun-owned empty tag excluded"
+}

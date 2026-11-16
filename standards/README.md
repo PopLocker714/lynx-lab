@@ -4,10 +4,11 @@
 [package-standard.md](../docs/package-standard.md), обновления host —
 [compatibility-policy.md](../docs/compatibility-policy.md).
 
-Стандарт внедрён в рабочие ветки crypto и secure-store; consumer/device QA одного
-профиля прошла с явно записанными ограничениями. Остальные пакеты мигрируются
-в отдельных worktree, с baseline checks,
-review и сохранением API. Это не означает готовность всех четырёх пакетов.
+Стандарт внедрён в рабочие ветки всех четырёх пакетов. Crypto, secure-store и
+app-lifecycle прошли consumer/device QA с явно записанными профилями и ограничениями.
+Edge-to-edge прошёл code/native checks и independent review; consumer QA продолжается.
+Все изменения находятся в отдельных невлитых worktree. Это не означает stable
+или разрешение публикации всех четырёх пакетов.
 У этого репозитория знаний нет package.json; устанавливать зависимости здесь не нужно.
 
 ## Внедрение

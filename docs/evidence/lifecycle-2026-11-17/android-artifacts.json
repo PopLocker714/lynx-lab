@@ -1,0 +1,10 @@
+{
+  "debug": {
+    "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/lifecycle-standard/probe-lifecycle-android-debug.apk",
+    "sha256": "2d8831ce016037a00880d11dc5a1aa8ee7e1843083ca55cebf51863fcc9b37a2"
+  },
+  "release": {
+    "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/lifecycle-standard/probe-lifecycle-android-release.apk",
+    "sha256": "d7e640b70a13bdf92d440f6b5a8508adc2a693fe50c0224cd6e286bde41eb85b"
+  }
+}

@@ -24,19 +24,39 @@ App-lifecycle: core `10af007`, tooling `196d912`; independent review нашло 
 публикации initial background snapshot после ранней Android initialization.
 Исправлено в `87a7b93`, Android Debug/Release/Lint/JVM checks и упаковка прошли.
 Новый tarball `c8cabd693d35b308b53aa166e7644b8c5b555e78fd8dc4b1daa936e452b93529`.
-Consumer/device QA ещё идёт. Пользователь выбрал отдельный candidate JS profile
+Consumer/device QA завершена для отдельного candidate JS profile
 ReactLynx 0.125.0 / types 4.2.1 / Rsbuild 2; старый probe 0.116.5 сохранён как
 baseline и не удовлетворяет опубликованным peer ranges. Probe `e924fbc` собирает
 новый JS profile без изменения native Lynx 3.9 / Sparkling 2.1.0-rc.36; точные
 версии и причина — [D13](DECISIONS.md#d13--отдельный-reactlynx-0125--rsbuild-2-candidate).
-Edge-to-edge: mechanical `a263844`, core `288d60b`; 31 JS test и typecheck прошли,
-independent review и native/consumer проверки ещё не завершены.
+Probe source `616c66a`, tooling patch `3cb55f3`, evidence `51ae596`: Android/iOS
+Debug/Release — lifecycle events, две JS-подписки, отписка/повторная подписка;
+отдельная Android instrumentation проверяет initial background до первой Activity
+и её настоящее пересоздание. Release Secure Store 10/10 и crypto smoke прошли.
+Parent сверил 68 evidence hashes, архивы, исходники, четыре embedded bundles и
+бинарные артефакты. [Результаты](docs/evidence/lifecycle-2026-11-17/results.json).
+React 0.125 testing-library не объявляет Vitest peer; добавлен metadata-only Bun
+patch, 692 runtime файла идентичны. Команда test теперь стартует, но единственный
+старый тест probe ожидает уже отсутствующий onMounted стартового шаблона и падает.
+Это подтверждено baseline; приложение и тест ради проверки не переписывались.
+Три прежние TS-ошибки probe сохраняются, собственные strict checks пакета проходят.
+После patch изменились локальные пути некоторых зависимостей: старые tested
+receipts сохранены; финальный consumer с edge будет собран отдельно.
+
+Edge-to-edge: mechanical `a263844`, core/review fixes до `d1a9f15`, pipeline `5d0cdb4`,
+README repair `2ba4bc3`. 31 JS, 12 binding и 5 JVM tests; strict TS, Android
+Debug/Release/Lint, actual iOS store adapters, compile/static analysis прошли.
+Independent review выявило и закрыло missing declarations и регистрацию позднего
+preloaded owner. Tarball `5c235a69cfcb567cd23ca15d72495ce62fea84ebe346b03044fee118f6250232`
+повторяется детерминированно; относительно `5d0cdb4` изменены только README EN/RU
+и package description, 66 файлов идентичны. Consumer/device QA ещё идёт.
 
 Crypto source-binding backport `6805c374`, tarball
 `c73335d3eb9ec10c4c25cd3513966da46995de733047ec6c0720e5bb4fa1a290`:
 50 tests; относительно физически проверенного `11be0db` изменились только
 CONTRIBUTING EN/RU и package.json, остальные 49 файлов идентичны. Новый candidate
-pin использует этот архив; проверка нового JS-профиля ещё не завершена.
+использует этот архив; Release native smoke на обоих устройствах и actual native
+source-binding gate подтверждены в lifecycle evidence выше.
 
 2026-11-16: согласованы цель production-пакетов Lynx, поддержка Lynx + проверяемые
 host (Sparkling первый), stable gate, 4 пробела и strict TS без усложнения архитектуры.

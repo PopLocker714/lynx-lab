@@ -1,0 +1,1 @@
+HARNESS PASS: repeated bytes/UUID rejected; varying stub accepted (not native evidence)

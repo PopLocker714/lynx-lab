@@ -1,0 +1,11 @@
+{
+  "oldRoot": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-js+react@0.125.0+a6825e54fecb76c2-6c3c5e2248c886ec/node_modules/@lynx-js/react",
+  "newRoot": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/.bun/@lynx-js+react@0.125.0+a6825e54fecb76c2/node_modules/@lynx-js/react",
+  "changedFiles": [
+    "package.json"
+  ],
+  "equalRuntimeFiles": 692,
+  "packageJsonChange": "optional peer vitest ^4.1.11 only",
+  "newManifestSha256": "86e05f94c2497ac11aeb8a70a407ed20d8af89068115642937970174ff72d1f0",
+  "removedOwnStaging": "/tmp/probe-react-patch-staging-01a1c041"
+}

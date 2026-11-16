@@ -8,13 +8,18 @@
   consumer source-binding gate и direct Android runner. Physical Android/iOS
   Debug/Release и persistence подтверждены; ограничения и два неуспешных runner
   сценария сохранены отдельно. Probe `855fdde` / evidence `8dffb04`.
-- App-lifecycle core/tooling реализованы; единственный finding независимого review
-  исправлен в `87a7b93`. Consumer/device acceptance ещё не выполнен.
+- App-lifecycle `87a7b93`: consumer/device acceptance завершён в новом JS profile,
+  probe `616c66a`, evidence `51ae596`. Две JS-подписки, foreground/background,
+  initial Android background и настоящее Activity recreation подтверждены.
+  Parent проверил 68 evidence hashes и четыре сборки; ограничения host сохранены.
 - По выбору пользователя probe `e924fbc` переведён в отдельный ReactLynx 0.125 /
   Rsbuild 2 candidate; JS build проходит, native host сохранён. Старый проверенный
   профиль остаётся baseline. Точные версии и ограничения — D13.
 - Crypto `6805c374`: reviewed source-binding helper перенесён в пакет, 50 tests.
   Runtime/native файлы нового архива идентичны ранее проверенным.
+- Edge-to-edge `2ba4bc3`: per-view ownership, Android bars и React effect lifecycle
+  исправлены, findings независимого review закрыты; strict/native checks проходят.
+  README сохраняет языки/бейджи; реальный consumer ещё проверяется.
 
 ## 2026-11-16
 

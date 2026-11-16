@@ -1,0 +1,23 @@
++ @lynx-js/qrcode-rsbuild-plugin@0.6.0
++ @lynx-js/react-rsbuild-plugin@0.19.1
++ @lynx-js/rspeedy@0.16.5
++ @lynx-js/types@4.2.1
++ @rsbuild/core@2.1.10
++ @rspack/core@2.1.8
++ @testing-library/jest-dom@6.10.0
++ @types/react@18.3.31
++ @vitest/coverage-v8@4.1.11
++ jsdom@28.1.0
++ prettier@3.9.6
++ sparkling-app-cli@2.1.0-rc.36
++ sparkling-types@2.1.0-rc.36
++ typescript@5.9.3
++ vitest@4.1.11
++ @lynx-js/react@0.125.0
++ @lynx-lab/app-lifecycle@./vendor/app-lifecycle-c8cabd69.tgz
++ @lynx-lab/crypto@./vendor/crypto-c73335d3.tgz
++ @lynx-lab/edge-to-edge@./vendor/edge-to-edge-1502c0a.tgz
++ @lynx-lab/secure-store@./vendor/secure-store-35c107ef.tgz
++ sparkling-method@2.1.0-rc.36
++ sparkling-navigation@2.1.0-rc.36
+606 packages installed [2.46s]

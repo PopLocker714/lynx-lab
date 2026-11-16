@@ -1,0 +1,140 @@
+[
+  {
+    "name": "@lynx-js/react-rsbuild-plugin",
+    "version": "0.19.1",
+    "source": "https://registry.npmjs.org/@lynx-js%2freact-rsbuild-plugin/0.19.1",
+    "peerDependencies": {
+      "@lynx-js/react": "^0.124.0 || ^0.125.0"
+    },
+    "engines": {
+      "node": ">=18"
+    },
+    "toolchainDevDependencies": {
+      "@rsbuild/core": "2.1.10",
+      "@lynx-js/rspeedy": "0.16.5",
+      "typia-rspack-plugin": "3.0.1",
+      "@rsbuild/plugin-sass": "2.0.1",
+      "rsbuild-plugin-publint": "1.0.0",
+      "@lynx-js/config-rsbuild-plugin": "0.2.2",
+      "rsbuild-plugin-arethetypeswrong": "0.3.1",
+      "@rsbuild/plugin-typed-css-modules": "1.2.4"
+    },
+    "dist": {
+      "shasum": "4d54c095977e7b227039e27045ee7133739e4365",
+      "tarball": "https://registry.npmjs.org/@lynx-js/react-rsbuild-plugin/-/react-rsbuild-plugin-0.19.1.tgz",
+      "fileCount": 11,
+      "integrity": "sha512-BEGi3Yjg9H71UPyL8rE69x6fs+JtQNnJzauabWgf3rJslH99HhWtC/T1ue1MBwQIFwltgbCaQFSYO6iq5nUwEg==",
+      "signatures": [
+        {
+          "sig": "MEQCIHFTcbj0PXxRdZkd+1kOIlEpggPn/D3hqypbBspYlKbhAiAScyWeiXGLN4MZqAB8FGmHEpr/hKkfOQo77C7fvd1CMA==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@lynx-js%2freact-rsbuild-plugin@0.19.1",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 200672
+    }
+  },
+  {
+    "name": "@lynx-js/rsbuild-plugin",
+    "version": "0.0.3",
+    "source": "https://registry.npmjs.org/@lynx-js%2frsbuild-plugin/0.0.3",
+    "peerDependencies": {
+      "@rsbuild/core": "^2.0.0"
+    },
+    "engines": {
+      "node": ">=18"
+    },
+    "toolchainDevDependencies": {
+      "@rsbuild/core": "2.1.10"
+    },
+    "dist": {
+      "shasum": "57337e577c2f181bbc0cb8117a2ce325468e1c45",
+      "tarball": "https://registry.npmjs.org/@lynx-js/rsbuild-plugin/-/rsbuild-plugin-0.0.3.tgz",
+      "fileCount": 9,
+      "integrity": "sha512-IGjHMtIzW3xihS1ZtyljYnxfSOoqLztCozplFCCSu8BFsp6Uq7AJuI/pnfPHHri6FOE6Q6LRGaO+2DmUMcAw8A==",
+      "signatures": [
+        {
+          "sig": "MEUCID5x/91Dzf9z6VLn6Qlw/fe1SuY//9bjdaf2Kl7JEdH+AiEA6eSFhb5aEAB/B3RFGj0Mu8RLUYFJybmY4XvK05Lpcs4=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@lynx-js%2frsbuild-plugin@0.0.3",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 101999
+    }
+  },
+  {
+    "name": "@lynx-js/react-webpack-plugin",
+    "version": "0.11.1",
+    "source": "https://registry.npmjs.org/@lynx-js%2freact-webpack-plugin/0.11.1",
+    "peerDependencies": {
+      "@lynx-js/template-webpack-plugin": "^0.13.0 || ^0.14.0 || ^0.15.0"
+    },
+    "engines": {
+      "node": ">=18"
+    },
+    "toolchainDevDependencies": {
+      "@rspack/core": "2.1.7",
+      "@rspack/lite-tapable": "1.1.5"
+    },
+    "dist": {
+      "shasum": "1a9a04a424d241854f72609f34065260a08da885",
+      "tarball": "https://registry.npmjs.org/@lynx-js/react-webpack-plugin/-/react-webpack-plugin-0.11.1.tgz",
+      "fileCount": 25,
+      "integrity": "sha512-+ANWTd/k4ziYBbKSoFho+RllYrxzQgoXV8Ian2j+WHG7EcJt+6r5U2MX1TUjVncoXvU9923mf15ZQeDVud/O0A==",
+      "signatures": [
+        {
+          "sig": "MEQCIGn7xAS+vayAWCkZ2DnLF1YVnjVTDR7FbqoqFrZ3ybMYAiAb6aKqyTezRSqnyTUSL5WPso8zz0eJny9d0UDhV+Q0fw==",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@lynx-js%2freact-webpack-plugin@0.11.1",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 96976
+    }
+  },
+  {
+    "name": "@lynx-js/template-webpack-plugin",
+    "version": "0.15.2",
+    "source": "https://registry.npmjs.org/@lynx-js%2ftemplate-webpack-plugin/0.15.2",
+    "peerDependencies": {},
+    "engines": {
+      "node": "^18.14 || >=19.4"
+    },
+    "toolchainDevDependencies": {
+      "@rspack/core": "2.1.7"
+    },
+    "dist": {
+      "shasum": "28eefb14430909a81a7d384caedb04c5a43c3603",
+      "tarball": "https://registry.npmjs.org/@lynx-js/template-webpack-plugin/-/template-webpack-plugin-0.15.2.tgz",
+      "fileCount": 24,
+      "integrity": "sha512-yBV+pbBusMlTJ2y3S6a5wrdKl+HewBQGbFgXSwzf3yF+OsB1A0PQBwXJGM/aeqTCaP0Em2ZhF41HEefEW0mmWg==",
+      "signatures": [
+        {
+          "sig": "MEUCIQChe1py4PPKsRr4yjT49E9bcfQhhDvoDhvwVAEq1V8LIAIgCZzyC5XOwnJiliHQ/FOL8Ra+3eED8JMMCVuWWe2xrec=",
+          "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+        }
+      ],
+      "attestations": {
+        "url": "https://registry.npmjs.org/-/npm/v1/attestations/@lynx-js%2ftemplate-webpack-plugin@0.15.2",
+        "provenance": {
+          "predicateType": "https://slsa.dev/provenance/v1"
+        }
+      },
+      "unpackedSize": 146276
+    }
+  }
+]

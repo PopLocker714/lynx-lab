@@ -1,0 +1,5 @@
+--------- beginning of main
+11-17 01:02:13.665 16936 16936 I LIFECYCLE_QA: EARLY background g0 started=0 provider=registered
+11-17 01:02:14.251 16936 16936 I LIFECYCLE_QA: START active g1 instance=133153509
+11-17 01:02:14.276 16936 16936 I LIFECYCLE_QA: RECREATED (active, 1) oldDestroyed=true newInstance=102063269 started=1
+11-17 01:02:14.434 16936 16936 I LIFECYCLE_QA: CLOSED (background, 2) started=0

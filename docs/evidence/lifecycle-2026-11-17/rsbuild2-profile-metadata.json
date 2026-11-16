@@ -1,0 +1,79 @@
+[
+  {
+    "name": "@lynx-js/rspeedy",
+    "version": "0.16.5",
+    "source": "https://registry.npmjs.org/@lynx-js%2frspeedy/0.16.5",
+    "dependencies": {
+      "@rsbuild/core": "2.1.10",
+      "@lynx-js/rsbuild-plugin": "0.0.3",
+      "@rsdoctor/rspack-plugin": "~1.6.1"
+    },
+    "peerDependencies": {
+      "typescript": "5.1.6 - 6.0.x"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    }
+  },
+  {
+    "name": "@lynx-js/rspeedy",
+    "version": "0.17.0",
+    "source": "https://registry.npmjs.org/@lynx-js%2frspeedy/0.17.0",
+    "dependencies": {
+      "@rsbuild/core": "2.2.3",
+      "@lynx-js/rsbuild-plugin": "0.1.0",
+      "@rsdoctor/rspack-plugin": "~1.6.1"
+    },
+    "peerDependencies": {
+      "typescript": "5.1.6 - 6.0.x"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    }
+  },
+  {
+    "name": "@rsbuild/core",
+    "version": "2.1.10",
+    "source": "https://registry.npmjs.org/@rsbuild%2fcore/2.1.10",
+    "dependencies": {
+      "@rspack/core": "~2.1.8",
+      "@swc/helpers": "^0.5.23"
+    },
+    "peerDependencies": {
+      "core-js": ">= 3.0.0"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    }
+  },
+  {
+    "name": "@rspack/core",
+    "version": "2.1.7",
+    "source": "https://registry.npmjs.org/@rspack%2fcore/2.1.7",
+    "dependencies": {
+      "@rspack/binding": "2.1.7"
+    },
+    "peerDependencies": {
+      "@swc/helpers": "^0.5.23",
+      "@module-federation/runtime-tools": "^0.24.1 || ^2.0.0"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    }
+  },
+  {
+    "name": "@rspack/core",
+    "version": "2.1.8",
+    "source": "https://registry.npmjs.org/@rspack%2fcore/2.1.8",
+    "dependencies": {
+      "@rspack/binding": "2.1.8"
+    },
+    "peerDependencies": {
+      "@swc/helpers": "^0.5.23",
+      "@module-federation/runtime-tools": "^0.24.1 || ^2.0.0"
+    },
+    "engines": {
+      "node": "^20.19.0 || >=22.12.0"
+    }
+  }
+]

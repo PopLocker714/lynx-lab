@@ -1,0 +1,3 @@
+consumer-bindings.json unchanged PASS
+crypto-consumer-bindings.json unchanged PASS
+secure-consumer-bindings.json unchanged PASS

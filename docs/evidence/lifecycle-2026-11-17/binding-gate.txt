@@ -1,0 +1,22 @@
+$ bun scripts/check-consumer-bindings.mjs
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :lynxConsumerBindings
+
+BUILD SUCCESSFUL in 4s
+1 actionable task: 1 executed
+18 |     'AppLifecycleInitProvider.kt',
+19 | ]
+20 | const variants = ['Debug', 'Release']
+21 | 
+22 | function requireBinding(condition, message) {
+23 |     if (!condition) throw new Error(`Consumer source binding: ${message}`)
+                                   ^
+error: Consumer source binding: Debug compiled registry does not register @lynx-lab/app-lifecycle
+      at requireBinding (/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/scripts/consumer/bindings.mjs:23:31)
+      at validateAndroidBinding (/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/scripts/consumer/bindings.mjs:71:9)
+      at verifyNativeBindings (/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/scripts/consumer/bindings.mjs:162:32)
+      at /Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/scripts/check-consumer-bindings.mjs:8:18
+
+Bun v1.4.0 (macOS arm64)
+error: script "check:consumer:bindings" exited with code 1

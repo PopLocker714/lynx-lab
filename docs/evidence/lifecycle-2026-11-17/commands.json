@@ -1,0 +1,52 @@
+{
+  "environment": {
+    "JAVA_HOME": "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home",
+    "ANDROID_HOME": "/Users/REDACTED_LOCAL_USER/Library/Android/sdk"
+  },
+  "js": "bun run build (sparkling-app-cli build --copy)",
+  "pods": {
+    "cwd": "ios",
+    "command": "bundle exec pod install"
+  },
+  "registry": "./android/gradlew -p android :app:generateDebugLynxLibraryRegistry :app:generateReleaseLynxLibraryRegistry --rerun-tasks --no-daemon",
+  "androidBuild": "./android/gradlew -p android :app:assembleDebug :app:assembleRelease :app:minifyReleaseWithR8 :app:assembleDebugAndroidTest --no-daemon --max-workers=4",
+  "iosDebug": {
+    "cwd": "ios",
+    "command": "xcodebuild -workspace SparklingGo.xcworkspace -scheme SparklingGoInHouse -configuration Debug -destination 'platform=iOS,id=REDACTED_IPHONE_UDID' -derivedDataPath build-device -allowProvisioningUpdates DEVELOPMENT_TEAM=REDACTED_DEVELOPMENT_TEAM IPHONEOS_DEPLOYMENT_TARGET=15.6 -jobs 4 build"
+  },
+  "iosRelease": {
+    "cwd": "ios",
+    "command": "xcodebuild -workspace SparklingGo.xcworkspace -scheme SparklingGo -configuration Release -destination 'platform=iOS,id=REDACTED_IPHONE_UDID' -derivedDataPath build-device -allowProvisioningUpdates DEVELOPMENT_TEAM=REDACTED_DEVELOPMENT_TEAM IPHONEOS_DEPLOYMENT_TARGET=15.6 -jobs 4 build"
+  },
+  "bindings": {
+    "command": "CONSUMER_ROOT=<probe> CONSUMER_TARBALL=<exact vendor archive> bun run check:consumer:bindings",
+    "packageWorktrees": [
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1",
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1",
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation"
+    ]
+  },
+  "instrumentation": "adb -s REDACTED_PIXEL_SERIAL shell am instrument -w -r -e class com.probe.e2e.LifecycleDeviceTest com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner",
+  "agentDevice": {
+    "cli": "/Users/REDACTED_LOCAL_USER/.t3/tools/agent-device/0.21.36/node_modules/agent-device/bin/agent-device.mjs",
+    "stateDir": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/lifecycle-standard/agent-device",
+    "env": {
+      "AGENT_DEVICE_IOS_TEAM_ID": "REDACTED_DEVELOPMENT_TEAM",
+      "AGENT_DEVICE_IOS_BUNDLE_ID": "com.ilya.lynxqa.agentdevice"
+    },
+    "sessions": [
+      "lifecycle-android",
+      "lifecycle-ios"
+    ],
+    "flow": [
+      "open com.probe.e2e --foreground",
+      "install exact preserved APK/.app in place",
+      "open com.probe.e2e --relaunch",
+      "tap Show Lifecycle; snapshot",
+      "home; open com.probe.e2e; Read lifecycle snapshot",
+      "Debug: Unsubscribe B; home/open; snapshot; Subscribe B; home/open; snapshot",
+      "Release: Run Secure Store checks; wait for 10/10; Run Crypto native checks; capture PASS",
+      "close both sessions; stop owned daemon; uninstall owned XCTest runner only"
+    ]
+  }
+}

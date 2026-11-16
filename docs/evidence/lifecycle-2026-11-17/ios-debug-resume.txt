@@ -1,0 +1,19 @@
+Page: com.probe.e2e
+App: com.probe.e2e
+Snapshot: 11 nodes
+@e1 [application] "Sparkling Template"
+@e2 [window] "sparkling"
+@e3 [button] "sparkling"
+@e4 [other] "lynxview"
+@e5 [other] "Show Secure Store"
+@e6 [button] "Show Secure Store"
+@e7 [button] "Show Crypto"
+@e8 [button] "Show edge-to-edge"
+@e9 [button] "Read lifecycle snapshot"
+@e10 [button] "Unsubscribe B"
+@e11 [text] "SNAPSHOT active g0
+SUBSCRIBERS A+B
+A background g1 gap=false
+B background g1 gap=false
+A active g2 gap=false
+B active g2 gap=false"

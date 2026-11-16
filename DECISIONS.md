@@ -214,4 +214,8 @@ plugin 0.19.1 требует Rsbuild 2. QR plugin также обновлён и
 Probe `e924fbc`: ReactLynx 0.125.0, types 4.2.1, react-rsbuild-plugin 0.19.1,
 Rspeedy 0.16.5, Rsbuild 2.1.10, Rspack 2.1.8, QR plugin 0.6.0. JS build и прежние
 пути main/second bundles проверены. Native Lynx 3.9 / Sparkling 2.1.0-rc.36
-сохранены. Это candidate, не новый recommended: native/device acceptance ещё идёт.
+сохранены. Lifecycle Debug/Release и Release crypto/secure-store smoke приняты
+на обоих физических устройствах (probe evidence `51ae596`). Это проверка
+конкретных пакетов/артефактов, не сертификация всего host: старые TS-ошибки и один
+устаревший App test probe остаются. Metadata-only patch React объявляет Vitest peer
+для isolated Bun; runtime-файлы не изменены. Финальный edge consumer ещё проверяется.
