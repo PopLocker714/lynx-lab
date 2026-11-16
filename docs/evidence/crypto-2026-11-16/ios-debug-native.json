@@ -1,0 +1,232 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "index": 0,
+        "type": "Application",
+        "enabled": true,
+        "label": "Sparkling Template",
+        "rect": {
+          "x": 0,
+          "height": 896,
+          "width": 414,
+          "y": 0
+        },
+        "depth": 0,
+        "hittable": false,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "parentIndex": 0,
+        "index": 1,
+        "type": "Window",
+        "enabled": true,
+        "label": "sparkling",
+        "rect": {
+          "x": 0,
+          "height": 896,
+          "width": 414,
+          "y": 0
+        },
+        "depth": 1,
+        "hittable": true,
+        "ref": "e2",
+        "kind": "window"
+      },
+      {
+        "parentIndex": 1,
+        "index": 2,
+        "type": "Other",
+        "enabled": true,
+        "label": "sparkling",
+        "rect": {
+          "x": 0,
+          "height": 896,
+          "width": 414,
+          "y": 0
+        },
+        "depth": 2,
+        "hittable": true,
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 2,
+        "index": 3,
+        "type": "Button",
+        "enabled": true,
+        "label": "sparkling",
+        "rect": {
+          "x": 0,
+          "height": 28,
+          "width": 72,
+          "y": 868
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 0,
+        "index": 4,
+        "type": "Other",
+        "enabled": true,
+        "label": "lynxview",
+        "rect": {
+          "x": 0,
+          "height": 896,
+          "width": 414,
+          "y": 0
+        },
+        "depth": 1,
+        "hittable": true,
+        "ref": "e5",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 4,
+        "index": 5,
+        "type": "Other",
+        "enabled": true,
+        "label": "Show Secure Store",
+        "rect": {
+          "x": 0,
+          "height": 896,
+          "width": 414,
+          "y": 0
+        },
+        "depth": 2,
+        "hittable": true,
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 5,
+        "index": 6,
+        "type": "Button",
+        "enabled": true,
+        "label": "Show Secure Store",
+        "rect": {
+          "x": 0,
+          "height": 39.5,
+          "width": 414,
+          "y": 52
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 5,
+        "index": 7,
+        "type": "Button",
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "rect": {
+          "x": 0,
+          "height": 39.5,
+          "width": 414,
+          "y": 99.5
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e8",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 5,
+        "index": 8,
+        "type": "Button",
+        "enabled": true,
+        "label": "Run Crypto native checks",
+        "rect": {
+          "x": 12,
+          "height": 43.5,
+          "width": 390,
+          "y": 155
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e9",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 5,
+        "index": 9,
+        "type": "Button",
+        "enabled": true,
+        "label": "Run Crypto failure injection",
+        "rect": {
+          "x": 12,
+          "height": 43.5,
+          "width": 390,
+          "y": 206.5
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e10",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 5,
+        "index": 10,
+        "type": "StaticText",
+        "enabled": true,
+        "label": "NATIVE: real bridge, no injection\nPASS views/offset/empty: Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, BigInt64Array, BigUint64Array\nPASS byte lengths 1/2/3/4/31/32/65536\nPASS float/DataView rejection + byte quota\nPASS 8 distinct 32-byte samples (smoke only)\nPASS 8 distinct UUIDs v4/lowercase (smoke only)\nCRYPTO NATIVE PASS; smoke does not measure entropy",
+        "rect": {
+          "x": 12,
+          "height": 140,
+          "width": 390,
+          "y": 260
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e11",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 11,
+      "totalNodeCount": 11,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 148.9119529724121,
+        "presentationMs": 0.4520416259765625
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 3,
+        "p50Ms": 350,
+        "p95Ms": 454,
+        "maxMs": 454,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 3
+        }
+      }
+    },
+    "refsGeneration": 519224
+  }
+}

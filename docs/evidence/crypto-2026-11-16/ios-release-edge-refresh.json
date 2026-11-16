@@ -1,0 +1,266 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "depth": 0,
+        "hittable": false,
+        "enabled": true,
+        "index": 0,
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "type": "Application",
+        "label": "Sparkling Template",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "depth": 1,
+        "hittable": true,
+        "enabled": true,
+        "index": 1,
+        "parentIndex": 0,
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "type": "Other",
+        "label": "lynxview",
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "depth": 2,
+        "hittable": true,
+        "enabled": true,
+        "index": 2,
+        "parentIndex": 1,
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "type": "Other",
+        "label": "Show Secure Store",
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 3,
+        "parentIndex": 2,
+        "rect": {
+          "height": 39.5,
+          "y": 52,
+          "x": 0,
+          "width": 414
+        },
+        "type": "Button",
+        "label": "Show Secure Store",
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 4,
+        "parentIndex": 2,
+        "rect": {
+          "height": 39.5,
+          "y": 99.5,
+          "x": 0,
+          "width": 414
+        },
+        "type": "Button",
+        "label": "Show Crypto",
+        "ref": "e5",
+        "kind": "button"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 5,
+        "parentIndex": 2,
+        "rect": {
+          "height": 39.5,
+          "y": 155,
+          "x": 157.5,
+          "width": 99
+        },
+        "type": "Button",
+        "label": "refresh()",
+        "ref": "e6",
+        "kind": "button"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 6,
+        "parentIndex": 2,
+        "rect": {
+          "height": 43,
+          "y": 198.5,
+          "x": 2,
+          "width": 410
+        },
+        "type": "StaticText",
+        "label": "System bars are controlled by the iOS host. Style/visibility controls are Android-only.",
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 7,
+        "parentIndex": 2,
+        "rect": {
+          "height": 28.5,
+          "y": 241.5,
+          "x": 40.5,
+          "width": 333.5
+        },
+        "type": "StaticText",
+        "label": "Keyboard input is unavailable in this iOS probe.",
+        "ref": "e8",
+        "kind": "text"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 8,
+        "parentIndex": 2,
+        "rect": {
+          "height": 28.5,
+          "y": 270,
+          "x": 114.5,
+          "width": 185.5
+        },
+        "type": "StaticText",
+        "label": "PKG edge-to-edge day 5",
+        "ref": "e9",
+        "kind": "text"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 9,
+        "parentIndex": 2,
+        "rect": {
+          "height": 28.5,
+          "y": 298.5,
+          "x": 20.5,
+          "width": 373.5
+        },
+        "type": "StaticText",
+        "label": "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 10,
+        "parentIndex": 2,
+        "rect": {
+          "height": 28.5,
+          "y": 327,
+          "x": 82.5,
+          "width": 249.5
+        },
+        "type": "StaticText",
+        "label": "events: g1 t48 b34 k0 globalProps",
+        "ref": "e11",
+        "kind": "text"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 11,
+        "parentIndex": 2,
+        "rect": {
+          "height": 28.5,
+          "y": 355.5,
+          "x": 34,
+          "width": 346.5
+        },
+        "type": "StaticText",
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "ref": "e12",
+        "kind": "text"
+      },
+      {
+        "depth": 3,
+        "hittable": true,
+        "enabled": true,
+        "index": 12,
+        "parentIndex": 2,
+        "rect": {
+          "height": 71.5,
+          "y": 384,
+          "x": 72,
+          "width": 270
+        },
+        "type": "StaticText",
+        "label": "log:\nrefresh: done g=1 t=48.0 globalProps\nrefresh: called",
+        "ref": "e13",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 13,
+      "totalNodeCount": 13,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 143.40102672576904,
+        "presentationMs": 0.3249645233154297
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 24,
+        "p50Ms": 335,
+        "p95Ms": 454,
+        "maxMs": 466,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 24
+        }
+      }
+    },
+    "refsGeneration": 519245
+  }
+}

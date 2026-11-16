@@ -1,0 +1,84 @@
+libtool: warning: 'NSBezierPath+SDRoundedCorners.o' has no symbols
+libtool: warning: 'NSButton+WebCache.o' has no symbols
+libtool: warning: 'NSData+ImageContentType.o' has no symbols
+libtool: warning: 'NSImage+Compatibility.o' has no symbols
+libtool: warning: 'SDAnimatedImageRep.o' has no symbols
+libtool: warning: 'SDWebImageCompat.o' has no symbols
+libtool: warning: 'UIColor+SDHexString.o' has no symbols
+libtool: warning: 'UIImage+ExtendedCacheData.o' has no symbols
+libtool: warning: 'UIImage+ForceDecode.o' has no symbols
+libtool: warning: 'UIImage+GIF.o' has no symbols
+libtool: warning: 'UIImage+MemoryCacheCost.o' has no symbols
+libtool: warning: 'UIImage+MultiFormat.o' has no symbols
+libtool: warning: 'UIView+WebCacheOperation.o' has no symbols
+<command line>:12:9: warning: 'JSC_OBJC_API_ENABLED' macro redefined [-Wmacro-redefined]
+<command line>:14:9: warning: 'JSC_OBJC_API_ENABLED' macro redefined [-Wmacro-redefined]
+<command line>:12:9: warning: 'JSC_OBJC_API_ENABLED' macro redefined [-Wmacro-redefined]
+<command line>:14:9: warning: 'JSC_OBJC_API_ENABLED' macro redefined [-Wmacro-redefined]
+<command line>:12:9: warning: 'JSC_OBJC_API_ENABLED' macro redefined [-Wmacro-redefined]
+<command line>:14:9: warning: 'JSC_OBJC_API_ENABLED' macro redefined [-Wmacro-redefined]
+libtool: warning: 'UIImage+WebP.o' has no symbols
+libtool: warning: 'NSArray+MTLManipulationAdditions.o' has no symbols
+libtool: warning: 'NSDictionary+MTLJSONKeyPath.o' has no symbols
+libtool: warning: 'NSDictionary+MTLManipulationAdditions.o' has no symbols
+libtool: warning: 'NSError+MTLModelException.o' has no symbols
+libtool: warning: 'embedded.o' has no symbols
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:157:40: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                        `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:157:71: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                                                       `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:158:41: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                         `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:158:72: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                                                        `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+libtool: warning: 'vector.o' has no symbols
+libtool: warning: 'animation_timeline.o' has no symbols
+libtool: warning: 'background_data.o' has no symbols
+libtool: warning: 'CALayer+LynxHeroTransition.o' has no symbols
+libtool: warning: 'constants.o' has no symbols
+libtool: warning: 'css_keyframes_token.o' has no symbols
+libtool: warning: 'css_selector_constants.o' has no symbols
+libtool: warning: 'lepus_global.o' has no symbols
+libtool: warning: 'lepusng_profiler.o' has no symbols
+libtool: warning: 'lynx_settings.o' has no symbols
+libtool: warning: 'LynxBaseScrollView+Internal.o' has no symbols
+libtool: warning: 'LynxBaseScrollView+Public.o' has no symbols
+libtool: warning: 'LynxConverter+LynxCSSType.o' has no symbols
+libtool: warning: 'LynxConverter+NSShadow.o' has no symbols
+libtool: warning: 'LynxConverter+UI.o' has no symbols
+libtool: warning: 'LynxFilterUtil+System.o' has no symbols
+libtool: warning: 'LynxHtmlEscape.o' has no symbols
+libtool: warning: 'LynxUI+Fluency.o' has no symbols
+libtool: warning: 'LynxUI+LynxHeroTransition.o' has no symbols
+libtool: warning: 'LynxUICollection+PropSetter.o' has no symbols
+libtool: warning: 'LynxUIListLight+PropSetter.o' has no symbols
+libtool: warning: 'LynxView+Identify.o' has no symbols
+libtool: warning: 'native_painting_context.o' has no symbols
+libtool: warning: 'quickjs_runtime_profiler.o' has no symbols
+libtool: warning: 'style_node.o' has no symbols
+libtool: warning: 'transition_data.o' has no symbols
+libtool: warning: 'UIView+Lynx.o' has no symbols
+libtool: warning: 'fps_trace_plugin_darwin.o' has no symbols
+libtool: warning: 'frame_trace_service.o' has no symbols
+libtool: warning: 'frameview_trace_plugin_darwin.o' has no symbols
+libtool: warning: 'instance_counter_trace_impl.o' has no symbols
+libtool: warning: 'instance_trace_plugin_darwin.o' has no symbols
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:157:40: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                        `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:157:71: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                                                       `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:158:41: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                         `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Debug-iphoneos/Lynx/Lynx.framework/Headers/LynxBackgroundRenderer+Internal.h:158:72: warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+    |                                                                        `- warning: 'mainScreen' is deprecated: first deprecated in iOS 26.0 - Use a UIScreen instance found through context instead (i.e, view.window.windowScene.screen), or for properties like UIScreen.scale with trait equivalents, use a traitCollection found through context.
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo/SparklingGo/UI/UIHelper.m:12:71: warning: 'keyWindow' is deprecated: first deprecated in iOS 13.0 - Should not be used for applications that support multiple scenes as it returns a key window across all connected scenes [-Wdeprecated-declarations]
+2026-11-16 23:39:31.859 appintentsmetadataprocessor[37876:19421101] warning: Metadata extraction skipped, no AppIntents.framework dependency found
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo.xcodeproj: warning: Multiple targets match implicit dependency for linker flags '-framework LynxService'. Consider adding an explicit dependency on the intended target to resolve this ambiguity. (in target 'SparklingGoInHouse' from project 'SparklingGo')
+/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo.xcodeproj: warning: Multiple targets match implicit dependency for linker flags '-framework PrimJS'. Consider adding an explicit dependency on the intended target to resolve this ambiguity. (in target 'SparklingGoInHouse' from project 'SparklingGo')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'PrimJS-a618e9fd' from project 'PrimJS')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'PrimJS-85d3fa4e' from project 'PrimJS')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'LynxDevtool' from project 'LynxDevtool')
+warning: Run script build phase 'Create Symlinks to Header Folders' will be run during every build because it does not specify any outputs. To address this issue, either add output dependencies to the script phase, or configure it to run in every build by unchecking "Based on dependency analysis" in the script phase. (in target 'DebugRouter' from project 'DebugRouter')
+warning: no rule to process file '/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/DebugRouter/debug_router/native/BUILD.gn' of type 'text' for architecture 'arm64' (in target 'DebugRouter' from project 'DebugRouter')
+warning: no rule to process file '/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/DebugRouter/debug_router/native/base/LICENSE' of type 'text' for architecture 'arm64' (in target 'DebugRouter' from project 'DebugRouter')
+** BUILD SUCCEEDED **

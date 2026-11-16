@@ -4,7 +4,7 @@
 [package-standard.md](../docs/package-standard.md), обновления host —
 [compatibility-policy.md](../docs/compatibility-policy.md).
 
-Стандарт внедрён в рабочую ветку crypto; consumer/device QA ещё продолжается.
+Стандарт внедрён в рабочую ветку crypto; consumer/device QA одного профиля прошла.
 Остальные пакеты мигрируются по одному в отдельном worktree, с baseline checks,
 review и сохранением API. Это не означает готовность всех четырёх пакетов.
 У этого репозитория знаний нет package.json; устанавливать зависимости здесь не нужно.
@@ -76,7 +76,11 @@ SDK/host. Проверки эталона записываются в CHANGELOG 
 Lint и отдельные ObjC compile/static analysis против Lynx 3.9.0 headers.
 Проверены Biome 2.5.9, ktlint 1.7.1 и clang-format 21.1.8. Эталон Biome обновлён
 на проверенный синтаксис 2.5.9. Отдельная компиляция ObjC не доказывает host autolink;
-полная consumer/device QA продолжается. GitHub CI ещё не запускался.
+полная consumer/device QA отдельно прошла на физических Pixel 9 / Android 17 и
+iPhone 11 / iOS 18.4.1 в Debug/Release, Android R8. Связка Lynx 3.9.0 /
+Sparkling 2.1.0-rc.36, probe `c3e957d`; результаты в
+[evidence](../docs/evidence/crypto-2026-11-16/results.json). Минимальные ОС и второй
+профиль не проверены. GitHub CI ещё не запускался; release blocker остаётся.
 
 Вклад пилота в следующие миграции:
 

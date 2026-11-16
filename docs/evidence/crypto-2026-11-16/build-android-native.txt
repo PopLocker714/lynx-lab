@@ -1,0 +1,517 @@
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.2/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+WARNING:We recommend using a newer Android Gradle plugin to use compileSdk = 35
+
+This Android Gradle plugin (7.4.2) was tested up to compileSdk = 33
+
+This warning can be suppressed by updating
+    android.suppressUnsupportedCompileSdk=34,35
+to this project's gradle.properties
+
+The build will continue, but you are strongly encouraged to update your project to
+use a newer Android Gradle Plugin that has been tested with compileSdk = 35
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:preBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_crypto:preDebugBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_crypto:compileDebugAidl NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:preBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_edge_to_edge:preDebugBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_edge_to_edge:compileDebugAidl NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:preBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_secure_store:preDebugBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_secure_store:compileDebugAidl NO-SOURCE
+> Task :sparkling-navigation:preBuild UP-TO-DATE
+> Task :sparkling-navigation:preDebugBuild UP-TO-DATE
+> Task :sparkling-navigation:compileDebugAidl NO-SOURCE
+> Task :app:compileDebugAidl NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:packageDebugRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:packageDebugRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:packageDebugRenderscript NO-SOURCE
+> Task :sparkling-navigation:packageDebugRenderscript NO-SOURCE
+> Task :app:compileDebugRenderscript NO-SOURCE
+> Task :app:generateDebugBuildConfig
+> Task :app:generateDebugLynxLibraryRegistry
+> Task :lynx_library__lynx_lab_crypto:writeDebugAarMetadata
+> Task :lynx_library__lynx_lab_edge_to_edge:writeDebugAarMetadata
+> Task :lynx_library__lynx_lab_secure_store:writeDebugAarMetadata
+> Task :sparkling-navigation:writeDebugAarMetadata
+> Task :app:generateDebugResValues
+> Task :lynx_library__lynx_lab_crypto:compileDebugRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:generateDebugResValues
+> Task :lynx_library__lynx_lab_crypto:generateDebugResources
+> Task :app:checkDebugAarMetadata
+> Task :lynx_library__lynx_lab_crypto:packageDebugResources
+> Task :lynx_library__lynx_lab_edge_to_edge:compileDebugRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:generateDebugResValues
+> Task :lynx_library__lynx_lab_edge_to_edge:generateDebugResources
+> Task :lynx_library__lynx_lab_edge_to_edge:packageDebugResources
+> Task :lynx_library__lynx_lab_secure_store:compileDebugRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:generateDebugResValues
+> Task :lynx_library__lynx_lab_secure_store:generateDebugResources
+> Task :lynx_library__lynx_lab_secure_store:packageDebugResources
+> Task :sparkling-navigation:compileDebugRenderscript NO-SOURCE
+> Task :sparkling-navigation:generateDebugResValues
+> Task :sparkling-navigation:generateDebugResources
+> Task :sparkling-navigation:packageDebugResources
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :lynx_library__lynx_lab_crypto:extractDeepLinksDebug
+> Task :lynx_library__lynx_lab_edge_to_edge:extractDeepLinksDebug
+> Task :lynx_library__lynx_lab_secure_store:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :sparkling-navigation:extractDeepLinksDebug
+> Task :lynx_library__lynx_lab_crypto:processDebugManifest
+> Task :lynx_library__lynx_lab_secure_store:processDebugManifest
+> Task :lynx_library__lynx_lab_edge_to_edge:processDebugManifest
+> Task :sparkling-navigation:processDebugManifest
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :lynx_library__lynx_lab_crypto:compileDebugLibraryResources
+> Task :lynx_library__lynx_lab_edge_to_edge:compileDebugLibraryResources
+> Task :lynx_library__lynx_lab_crypto:parseDebugLocalResources
+> Task :app:processDebugManifestForPackage
+> Task :lynx_library__lynx_lab_edge_to_edge:parseDebugLocalResources
+> Task :lynx_library__lynx_lab_secure_store:compileDebugLibraryResources
+> Task :lynx_library__lynx_lab_secure_store:parseDebugLocalResources
+> Task :sparkling-navigation:compileDebugLibraryResources
+> Task :sparkling-navigation:parseDebugLocalResources
+> Task :lynx_library__lynx_lab_edge_to_edge:generateDebugRFile
+> Task :lynx_library__lynx_lab_crypto:generateDebugRFile
+> Task :lynx_library__lynx_lab_secure_store:generateDebugRFile
+> Task :sparkling-navigation:generateDebugRFile
+> Task :lynx_library__lynx_lab_crypto:generateDebugBuildConfig
+> Task :lynx_library__lynx_lab_edge_to_edge:generateDebugBuildConfig
+> Task :lynx_library__lynx_lab_crypto:javaPreCompileDebug
+> Task :app:processDebugResources
+> Task :lynx_library__lynx_lab_edge_to_edge:javaPreCompileDebug
+> Task :lynx_library__lynx_lab_secure_store:generateDebugBuildConfig
+> Task :lynx_library__lynx_lab_secure_store:javaPreCompileDebug
+> Task :sparkling-navigation:generateDebugBuildConfig
+> Task :lynx_library__lynx_lab_secure_store:kaptGenerateStubsDebugKotlin
+> Task :lynx_library__lynx_lab_crypto:kaptGenerateStubsDebugKotlin
+> Task :lynx_library__lynx_lab_edge_to_edge:kaptGenerateStubsDebugKotlin
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.jetbrains.kotlin.kapt3.util.ModuleManipulationUtilsKt (file:/Users/REDACTED_LOCAL_USER/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.8.10/ad05a4188f984f89630571206974f0cf52d7ab8f/kotlin-annotation-processing-gradle-1.8.10.jar) to constructor com.sun.tools.javac.util.Context()
+WARNING: Please consider reporting this to the maintainers of org.jetbrains.kotlin.kapt3.util.ModuleManipulationUtilsKt
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.jetbrains.kotlin.kapt3.util.ModuleManipulationUtilsKt (file:/Users/REDACTED_LOCAL_USER/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.8.10/ad05a4188f984f89630571206974f0cf52d7ab8f/kotlin-annotation-processing-gradle-1.8.10.jar) to constructor com.sun.tools.javac.util.Context()
+WARNING: Please consider reporting this to the maintainers of org.jetbrains.kotlin.kapt3.util.ModuleManipulationUtilsKt
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.jetbrains.kotlin.kapt3.util.ModuleManipulationUtilsKt (file:/Users/REDACTED_LOCAL_USER/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.8.10/ad05a4188f984f89630571206974f0cf52d7ab8f/kotlin-annotation-processing-gradle-1.8.10.jar) to constructor com.sun.tools.javac.util.Context()
+WARNING: Please consider reporting this to the maintainers of org.jetbrains.kotlin.kapt3.util.ModuleManipulationUtilsKt
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+
+> Task :sparkling-navigation:compileDebugKotlin
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/close/RouterCloseMethod.kt:50:70 'createXModel(): T' is deprecated. This method has no containerID info. Please use createXModel(containerID: String) to create.
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/open/RouterOpenMethod.kt:94:73 'createXModel(): T' is deprecated. This method has no containerID info. Please use createXModel(containerID: String) to create.
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/open/RouterOpenMethod.kt:134:69 'createXModel(): T' is deprecated. This method has no containerID info. Please use createXModel(containerID: String) to create.
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/utils/IHostRouterDepend.kt:26:100 Unnecessary safe call on a non-null receiver of type ContextProviderFactory
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/utils/IHostRouterDepend.kt:32:52 Unnecessary non-null assertion (!!) on a non-null receiver of type AbsRouteOpenHandler
+
+> Task :sparkling-navigation:javaPreCompileDebug
+
+> Task :lynx_library__lynx_lab_crypto:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx_library__lynx_lab_secure_store:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx_library__lynx_lab_edge_to_edge:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :sparkling-navigation:compileDebugJavaWithJavac
+> Task :sparkling-navigation:bundleLibCompileToJarDebug
+> Task :app:javaPreCompileDebug
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_crypto:mergeDebugShaders
+> Task :lynx_library__lynx_lab_crypto:compileDebugShaders NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:generateDebugAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_crypto:packageDebugAssets
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeDebugShaders
+> Task :lynx_library__lynx_lab_edge_to_edge:compileDebugShaders NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:generateDebugAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_edge_to_edge:packageDebugAssets
+> Task :lynx_library__lynx_lab_secure_store:mergeDebugShaders
+> Task :lynx_library__lynx_lab_secure_store:compileDebugShaders NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:generateDebugAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_secure_store:packageDebugAssets
+> Task :sparkling-navigation:mergeDebugShaders
+> Task :sparkling-navigation:compileDebugShaders NO-SOURCE
+> Task :sparkling-navigation:generateDebugAssets UP-TO-DATE
+> Task :sparkling-navigation:packageDebugAssets
+> Task :app:mergeDebugAssets
+> Task :lynx_library__lynx_lab_crypto:compileDebugKotlin
+> Task :app:compressDebugAssets
+
+> Task :lynx_library__lynx_lab_crypto:compileDebugJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-4.0.1.jar (org.lynxsdk.lynx:lynx-processor:4.0.1), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:processDebugJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:bundleLibCompileToJarDebug
+> Task :lynx_library__lynx_lab_edge_to_edge:processDebugJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:processDebugJavaRes NO-SOURCE
+> Task :sparkling-navigation:processDebugJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:bundleLibResDebug
+> Task :sparkling-navigation:bundleLibResDebug
+> Task :app:desugarDebugFileDependencies
+> Task :lynx_library__lynx_lab_crypto:bundleLibRuntimeToDirDebug
+> Task :app:checkDebugDuplicateClasses
+> Task :lynx_library__lynx_lab_secure_store:compileDebugKotlin
+
+> Task :lynx_library__lynx_lab_secure_store:compileDebugJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-4.0.1.jar (org.lynxsdk.lynx:lynx-processor:4.0.1), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :lynx_library__lynx_lab_secure_store:bundleLibCompileToJarDebug
+> Task :lynx_library__lynx_lab_secure_store:bundleLibResDebug
+> Task :lynx_library__lynx_lab_secure_store:bundleLibRuntimeToDirDebug
+
+> Task :lynx_library__lynx_lab_edge_to_edge:compileDebugKotlin
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/@lynx-lab/edge-to-edge/android/src/main/java/dev/lynxlab/edgetoedge/EdgeToEdge.kt:113:14 'setter for isStatusBarContrastEnforced: Boolean' is deprecated. Deprecated in Java
+
+> Task :lynx_library__lynx_lab_edge_to_edge:compileDebugJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-4.0.1.jar (org.lynxsdk.lynx:lynx-processor:4.0.1), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleLibCompileToJarDebug
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleLibResDebug
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleLibRuntimeToDirDebug
+> Task :sparkling-navigation:bundleLibRuntimeToDirDebug
+> Task :app:mergeDebugJniLibFolders
+> Task :lynx_library__lynx_lab_crypto:mergeDebugJniLibFolders
+> Task :lynx_library__lynx_lab_crypto:mergeDebugNativeLibs NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:copyDebugJniLibsProjectOnly
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeDebugJniLibFolders
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeDebugNativeLibs NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:copyDebugJniLibsProjectOnly
+> Task :lynx_library__lynx_lab_secure_store:mergeDebugJniLibFolders
+> Task :app:mergeLibDexDebug
+> Task :lynx_library__lynx_lab_secure_store:mergeDebugNativeLibs NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:copyDebugJniLibsProjectOnly
+> Task :sparkling-navigation:mergeDebugJniLibFolders
+> Task :sparkling-navigation:mergeDebugNativeLibs NO-SOURCE
+> Task :sparkling-navigation:copyDebugJniLibsProjectOnly
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :lynx_library__lynx_lab_crypto:preReleaseBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_crypto:compileReleaseAidl NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:mergeReleaseJniLibFolders
+> Task :lynx_library__lynx_lab_crypto:mergeReleaseNativeLibs NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:stripReleaseDebugSymbols NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:copyReleaseJniLibsProjectAndLocalJars
+> Task :lynx_library__lynx_lab_crypto:compileReleaseRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:generateReleaseResValues
+> Task :lynx_library__lynx_lab_crypto:extractDeepLinksForAarRelease
+> Task :lynx_library__lynx_lab_crypto:generateReleaseBuildConfig
+> Task :lynx_library__lynx_lab_crypto:generateReleaseResources
+> Task :lynx_library__lynx_lab_crypto:packageReleaseResources
+> Task :lynx_library__lynx_lab_crypto:parseReleaseLocalResources
+> Task :app:kaptGenerateStubsDebugKotlin
+> Task :lynx_library__lynx_lab_crypto:processReleaseManifest
+> Task :lynx_library__lynx_lab_crypto:generateReleaseRFile
+
+> Task :app:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :app:mergeDebugNativeLibs
+> Task :lynx_library__lynx_lab_crypto:kaptGenerateStubsReleaseKotlin
+
+> Task :lynx_library__lynx_lab_crypto:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libbasedevtool.so, libgifimage.so, libimagepipeline.so, liblynx.so, liblynx_debug.so, liblynx_service_api.so, liblynx_v8_bridge.so, liblynxbase.so, liblynxdebugrouter.so, liblynxdevtool.so, liblynxdevtool_qjs_bridge.so, liblynxdevtool_v8_bridge.so, liblynxtrace.so, libnapi.so, libnapi_v8.so, libnative-filters.so, libnative-imagetranscoder.so, libquick.so, libstatic-webp.so, libv8_libfull.cr.so, libwasm.so.
+
+> Task :lynx_library__lynx_lab_crypto:javaPreCompileRelease
+> Task :lynx_library__lynx_lab_crypto:mergeReleaseShaders
+> Task :lynx_library__lynx_lab_crypto:compileReleaseShaders NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:generateReleaseAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_crypto:packageReleaseAssets
+> Task :lynx_library__lynx_lab_crypto:packageReleaseRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:compileReleaseKotlin
+> Task :lynx_library__lynx_lab_crypto:prepareLintJarForPublish
+> Task :lynx_library__lynx_lab_crypto:extractReleaseAnnotations
+
+> Task :lynx_library__lynx_lab_crypto:compileReleaseJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-4.0.1.jar (org.lynxsdk.lynx:lynx-processor:4.0.1), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :lynx_library__lynx_lab_crypto:mergeReleaseGeneratedProguardFiles
+> Task :lynx_library__lynx_lab_crypto:mergeReleaseConsumerProguardFiles
+> Task :lynx_library__lynx_lab_crypto:prepareReleaseArtProfile
+> Task :lynx_library__lynx_lab_crypto:processReleaseJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_crypto:writeReleaseAarMetadata
+> Task :lynx_library__lynx_lab_crypto:mergeReleaseJavaResource
+> Task :lynx_library__lynx_lab_crypto:syncReleaseLibJars
+> Task :lynx_library__lynx_lab_crypto:bundleReleaseLocalLintAar
+> Task :lynx_library__lynx_lab_edge_to_edge:preReleaseBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_edge_to_edge:compileReleaseAidl NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeReleaseJniLibFolders
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeReleaseNativeLibs NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:stripReleaseDebugSymbols NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:copyReleaseJniLibsProjectAndLocalJars
+> Task :lynx_library__lynx_lab_edge_to_edge:compileReleaseRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:generateReleaseResValues
+> Task :lynx_library__lynx_lab_edge_to_edge:extractDeepLinksForAarRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:generateReleaseBuildConfig
+> Task :lynx_library__lynx_lab_edge_to_edge:generateReleaseResources
+> Task :lynx_library__lynx_lab_edge_to_edge:packageReleaseResources
+> Task :lynx_library__lynx_lab_edge_to_edge:parseReleaseLocalResources
+> Task :lynx_library__lynx_lab_edge_to_edge:processReleaseManifest
+> Task :lynx_library__lynx_lab_edge_to_edge:javaPreCompileRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeReleaseShaders
+> Task :lynx_library__lynx_lab_edge_to_edge:generateReleaseRFile
+> Task :lynx_library__lynx_lab_edge_to_edge:compileReleaseShaders NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:generateReleaseAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_edge_to_edge:packageReleaseAssets
+> Task :lynx_library__lynx_lab_edge_to_edge:packageReleaseRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:prepareLintJarForPublish
+> Task :lynx_library__lynx_lab_edge_to_edge:prepareReleaseArtProfile
+> Task :lynx_library__lynx_lab_edge_to_edge:processReleaseJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_edge_to_edge:writeReleaseAarMetadata
+> Task :lynx_library__lynx_lab_secure_store:preReleaseBuild UP-TO-DATE
+> Task :lynx_library__lynx_lab_secure_store:compileReleaseAidl NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:mergeReleaseJniLibFolders
+> Task :lynx_library__lynx_lab_secure_store:mergeReleaseNativeLibs NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:stripReleaseDebugSymbols NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:copyReleaseJniLibsProjectAndLocalJars
+> Task :lynx_library__lynx_lab_secure_store:compileReleaseRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:generateReleaseResValues
+> Task :lynx_library__lynx_lab_secure_store:extractDeepLinksForAarRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:kaptGenerateStubsReleaseKotlin
+> Task :lynx_library__lynx_lab_secure_store:generateReleaseBuildConfig
+> Task :lynx_library__lynx_lab_secure_store:generateReleaseResources
+> Task :lynx_library__lynx_lab_secure_store:packageReleaseResources
+> Task :lynx_library__lynx_lab_secure_store:parseReleaseLocalResources
+> Task :lynx_library__lynx_lab_secure_store:processReleaseManifest
+> Task :app:mergeExtDexDebug
+> Task :lynx_library__lynx_lab_secure_store:generateReleaseRFile
+> Task :lynx_library__lynx_lab_secure_store:javaPreCompileRelease
+> Task :lynx_library__lynx_lab_secure_store:mergeReleaseShaders
+> Task :lynx_library__lynx_lab_secure_store:compileReleaseShaders NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:generateReleaseAssets UP-TO-DATE
+> Task :lynx_library__lynx_lab_secure_store:packageReleaseAssets
+> Task :lynx_library__lynx_lab_secure_store:packageReleaseRenderscript NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:prepareLintJarForPublish
+> Task :lynx_library__lynx_lab_secure_store:prepareReleaseArtProfile
+> Task :lynx_library__lynx_lab_secure_store:processReleaseJavaRes NO-SOURCE
+> Task :lynx_library__lynx_lab_secure_store:writeReleaseAarMetadata
+> Task :sparkling-navigation:preReleaseBuild UP-TO-DATE
+> Task :sparkling-navigation:compileReleaseAidl NO-SOURCE
+> Task :sparkling-navigation:mergeReleaseJniLibFolders
+> Task :sparkling-navigation:mergeReleaseNativeLibs NO-SOURCE
+> Task :sparkling-navigation:stripReleaseDebugSymbols NO-SOURCE
+> Task :sparkling-navigation:copyReleaseJniLibsProjectAndLocalJars
+> Task :sparkling-navigation:compileReleaseRenderscript NO-SOURCE
+> Task :sparkling-navigation:generateReleaseResValues
+> Task :sparkling-navigation:extractDeepLinksForAarRelease
+> Task :sparkling-navigation:generateReleaseBuildConfig
+> Task :sparkling-navigation:generateReleaseResources
+> Task :sparkling-navigation:packageReleaseResources
+> Task :sparkling-navigation:parseReleaseLocalResources
+> Task :sparkling-navigation:processReleaseManifest
+> Task :sparkling-navigation:generateReleaseRFile
+
+> Task :lynx_library__lynx_lab_edge_to_edge:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :app:compileDebugKotlin
+> Task :lynx_library__lynx_lab_secure_store:kaptGenerateStubsReleaseKotlin
+
+> Task :app:compileDebugJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-3.9.0.jar (org.lynxsdk.lynx:lynx-processor:3.9.0), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :sparkling-navigation:compileReleaseKotlin
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/close/RouterCloseMethod.kt:50:70 'createXModel(): T' is deprecated. This method has no containerID info. Please use createXModel(containerID: String) to create.
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/open/RouterOpenMethod.kt:94:73 'createXModel(): T' is deprecated. This method has no containerID info. Please use createXModel(containerID: String) to create.
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/open/RouterOpenMethod.kt:134:69 'createXModel(): T' is deprecated. This method has no containerID info. Please use createXModel(containerID: String) to create.
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/utils/IHostRouterDepend.kt:26:100 Unnecessary safe call on a non-null receiver of type ContextProviderFactory
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/sparkling-navigation/android/src/main/java/com/tiktok/sparkling/method/router/utils/IHostRouterDepend.kt:32:52 Unnecessary non-null assertion (!!) on a non-null receiver of type AbsRouteOpenHandler
+
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugJavaResource
+> Task :app:mergeProjectDexDebug
+> Task :sparkling-navigation:extractReleaseAnnotations
+
+> Task :lynx_library__lynx_lab_edge_to_edge:compileReleaseKotlin
+w: file:///Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules/@lynx-lab/edge-to-edge/android/src/main/java/dev/lynxlab/edgetoedge/EdgeToEdge.kt:113:14 'setter for isStatusBarContrastEnforced: Boolean' is deprecated. Deprecated in Java
+
+> Task :lynx_library__lynx_lab_edge_to_edge:extractReleaseAnnotations
+
+> Task :lynx_library__lynx_lab_secure_store:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx_library__lynx_lab_edge_to_edge:compileReleaseJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-4.0.1.jar (org.lynxsdk.lynx:lynx-processor:4.0.1), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeReleaseGeneratedProguardFiles
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeReleaseConsumerProguardFiles
+> Task :lynx_library__lynx_lab_edge_to_edge:mergeReleaseJavaResource
+> Task :lynx_library__lynx_lab_edge_to_edge:syncReleaseLibJars
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleReleaseLocalLintAar
+> Task :sparkling-navigation:javaPreCompileRelease
+> Task :sparkling-navigation:compileReleaseJavaWithJavac
+> Task :sparkling-navigation:mergeReleaseGeneratedProguardFiles
+> Task :sparkling-navigation:mergeReleaseConsumerProguardFiles
+> Task :sparkling-navigation:mergeReleaseShaders
+> Task :sparkling-navigation:compileReleaseShaders NO-SOURCE
+> Task :sparkling-navigation:generateReleaseAssets UP-TO-DATE
+> Task :sparkling-navigation:packageReleaseAssets
+> Task :sparkling-navigation:packageReleaseRenderscript NO-SOURCE
+> Task :sparkling-navigation:prepareReleaseArtProfile
+> Task :sparkling-navigation:processReleaseJavaRes NO-SOURCE
+> Task :sparkling-navigation:prepareLintJarForPublish
+> Task :sparkling-navigation:mergeReleaseJavaResource
+> Task :sparkling-navigation:syncReleaseLibJars
+> Task :app:buildKotlinToolingMetadata
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:compileReleaseAidl NO-SOURCE
+> Task :app:compileReleaseRenderscript NO-SOURCE
+> Task :app:generateReleaseBuildConfig
+> Task :app:generateReleaseLynxLibraryRegistry
+> Task :app:generateReleaseResValues
+> Task :sparkling-navigation:writeReleaseAarMetadata
+> Task :app:mapReleaseSourceSetPaths
+> Task :sparkling-navigation:bundleReleaseLocalLintAar
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+> Task :app:generateReleaseResources
+> Task :app:checkReleaseAarMetadata
+> Task :lynx_library__lynx_lab_secure_store:compileReleaseKotlin
+> Task :lynx_library__lynx_lab_secure_store:extractReleaseAnnotations
+
+> Task :lynx_library__lynx_lab_secure_store:compileReleaseJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-4.0.1.jar (org.lynxsdk.lynx:lynx-processor:4.0.1), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :lynx_library__lynx_lab_secure_store:mergeReleaseGeneratedProguardFiles
+> Task :lynx_library__lynx_lab_secure_store:mergeReleaseConsumerProguardFiles
+> Task :lynx_library__lynx_lab_secure_store:mergeReleaseJavaResource
+> Task :app:packageReleaseResources
+> Task :lynx_library__lynx_lab_secure_store:syncReleaseLibJars
+> Task :lynx_library__lynx_lab_secure_store:bundleReleaseLocalLintAar
+> Task :app:parseReleaseLocalResources
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :lynx_library__lynx_lab_crypto:extractDeepLinksRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:extractDeepLinksRelease
+> Task :lynx_library__lynx_lab_secure_store:extractDeepLinksRelease
+> Task :sparkling-navigation:extractDeepLinksRelease
+> Task :app:mergeReleaseResources
+> Task :app:processReleaseMainManifest
+> Task :app:processReleaseManifest
+> Task :lynx_library__lynx_lab_crypto:bundleLibCompileToJarRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleLibCompileToJarRelease
+> Task :lynx_library__lynx_lab_secure_store:bundleLibCompileToJarRelease
+> Task :sparkling-navigation:bundleLibCompileToJarRelease
+> Task :app:javaPreCompileRelease
+> Task :app:extractProguardFiles
+> Task :lynx_library__lynx_lab_crypto:bundleLibResRelease
+> Task :lynx_library__lynx_lab_crypto:bundleLibRuntimeToJarRelease
+> Task :lynx_library__lynx_lab_crypto:writeReleaseLintModelMetadata
+> Task :lynx_library__lynx_lab_crypto:createFullJarRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleLibResRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:writeReleaseLintModelMetadata
+> Task :lynx_library__lynx_lab_edge_to_edge:bundleLibRuntimeToJarRelease
+> Task :lynx_library__lynx_lab_secure_store:bundleLibResRelease
+> Task :lynx_library__lynx_lab_edge_to_edge:createFullJarRelease
+> Task :lynx_library__lynx_lab_secure_store:writeReleaseLintModelMetadata
+> Task :lynx_library__lynx_lab_secure_store:bundleLibRuntimeToJarRelease
+> Task :sparkling-navigation:bundleLibResRelease
+> Task :lynx_library__lynx_lab_secure_store:createFullJarRelease
+> Task :sparkling-navigation:writeReleaseLintModelMetadata
+> Task :sparkling-navigation:bundleLibRuntimeToJarRelease
+> Task :app:mergeReleaseJniLibFolders
+> Task :sparkling-navigation:createFullJarRelease
+> Task :lynx_library__lynx_lab_crypto:copyReleaseJniLibsProjectOnly
+> Task :lynx_library__lynx_lab_edge_to_edge:copyReleaseJniLibsProjectOnly
+> Task :lynx_library__lynx_lab_secure_store:copyReleaseJniLibsProjectOnly
+> Task :app:processReleaseManifestForPackage
+> Task :sparkling-navigation:copyReleaseJniLibsProjectOnly
+> Task :app:mergeReleaseArtProfile
+> Task :lynx_library__lynx_lab_crypto:exportReleaseConsumerProguardFiles
+> Task :lynx_library__lynx_lab_edge_to_edge:exportReleaseConsumerProguardFiles
+> Task :lynx_library__lynx_lab_secure_store:exportReleaseConsumerProguardFiles
+> Task :sparkling-navigation:exportReleaseConsumerProguardFiles
+> Task :app:processReleaseJavaRes NO-SOURCE
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:compressReleaseAssets
+> Task :app:mergeReleaseNativeLibs
+> Task :app:collectReleaseDependencies
+> Task :app:sdkReleaseDependencyData
+> Task :app:validateSigningRelease
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+
+> Task :app:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libgifimage.so, libimagepipeline.so, liblynx.so, liblynx_service_api.so, liblynx_v8_bridge.so, liblynxbase.so, liblynxtrace.so, libnapi.so, libnapi_v8.so, libnative-filters.so, libnative-imagetranscoder.so, libquick.so, libstatic-webp.so, libwasm.so.
+
+> Task :app:extractReleaseNativeSymbolTables
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:processReleaseResources
+> Task :app:kaptGenerateStubsReleaseKotlin
+
+> Task :app:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :app:compileReleaseKotlin
+
+> Task :app:compileReleaseJavaWithJavac
+The following annotation processors are not incremental: lynx-processor-3.9.0.jar (org.lynxsdk.lynx:lynx-processor:3.9.0), auto-service-1.0-rc5.jar (com.google.auto.service:auto-service:1.0-rc5).
+Make sure all annotation processors are incremental to improve your build speed.
+
+> Task :app:mergeReleaseGeneratedProguardFiles
+> Task :app:mergeReleaseJavaResource
+> Task :app:lintVitalAnalyzeRelease
+> Task :app:lintVitalReportRelease
+> Task :app:lintVitalRelease
+> Task :app:minifyReleaseWithR8
+> Task :app:compileReleaseArtProfile
+> Task :app:shrinkReleaseRes
+> Task :app:optimizeReleaseResources
+> Task :app:packageRelease
+> Task :app:createReleaseApkListingFileRedirect
+> Task :app:assembleRelease
+
+BUILD SUCCESSFUL in 44s
+295 actionable tasks: 295 executed

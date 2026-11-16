@@ -1,0 +1,232 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "type": "Application",
+        "index": 0,
+        "enabled": true,
+        "label": "Sparkling Template",
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 0,
+        "hittable": false,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "parentIndex": 0,
+        "type": "Window",
+        "index": 1,
+        "enabled": true,
+        "label": "sparkling",
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 1,
+        "hittable": true,
+        "ref": "e2",
+        "kind": "window"
+      },
+      {
+        "parentIndex": 1,
+        "type": "Other",
+        "index": 2,
+        "enabled": true,
+        "label": "sparkling",
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 2,
+        "hittable": true,
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 2,
+        "type": "Button",
+        "index": 3,
+        "enabled": true,
+        "label": "sparkling",
+        "rect": {
+          "height": 28,
+          "y": 868,
+          "x": 0,
+          "width": 72
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 0,
+        "type": "Other",
+        "index": 4,
+        "enabled": true,
+        "label": "lynxview",
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 1,
+        "hittable": true,
+        "ref": "e5",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 4,
+        "type": "Other",
+        "index": 5,
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 2,
+        "hittable": true,
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 5,
+        "type": "Button",
+        "index": 6,
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "rect": {
+          "height": 39.5,
+          "y": 52,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 5,
+        "type": "Button",
+        "index": 7,
+        "enabled": true,
+        "label": "Show Crypto",
+        "rect": {
+          "height": 39.5,
+          "y": 99.5,
+          "x": 0,
+          "width": 414
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e8",
+        "kind": "button"
+      },
+      {
+        "parentIndex": 5,
+        "type": "Other",
+        "index": 8,
+        "enabled": true,
+        "label": "Run Secure Store checks",
+        "rect": {
+          "height": 43.5,
+          "y": 155,
+          "x": 12,
+          "width": 390
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e9",
+        "kind": "other"
+      },
+      {
+        "parentIndex": 8,
+        "type": "StaticText",
+        "index": 9,
+        "enabled": true,
+        "label": "Run Secure Store checks",
+        "rect": {
+          "height": 19.5,
+          "y": 167,
+          "x": 24,
+          "width": 366
+        },
+        "depth": 4,
+        "hittable": true,
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "parentIndex": 5,
+        "type": "StaticText",
+        "index": 10,
+        "enabled": true,
+        "label": "persistence: stored marker found",
+        "rect": {
+          "height": 17,
+          "y": 208.5,
+          "x": 12,
+          "width": 390
+        },
+        "depth": 3,
+        "hittable": true,
+        "ref": "e11",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 11,
+      "totalNodeCount": 11,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 140.63096046447754,
+        "presentationMs": 0.32699108123779297
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 9,
+        "p50Ms": 349,
+        "p95Ms": 454,
+        "maxMs": 454,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 9
+        }
+      }
+    },
+    "refsGeneration": 519230
+  }
+}

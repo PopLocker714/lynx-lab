@@ -4,8 +4,10 @@
 
 ## 2026-11-16
 
-- Crypto pilot `9d1bd34`: проверки кода и independent review завершены,
-  consumer/device QA продолжается. Эталон Biome обновлён до проверенного 2.5.9;
+- Crypto pilot `9d1bd34`: проверки кода, independent review и consumer/device QA
+  завершены для одного профиля. Physical Android/iOS Debug/Release прошли,
+  Android R8, tarball/lock/bundle hashes сверены; probe source `c3e957d`.
+  Эталон Biome обновлён до проверенного 2.5.9;
   уточнены TS-окружения, bundled dependencies/audit и идентичность release tarball.
   Публикация crypto заблокирована; два audit-исключения требуют пересмотра
   до 2026-12-17. Это не завершение миграции остальных пакетов.

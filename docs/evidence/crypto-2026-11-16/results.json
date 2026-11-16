@@ -1,0 +1,143 @@
+{
+  "date": "2026-11-16",
+  "status": "passed",
+  "scope": "One consumer profile; physical Debug and Release smoke, not entropy certification or minimum-OS verification",
+  "package": {
+    "name": "@lynx-lab/crypto",
+    "version": "1.0.3",
+    "sourceCommit": "9d1bd34af54fa59ab33f54bd5cb409b8353d3275",
+    "tarball": "vendor/crypto-11be0db.tgz",
+    "sha256": "11be0db8735d435a58a4f1f4443b566d7ec4c5e0076519e063e78cee669adf2f",
+    "installedFilesMatchedArchive": 52
+  },
+  "consumer": {
+    "sourceCommit": "c3e957dd72e4c260c7ee5b5a07f22622825f21c3",
+    "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification",
+    "branch": "test/android-libraries",
+    "bunLockSha256": "67b051df563f6d056d27e81fa6122e4aad5ba1bf22591f8f40a58468ad28585a",
+    "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+    "bundleHashVerifiedInsideAllFourArtifacts": true,
+    "bundleIdentifier": "com.probe.e2e",
+    "lynxRuntime": "3.9.0",
+    "primJS": "3.8.0-alpha.6",
+    "reactLynx": "0.116.5",
+    "lynxTypes": "3.9.0",
+    "rspeedy": "0.13.6",
+    "sparkling": "2.1.0-rc.36",
+    "bun": "1.4.0",
+    "typescript": "5.9.3",
+    "dependencyLinker": "Bun isolated globalStore; installed packages resolve to ~/.bun/install/cache/links"
+  },
+  "toolchains": {
+    "android": {
+      "gradle": "8.2",
+      "agp": "7.4.2",
+      "kotlin": "1.8.10",
+      "launcherJdk": "17.0.20",
+      "javaToolchain": "11.0.32.1+1",
+      "compileSdk": 34,
+      "targetSdk": 34,
+      "minSdk": 24,
+      "abiTested": "arm64-v8a",
+      "releaseR8AndResourceShrinking": true,
+      "releaseSigning": "local probe debug key"
+    },
+    "ios": {
+      "xcode": "27.2",
+      "xcodeBuild": "27B52",
+      "sdk": "iphoneos27.2",
+      "cocoaPods": "1.17.0",
+      "cocoaPodsLynxLibrary": "3.9.0",
+      "podfileDeclaredDeploymentTarget": "12.0",
+      "effectiveBuildDeploymentTarget": "15.6",
+      "overrideReason": "Xcode 27.2 rejects deployment targets of old host Pods below 15; does not verify iOS 12 support"
+    },
+    "agentDevice": "0.21.36"
+  },
+  "builds": {
+    "js": { "status": "passed", "command": "bun run build" },
+    "androidDebug": {
+      "status": "passed",
+      "artifact": "evidence-local/crypto/probe-crypto-android-debug.apk",
+      "sha256": "61057543c0d35c64b838b92a9c7d45f64d62a80a2b7de5bcbcb511e3e2c38a31"
+    },
+    "androidRelease": {
+      "status": "passed",
+      "artifact": "evidence-local/crypto/probe-crypto-android-release.apk",
+      "sha256": "8fd4bd9653b3493a0259f447d674bccfccc1e7040c09eac42fa948702912da37",
+      "r8": "passed; build-android-native.txt records execution, build-android.txt records final bundle packaging"
+    },
+    "iosDebug": {
+      "status": "passed",
+      "scheme": "SparklingGoInHouse",
+      "artifact": "evidence-local/crypto/probe-crypto-ios-debug.app",
+      "executableSha256": "5a666c79e85d7148a4d71c0f847a594cf3f812d41b083d371e3acb0ee348e9ce"
+    },
+    "iosRelease": {
+      "status": "passed",
+      "scheme": "SparklingGo",
+      "artifact": "evidence-local/crypto/probe-crypto-ios-release.app",
+      "executableSha256": "a463a1a7b400a5dd08be420eca522fa77b30679be21d37720bcf4db6f2ea15bb"
+    }
+  },
+  "physicalRuns": [
+    {
+      "platform": "android", "device": "Pixel 9", "os": "17", "serial": "REDACTED_PIXEL_SERIAL", "configuration": "Debug",
+      "native": "passed", "failureInjection": "passed", "nativeAfterRestore": "passed", "secureStoreMarkerPreserved": true,
+      "evidence": ["android-debug-native.png", "android-debug-injection.png", "android-debug-native-restored.png", "android-debug-secure-preserved.png", "android-debug-crypto.log"]
+    },
+    {
+      "platform": "android", "device": "Pixel 9", "os": "17", "serial": "REDACTED_PIXEL_SERIAL", "configuration": "Release",
+      "native": "passed", "failureInjection": "passed", "nativeAfterRestore": "passed", "secureStoreMarkerPreserved": true, "secureStoreRegressionChecks": "10/10 passed",
+      "evidence": ["android-release-native.png", "android-release-injection.png", "android-release-native-restored.png", "android-release-secure-preserved.png", "android-release-secure-checks.png"]
+    },
+    {
+      "platform": "ios", "device": "iPhone 11", "os": "18.4.1", "udid": "REDACTED_IPHONE_UDID", "configuration": "Debug",
+      "native": "passed", "failureInjection": "passed", "nativeAfterRestore": "passed", "secureStoreMarkerPreserved": true,
+      "evidence": ["ios-debug-native.json", "ios-debug-injection.json", "ios-debug-native-restored.json", "ios-debug-secure-preserved.json", "ios-debug-injection.png", "ios-debug-native-restored.png"]
+    },
+    {
+      "platform": "ios", "device": "iPhone 11", "os": "18.4.1", "udid": "REDACTED_IPHONE_UDID", "configuration": "Release",
+      "native": "passed", "failureInjection": "passed", "nativeAfterRestore": "passed", "secureStoreMarkerPreserved": true, "secureStoreRegressionChecks": "10/10 passed", "edgeRefreshAfterPanelSwitches": "passed",
+      "evidence": ["ios-release-native.json", "ios-release-injection.json", "ios-release-native-restored.json", "ios-release-secure-preserved.json", "ios-release-secure-checks.json", "ios-release-edge-refresh.json", "ios-release-injection.png", "ios-release-native-restored.png"]
+    }
+  ],
+  "nativeScenarios": [
+    "Nine available integer TypedArray constructors: same-object return, non-zero offset, unchanged prefix/suffix, empty view",
+    "Byte lengths 1/2/3/4/31/32/65536; Uint32Array at 65536 bytes",
+    "Float32Array, Float64Array, DataView rejected with TypeMismatchError",
+    "Uint8Array and Uint32Array over byte quota rejected with QuotaExceededError without mutation",
+    "Eight distinct independent 32-byte samples; smoke only",
+    "Eight distinct lowercase RFC 4122 v4 UUIDs; smoke only"
+  ],
+  "integerTypedArraysOnBothDevices": ["Int8Array", "Uint8Array", "Uint8ClampedArray", "Int16Array", "Uint16Array", "Int32Array", "Uint32Array", "BigInt64Array", "BigUint64Array"],
+  "failureInjectionScenarios": [
+    "Empty, short, long, malformed base64 rejected and target view zeroed without touching its surrounding buffer",
+    "Native byte and UUID exceptions propagated unchanged",
+    "Invalid/uppercase/non-v4 UUID rejected",
+    "install creates missing global, is idempotent, preserves existing functions, fills partial crypto, rejects frozen object",
+    "Global crypto descriptor restored in finally; native injection reset in finally; real native smoke afterward"
+  ],
+  "harnessSelfTest": {
+    "command": "bun scripts/check-crypto-harness.ts",
+    "status": "passed",
+    "alwaysZeroBytes": "rejected: repeated native byte sample",
+    "fixedValidUUID": "rejected: repeated native UUID",
+    "varyingDeterministicStub": "accepted; not native evidence"
+  },
+  "checks": {
+    "biomeNewFiles": "passed --error-on-warnings",
+    "reactLynxScanner": "passed; heuristic only",
+    "gitDiffCheck": "passed",
+    "typecheck": "failed only at three pre-existing errors: SafeAreaView.tsx:26, App.test.tsx:12, spike.ts:13; see typecheck.txt"
+  },
+  "limitations": [
+    "Distinct outputs and these smoke checks do not certify entropy or CSPRNG quality",
+    "Minimum supported OS versions and a second compatibility profile were not tested",
+    "GitHub CI was not run",
+    "Host and third-party native warnings remain; successful builds do not imply a warning-clean host",
+    "Android Debug shows the existing 16 KiB shared-library alignment warning; Release launches without that dialog",
+    "Android host does not expose Lynx labels to agent-device accessibility snapshots even with explicit labels; reviewed screenshots and Debug console logs provide evidence",
+    "The old iOS host still has no registered Lynx input component; its existing input gate was preserved"
+  ]
+}

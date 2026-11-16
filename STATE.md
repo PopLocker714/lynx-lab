@@ -16,10 +16,21 @@ host (Sparkling первый), stable gate, 4 пробела и strict TS без
 Crypto pilot реализован в `refactor/package-standard-v1`, commit `9d1bd34`:
 41 тест, strict TS, повторная упаковка, Android compile/Lint и отдельные ObjC
 compile/static analysis прошли; независимое review выполнено, findings исправлены.
-Consumer/device QA продолжается; GitHub CI не запускался. Публикация заблокирована
+Consumer/device QA прошла: Pixel 9 / Android 17 и iPhone 11 / iOS 18.4.1,
+Debug/Release (Android R8), Lynx 3.9.0 / Sparkling 2.1.0-rc.36.
+Tarball `11be0db8735d435a58a4f1f4443b566d7ec4c5e0076519e063e78cee669adf2f`,
+probe source `c3e957d`; parent сверил hash bundle во всех четырёх артефактах.
+Native и отдельные failure-injection сценарии прошли, повторный native после
+восстановления состояния тоже. Это smoke, не измерение энтропии.
+[Результаты и raw evidence](docs/evidence/crypto-2026-11-16/results.json).
+GitHub CI не запускался; минимум ОС и второй профиль совместимости не проверены.
+Публикация заблокирована
 до реализации выпуска именно проверенного финального tarball. Audit имеет два
 срочных исключения, пересмотр до 2026-12-17. Пакет ещё не объявлен stable по новому
-стандарту. Следом secure-store, app-lifecycle, edge-to-edge; их миграция не завершена.
+стандарту. Secure-store и app-lifecycle мигрируются; edge-to-edge прошёл read-only
+аудит, его миграция впереди. Подтверждены прежние lifecycle multi-view/generation
+дефекты и общий snapshot разных views в edge-to-edge; их исправления и специальные
+regression/device проверки обязательны, прежний smoke их не покрывал.
 
 2026-11-16: физический iPhone 11 / iOS 18.4.1 — обе библиотеки собраны и
 проверены в Debug и Release на Lynx 3.9.0 / Sparkling 2.1.0-rc.36. Secure Store:
