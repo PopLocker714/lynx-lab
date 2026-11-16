@@ -13,9 +13,13 @@ host (Sparkling первый), stable gate, 4 пробела и strict TS без
 [порядок обновления host и SemVer](docs/compatibility-policy.md),
 [эталонные конфиги](standards/README.md). Целевая матрица: рекомендуемая и предыдущая
 поддерживаемая связка; непроверенная версия не получает verified автоматически.
-Конфиги пока не подключены к пакетам, CI и native builds пакетов в этой задаче
-не менялись. Следующий шаг — пилот crypto, затем secure-store, app-lifecycle,
-edge-to-edge; миграцию каждого пакета проверять отдельно с сохранением API.
+Crypto pilot реализован в `refactor/package-standard-v1`, commit `9d1bd34`:
+41 тест, strict TS, повторная упаковка, Android compile/Lint и отдельные ObjC
+compile/static analysis прошли; независимое review выполнено, findings исправлены.
+Consumer/device QA продолжается; GitHub CI не запускался. Публикация заблокирована
+до реализации выпуска именно проверенного финального tarball. Audit имеет два
+срочных исключения, пересмотр до 2026-12-17. Пакет ещё не объявлен stable по новому
+стандарту. Следом secure-store, app-lifecycle, edge-to-edge; их миграция не завершена.
 
 2026-11-16: физический iPhone 11 / iOS 18.4.1 — обе библиотеки собраны и
 проверены в Debug и Release на Lynx 3.9.0 / Sparkling 2.1.0-rc.36. Secure Store:

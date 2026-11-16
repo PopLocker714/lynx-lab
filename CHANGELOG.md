@@ -4,6 +4,11 @@
 
 ## 2026-11-16
 
+- Crypto pilot `9d1bd34`: проверки кода и independent review завершены,
+  consumer/device QA продолжается. Эталон Biome обновлён до проверенного 2.5.9;
+  уточнены TS-окружения, bundled dependencies/audit и идентичность release tarball.
+  Публикация crypto заблокирована; два audit-исключения требуют пересмотра
+  до 2026-12-17. Это не завершение миграции остальных пакетов.
 - Зафиксированы стандарт production-пакетов, stable gate и политика поддержки
   Lynx + проверяемых host. Добавлены эталонные Biome/TS/EditorConfig/clang-format
   настройки и общий TS pipeline. Внедрение в четыре пакета ещё впереди.

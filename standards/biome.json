@@ -1,5 +1,5 @@
 {
-    "$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+    "$schema": "https://biomejs.dev/schemas/2.5.9/schema.json",
     "files": {
         "includes": [
             "**/*.ts",
@@ -17,7 +17,9 @@
             "!android-check/build",
             "!android-check/.gradle",
             "!ios/build",
-            "!ios/Pods"
+            "!ios/Pods",
+            "!.tools",
+            "!artifacts"
         ]
     },
     "formatter": {
@@ -36,7 +38,7 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true,
+            "preset": "recommended",
             "suspicious": {
                 "noExplicitAny": "error"
             }
