@@ -7,6 +7,25 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-16: физический iPhone 11 / iOS 18.4.1 — обе библиотеки собраны и
+проверены в Debug и Release на Lynx 3.9.0 / Sparkling 2.1.0-rc.36. Secure Store:
+по 10/10 JS/native сценариев, autolink и сохранность после перезапуска процесса
+и обновления Debug→Release поверх приложения. Release edge-to-edge: начальные
+инсеты, refresh и поворот подтверждены.
+edge-to-edge: начальные globalProps top=48/bottom=34, refresh, поворот
+left=right=48/bottom=21, возврат в portrait и keyboardHeight 0→346→0 pt.
+Клавиатура проверена через нативное поле debug-панели: Lynx input в старом
+iOS-хосте не подключён. Стиль/скрытие баров на iOS остаются no-op в v1.
+После поворота пробник в Debug и Release рисует дубли старых текстовых строк; текущие значения
+и подписка обновляются, причина дублей не расследована.
+Сборка Xcode 27.2 требует override `IPHONEOS_DEPLOYMENT_TARGET=15.6` для старых
+Pods; библиотечный минимум iOS 12 этим не проверен. Interceptor не подключился
+(-1009, в Local Network runner отсутствует); QA выполнена через отдельную
+сессию agent-device с корректной signing team.
+Evidence: [iOS results.json](docs/evidence/ios-2026-11-16/results.json).
+Публикации и интеграции веток не было; оставшиеся recovery/lifecycle проверки
+перечислены ниже и в спецификации Secure Store.
+
 2026-11-16: физический Pixel 9 / Android 17 — edge-to-edge и secure-store
 проверены в debug и release с R8. Secure Store: 7 нативных тестов, по 10
 JS/native сценариев, 3 Bun regression tests; сохранность после обновления APK
@@ -20,7 +39,8 @@ Evidence: [results.json](docs/evidence/android-2026-11-16/results.json).
 Код Secure Store: `6ea2ae6`, ветка `feat/secure-store`; пробник впервые сохранён
 отдельным Git-репозиторием в `apps/probe-e2e`, рабочая ветка `test/android-libraries`
 в `/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification` (`3d9bd65`).
-iOS, locked-device, reinstall/backup/restore и callback после уничтожения Lynx view
+На момент Android-прогона iOS ещё не был проверен; результат iPhone приведён выше.
+Locked-device, reinstall/backup/restore и callback после уничтожения Lynx view
 ещё не проверены. Оба пакета остаются private, публикации не было.
 Старый host пробника выдаёт debug-предупреждение о 16-КиБ выравнивании зависимостей;
 полный typecheck пробника имеет 3 старые ошибки, typecheck самого secure-store проходит.
@@ -39,16 +59,16 @@ Android-проверку пользователь разрешил 2026-11-16, �
 ## Коротко
 
 Пишем недостающие нативные пакеты для **Lynx** под скоупом `@lynx-lab`.
-Два выпущены; edge-to-edge и secure-store проверены на физическом Android,
-но ещё не опубликованы и требуют завершения iOS-проверок.
+Два выпущены; edge-to-edge и secure-store проверены на физических Android и iPhone,
+но ещё не опубликованы; границы проверки и оставшиеся сценарии приведены выше.
 
 | Пакет | Состояние | Где |
 |---|---|---|
 | `@lynx-lab/crypto` | ✅ **1.0.3** | [npm](https://www.npmjs.com/package/@lynx-lab/crypto) · [repo](https://github.com/PopLocker714/lynx-crypto) |
 | `@lynx-lab/app-lifecycle` | ✅ **1.0.0** | [npm](https://www.npmjs.com/package/@lynx-lab/app-lifecycle) · [repo](https://github.com/PopLocker714/lynx-app-lifecycle) |
-| `@lynx-lab/edge-to-edge` | 🔨 **Android/Pixel 9 debug+release проверены 2026-11-16**; осталась физическая проверка iPhone | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
+| `@lynx-lab/edge-to-edge` | 🔨 **Pixel 9 и iPhone 11 проверены 2026-11-16**; iOS style/hidden — no-op, пакет private | [packages/lynx-edge-to-edge](packages/lynx-edge-to-edge) · [repo (private)](https://github.com/PopLocker714/lynx-edge-to-edge) · [спека](docs/packages/lynx-edge-to-edge.md) |
 | остальные семь | 🗒 наброски | [docs/packages/](docs/packages/) |
-| `@lynx-lab/secure-store` | 🔨 **Android/Pixel 9 debug+release проверены 2026-11-16**; iOS и дополнительные recovery/lifecycle сценарии впереди | [спека](docs/packages/lynx-secure-store.md) · [исследование](docs/secure-store-research.md) |
+| `@lynx-lab/secure-store` | 🔨 **Pixel 9 и iPhone 11 проверены 2026-11-16**; дополнительные recovery/lifecycle сценарии впереди, пакет private | [спека](docs/packages/lynx-secure-store.md) · [исследование](docs/secure-store-research.md) |
 
 2026-11-09: secure-store исследован и написан по запросу Ильи. В плане 11 библиотек:
 две выпущены, edge-to-edge и secure-store требуют проверок, семь не реализованы.
@@ -279,30 +299,17 @@ git -C upstream/sparkling grep -n 'updateGlobalProps' 2.1.0-rc.36 -- 'packages/s
 
 ## Следующий шаг
 
-**Проверки на телефонах отложены 2026-11-09:** доступа к устройствам пока нет.
-Для secure-store следующим этапом разрешить и выполнить отложенные проверки
-из отчёта. Для `@lynx-lab/edge-to-edge` после возвращения телефонов:
+Проверки на физических Pixel 9 и iPhone 11 разрешены и выполнены 2026-11-16;
+актуальные границы и evidence — в начале этого файла. Историческая iOS-сборка
+от сентября удалена при уборке 2026-11-11; не использовать её старый путь.
 
-1. iPhone 11 по проводу: сборка под устройство **уже готова** (2026-09-10, подпись
-   `REDACTED_DEVELOPMENT_TEAM`, `apps/probe-e2e/ios/build-device/Build/Products/Debug-iphoneos/SparklingGoInHouse.app`).
-   Установка упёрлась в заблокированный телефон (`devicectl`: `Failed to allocate RSD device`,
-   `passcodeRequired: true`). С разблокированным телефоном:
-   `xcrun devicectl device install app --device REDACTED_COREDEVICE_ID <.app>`,
-   `xcrun devicectl device process launch --device ... com.probe.e2e`, тапы и скриншоты через
-   `interceptor ios click --x N --y N` / `screenshot` (runner на телефоне стоит).
-   Пересобрать под устройство: та же команда `xcodebuild`, что для симулятора, но
-   `-destination 'platform=iOS,id=REDACTED_IPHONE_UDID' -derivedDataPath build-device
-   -allowProvisioningUpdates DEVELOPMENT_TEAM=REDACTED_DEVELOPMENT_TEAM` (в pbxproj шаблона стоит чужой `RL87M95CBB`).
-2. Pixel 9 по проводу: повторить день 5 (`./run-pkg.sh pixel <apk>` и тапы по координатам
-   из `docs/evidence/edge-to-edge/emu-module-*.png`).
-3. 0.1.0. Первую версию npm через OIDC опубликовать нельзя (trusted publisher настраивается
-   только на существующем пакете), а локальный `npm whoami` даёт 401: нужен логин Ильи.
-   Порядок: `npm login` → в `packages/lynx-edge-to-edge`: `npm version 0.1.0 --no-git-tag-version`,
-   `npm publish --access public` (prepack соберёт, prepublishOnly проверит тарбол),
-   `git tag v0.1.0 && git push --tags`, вернуть `0.0.0-development` в package.json →
-   на npmjs.com включить trusted publisher (`PopLocker714` / `lynx-edge-to-edge` / `release.yml`)
-   → репозиторий сделать публичным. Дальше релизы через `release.yml` (semantic-release,
-   `feat:` даст 0.2.0, `fix:` 0.1.1).
+1. Для Secure Store остаются locked-device, reinstall/backup/restore и callback
+   после уничтожения Lynx view. API и код проверены на runtime 3.9.0, не на 4.0.1.
+2. Для edge-to-edge учесть iOS no-op style/hidden, отсутствие Lynx input в старом
+   iOS-пробнике и дубли текста после поворота; не считать весь host production-ready.
+3. Изменения сохранены в task-ветках, main не интегрирован. Перед релизом отдельно
+   согласовать интеграцию, версии, публикацию и настройку OIDC; эта QA-задача
+   не разрешает npm publish, push или изменение видимости репозиториев.
 
 ## Карта репозитория
 

@@ -1,0 +1,266 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "label": "Sparkling Template",
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "height": 896,
+          "x": 0
+        },
+        "index": 0,
+        "depth": 0,
+        "hittable": false,
+        "enabled": true,
+        "type": "Application",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "label": "lynxview",
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "height": 896,
+          "x": 0
+        },
+        "index": 1,
+        "depth": 1,
+        "hittable": true,
+        "parentIndex": 0,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "height": 896,
+          "x": 0
+        },
+        "index": 2,
+        "depth": 2,
+        "hittable": true,
+        "parentIndex": 1,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "width": 414,
+          "y": 52,
+          "height": 39.5,
+          "x": 0
+        },
+        "index": 3,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "width": 378,
+          "y": 62,
+          "height": 19.5,
+          "x": 18
+        },
+        "index": 4,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 3,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e5",
+        "kind": "text"
+      },
+      {
+        "label": "Run Secure Store checks",
+        "rect": {
+          "width": 390,
+          "y": 107.5,
+          "height": 43.5,
+          "x": 12
+        },
+        "index": 5,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "label": "Run Secure Store checks",
+        "rect": {
+          "width": 366,
+          "y": 119.5,
+          "height": 19.5,
+          "x": 24
+        },
+        "index": 6,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 5,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "label": "persistence: stored marker found",
+        "rect": {
+          "width": 390,
+          "y": 161,
+          "height": 17,
+          "x": 12
+        },
+        "index": 7,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e8",
+        "kind": "text"
+      },
+      {
+        "label": "PKG edge-to-edge day 5",
+        "rect": {
+          "width": 185.5,
+          "y": 341.5,
+          "height": 28.5,
+          "x": 114.5
+        },
+        "index": 8,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e9",
+        "kind": "text"
+      },
+      {
+        "label": "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "rect": {
+          "width": 373.5,
+          "y": 370,
+          "height": 28.5,
+          "x": 20.5
+        },
+        "index": 9,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "label": "events: g1 t48 b34 k0 globalProps",
+        "rect": {
+          "width": 249.5,
+          "y": 398.5,
+          "height": 28.5,
+          "x": 82.5
+        },
+        "index": 10,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e11",
+        "kind": "text"
+      },
+      {
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "rect": {
+          "width": 346.5,
+          "y": 427,
+          "height": 28.5,
+          "x": 34
+        },
+        "index": 11,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e12",
+        "kind": "text"
+      },
+      {
+        "label": "log:\nrefresh: done g=1 t=48.0 globalProps\nrefresh: called",
+        "rect": {
+          "width": 270,
+          "y": 455.5,
+          "height": 71.5,
+          "x": 72
+        },
+        "index": 12,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e13",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 13,
+      "totalNodeCount": 13,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 138.61799240112305,
+        "presentationMs": 0.3349781036376953
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 70,
+        "p50Ms": 405,
+        "p95Ms": 862,
+        "maxMs": 19822,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 70
+        }
+      }
+    },
+    "refsGeneration": 899678
+  }
+}

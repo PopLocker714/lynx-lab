@@ -1,5 +1,5 @@
 ---
-verified: 2026-09-10
+verified: 2026-11-16
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling_version: 2.1.0-rc.36
 status: building
@@ -11,7 +11,14 @@ estimate: 9–10 дней
 2026-11-16: физический Pixel 9 / Android 17 прошёл debug-проверки первого кадра,
 refresh, light/dark, hide/show, клавиатуры, поворота и жестов ↔ трёх кнопок;
 release с R8 прошёл проверку refresh и hide/show. Исходники `1502c0a` без изменений.
-[Evidence](../evidence/android-2026-11-16/results.json). Физическая проверка iPhone остаётся.
+[Android evidence](../evidence/android-2026-11-16/results.json).
+iPhone 11 / iOS 18.4.1: Debug/Release сборки, начальные globalProps (top=48, bottom=34),
+refresh, поворот (left=right=48, bottom=21), возврат в portrait; в Debug события клавиатуры
+(0→346→0 pt) проверены. Клавиатура вызвана нативным полем debug-панели:
+Lynx `<input>` в старом iOS-хосте не зарегистрирован. Стиль/скрытие баров —
+документированные no-op в v1. После поворота пробник сохраняет дубли старых
+текстовых строк; текущая строка и подписка обновляются, причина дублей не установлена.
+[iOS evidence](../evidence/ios-2026-11-16/results.json).
 
 Safe area, инсеты и системные бары. Аналог `react-native-edge-to-edge` плюс
 `react-native-safe-area-context` в одном пакете.

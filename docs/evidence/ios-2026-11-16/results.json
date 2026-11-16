@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-16",
+  "device": {
+    "model": "iPhone 11",
+    "os": "iOS 18.4.1"
+  },
+  "runtime": {
+    "lynx": "3.9.0",
+    "sparkling": "2.1.0-rc.36",
+    "xcode": "27.2 (27B52)",
+    "deploymentTargetOverride": "15.6"
+  },
+  "source": {
+    "secureStoreCode": "6ea2ae6",
+    "edgeToEdgeCode": "1502c0a",
+    "probeCode": "3d9bd65",
+    "bundleId": "com.probe.e2e",
+    "nativeCodeChangedForIOSVerification": false
+  },
+  "build": {
+    "debug": "passed",
+    "release": "passed",
+    "autolink": [
+      "LynxEdgeToEdgeModule",
+      "LynxSecureStoreModule"
+    ],
+    "podLockSha256": "debe7271bdda7d048c316f0bb46b0729bb620c411de9125bce4a20048d04929c",
+    "releaseExecutableSha256": "d9d6f4e864e311ecd25a20e3e92c1fff009a45c97c5856d47ad80ccebd7543e7"
+  },
+  "secureStore": {
+    "debug": {
+      "passed": 10,
+      "total": 10,
+      "evidence": "secure-store-debug.json"
+    },
+    "restart": {
+      "passed": true,
+      "beforePid": 19268,
+      "afterPid": 19281,
+      "evidence": "secure-store-restart.json"
+    },
+    "inPlaceUpdate": {
+      "passed": true,
+      "from": "Debug",
+      "to": "Release",
+      "uninstalled": false,
+      "evidence": "secure-store-upgrade.json"
+    },
+    "release": {
+      "passed": 10,
+      "total": 10,
+      "evidence": "secure-store-release.json"
+    }
+  },
+  "edgeToEdge": {
+    "initial": {
+      "top": 48,
+      "right": 0,
+      "bottom": 34,
+      "left": 0,
+      "keyboardHeight": 0,
+      "generation": 1,
+      "source": "globalProps"
+    },
+    "refresh": "passed",
+    "landscape": {
+      "top": 0,
+      "right": 48,
+      "bottom": 21,
+      "left": 48
+    },
+    "returnToPortrait": {
+      "top": 48,
+      "right": 0,
+      "bottom": 34,
+      "left": 0
+    },
+    "keyboardHeights": [
+      0,
+      346,
+      0
+    ],
+    "keyboardTrigger": "native Sparkling Debug Tool search field; Lynx input is not registered in the iOS probe",
+    "systemBarControls": "invoked without crashing; documented no-ops on iOS v1",
+    "evidence": [
+      "edge-first-frame.png",
+      "edge-landscape.json",
+      "edge-landscape.png",
+      "edge-keyboard-events.json",
+      "edge-controls.json"
+    ],
+    "release": {
+      "initialInsets": "passed",
+      "refresh": "passed",
+      "landscape": {
+        "top": 0,
+        "right": 48,
+        "bottom": 21,
+        "left": 48
+      },
+      "evidence": "edge-release-landscape.json"
+    }
+  },
+  "limitations": [
+    "Only iOS 18.4.1 tested; iOS 12 minimum not validated by Xcode 27.2 build targeting 15.6.",
+    "Locked-device, reinstall/backup/restore and callbacks after Lynx view destruction remain unverified.",
+    "Old probe displays duplicate stale text labels after rotation in Debug and Release; current inset values and subscriptions update. Cause unresolved.",
+    "Interceptor websocket failed with -1009 and no Local Network entry; QA used agent-device 0.21.36 with separate daemon state and explicit signing team. No Interceptor source changes.",
+    "agent-device landscape verification returned unknown device orientation; landscape was independently confirmed by 1792x828 screenshot and safe-area values. Portrait restoration succeeded.",
+    "Full probe typecheck has three pre-existing errors; no new library source edits in this iOS run."
+  ],
+  "published": false
+}

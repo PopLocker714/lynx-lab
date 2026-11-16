@@ -1,6 +1,6 @@
 ---
 verified: 2026-11-16
-lynx_version: 3.9.0 (verified Android runtime), 4.0.1 (compile target)
+lynx_version: 3.9.0 (verified Android/iOS runtime), 4.0.1 (Android compile target)
 status: building
 ---
 
@@ -12,7 +12,9 @@ status: building
 Пройдены debug/release с R8, 7 нативных и по 10 JS/native проверок, 3 Bun-теста,
 перезапуск процесса и обновление APK без удаления данных.
 [Машинные результаты и screenshots](../evidence/android-2026-11-16/results.json).
-iOS и оставшиеся lifecycle/recovery сценарии не проверены; пакет private.
+iPhone 11 / iOS 18.4.1: Debug и Release прошли по 10 JS/native сценариев,
+autolink, сохранность после перезапуска процесса и обновления Debug→Release. [iOS evidence](../evidence/ios-2026-11-16/results.json).
+Оставшиеся lifecycle/recovery сценарии не проверены; пакет private.
 
 Исправления `6ea2ae6`: публичный `Os.remove` вместо недоступного `Os.unlink`;
 JSON-конверт записи и percent-encoded значение ответа сохраняют NUL через

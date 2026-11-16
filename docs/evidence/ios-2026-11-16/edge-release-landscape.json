@@ -1,0 +1,409 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "label": "Sparkling Template",
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "index": 0,
+        "depth": 0,
+        "hittable": false,
+        "enabled": true,
+        "type": "Application",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "label": "lynxview",
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "index": 1,
+        "depth": 1,
+        "hittable": true,
+        "parentIndex": 0,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "label": "Show Secure Store",
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "index": 2,
+        "depth": 2,
+        "hittable": true,
+        "parentIndex": 1,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "label": "Show Secure Store",
+        "rect": {
+          "width": 896,
+          "y": 4,
+          "height": 39.5,
+          "x": 0
+        },
+        "index": 3,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "label": "Show Secure Store",
+        "rect": {
+          "width": 860,
+          "y": 14,
+          "height": 19.5,
+          "x": 18
+        },
+        "index": 4,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 3,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e5",
+        "kind": "text"
+      },
+      {
+        "label": "refresh()",
+        "rect": {
+          "width": 99,
+          "y": 59.5,
+          "height": 39.5,
+          "x": 398.5
+        },
+        "index": 5,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "label": "refresh()",
+        "rect": {
+          "width": 63,
+          "y": 69.5,
+          "height": 19.5,
+          "x": 416.5
+        },
+        "index": 6,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 5,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "label": "style light",
+        "rect": {
+          "width": 106.5,
+          "y": 107,
+          "height": 39.5,
+          "x": 395
+        },
+        "index": 7,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e8",
+        "kind": "other"
+      },
+      {
+        "label": "style light",
+        "rect": {
+          "width": 70.5,
+          "y": 117,
+          "height": 19.5,
+          "x": 413
+        },
+        "index": 8,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 7,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e9",
+        "kind": "text"
+      },
+      {
+        "label": "style dark",
+        "rect": {
+          "width": 107,
+          "y": 154.5,
+          "height": 39.5,
+          "x": 394.5
+        },
+        "index": 9,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e10",
+        "kind": "other"
+      },
+      {
+        "label": "style dark",
+        "rect": {
+          "width": 71,
+          "y": 164.5,
+          "height": 19.5,
+          "x": 412.5
+        },
+        "index": 10,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 9,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e11",
+        "kind": "text"
+      },
+      {
+        "label": "bars: hide",
+        "rect": {
+          "width": 107.5,
+          "y": 202,
+          "height": 39.5,
+          "x": 394.5
+        },
+        "index": 11,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "Other",
+        "ref": "e12",
+        "kind": "other"
+      },
+      {
+        "label": "bars: hide",
+        "rect": {
+          "width": 71.5,
+          "y": 212,
+          "height": 19.5,
+          "x": 412.5
+        },
+        "index": 12,
+        "depth": 4,
+        "hittable": true,
+        "parentIndex": 11,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e13",
+        "kind": "text"
+      },
+      {
+        "label": "PKG edge-to-edge day 5",
+        "rect": {
+          "width": 185.5,
+          "y": 293.5,
+          "height": 28.5,
+          "x": 355.5
+        },
+        "index": 13,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e14",
+        "kind": "text"
+      },
+      {
+        "label": "current: t=0.0 r=48 b=21 l=48.0 kb=0 g=2 globalProps",
+        "rect": {
+          "width": 381.5,
+          "y": 322,
+          "height": 28.5,
+          "x": 257.5
+        },
+        "index": 14,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e15",
+        "kind": "text"
+      },
+      {
+        "label": "PKG edge-to-edge day 5",
+        "rect": {
+          "width": 185.5,
+          "y": 341.5,
+          "height": 28.5,
+          "x": 114.5
+        },
+        "index": 15,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e16",
+        "kind": "text"
+      },
+      {
+        "label": "events: g1 t48 b34 k0 globalProps | g2 t0 b21 k0 globalProps",
+        "rect": {
+          "width": 423,
+          "y": 350.5,
+          "height": 28.5,
+          "x": 236.5
+        },
+        "index": 16,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e17",
+        "kind": "text"
+      },
+      {
+        "label": "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "rect": {
+          "width": 373.5,
+          "y": 370,
+          "height": 28.5,
+          "x": 20.5
+        },
+        "index": 17,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e18",
+        "kind": "text"
+      },
+      {
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "rect": {
+          "width": 346.5,
+          "y": 379,
+          "height": 28.5,
+          "x": 275
+        },
+        "index": 18,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e19",
+        "kind": "text"
+      },
+      {
+        "label": "events: g1 t48 b34 k0 globalProps",
+        "rect": {
+          "width": 249.5,
+          "y": 398.5,
+          "height": 15.5,
+          "x": 82.5
+        },
+        "index": 19,
+        "depth": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e20",
+        "kind": "text"
+      },
+      {
+        "label": "log:\nrefresh: done g=1 t=48.0 globalProps\nrefresh: called",
+        "rect": {
+          "width": 270,
+          "y": 407.5,
+          "height": 6.5,
+          "x": 313
+        },
+        "index": 20,
+        "depth": 3,
+        "hittable": false,
+        "parentIndex": 2,
+        "enabled": true,
+        "type": "StaticText",
+        "ref": "e21",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 21,
+      "totalNodeCount": 21,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 896,
+      "height": 414
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 179.49998378753662,
+        "presentationMs": 0.5500316619873047
+      }
+    },
+    "snapshotQualityNotes": [
+      {
+        "code": "regular-geometry-clipped",
+        "clippedNodeCount": 3,
+        "droppedNodeCount": 2
+      }
+    ],
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 79,
+        "p50Ms": 403,
+        "p95Ms": 862,
+        "maxMs": 19822,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 79
+        }
+      }
+    },
+    "refsGeneration": 899687
+  }
+}

@@ -1,0 +1,460 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "type": "Application",
+        "hittable": false,
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 0,
+        "index": 0,
+        "label": "Sparkling Template",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "type": "Window",
+        "parentIndex": 0,
+        "hittable": true,
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 1,
+        "index": 1,
+        "label": "sparkling",
+        "ref": "e2",
+        "kind": "window"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 1,
+        "hittable": true,
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 2,
+        "index": 2,
+        "label": "sparkling",
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "type": "Button",
+        "parentIndex": 2,
+        "hittable": true,
+        "rect": {
+          "width": 72,
+          "y": 386,
+          "height": 28,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 3,
+        "label": "sparkling",
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 0,
+        "hittable": true,
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 1,
+        "index": 4,
+        "label": "lynxview",
+        "ref": "e5",
+        "kind": "other"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 4,
+        "hittable": true,
+        "rect": {
+          "width": 896,
+          "y": 0,
+          "height": 414,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 2,
+        "index": 5,
+        "label": "Show Secure Store",
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 896,
+          "y": 4,
+          "height": 39.5,
+          "x": 0
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 6,
+        "label": "Show Secure Store",
+        "ref": "e7",
+        "kind": "other"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 6,
+        "hittable": true,
+        "rect": {
+          "width": 860,
+          "y": 14,
+          "height": 19.5,
+          "x": 18
+        },
+        "enabled": true,
+        "depth": 4,
+        "index": 7,
+        "label": "Show Secure Store",
+        "ref": "e8",
+        "kind": "text"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 99,
+          "y": 59.5,
+          "height": 39.5,
+          "x": 398.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 8,
+        "label": "refresh()",
+        "ref": "e9",
+        "kind": "other"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 8,
+        "hittable": true,
+        "rect": {
+          "width": 63,
+          "y": 69.5,
+          "height": 19.5,
+          "x": 416.5
+        },
+        "enabled": true,
+        "depth": 4,
+        "index": 9,
+        "label": "refresh()",
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 106.5,
+          "y": 107,
+          "height": 39.5,
+          "x": 395
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 10,
+        "label": "style light",
+        "ref": "e11",
+        "kind": "other"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 10,
+        "hittable": true,
+        "rect": {
+          "width": 70.5,
+          "y": 117,
+          "height": 19.5,
+          "x": 413
+        },
+        "enabled": true,
+        "depth": 4,
+        "index": 11,
+        "label": "style light",
+        "ref": "e12",
+        "kind": "text"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 107,
+          "y": 154.5,
+          "height": 39.5,
+          "x": 394.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 12,
+        "label": "style dark",
+        "ref": "e13",
+        "kind": "other"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 12,
+        "hittable": true,
+        "rect": {
+          "width": 71,
+          "y": 164.5,
+          "height": 19.5,
+          "x": 412.5
+        },
+        "enabled": true,
+        "depth": 4,
+        "index": 13,
+        "label": "style dark",
+        "ref": "e14",
+        "kind": "text"
+      },
+      {
+        "type": "Other",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 107.5,
+          "y": 202,
+          "height": 39.5,
+          "x": 394.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 14,
+        "label": "bars: hide",
+        "ref": "e15",
+        "kind": "other"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 14,
+        "hittable": true,
+        "rect": {
+          "width": 71.5,
+          "y": 212,
+          "height": 19.5,
+          "x": 412.5
+        },
+        "enabled": true,
+        "depth": 4,
+        "index": 15,
+        "label": "bars: hide",
+        "ref": "e16",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 185.5,
+          "y": 293.5,
+          "height": 28.5,
+          "x": 355.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 16,
+        "label": "PKG edge-to-edge day 5",
+        "ref": "e17",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 382,
+          "y": 322,
+          "height": 28.5,
+          "x": 257
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 17,
+        "label": "current: t=0.0 r=48 b=21 l=48.0 kb=0 g=4 globalProps",
+        "ref": "e18",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 185.5,
+          "y": 341.5,
+          "height": 28.5,
+          "x": 114.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 18,
+        "label": "PKG edge-to-edge day 5",
+        "ref": "e19",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 765,
+          "y": 350.5,
+          "height": 28.5,
+          "x": 65.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 19,
+        "label": "events: g1 t48 b34 k0 globalProps | g2 t0 b21 k0 globalProps | g3 t0 b0 k0 globalProps | g4 t0 b21 k0 globalProps",
+        "ref": "e20",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 373.5,
+          "y": 370,
+          "height": 28.5,
+          "x": 20.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 20,
+        "label": "current: t=48.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "ref": "e21",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 346.5,
+          "y": 379,
+          "height": 28.5,
+          "x": 275
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 21,
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "ref": "e22",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": true,
+        "rect": {
+          "width": 249.5,
+          "y": 398.5,
+          "height": 15.5,
+          "x": 82.5
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 22,
+        "label": "events: g1 t48 b34 k0 globalProps",
+        "ref": "e23",
+        "kind": "text"
+      },
+      {
+        "type": "StaticText",
+        "parentIndex": 5,
+        "hittable": false,
+        "rect": {
+          "width": 270,
+          "y": 407.5,
+          "height": 6.5,
+          "x": 313
+        },
+        "enabled": true,
+        "depth": 3,
+        "index": 23,
+        "label": "log:\nrefresh: done g=1 t=48.0 globalProps\nrefresh: called",
+        "ref": "e24",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 24,
+      "totalNodeCount": 24,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 896,
+      "height": 414
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 203.30893993377686,
+        "presentationMs": 0.6090402603149414
+      }
+    },
+    "snapshotQualityNotes": [
+      {
+        "code": "regular-geometry-clipped",
+        "clippedNodeCount": 3,
+        "droppedNodeCount": 2
+      }
+    ],
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 27,
+        "p50Ms": 391,
+        "p95Ms": 582,
+        "maxMs": 19822,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 27
+        }
+      }
+    },
+    "refsGeneration": 899635
+  }
+}
