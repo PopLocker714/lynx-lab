@@ -4,8 +4,9 @@
 [package-standard.md](../docs/package-standard.md), обновления host —
 [compatibility-policy.md](../docs/compatibility-policy.md).
 
-Стандарт внедрён в рабочую ветку crypto; consumer/device QA одного профиля прошла.
-Остальные пакеты мигрируются по одному в отдельном worktree, с baseline checks,
+Стандарт внедрён в рабочие ветки crypto и secure-store; consumer/device QA одного
+профиля прошла с явно записанными ограничениями. Остальные пакеты мигрируются
+в отдельных worktree, с baseline checks,
 review и сохранением API. Это не означает готовность всех четырёх пакетов.
 У этого репозитория знаний нет package.json; устанавливать зависимости здесь не нужно.
 
@@ -97,7 +98,10 @@ Sparkling 2.1.0-rc.36, probe `c3e957d`; результаты в
   отдельного результата. Чувствительность QA проверяется дефектными заглушками.
 - Проверять actual native source roots и используемую autolink registry наряду с
   installed-file identity. Secure-store review выявило, что stale Pods/Gradle paths
-  иначе проходят gate; исправление gate внедряется в secure-store и crypto.
+  иначе проходят gate. Secure-store gate исправлен, перенесён в app-lifecycle;
+  backport в crypto ещё предстоит. iOS-фильтры исходников также учитываются:
+  PBXSources membership не гарантирует компиляцию; ограниченный adapter отклоняет
+  неподдерживаемые source/platform filters, а прочитанные xcconfigs входят в hashes.
 - Публикация crypto заблокирована до реализации цепочки final version/changelog →
   immutable tarball → consumer QA → публикация того же tarball. Обычная повторная
   упаковка semantic-release после QA не подтверждает идентичность артефакта.

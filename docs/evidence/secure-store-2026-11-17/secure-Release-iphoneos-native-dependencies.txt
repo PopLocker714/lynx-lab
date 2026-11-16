@@ -1,0 +1,11 @@
+dependencies: \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk/SDKSettings.json \
+  /Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.m \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target\ Support\ Files/LynxSecureStore/LynxSecureStore-prefix.pch \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/UIKit-ED3A9XVG847B8G8G0GMLGV84C.pcm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Modules/module.modulemap \
+  /Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.h \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/Lynx-7BFHC4AZ51143CO0YZH17UJ4F.pcm \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Release-iphoneos/Lynx/Lynx.framework/Modules/module.modulemap

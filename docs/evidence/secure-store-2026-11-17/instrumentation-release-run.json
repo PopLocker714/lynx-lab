@@ -1,0 +1,23 @@
+{
+  "command": [
+    "/Users/REDACTED_LOCAL_USER/Library/Android/sdk/platform-tools/adb",
+    "-s",
+    "REDACTED_PIXEL_SERIAL",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "com.probe.e2e.SecureStoreDeviceTest",
+    "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "configuration": "Release R8; Debug instrumentation APK; same certificate; no target reinstall",
+  "startedAt": "2026-11-16T21:28:27.565520+00:00",
+  "finishedAt": "2026-11-16T21:28:43.706575+00:00",
+  "exitCode": 0,
+  "rawFile": "instrumentation-release-raw.txt",
+  "status": "not-passed",
+  "reason": "Debug instrumentation APK against Release R8 terminated with Process crashed; INSTRUMENTATION_CODE 0. Additional check, no passing claim. No further investigation or host/R8 changes."
+}

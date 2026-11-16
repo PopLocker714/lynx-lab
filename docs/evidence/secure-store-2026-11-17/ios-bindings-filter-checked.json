@@ -1,0 +1,73 @@
+{
+  "profile": "sparkling-2.1.0-rc.36-lynx-3.9.0",
+  "sha256": "3f3aff3429d0aae225d2348e57f9d2743ea4f08a54ed2a4e16666977762fb7d2",
+  "ios": {
+    "directory": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios",
+    "files": [
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.m",
+        "sha256": "8d9823c5546344bffbffcc77f8abdf6e3199f0a8ccd3bbdcb6036f3b33d4409d"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.h",
+        "sha256": "a97d725cc250fbda14542813fb663442769f96eaab1cb021db2b65cedd4dd96e"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/generated/lynx-library/LynxGeneratedLibraryRegistry.m",
+        "sha256": "843a17dcce73ebc122fed0c090d4f8b7dffbdb9aa10e6e0a4c420666a0b34af9"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/LynxSecureStore.xcodeproj/project.pbxproj",
+        "sha256": "43edfcaf448efe706bf0ba95fc2a1fad3b1a770c06a9191633efe1b8f0c651ba"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Pods.xcodeproj/project.pbxproj",
+        "sha256": "6acb131cda5047274f189b1800765a76f252a1cf5086a02042aaefc629b848fa"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/LynxLibraryRegistry.xcodeproj/project.pbxproj",
+        "sha256": "e34a7639d1dfd2039bcd6ad0c6dfc0e652a17e44d1216372ab8600f4827e2993"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/SparklingGo.xcodeproj/project.pbxproj",
+        "sha256": "215b59275ef8b7706a575e17e97f8a4f561a3990c73543fe5ca1ebe33bca6f2b"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Podfile.lock",
+        "sha256": "c9c0e133e530a9ac7282ccc5467eba6cb80c34f7339967cf1066517f750162ae"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/Pods-SparklingGo/Pods-SparklingGo.debug.xcconfig",
+        "sha256": "2101052463dcb6fbaa1881bff22833a45bf1c2bbe1c36d70cb9ac6fccec4321c"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/Pods-SparklingGo/Pods-SparklingGo.release.xcconfig",
+        "sha256": "2101052463dcb6fbaa1881bff22833a45bf1c2bbe1c36d70cb9ac6fccec4321c"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/Pods-SparklingGoInHouse/Pods-SparklingGoInHouse.debug.xcconfig",
+        "sha256": "82224c2a45126878fe9e75f443a6ac24257a26b40572451b8f8732f9f7731df8"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/Pods-SparklingGoInHouse/Pods-SparklingGoInHouse.release.xcconfig",
+        "sha256": "82224c2a45126878fe9e75f443a6ac24257a26b40572451b8f8732f9f7731df8"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/LynxSecureStore/LynxSecureStore.debug.xcconfig",
+        "sha256": "5f5a69ac48cf2ddef7fd1bf468351476e786d1c2350d6722def18711a608c201"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/LynxSecureStore/LynxSecureStore.release.xcconfig",
+        "sha256": "5f5a69ac48cf2ddef7fd1bf468351476e786d1c2350d6722def18711a608c201"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/LynxLibraryRegistry/LynxLibraryRegistry.debug.xcconfig",
+        "sha256": "3e940abbd5620ac214c11af27ab17e58521d58d83b07dd24eb8b1a88b1599dee"
+      },
+      {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target Support Files/LynxLibraryRegistry/LynxLibraryRegistry.release.xcconfig",
+        "sha256": "3e940abbd5620ac214c11af27ab17e58521d58d83b07dd24eb8b1a88b1599dee"
+      }
+    ]
+  }
+}

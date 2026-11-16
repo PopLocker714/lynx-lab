@@ -1,11 +1,32 @@
 ---
-last_updated: 2026-11-16
+last_updated: 2026-11-17
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling: 2.0.1 (latest) / 2.1.0-rc.36 (rc)
 bun: 1.4.0
 ---
 
 # Состояние проекта
+
+2026-11-17: Secure Store migration принят для проверенного consumer-профиля.
+Package `c350fce`, tarball `35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd`:
+65 package tests, strict TS, lint, native compile/analysis и независимое review.
+Probe `855fdde` / evidence `8dffb04`: Android/iOS Debug/Release — по 10/10 сценариев,
+persistence, Android R8; direct Android instrumentation — 7/7 на финальном архиве.
+Четыре сборки проверяли `3f3aff`; финальный архив отличается только CONTRIBUTING
+EN/RU, остальные 25 файлов идентичны, JS bundle и APK Debug совпадают побайтно.
+[Результаты и границы](docs/evidence/secure-store-2026-11-17/results.json).
+UTP старого AGP упал до запуска тестов; отдельная попытка Debug test APK поверх
+Release также не прошла. Эти результаты не смешаны с успешным Release UI smoke.
+Пакет остаётся private: locked-Keychain, поздний callback после teardown, minimum OS
+и remote CI ещё не подтверждены. Runner/daemon завершены, данные устройств сохранены.
+
+App-lifecycle: core `10af007`, tooling `196d912`; independent review нашло отсутствие
+публикации initial background snapshot после ранней Android initialization.
+Исправлено в `87a7b93`, Android Debug/Release/Lint/JVM checks и упаковка прошли.
+Новый tarball `c8cabd693d35b308b53aa166e7644b8c5b555e78fd8dc4b1daa936e452b93529`.
+Consumer/device QA, включая initialize без Activity, ещё впереди. Потребуется
+отдельный candidate JS profile ReactLynx 0.125.0 / types 4.2.1; старый probe 0.116.5
+не удовлетворяет опубликованным peer ranges. Edge-to-edge пока только исследован.
 
 2026-11-16: согласованы цель production-пакетов Lynx, поддержка Lynx + проверяемые
 host (Sparkling первый), stable gate, 4 пробела и strict TS без усложнения архитектуры.

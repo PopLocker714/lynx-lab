@@ -1,0 +1,164 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "type": "Application",
+        "depth": 0,
+        "enabled": true,
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "x": 0,
+          "height": 896
+        },
+        "hittable": false,
+        "index": 0,
+        "label": "Sparkling Template",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "x": 0,
+          "height": 896
+        },
+        "hittable": true,
+        "index": 1,
+        "parentIndex": 0,
+        "type": "Other",
+        "depth": 1,
+        "enabled": true,
+        "label": "lynxview",
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "x": 0,
+          "height": 896
+        },
+        "hittable": true,
+        "index": 2,
+        "parentIndex": 1,
+        "type": "Other",
+        "depth": 2,
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "rect": {
+          "width": 414,
+          "y": 52,
+          "x": 0,
+          "height": 39.5
+        },
+        "hittable": true,
+        "index": 3,
+        "parentIndex": 2,
+        "type": "Button",
+        "depth": 3,
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "rect": {
+          "width": 414,
+          "y": 99.5,
+          "x": 0,
+          "height": 39.5
+        },
+        "hittable": true,
+        "index": 4,
+        "parentIndex": 2,
+        "type": "Button",
+        "depth": 3,
+        "enabled": true,
+        "label": "Show Crypto",
+        "ref": "e5",
+        "kind": "button"
+      },
+      {
+        "rect": {
+          "width": 390,
+          "y": 155,
+          "x": 12,
+          "height": 43.5
+        },
+        "hittable": true,
+        "index": 5,
+        "parentIndex": 2,
+        "type": "Other",
+        "depth": 3,
+        "enabled": true,
+        "label": "Run Secure Store checks",
+        "ref": "e6",
+        "kind": "other"
+      },
+      {
+        "rect": {
+          "width": 390,
+          "y": 208.5,
+          "x": 12,
+          "height": 17
+        },
+        "hittable": true,
+        "index": 6,
+        "parentIndex": 2,
+        "type": "StaticText",
+        "depth": 3,
+        "enabled": true,
+        "label": "persistence: stored marker found",
+        "ref": "e7",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 7,
+      "totalNodeCount": 7,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 131.50107860565186,
+        "presentationMs": 0.28395652770996094
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 50,
+        "p50Ms": 336,
+        "p95Ms": 465,
+        "maxMs": 545,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 50
+        }
+      }
+    },
+    "refsGeneration": 853408
+  }
+}

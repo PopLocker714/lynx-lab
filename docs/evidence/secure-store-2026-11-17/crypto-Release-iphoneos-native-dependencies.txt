@@ -1,0 +1,11 @@
+dependencies: \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS27.2.sdk/SDKSettings.json \
+  /Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-11be0db.tgz+3927ea12a8a8b167-4b7af389bc0fda0b/node_modules/@lynx-lab/crypto/ios/src/LynxCryptoModule.m \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Target\ Support\ Files/LynxCrypto/LynxCrypto-prefix.pch \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/UIKit-ED3A9XVG847B8G8G0GMLGV84C.pcm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Security.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Foundation.framework/Modules/module.modulemap \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/UIKit.framework/Modules/module.modulemap \
+  /Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-11be0db.tgz+3927ea12a8a8b167-4b7af389bc0fda0b/node_modules/@lynx-lab/crypto/ios/src/LynxCryptoModule.h \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/ExplicitPrecompiledModules/Lynx-7BFHC4AZ51143CO0YZH17UJ4F.pcm \
+  /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Products/Release-iphoneos/Lynx/Lynx.framework/Modules/module.modulemap

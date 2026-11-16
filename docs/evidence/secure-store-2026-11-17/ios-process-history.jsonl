@@ -1,0 +1,4 @@
+{"at": "2026-11-16T21:25:15.710784+00:00", "processes": [{"executable": "file:///private/var/containers/Bundle/Application/9EF5149D-B109-4E19-932A-077B71589E46/probe-secure-ios-debug.app/SparklingGoInHouse", "processIdentifier": 20193}]}
+{"at": "2026-11-16T21:25:41.549932+00:00", "processes": [{"executable": "file:///private/var/containers/Bundle/Application/9EF5149D-B109-4E19-932A-077B71589E46/probe-secure-ios-debug.app/SparklingGoInHouse", "processIdentifier": 20198}]}
+{"at": "2026-11-16T21:26:21.938032+00:00", "processes": [{"executable": "file:///private/var/containers/Bundle/Application/FB3FC2F4-F289-4771-8BD2-63343FBE660A/probe-secure-ios-release.app/SparklingGo", "processIdentifier": 20201}]}
+{"at": "2026-11-16T21:27:07.298542+00:00", "processes": [{"executable": "file:///private/var/containers/Bundle/Application/FB3FC2F4-F289-4771-8BD2-63343FBE660A/probe-secure-ios-release.app/SparklingGo", "processIdentifier": 20208}]}

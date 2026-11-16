@@ -1,0 +1,198 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "type": "Application",
+        "depth": 0,
+        "enabled": true,
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": false,
+        "index": 0,
+        "label": "Sparkling Template",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "index": 1,
+        "parentIndex": 0,
+        "type": "Window",
+        "depth": 1,
+        "enabled": true,
+        "label": "sparkling",
+        "ref": "e2",
+        "kind": "window"
+      },
+      {
+        "rect": {
+          "height": 28,
+          "y": 868,
+          "x": 0,
+          "width": 72
+        },
+        "hittable": true,
+        "index": 2,
+        "parentIndex": 1,
+        "type": "Button",
+        "depth": 3,
+        "enabled": true,
+        "label": "sparkling",
+        "ref": "e3",
+        "kind": "button"
+      },
+      {
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "index": 3,
+        "parentIndex": 0,
+        "type": "Other",
+        "depth": 1,
+        "enabled": true,
+        "label": "lynxview",
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "rect": {
+          "height": 896,
+          "y": 0,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "index": 4,
+        "parentIndex": 3,
+        "type": "Other",
+        "depth": 2,
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "ref": "e5",
+        "kind": "other"
+      },
+      {
+        "rect": {
+          "height": 39.5,
+          "y": 52,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "index": 5,
+        "parentIndex": 4,
+        "type": "Button",
+        "depth": 3,
+        "enabled": true,
+        "label": "Show edge-to-edge",
+        "ref": "e6",
+        "kind": "button"
+      },
+      {
+        "rect": {
+          "height": 39.5,
+          "y": 99.5,
+          "x": 0,
+          "width": 414
+        },
+        "hittable": true,
+        "index": 6,
+        "parentIndex": 4,
+        "type": "Button",
+        "depth": 3,
+        "enabled": true,
+        "label": "Show Crypto",
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "index": 7,
+        "parentIndex": 4,
+        "depth": 3,
+        "rect": {
+          "height": 43.5,
+          "y": 155,
+          "x": 12,
+          "width": 390
+        },
+        "hittable": true,
+        "type": "Other",
+        "enabled": true,
+        "label": "Run Secure Store checks",
+        "ref": "e8",
+        "kind": "other"
+      },
+      {
+        "index": 8,
+        "parentIndex": 4,
+        "depth": 3,
+        "rect": {
+          "height": 200.5,
+          "y": 208.5,
+          "x": 12,
+          "width": 390
+        },
+        "hittable": true,
+        "type": "StaticText",
+        "enabled": true,
+        "label": "Secure Store: running\nPASS absent + idempotent delete\nPASS write/read + overwrite\nPASS empty + unicode + NUL\nPASS 16 KiB UTF-8 boundary\nPASS invalid keys + malformed UTF-16\nPASS 256-character key\nPASS concurrent independent records\nPASS ordered concurrent writes\nPASS delete + read null\nPASS seed process persistence\nSECURE STORE PASS 10/10",
+        "ref": "e9",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 9,
+      "totalNodeCount": 9,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 266.4099931716919,
+        "presentationMs": 0.29790401458740234
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 16,
+        "p50Ms": 340,
+        "p95Ms": 468,
+        "maxMs": 468,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 16
+        }
+      }
+    },
+    "refsGeneration": 853374
+  }
+}

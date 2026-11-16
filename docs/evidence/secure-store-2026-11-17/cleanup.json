@@ -1,0 +1,34 @@
+{
+  "completedAt": "2026-11-16T21:39:48.884224+00:00",
+  "closedSessions": [
+    "secure-standard-android",
+    "secure-standard-ios"
+  ],
+  "terminatedDaemonPid": 76422,
+  "xctestRunnerPidExited": 28823,
+  "verifiedPidsAbsent": [
+    76422,
+    28823
+  ],
+  "daemonPortNoListener": 56197,
+  "removedIOSRunnerBundle": "com.ilya.lynxqa.agentdevice.uitests.xctrunner",
+  "removedPaths": [
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/secure-store-standard/agent-device",
+    "/Users/REDACTED_LOCAL_USER/.agent-device/apple-runner/derived/ios-device/cache-7d9d4efa1533f15a/Logs/Test/Test-AgentDeviceRunner-2026.11.17_00-24-00-+0300.xcresult"
+  ],
+  "removedAllocatedBytes": 643072,
+  "retained": {
+    "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification",
+    "artifacts": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/secure-store-standard",
+    "sharedNativeBuildState": [
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods",
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device",
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build"
+    ],
+    "dependencies": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/node_modules",
+    "priorCryptoArtifacts": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/crypto",
+    "iosRenderingExperiment": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/ios-rendering/experiment.app",
+    "installedApplications": "com.probe.e2e Release on both devices; all target data preserved; Android test helper retained for following QA"
+  },
+  "activeOwnedProcesses": []
+}

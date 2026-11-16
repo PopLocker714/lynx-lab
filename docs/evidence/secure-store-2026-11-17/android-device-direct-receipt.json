@@ -1,0 +1,71 @@
+{
+    "mode": "direct-android-junit",
+    "status": "passed",
+    "sha256": "35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd",
+    "serial": "REDACTED_PIXEL_SERIAL",
+    "startedAt": "2026-11-16T21:34:59.036Z",
+    "bindings": {
+        "profile": "sparkling-2.1.0-rc.36-lynx-3.9.0",
+        "sha256": "35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd",
+        "android": {
+            "project": ":lynx_library__lynx_lab_secure_store",
+            "directory": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-35c107ef.tgz-1783ae239483658b/node_modules/@lynx-lab/secure-store/android",
+            "files": [
+                {
+                    "path": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-35c107ef.tgz-1783ae239483658b/node_modules/@lynx-lab/secure-store/android/src/main/java/dev/lynxlab/securestore/LynxSecureStoreModule.kt",
+                    "sha256": "b2611be00e85ff027ae18217b187f48461e743a1e221d33edb4e3dd5cc76a64f"
+                },
+                {
+                    "path": "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-35c107ef.tgz-1783ae239483658b/node_modules/@lynx-lab/secure-store/android/src/main/java/dev/lynxlab/securestore/SecureStore.kt",
+                    "sha256": "9b2ad1e52b444b498b3af499b273d0e2cb8118dfb72ceb158d972f59be49c431"
+                },
+                {
+                    "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build/generated/source/lynxLibraryRegistry/debug/com/lynx/tasm/library/LynxAutolinkGenerated.java",
+                    "sha256": "38c7df2380594fd981fc6558b8547177144af23b8d0b56c2523fcd4e804ee3a0"
+                },
+                {
+                    "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build/generated/source/lynxLibraryRegistry/release/com/lynx/tasm/library/LynxAutolinkGenerated.java",
+                    "sha256": "38c7df2380594fd981fc6558b8547177144af23b8d0b56c2523fcd4e804ee3a0"
+                }
+            ]
+        }
+    },
+    "app": {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build/outputs/apk/debug/app-arm64-v8a-debug.apk",
+        "sha256": "a30a6637a9559d36ad95aa23fe79dd6f3db43392caca7a2c06ec4f3601b39731",
+        "metadataSha256": "2523cb56a312b53f64b0aee7cb93fbbcce97e76be8065279171a821bdbe67246"
+    },
+    "tests": {
+        "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+        "sha256": "9e361f9250618d61ab61d1fb5980a8d5a7e3cfbf0977d54b1c8279dcbeb767e8",
+        "metadataSha256": "1830d8a4556b776e8a5a161b39e34484e576ff87bd4c57c2442f3d7b718bc2da"
+    },
+    "command": [
+        "/Users/REDACTED_LOCAL_USER/Library/Android/sdk/platform-tools/adb",
+        "-s",
+        "REDACTED_PIXEL_SERIAL",
+        "shell",
+        "am",
+        "instrument",
+        "-w",
+        "-r",
+        "-e",
+        "class",
+        "com.probe.e2e.SecureStoreDeviceTest",
+        "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner"
+    ],
+    "runnerMapping": "instrumentation:com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner (target=com.probe.e2e)",
+    "rawPath": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/artifacts/android-instrumentation-1794864919084.txt",
+    "rawSha256": "076ebb89a4a34a23b9bde20644fb8e79b9e2e8d23f34c3a4730dab6bfff74d5a",
+    "runStartedAt": "2026-11-16T21:35:19.084Z",
+    "finishedAt": "2026-11-16T21:35:21.735Z",
+    "passedCases": [
+        "encryptedOutsideBackupWithFreshNonceAndNonExportableKey",
+        "unicodeAndNulSurviveNativeJsonAndStorage",
+        "authenticationFailurePreservesOtherRecordsAndCiphertext",
+        "moduleInstancesShareWriteOrdering",
+        "missingKeystoreKeyFailsWithoutReplacingCiphertext",
+        "malformedRecordAndNativeInputAreRejected",
+        "failedOverwritePreservesAcknowledgedValue"
+    ]
+}

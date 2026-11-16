@@ -1,0 +1,232 @@
+{
+  "date": "2026-11-17",
+  "status": "passed-with-documented-limits",
+  "scope": "One physical consumer profile; no minimum-OS, locked-Keychain or teardown-late-callback claim",
+  "package": {
+    "name": "@lynx-lab/secure-store",
+    "sourceCommit": "c350fce2fcb0b5e982a4bb81eaa6c41f9e87ac18",
+    "tarball": "vendor/secure-store-35c107ef.tgz",
+    "sha256": "35c107ef060160b9559f5065734d790b9c46bdf0d292090c7b9014dc86877acd",
+    "installedFilesMatchedArchive": 27,
+    "fourConfigurationTestedArchive": "3f3aff3429d0aae225d2348e57f9d2743ea4f08a54ed2a4e16666977762fb7d2",
+    "reuseBasis": "final-archive-delta.json:25 identical files, only2 CONTRIBUTING docs differ"
+  },
+  "consumer": {
+    "sourceCommit": "855fdde503a3abfc97fd929452d0b382ae82fbc6",
+    "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification",
+    "branch": "test/android-libraries",
+    "bunLockSha256": "2048447509c0b1e03b033f45adbac69e49cb876036a4de82219843dfbac7da92",
+    "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+    "runtime": "Lynx3.9.0 / Sparkling2.1.0-rc.36 / ReactLynx0.116.5",
+    "bundleIdentifier": "com.probe.e2e",
+    "applicationSourceHashes": {
+      "src/pages/main/App.tsx": "efddb6a791e5ddead2bffcfdd8fcf70a81949ff9aa0a41e0c5286626bab37a04",
+      "src/pages/main/secureStoreChecks.ts": "95b27c0f2b9e0cc361b0b5a26f2befedfe544f40225a464178ee619f0b5b682c",
+      "src/pages/main/SecureStorePanel.tsx": "bd34ce2bc36c21fa5955e03a8fa21ff8b94ed328930a1fcf633e6604c435f2a5",
+      "src/pages/main/cryptoChecks.ts": "74189bff7a079a56dbbfe48df57d908411a014a3c2fafc867ec5f00f32eff4d7",
+      "src/pages/main/CryptoPanel.tsx": "ead721f6b6718de9c9c7ad5a871d9aec6938b9bb86eed7d2522d167011d5a3fe",
+      "android/app/src/androidTest/java/com/probe/e2e/SecureStoreDeviceTest.kt": "b4e17f5f10a669ddf0feedd7a9f9bdcfbe314d61aec1ed145506c25038667b68"
+    },
+    "fourConfigurationSourceBase": "59dc5e90bcb31da39519521a251e6fb951558773",
+    "applicationSourcesUnchangedByThisTask": true
+  },
+  "builds": {
+    "status": "passed",
+    "androidR8": "executed, build-android.txt",
+    "artifacts": {
+      "androidDebug": {
+        "path": "evidence-local/secure-store-standard/probe-secure-android-debug.apk",
+        "sha256": "a30a6637a9559d36ad95aa23fe79dd6f3db43392caca7a2c06ec4f3601b39731",
+        "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+        "archive": "3f3aff34"
+      },
+      "androidRelease": {
+        "path": "evidence-local/secure-store-standard/probe-secure-android-release.apk",
+        "sha256": "460fca5262ea62d3b3dab38142b755f1a4d00e6f3005853ab56f6fa734c917e5",
+        "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+        "archive": "3f3aff34"
+      },
+      "finalAndroidDebug": {
+        "path": "evidence-local/secure-store-standard/probe-secure-final-android-debug.apk",
+        "sha256": "a30a6637a9559d36ad95aa23fe79dd6f3db43392caca7a2c06ec4f3601b39731",
+        "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+        "archive": "35c107ef"
+      },
+      "iosDebug": {
+        "path": "evidence-local/secure-store-standard/probe-secure-ios-debug.app",
+        "executableSha256": "0d87f63d14c2423b3e64456165baf8ca0c7089204634c50a0abf6a5c1d2ed45f",
+        "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+        "archive": "3f3aff34"
+      },
+      "iosRelease": {
+        "path": "evidence-local/secure-store-standard/probe-secure-ios-release.app",
+        "executableSha256": "91c37d95cdd7d7fe215529a8d58f5150f6d3b4bfedfeceadc0fc1b6ff54f1ebb",
+        "mainBundleSha256": "798b34a4f81d9a2f465dec2daced7d601d7f6a4f9df9f61ce81244e6b132f263",
+        "archive": "3f3aff34"
+      }
+    },
+    "iosDeploymentTarget": "15.6 command-line override; not iOS12 validation",
+    "compilerBaseline": "Existing host/third-party warnings retained in raw build logs; full tsc has exactly3 pre-existing errors (typecheck.txt)"
+  },
+  "nativeBindings": {
+    "tested3f": [
+      "consumer-bindings.json",
+      "ios-bindings-filter-checked.json",
+      "android-binding-model-final.json",
+      "ios-compiled-inputs.json"
+    ],
+    "final35": [
+      "android-device-direct-receipt.json",
+      "ios-bindings-final35.json"
+    ],
+    "crypto": "11be0db unchanged; original iOS compiler dependencies plus current Android compiler model and fresh Release smokes recorded"
+  },
+  "physicalRuns": [
+    {
+      "platform": "android",
+      "device": "Pixel9",
+      "os": "17",
+      "serial": "REDACTED_PIXEL_SERIAL",
+      "configuration": "Debug",
+      "checks": "10/10passed",
+      "updateMarker": true,
+      "processPersistence": {
+        "beforePid": 12315,
+        "afterPid": 12803,
+        "markerFound": true,
+        "operation": "instrumentation followed by app relaunch"
+      },
+      "evidence": [
+        "android-debug-checks.png",
+        "android-debug-update-marker.png",
+        "android-debug-after-instrumentation-marker.png"
+      ]
+    },
+    {
+      "platform": "android",
+      "device": "Pixel9",
+      "os": "17",
+      "serial": "REDACTED_PIXEL_SERIAL",
+      "configuration": "Release R8",
+      "checks": "10/10passed",
+      "debugToReleaseMarker": true,
+      "cryptoRegression": "real native smoke passed;9 integer arrays",
+      "finalReleaseRestore": {
+        "pid": 14680,
+        "markerFound": true
+      },
+      "evidence": [
+        "android-release-checks.png",
+        "android-release-update-marker.png",
+        "android-release-crypto.png",
+        "android-final-release-marker.png"
+      ]
+    },
+    {
+      "platform": "ios",
+      "device": "iPhone11",
+      "os": "18.4.1",
+      "udid": "REDACTED_IPHONE_UDID",
+      "configuration": "Debug",
+      "checks": "10/10passed",
+      "updateMarker": true,
+      "restart": {
+        "beforePid": 20193,
+        "afterPid": 20198,
+        "markerFound": true
+      },
+      "evidence": [
+        "ios-debug-checks.json",
+        "ios-debug-update-marker.json",
+        "ios-debug-restart-marker.json"
+      ]
+    },
+    {
+      "platform": "ios",
+      "device": "iPhone11",
+      "os": "18.4.1",
+      "udid": "REDACTED_IPHONE_UDID",
+      "configuration": "Release",
+      "checks": "10/10passed",
+      "debugToReleaseMarker": true,
+      "restart": {
+        "beforePid": 20201,
+        "afterPid": 20208,
+        "markerFound": true
+      },
+      "cryptoRegression": "real native smoke passed;9 integer arrays",
+      "evidence": [
+        "ios-release-checks.json",
+        "ios-release-update-marker.json",
+        "ios-release-restart-marker.json",
+        "ios-release-crypto.json"
+      ]
+    }
+  ],
+  "instrumentation": {
+    "finalScript": {
+      "status": "passed",
+      "mode": "direct-android-junit",
+      "configuration": "Debug",
+      "cases": 7,
+      "receipt": "android-device-direct-receipt.json",
+      "raw": "android-device-direct-final-raw.txt"
+    },
+    "originalUTP": {
+      "status": "failed-before-tests",
+      "cases": 0,
+      "reason": "AGP7.4.2/UTP0.0.8-alpha08 Protobuf class-loader IllegalAccessError in ddmlib AppProcessesProto on Android17",
+      "evidence": "utp-failure.txt"
+    },
+    "additionalReleaseAttempt": {
+      "status": "not-passed",
+      "reason": "Debug test APK against Release R8: Process crashed / INSTRUMENTATION_CODE0",
+      "evidence": [
+        "instrumentation-release-run.json",
+        "instrumentation-release-raw.txt"
+      ],
+      "noFurtherInvestigation": true
+    }
+  },
+  "knownGaps": [
+    "Locked iOS Keychain and teardown/late-callback scenarios not exercised; no stability claim for those states",
+    "Minimum supported OS versions and GitHub CI not verified",
+    "Debug host displays existing16KiB native library alignment warning",
+    "Android Lynx labels absent from AX; inspected screenshots plus native instrumentation used",
+    "Additional Debug-test-APK-on-Release instrumentation did not pass; Release JS/native10checks and crypto smoke passed"
+  ],
+  "preservation": {
+    "noTargetUninstallOrDataReset": true,
+    "syntheticTestKeysOnly": true,
+    "iosInputGatePreserved": true,
+    "sharedPodsAndNativeBuildStateRetainedForNextQA": true
+  },
+  "toolchains": {
+    "android": {
+      "gradle": "8.2",
+      "agp": "7.4.2",
+      "kotlin": "1.8.10",
+      "launcherJdk": "17.0.20",
+      "javaToolchain": "11.0.32.1+1",
+      "compileSdk": 34,
+      "targetSdk": 34,
+      "minSdk": 24,
+      "abiTested": "arm64-v8a",
+      "releaseR8AndResourceShrinking": true,
+      "releaseSigning": "local probe debug key"
+    },
+    "ios": {
+      "xcode": "27.2",
+      "xcodeBuild": "27B52",
+      "sdk": "iphoneos27.2",
+      "cocoaPods": "1.17.0",
+      "cocoaPodsLynxLibrary": "3.9.0",
+      "podfileDeclaredDeploymentTarget": "12.0",
+      "effectiveBuildDeploymentTarget": "15.6",
+      "overrideReason": "Xcode 27.2 rejects deployment targets of old host Pods below 15; does not verify iOS 12 support"
+    },
+    "agentDevice": "0.21.36"
+  },
+  "cleanup": "cleanup.json",
+  "commands": "commands.json"
+}

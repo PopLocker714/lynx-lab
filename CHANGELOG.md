@@ -2,6 +2,15 @@
 
 Формат: дата, что изменилось, чем подтверждено.
 
+## 2026-11-17
+
+- Secure Store приведён к стандарту: 65 tests, strict TS, native checks, reviewed
+  consumer source-binding gate и direct Android runner. Physical Android/iOS
+  Debug/Release и persistence подтверждены; ограничения и два неуспешных runner
+  сценария сохранены отдельно. Probe `855fdde` / evidence `8dffb04`.
+- App-lifecycle core/tooling реализованы; единственный finding независимого review
+  исправлен в `87a7b93`. Consumer/device acceptance ещё не выполнен.
+
 ## 2026-11-16
 
 - Crypto pilot `9d1bd34`: проверки кода, independent review и consumer/device QA

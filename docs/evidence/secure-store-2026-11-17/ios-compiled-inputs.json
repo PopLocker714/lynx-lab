@@ -1,0 +1,20 @@
+[
+  {
+    "configuration": "Release-iphoneos",
+    "dependencyFile": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Release-iphoneos/LynxSecureStore.build/Objects-normal/arm64/LynxSecureStoreModule.d",
+    "evidence": "secure-Release-iphoneos-native-dependencies.txt",
+    "sha256": "5459b670e6df2a835bf69f9ca5038cc117c65023bda652acd26493e0c538c8d5",
+    "sourceLines": [
+      "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.m"
+    ]
+  },
+  {
+    "configuration": "Debug-iphoneos",
+    "dependencyFile": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxSecureStore.build/Debug-iphoneos/LynxSecureStore.build/Objects-normal/arm64/LynxSecureStoreModule.d",
+    "evidence": "secure-Debug-iphoneos-native-dependencies.txt",
+    "sha256": "baac68a53ab68d4a2702a17cd0d5afacdabc2a0fd302b4712b63fa5d997c679a",
+    "sourceLines": [
+      "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+secure-store@.+vendor+secure-store-3f3aff34.tgz-b890651ec3574886/node_modules/@lynx-lab/secure-store/ios/src/LynxSecureStoreModule.m"
+    ]
+  }
+]

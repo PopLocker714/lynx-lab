@@ -1,0 +1,25 @@
+SEVERE: Fatal error while executing main with args: --proto_config=/Users/REDACTED_LOCAL_USER/.android/utp/runnerConfig11446575806560595106.pb --proto_server_config=/Users/REDACTED_LOCAL_USER/.android/utp/serverConfig3677666342275513548.pb
+java.lang.IllegalAccessError: class com.google.protobuf.GeneratedMessageV3 tried to access method 'boolean com.google.protobuf.CodedInputStream.shouldDiscardUnknownFields()' (com.google.protobuf.GeneratedMessageV3 is in unnamed module of loader java.net.URLClassLoader @622ef26a; com.google.protobuf.CodedInputStream is in unnamed module of loader 'app')
+	at com.google.protobuf.GeneratedMessageV3.parseUnknownField(GeneratedMessageV3.java:317)
+	at com.android.server.adb.protos.AppProcessesProto$ProcessEntry.<init>(AppProcessesProto.java:119)
+	at com.android.server.adb.protos.AppProcessesProto$ProcessEntry.<init>(AppProcessesProto.java:54)
+	at com.android.server.adb.protos.AppProcessesProto$ProcessEntry$1.parsePartialFrom(AppProcessesProto.java:778)
+	at com.android.server.adb.protos.AppProcessesProto$ProcessEntry$1.parsePartialFrom(AppProcessesProto.java:772)
+	at com.google.protobuf.CodedInputStream$ArrayDecoder.readMessage(CodedInputStream.java:980)
+	at com.android.server.adb.protos.AppProcessesProto$AppProcesses.<init>(AppProcessesProto.java:879)
+	at com.android.server.adb.protos.AppProcessesProto$AppProcesses.<init>(AppProcessesProto.java:829)
+	at com.android.server.adb.protos.AppProcessesProto$AppProcesses$1.parsePartialFrom(AppProcessesProto.java:1571)
+	at com.android.server.adb.protos.AppProcessesProto$AppProcesses$1.parsePartialFrom(AppProcessesProto.java:1565)
+	at com.google.protobuf.AbstractParser.parseFrom(AbstractParser.java:111)
+	at com.google.protobuf.AbstractParser.parseFrom(AbstractParser.java:126)
+	at com.google.protobuf.AbstractParser.parseFrom(AbstractParser.java:20)
+	at com.android.server.adb.protos.AppProcessesProto$AppProcesses.parseFrom(AppProcessesProto.java:1027)
+	at com.android.ddmlib.internal.DeviceClientMonitorTask$TrackAppProcessor.onMessage(DeviceClientMonitorTask.java:585)
+	at com.android.ddmlib.internal.DeviceClientMonitorTask$Processor.onBytesReceived(DeviceClientMonitorTask.java:501)
+	at com.android.ddmlib.internal.DeviceClientMonitorTask.run(DeviceClientMonitorTask.java:281)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Nov 17, 2026 12:19:11 AM com.google.testing.platform.runtime.android.driver.AndroidInstrumentationDriver cancel
+WARNING: Cancellation triggered in Android Instrumentation Driver.
+
+Transforming sparkling-debug-tool-2.1.0-rc.36.aar (com.tiktok.sparkling:sparkling-debug-tool:2.1.0-rc.36) with JetifyTransform

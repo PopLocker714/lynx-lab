@@ -1,0 +1,19 @@
+{
+  "environment": {
+    "JAVA_HOME": "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home",
+    "ANDROID_HOME": "/Users/REDACTED_LOCAL_USER/Library/Android/sdk",
+    "ANDROID_SERIAL": "REDACTED_PIXEL_SERIAL"
+  },
+  "js": "bun run build",
+  "android": "./android/gradlew -p android -I /Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/scripts/consumer/inspect-android.gradle :app:assembleDebug :app:assembleRelease :app:minifyReleaseWithR8 :app:assembleDebugAndroidTest lynxConsumerBindings --no-daemon --max-workers=4",
+  "iosDebug": "xcodebuild -workspace SparklingGo.xcworkspace -scheme SparklingGoInHouse -configuration Debug -destination platform=iOS,id=REDACTED_IPHONE_UDID -derivedDataPath build-device -allowProvisioningUpdates DEVELOPMENT_TEAM=REDACTED_DEVELOPMENT_TEAM IPHONEOS_DEPLOYMENT_TARGET=15.6 -jobs 4 build",
+  "iosRelease": "same iOS cwd and options; scheme SparklingGo, configuration Release",
+  "finalDirectGate": {
+    "cwd": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation",
+    "sourceCommit": "c350fce2fcb0b5e982a4bb81eaa6c41f9e87ac18",
+    "command": "bun run check:android:device",
+    "CONSUMER_ROOT": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification",
+    "CONSUMER_TARBALL": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/vendor/secure-store-35c107ef.tgz"
+  },
+  "iosBindingRefresh": "bundle exec pod install after final docs-only archive; verifyNativeBindings(host,tarball,[ios]); no duplicate iOS native rebuild"
+}

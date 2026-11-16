@@ -1,0 +1,181 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "type": "Application",
+        "depth": 0,
+        "enabled": true,
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "x": 0,
+          "height": 896
+        },
+        "hittable": false,
+        "label": "Sparkling Template",
+        "index": 0,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "label": "lynxview",
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "x": 0,
+          "height": 896
+        },
+        "type": "Other",
+        "parentIndex": 0,
+        "enabled": true,
+        "hittable": true,
+        "depth": 1,
+        "index": 1,
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "label": "Show Secure Store",
+        "rect": {
+          "width": 414,
+          "y": 0,
+          "x": 0,
+          "height": 896
+        },
+        "type": "Other",
+        "parentIndex": 1,
+        "enabled": true,
+        "hittable": true,
+        "depth": 2,
+        "index": 2,
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "label": "Show Secure Store",
+        "rect": {
+          "width": 414,
+          "y": 52,
+          "x": 0,
+          "height": 39.5
+        },
+        "type": "Button",
+        "parentIndex": 2,
+        "enabled": true,
+        "hittable": true,
+        "depth": 3,
+        "index": 3,
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "label": "Show edge-to-edge",
+        "rect": {
+          "width": 414,
+          "y": 99.5,
+          "x": 0,
+          "height": 39.5
+        },
+        "type": "Button",
+        "parentIndex": 2,
+        "enabled": true,
+        "hittable": true,
+        "depth": 3,
+        "index": 4,
+        "ref": "e5",
+        "kind": "button"
+      },
+      {
+        "label": "Run Crypto native checks",
+        "rect": {
+          "width": 390,
+          "y": 155,
+          "x": 12,
+          "height": 43.5
+        },
+        "type": "Button",
+        "parentIndex": 2,
+        "enabled": true,
+        "hittable": true,
+        "depth": 3,
+        "index": 5,
+        "ref": "e6",
+        "kind": "button"
+      },
+      {
+        "label": "Run Crypto failure injection",
+        "rect": {
+          "width": 390,
+          "y": 206.5,
+          "x": 12,
+          "height": 43.5
+        },
+        "type": "Button",
+        "parentIndex": 2,
+        "enabled": true,
+        "hittable": true,
+        "depth": 3,
+        "index": 6,
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "label": "NATIVE: real bridge, no injection\nPASS views/offset/empty: Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, BigInt64Array, BigUint64Array\nPASS byte lengths 1/2/3/4/31/32/65536\nPASS float/DataView rejection + byte quota\nPASS 8 distinct 32-byte samples (smoke only)\nPASS 8 distinct UUIDs v4/lowercase (smoke only)\nCRYPTO NATIVE PASS; smoke does not measure entropy",
+        "rect": {
+          "width": 390,
+          "y": 260,
+          "x": 12,
+          "height": 140
+        },
+        "type": "StaticText",
+        "parentIndex": 2,
+        "enabled": true,
+        "hittable": true,
+        "depth": 3,
+        "index": 7,
+        "ref": "e8",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 8,
+      "totalNodeCount": 8,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 120.95296382904053,
+        "presentationMs": 0.2809762954711914
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 43,
+        "p50Ms": 336,
+        "p95Ms": 457,
+        "maxMs": 545,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 43
+        }
+      }
+    },
+    "refsGeneration": 853401
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "type": "Application",
+        "depth": 0,
+        "enabled": true,
+        "rect": {
+          "y": 0,
+          "x": 0,
+          "width": 414,
+          "height": 896
+        },
+        "hittable": false,
+        "label": "Sparkling Template",
+        "index": 0,
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "type": "Window",
+        "hittable": true,
+        "depth": 1,
+        "index": 1,
+        "label": "sparkling",
+        "rect": {
+          "y": 0,
+          "x": 0,
+          "width": 414,
+          "height": 896
+        },
+        "parentIndex": 0,
+        "enabled": true,
+        "ref": "e2",
+        "kind": "window"
+      },
+      {
+        "type": "Button",
+        "hittable": true,
+        "depth": 3,
+        "index": 2,
+        "label": "sparkling",
+        "rect": {
+          "y": 868,
+          "x": 0,
+          "width": 72,
+          "height": 28
+        },
+        "parentIndex": 1,
+        "enabled": true,
+        "ref": "e3",
+        "kind": "button"
+      },
+      {
+        "type": "Other",
+        "hittable": true,
+        "depth": 1,
+        "index": 3,
+        "label": "lynxview",
+        "rect": {
+          "y": 0,
+          "x": 0,
+          "width": 414,
+          "height": 896
+        },
+        "parentIndex": 0,
+        "enabled": true,
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "type": "Other",
+        "hittable": true,
+        "depth": 2,
+        "index": 4,
+        "label": "Show edge-to-edge",
+        "rect": {
+          "y": 0,
+          "x": 0,
+          "width": 414,
+          "height": 896
+        },
+        "parentIndex": 3,
+        "enabled": true,
+        "ref": "e5",
+        "kind": "other"
+      },
+      {
+        "type": "Button",
+        "hittable": true,
+        "depth": 3,
+        "index": 5,
+        "label": "Show edge-to-edge",
+        "rect": {
+          "y": 52,
+          "x": 0,
+          "width": 414,
+          "height": 39.5
+        },
+        "parentIndex": 4,
+        "enabled": true,
+        "ref": "e6",
+        "kind": "button"
+      },
+      {
+        "type": "Button",
+        "hittable": true,
+        "depth": 3,
+        "index": 6,
+        "label": "Show Crypto",
+        "rect": {
+          "y": 99.5,
+          "x": 0,
+          "width": 414,
+          "height": 39.5
+        },
+        "parentIndex": 4,
+        "enabled": true,
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "index": 7,
+        "parentIndex": 4,
+        "depth": 3,
+        "rect": {
+          "y": 155,
+          "x": 12,
+          "width": 390,
+          "height": 43.5
+        },
+        "hittable": true,
+        "type": "Other",
+        "enabled": true,
+        "label": "Run Secure Store checks",
+        "ref": "e8",
+        "kind": "other"
+      },
+      {
+        "index": 8,
+        "parentIndex": 4,
+        "depth": 3,
+        "rect": {
+          "y": 208.5,
+          "x": 12,
+          "width": 390,
+          "height": 17
+        },
+        "hittable": true,
+        "type": "StaticText",
+        "enabled": true,
+        "label": "persistence: stored marker found",
+        "ref": "e9",
+        "kind": "text"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 9,
+      "totalNodeCount": 9,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 414,
+      "height": 896
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 155.10106086730957,
+        "presentationMs": 0.5249977111816406
+      }
+    },
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 23,
+        "p50Ms": 351,
+        "p95Ms": 415,
+        "maxMs": 468,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 23
+        }
+      }
+    },
+    "refsGeneration": 853381
+  }
+}

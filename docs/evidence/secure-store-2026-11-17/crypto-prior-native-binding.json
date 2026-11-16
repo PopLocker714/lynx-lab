@@ -1,0 +1,26 @@
+{
+  "collectedAt": "2026-11-16T21:12:38.373289+00:00",
+  "source": "Preserved compiler dependency outputs from original crypto Debug/Release, before any secure candidate native build",
+  "ios": [
+    {
+      "file": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Release-iphoneos/LynxCrypto.build/Objects-normal/arm64/LynxCryptoModule.d",
+      "modifiedAt": "2026-11-16T20:44:54.071955+00:00",
+      "sha256": "38229f77d6475070bbd278bc72c793b4ab5c94647262e9ce4b7c3ec2ed8c55cb",
+      "copy": "crypto-Release-iphoneos-native-dependencies.txt",
+      "sourceLines": [
+        "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-11be0db.tgz+3927ea12a8a8b167-4b7af389bc0fda0b/node_modules/@lynx-lab/crypto/ios/src/LynxCryptoModule.m"
+      ]
+    },
+    {
+      "file": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/build-device/Build/Intermediates.noindex/LynxCrypto.build/Debug-iphoneos/LynxCrypto.build/Objects-normal/arm64/LynxCryptoModule.d",
+      "modifiedAt": "2026-11-16T20:34:11.605646+00:00",
+      "sha256": "5febe8531f61b06e4e6c0ef381371ff3d0dbdd6f400aef1daab398de1a12bce2",
+      "copy": "crypto-Debug-iphoneos-native-dependencies.txt",
+      "sourceLines": [
+        "/Users/REDACTED_LOCAL_USER/.bun/install/cache/links/@lynx-lab+crypto@.+vendor+crypto-11be0db.tgz+3927ea12a8a8b167-4b7af389bc0fda0b/node_modules/@lynx-lab/crypto/ios/src/LynxCryptoModule.m"
+      ]
+    }
+  ],
+  "originalPodLock": "docs/evidence/crypto-2026-11-16/Podfile.lock",
+  "android": "Original build logs contain executed module and generated registry tasks; current Gradle compiler source roots are independently recorded. Fresh Release crypto smoke is still required in secure QA."
+}

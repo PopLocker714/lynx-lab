@@ -1,0 +1,35 @@
+{
+  "command": [
+    "/Users/REDACTED_LOCAL_USER/Library/Android/sdk/platform-tools/adb",
+    "-s",
+    "REDACTED_PIXEL_SERIAL",
+    "shell",
+    "am",
+    "instrument",
+    "-w",
+    "-r",
+    "-e",
+    "class",
+    "com.probe.e2e.SecureStoreDeviceTest",
+    "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner"
+  ],
+  "serial": "REDACTED_PIXEL_SERIAL",
+  "startedAt": "2026-11-16T21:21:15.593794+00:00",
+  "finishedAt": "2026-11-16T21:21:18.089536+00:00",
+  "exitCode": 0,
+  "rawFile": "instrumentation-direct-raw.txt",
+  "runnerMapping": "com.probe.e2e.test/androidx.test.runner.AndroidJUnitRunner (target=com.probe.e2e)",
+  "mode": "direct instrumentation; original UTP script remains failed",
+  "status": "passed",
+  "passedCases": [
+    "encryptedOutsideBackupWithFreshNonceAndNonExportableKey",
+    "unicodeAndNulSurviveNativeJsonAndStorage",
+    "authenticationFailurePreservesOtherRecordsAndCiphertext",
+    "moduleInstancesShareWriteOrdering",
+    "missingKeystoreKeyFailsWithoutReplacingCiphertext",
+    "malformedRecordAndNativeInputAreRejected",
+    "failedOverwritePreservesAcknowledgedValue"
+  ],
+  "rawSha256": "032b6926b42c4a7cb122eb12721eab29ebbd4384960e812737c7568bbfb8e703",
+  "oracle": "Exactly seven unique expected cases, each started and status 0; runner OK (7 tests), final code -1, no errors/skips"
+}

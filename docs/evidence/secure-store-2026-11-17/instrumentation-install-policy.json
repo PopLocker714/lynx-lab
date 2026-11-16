@@ -1,0 +1,44 @@
+{
+  "inspectedAt": "2026-11-16T21:11:24.224281+00:00",
+  "method": "javap -c -p on installed AGP/UTP jars; no device test yet",
+  "jars": {
+    "agp": {
+      "path": "/Users/REDACTED_LOCAL_USER/.gradle/caches/modules-2/files-2.1/com.android.tools.build/gradle/7.4.2/87cb2d87280562820906f2a1ee3a12b047359a7/gradle-7.4.2.jar",
+      "sha256": "d426478af963bd2276feb840fc97b8590edb1392670f587e838fd63f829fbd24"
+    },
+    "androidTestPlugin": {
+      "path": "/Users/REDACTED_LOCAL_USER/.gradle/caches/modules-2/files-2.1/com.google.testing.platform/android-test-plugin/0.0.8-alpha08/c9485307a108389faa4f9aeb5738c0b0625aa3dc/android-test-plugin-0.0.8-alpha08.jar",
+      "sha256": "27a7ca80d78e568f29e2e59487202d1918e7ba26ff511c756e35e8746baa6e93"
+    },
+    "deviceProvider": {
+      "path": "/Users/REDACTED_LOCAL_USER/.gradle/caches/modules-2/files-2.1/com.android.tools.utp/android-device-provider-ddmlib/30.4.2/e0bf24a7d01bf192a1a4dce54ced2b99aad690f1/android-device-provider-ddmlib-30.4.2.jar",
+      "sha256": "475a432ce6ad77ca33b48bdfcdaf5b7521f855c8db721076b55cfff2b811d854"
+    }
+  },
+  "unifiedTestPlatform": {
+    "default": true,
+    "property": "android.experimental.androidTest.useUnifiedTestPlatform",
+    "consumerOverride": false
+  },
+  "factory": "com.android.build.gradle.internal.testing.utp.UtpConfigFactory.createTestFixture",
+  "hostPlugins": [
+    "AndroidTestPlugin (AndroidDevicePlugin)",
+    "AndroidTestDeviceInfoPlugin",
+    "AndroidTestLogcatPlugin",
+    "AndroidTestCoveragePlugin (conditional)",
+    "AdditionalTestOutputPlugin (conditional)",
+    "IceboxPlugin (conditional)"
+  ],
+  "installerClass": "com.google.testing.platform.plugin.android.AndroidDevicePlugin",
+  "installerBeforeAll": "DeviceController.install; DdmlibAndroidDeviceController.install invokes installPackage(path, true, options), preserving existing data",
+  "installerAfterAll": "delegates to BaseHostPlugin.afterAll, which only returns incoming result; no uninstall",
+  "scope": "AGP 7.4.2 + UTP 0.0.8-alpha08 only; runtime marker checked separately",
+  "androidBaseline": {
+    "serial": "REDACTED_PIXEL_SERIAL",
+    "app": "com.probe.e2e",
+    "pid": 5667,
+    "configuration": "previous crypto Release",
+    "persistedMarker": "stored marker found",
+    "evidence": "android-before-marker.png"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "info": {
+    "arguments": [
+      "devicectl",
+      "device",
+      "info",
+      "processes",
+      "--device",
+      "REDACTED_IPHONE_UDID",
+      "--json-output",
+      "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/secure-store-standard/ios-processes-before.json"
+    ],
+    "commandType": "devicectl.device.info.processes",
+    "environment": {
+      "TERM": "dumb"
+    },
+    "jsonVersion": 5,
+    "outcome": "success",
+    "version": "651.32"
+  },
+  "result": {
+    "deviceIdentifier": "REDACTED_COREDEVICE_ID",
+    "runningProcesses": [
+      {
+        "executable": "file:///private/var/containers/Bundle/Application/A0383383-802D-4EFE-A64F-4B93083CAC53/probe-crypto-ios-release.app/SparklingGo",
+        "processIdentifier": 19969
+      }
+    ]
+  }
+}
