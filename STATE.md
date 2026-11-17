@@ -7,6 +7,14 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-17: дополнительный Release-прогон на общем Android16/API36 эмуляторе:
+Secure Store 10/10 и persistence после relaunch, Crypto native smoke, lifecycle
+A/B background g2 → active g3 прошли. Edge portrait snapshot: top51.81/bottom24/g1.
+Rotation снова tool-blocked (`adb timed out after 1ms`), first-visible-frame не
+подтверждён. [Evidence](docs/evidence/android-emulator-2026-11-17/results.json).
+Установленный для прогона probe удалён, session и Device panel закрыты; общий
+ранее запущенный эмулятор оставлен работающим, новых сборок/зависимостей нет.
+
 2026-11-17: стандарт внедрён в рабочие ветки всех четырёх библиотек. Выполнены
 strict TS, форматирование в 4 пробела, проверки native-кода, независимое review,
 упаковка и проверки actual native source bindings в consumer. README EN/RU,

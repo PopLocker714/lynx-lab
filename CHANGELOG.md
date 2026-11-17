@@ -115,3 +115,5 @@
   (регистрация через `LynxEnv.lifecycleDispatcher`, T39). T40 про `@YES` → `1`.
   T33 закрыт для iOS по исходникам.
 - README EN/RU для `edge-to-edge` (день 9), vitest 4.1.11 из-за `bun audit`.
+
+- 2026-11-17: Android16 emulator Release smoke: Secure10/10+persistence, crypto, lifecycle A/B PASS; edge rotation tool-blocked. Own probe removed and T3 session closed; evidence in docs/evidence/android-emulator-2026-11-17/.

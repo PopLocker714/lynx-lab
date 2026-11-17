@@ -1,0 +1,45 @@
+{
+    "date": "2026-11-17",
+    "device": "Pythia_Development / emulator-5554 / Android16 API36",
+    "configuration": "Release R8",
+    "apkSha256": "1548c8ae88f83756fd0734d06626db5bbfde652300e33f107aae10fbb8fe20ff",
+    "sourceEvidence": "../edge-2026-11-17/results.json",
+    "results": {
+        "secureStore": "PASS 10/10; stored marker found after relaunch",
+        "crypto": "PASS native bridge arrays/offsets/empty/byte lengths/rejections/quota; samples and UUID smoke only",
+        "lifecycle": "PASS both subscribers A/B: background g2 gap=false then active g3 gap=false",
+        "edge": "Portrait stable snapshot top51.80952453613281 bottom24 generation1 keyboard0; first visible frame not verified",
+        "rotation": "TOOL_BLOCKED: orientation landscape-left could not confirm display rotation: adb timed out after 1ms. Subsequent screenshot remains1080x2400. Not a package failure or pass."
+    },
+    "cleanup": {
+        "appAbsentBefore": true,
+        "installedForThisRun": true,
+        "uninstalledAfter": true,
+        "appsAfter": [
+            "dev.poplocker.lifeos"
+        ],
+        "sessionClosed": true,
+        "devicePanelClosed": true,
+        "sharedEmulatorAlreadyBootedAndLeftRunning": true,
+        "nativeBuilds": false,
+        "newDependencies": false,
+        "physicalDevicesUsed": false
+    },
+    "limits": [
+        "No new iOS tests",
+        "Minimum OS and remote CI still unverified",
+        "No first-frame evidence",
+        "Rotation tool failure retained; no retry loop or adb UI bypass"
+    ],
+    "sha256": {
+        "after-rotation.png": "be1b146c525a35d2700360f08a56a5687c14ff0fee3e5069727b21fafe31a948",
+        "crypto-before.png": "167a031659fa398f8fe21332314354f48dcdd84f4628949349719840cdf9f8ad",
+        "crypto-result.png": "894cbaeb99addba1148dea33097226b93aa21646cb6e603d07c421f77f3c4721",
+        "lifecycle-before.png": "afdba1c4364fcafed8a43cfa2afb6bb6dcc60b57ea8906cd85dafbe54df94b6f",
+        "lifecycle-resume.png": "7d6f29996d378a445978566fc6380f7f696864265ca191e2b73c3fa1fe79a7aa",
+        "relaunch.png": "3a8053ac6c189292251767afa088c9e23a7ab91fa711fb526c2524a628e60f3c",
+        "secure-before.png": "179430d36b1dbc9c9cf27a0b2ddb25dfb5b41c4949fcb18e4ca030bfac84b1f8",
+        "secure-persistence.png": "a5130a33052981b9fdf4b84aa7744419e9274e93646eee2402ff5172716e39af",
+        "secure-result.png": "283cae5927c998ad7b0e86c035bcab14c5a64b66d585cb40f6b057ca8a85f9ad"
+    }
+}
