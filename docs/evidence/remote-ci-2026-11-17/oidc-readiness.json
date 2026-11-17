@@ -1,0 +1,185 @@
+{
+    "schema_version": 1,
+    "verified": "2026-11-17",
+    "audit_scope": "Read-only remote registry, GitHub metadata, and local release workflow prerequisite audit; not a publication test.",
+    "packages": [
+        {
+            "package": "@lynx-lab/crypto",
+            "repository": "PopLocker714/lynx-crypto",
+            "repository_visibility": "public",
+            "source_commit_abbreviated": "1508946",
+            "public_registry_latest": "1.0.3",
+            "registry_provenance_present": true,
+            "trusted_publisher_read": {
+                "status": "unverified",
+                "http_status": 401,
+                "npm_code": "E401"
+            },
+            "github_environments_count": 0
+        },
+        {
+            "package": "@lynx-lab/app-lifecycle",
+            "repository": "PopLocker714/lynx-app-lifecycle",
+            "repository_visibility": "public",
+            "source_commit_abbreviated": "0d1106e",
+            "public_registry_latest": "1.0.0",
+            "registry_provenance_present": false,
+            "trusted_publisher_read": {
+                "status": "unverified",
+                "http_status": 401,
+                "npm_code": "E401"
+            },
+            "github_environments_count": 0
+        },
+        {
+            "package": "@lynx-lab/edge-to-edge",
+            "repository": "PopLocker714/lynx-edge-to-edge",
+            "repository_visibility": "private",
+            "source_commit_abbreviated": "327ca4f",
+            "public_registry_http_status": 404,
+            "public_registry_interpretation": "Package metadata was not publicly accessible; this is not proof that the package has never existed.",
+            "trusted_publisher_read": {
+                "status": "not_attempted"
+            },
+            "github_environments_count": 0
+        }
+    ],
+    "workflow_static_checks": {
+        "workflow": ".github/workflows/release.yml",
+        "trigger": "workflow_dispatch",
+        "publication_branch": "main",
+        "runner": "ubuntu-24.04 GitHub-hosted",
+        "node": "22.14.0",
+        "npm_adapter": "11.21.2",
+        "bun": "1.4.0",
+        "publish_job_id_token_permission": "write",
+        "publish_job_environment": "npm-release",
+        "repository_urls_match_github_repositories": true,
+        "npm_config_provenance": true,
+        "publish_arguments": [
+            "--ignore-scripts",
+            "--access",
+            "public",
+            "--tag",
+            "latest",
+            "--registry",
+            "https://registry.npmjs.org/",
+            "--provenance"
+        ],
+        "publishes_verified_tarball_without_repacking": true,
+        "rejects_NPM_TOKEN_and_NODE_AUTH_TOKEN": true,
+        "requires_actions_oidc_environment": true,
+        "sources": [
+            ".github/workflows/release.yml",
+            "scripts/release/publish.mjs",
+            "package.json"
+        ],
+        "limitations": "Static inspection does not validate the live npm trusted publisher mapping, issue an OIDC token, or prove a successful registry exchange."
+    },
+    "confirmed_historical_crypto_provenance": {
+        "package_version": "@lynx-lab/crypto@1.0.3",
+        "attestation_url": "https://registry.npmjs.org/-/npm/v1/attestations/@lynx-lab%2fcrypto@1.0.3",
+        "predicate_type": "https://slsa.dev/provenance/v1",
+        "workflow": ".github/workflows/release.yml",
+        "ref": "refs/heads/main",
+        "source_commit": "5e029cbe8ba3ff2c0ef8825e9b028213ca9756ae",
+        "builder": "https://github.com/actions/runner/github-hosted",
+        "invocation": "https://github.com/PopLocker714/lynx-crypto/actions/runs/33243486253/attempts/1",
+        "verification_boundary": "Fetched registry attestation and decoded payload; no independent signature verification. This historical evidence does not establish current trust settings."
+    },
+    "prerequisite_findings": [
+        {
+            "id": "edge-private-provenance",
+            "status": "confirmed_blocker_for_current_publish_policy",
+            "finding": "npm provenance is unsupported for private source repositories, even for public packages. The edge repository is private and its publisher requires provenance.",
+            "next_action": "Resolve repository visibility with explicit owner approval before release; this audit did not change visibility or disable provenance."
+        },
+        {
+            "id": "trust-settings",
+            "status": "unverified",
+            "finding": "Read-only npm trust list for crypto and app-lifecycle returned E401 using existing local authorization. No login or settings mutation was attempted.",
+            "required_mapping": {
+                "owner": "PopLocker714",
+                "repository": "The corresponding package repository",
+                "workflow_filename": "release.yml",
+                "environment_if_bound": "npm-release",
+                "direct_npm_publish_allowed": true
+            }
+        },
+        {
+            "id": "github-environment",
+            "status": "confirmed_absent_at_audit_time",
+            "finding": "Successful GitHub environment listing returned total_count 0 for all three repositories. npm-release is present in workflow YAML but no remote environment or protection rules were configured at audit time."
+        },
+        {
+            "id": "new-trust-expiry",
+            "status": "confirmed_official_requirement",
+            "finding": "A new trusted publisher configuration must complete its first successful publish within two days or expires. New configurations default to staged publication; direct npm publish must be allowed explicitly.",
+            "next_action": "Configure or validate trust close to an approved actual release, after other gates pass."
+        }
+    ],
+    "billing_distinction": {
+        "status": "confirmed_separate_actions_billing_blocker",
+        "run_url": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44116979631",
+        "job_check_run_ids": [
+            134157626026,
+            134157626506,
+            134157626738,
+            134157626833
+        ],
+        "all_four_job_conclusions": "failure",
+        "all_four_annotations": "The job was not started because recent account payments have failed or your spending limit needs to be increased. Please check the 'Billing & plans' section in your settings",
+        "macos_additional_annotation": "Due to capacity constraints, jobs targeting macOS arm64 runners may experience longer queue times.",
+        "verification": "Fetched run jobs and each check-run annotations using GitHub REST API.",
+        "statement": "Jobs did not start due to the reported billing or spending-limit condition. This is not an npm OIDC exchange failure. The edge private-repository provenance incompatibility is independent: resolving Actions billing would not remove the provenance restriction.",
+        "account_billing_settings_read_or_changed": false
+    },
+    "official_sources": [
+        {
+            "url": "https://docs.npmjs.com/trusted-publishers/",
+            "supports": [
+                "npm and Node minimum versions",
+                "hosted runners and id-token permission",
+                "exact trust mapping and direct publish allowed action",
+                "new configuration two-day first-use expiry",
+                "public repository provenance requirement"
+            ]
+        },
+        {
+            "url": "https://docs.npmjs.com/generating-provenance-statements/",
+            "supports": [
+                "provenance prerequisites"
+            ]
+        },
+        {
+            "url": "https://docs.npmjs.com/cli/v11/commands/npm-trust/",
+            "supports": [
+                "read-only trusted publisher listing command"
+            ]
+        }
+    ],
+    "remote_evidence_endpoints": [
+        "https://api.github.com/repos/PopLocker714/lynx-crypto",
+        "https://api.github.com/repos/PopLocker714/lynx-app-lifecycle",
+        "https://api.github.com/repos/PopLocker714/lynx-edge-to-edge",
+        "https://api.github.com/repos/PopLocker714/lynx-crypto/environments",
+        "https://api.github.com/repos/PopLocker714/lynx-app-lifecycle/environments",
+        "https://api.github.com/repos/PopLocker714/lynx-edge-to-edge/environments",
+        "https://registry.npmjs.org/@lynx-lab%2fcrypto",
+        "https://registry.npmjs.org/@lynx-lab%2fapp-lifecycle",
+        "https://registry.npmjs.org/@lynx-lab%2fedge-to-edge",
+        "https://registry.npmjs.org/-/package/@lynx-lab%2fcrypto/trust",
+        "https://registry.npmjs.org/-/package/@lynx-lab%2fapp-lifecycle/trust"
+    ],
+    "safety_and_cleanup": {
+        "settings_changed": false,
+        "shared_auth_changed": false,
+        "publish_attempted": false,
+        "oidc_token_exchange_attempted": false,
+        "credentials_recorded": false,
+        "npm_debug_logs_written": false,
+        "devices_used": false,
+        "persistent_processes_started": false,
+        "source_files_changed": false
+    }
+}

@@ -4,6 +4,13 @@
 
 ## 2026-11-17
 
+- Probe `e806327`: убрана Release portrait-блокировка host, диагностические строки
+  видны в landscape. Android16 Release rotation/insets подтверждены screenshots;
+  сохранён final APK, временная установка и build intermediates убраны.
+- Remote CI task-веток: crypto JS/audit/Android pass; lifecycle strict JSX conflict
+  исправлен dev-only patch (`d2eb9c2`, edge `f226ff6`) с negative ref fixtures и
+  независимым mutation review. Edge jobs блокирует GitHub billing; private repo
+  отдельно блокирует provenance. Настройки и публикации не менялись.
 - Secure Store приведён к стандарту: 65 tests, strict TS, native checks, reviewed
   consumer source-binding gate и direct Android runner. Physical Android/iOS
   Debug/Release и persistence подтверждены; ограничения и два неуспешных runner

@@ -1,0 +1,48 @@
+{
+  "conclusion": "failure",
+  "headSha": "f226ff61fc1fe702ac81654fa3fe3c1b33a3ccee",
+  "jobs": [
+    {
+      "completedAt": "2026-11-17T15:53:27Z",
+      "conclusion": "failure",
+      "databaseId": 134166538053,
+      "name": "Kotlin format, Debug/Release compile and Android Lint",
+      "startedAt": "2026-11-17T15:53:24Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44119469252/job/134166538053"
+    },
+    {
+      "completedAt": "2026-11-17T15:53:27Z",
+      "conclusion": "failure",
+      "databaseId": 134166538281,
+      "name": "TypeScript, contract tests and packaged exports",
+      "startedAt": "2026-11-17T15:53:24Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44119469252/job/134166538281"
+    },
+    {
+      "completedAt": "2026-11-17T15:53:27Z",
+      "conclusion": "failure",
+      "databaseId": 134166538436,
+      "name": "Dependency audit",
+      "startedAt": "2026-11-17T15:53:24Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44119469252/job/134166538436"
+    },
+    {
+      "completedAt": "2026-11-17T15:53:27Z",
+      "conclusion": "failure",
+      "databaseId": 134166538585,
+      "name": "Objective-C format, compile and static analysis",
+      "startedAt": "2026-11-17T15:53:24Z",
+      "status": "completed",
+      "steps": [],
+      "url": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44119469252/job/134166538585"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44119469252"
+}

@@ -1,0 +1,106 @@
+{
+  "date": "2026-11-17",
+  "probeCommit": "e8063275b18fa8abc4a5964bb95393aa36e7164d",
+  "device": {
+    "id": "emulator-5554",
+    "name": "Pythia_Development",
+    "os": "Android 16/API36",
+    "physical": false
+  },
+  "artifact": {
+    "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/probe-observable-release.apk",
+    "sha256": "50881044f089d641aeaf466fb382fdf6672618f72df697da421c0e5ca07bf95f",
+    "mainBundleSha256": "bfb6597c73c87976ab34601d84f61f62ff97c1dfcf33d55d42a49402fb5e6f4b",
+    "secondBundleSha256": "051f6e456d8db50ee894337e41c8d9246a38fcfeddd075a5daf2544a32da3d33"
+  },
+  "cause": {
+    "host": "Release Sparkling URL fixed portrait; upstream maps it to requestedOrientation PORTRAIT",
+    "tool": "agent-device 0.21.36 orientation polling hardcodes15s and floors last adb timeout to1ms, masking rotation-not-applied",
+    "fix": "Release URL uses unspecified, matching Debug; three existing diagnostic text nodes moved above controls"
+  },
+  "checks": {
+    "jsBuild": "pass",
+    "typecheck": "pass",
+    "vitest": "2/2 pass; existing upstream deprecation/sourcemap warnings",
+    "biomeLint": "pass",
+    "biomeFormat": "existing line49 wrapping mismatch under explicit2-space/80-column profile; no formatter config in probe; not a package standard gate",
+    "reactLynxScanner": "0 issues",
+    "androidRelease": "assembleRelease/R8 pass; existing AGP/SDK/kapt diagnostics",
+    "sourceBindings": "edge Android+iOS gate passed after regeneration of deleted Debug registry; no iOS build in this run",
+    "independentReview": "pass; final APK URL and both embedded bundles verified"
+  },
+  "rotation": {
+    "status": "pass on this emulator and final APK",
+    "portraitBefore": {
+      "size": [
+        1080,
+        2400
+      ],
+      "top": 51.80952453613281,
+      "right": 0,
+      "bottom": 24,
+      "left": 0,
+      "generation": 1
+    },
+    "landscapeLeft": {
+      "size": [
+        2400,
+        1080
+      ],
+      "top": 28.190475463867188,
+      "right": 0,
+      "bottom": 24,
+      "left": 51.80952453613281,
+      "generation": 1
+    },
+    "landscapeRight": {
+      "size": [
+        2400,
+        1080
+      ],
+      "top": 28.190475463867188,
+      "right": 51.80952453613281,
+      "bottom": 24,
+      "left": 0,
+      "generation": 2
+    },
+    "portraitAfter": {
+      "size": [
+        1080,
+        2400
+      ],
+      "top": 51.80952453613281,
+      "right": 0,
+      "bottom": 24,
+      "left": 0,
+      "generation": 1
+    },
+    "source": "globalProps",
+    "keyboardHeight": 0,
+    "notes": [
+      "CLI says unconfirmed; actual screenshots confirm rotation and insets.",
+      "Generation resets observed between portrait/landscape; screenshots alone do not prove Activity recreation.",
+      "current/events each visible once."
+    ]
+  },
+  "limitations": [
+    "First visible frame not verified.",
+    "Physical Android Release rotation not rerun.",
+    "Lower controls remain clipped in landscape.",
+    "iOS Release keyboard and minimum OS remain open."
+  ],
+  "cleanup": {
+    "appAbsentBefore": true,
+    "appUninstalledAfter": true,
+    "sessionClosed": true,
+    "devicePanelClosed": true,
+    "shutdown": false,
+    "reason": "Emulator was already running; other Lifeos app untouched."
+  },
+  "screenshots": {
+    "final-portrait-before.png": "a2c430191cc197851d134475953f83143c237d670ddbba062158a986d4300ddf",
+    "final-landscape-left.png": "91e8951ce4201990f7294b1e06d2aa14329f6171bb230a744d61eba0788f8858",
+    "final-landscape-right.png": "62589c357a295dc00cbd9cba0cbc9b8f8ebc3ea9271fe2f097fb1065baecf072",
+    "final-portrait-after.png": "c9706dd4fed0ab8849fe7fbbb539b701e6881196e2d63637d874df0679ab821f"
+  }
+}

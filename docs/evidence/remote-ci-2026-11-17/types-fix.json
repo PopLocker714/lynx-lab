@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-17",
+  "commits": {
+    "lifecycle": "d2eb9c22dfd1672e09688d015b486882274ca0e3",
+    "edge": "f226ff61fc1fe702ac81654fa3fe3c1b33a3ccee"
+  },
+  "cause": "@lynx-js/types4.2.1 legacy react.JSX augmentation collides with React18 DOM input/SVG declarations under hoisted and isolated without GlobalStore. Cache realpath in local GlobalStore prevented react resolution, hiding conflict.",
+  "fix": "Dev-only Bun patch removes legacy react augmentation while retaining exported Lynx IntrinsicElements; ReactLynx0.125 uses own JSX namespace. Exact declaration version/hash guard. No skipLibCheck or runtime changes.",
+  "validation": {
+    "implementer": [
+      "Clean unpatched hoisted reproduces TS2314/TS2430",
+      "Local and clean-hoisted full check/audit pass for both packages",
+      "Lifecycle clean isolated without GlobalStore typecheck/compat/build pass",
+      "Lock graph versions unchanged; only patch entry added, audit hash updated",
+      "All28 lifecycle and36 edge dist files byte-identical before/after"
+    ],
+    "independentReviewer": [
+      "typecheck/compat/diff-check pass both",
+      "Restoring original declaration in memory reproduces TS2314/TS2430",
+      "Found negative fixture incorrectly rejected placeholder; fixed concrete callback ref-only fixtures",
+      "Mutation allowing DOM ref in native input triggers unused ts-expect-error TS2578 for both final fixtures"
+    ]
+  },
+  "limitations": [
+    "Root dev patch does not automatically apply to consumer dependencies; consumer type profile must be validated separately",
+    "No new native build needed for dev declarations only; final remote status in sibling run JSONs"
+  ]
+}

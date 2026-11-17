@@ -7,6 +7,32 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-17: Android Release rotation подтверждён на общем Android16/API36 emulator.
+Причина прежнего отказа — `screen_orientation=portrait` в Release host URL;
+таймаут `1ms` был вторичным дефектом сообщения agent-device. Probe `e806327`
+разрешает поворот как Debug и держит диагностические строки видимыми в landscape.
+Проверены portrait → landscape-left → landscape-right → portrait, перенос inset
+51.81 слева направо и восстановление верхнего inset. Итоговые screenshots и APK
+сверены независимым reviewer. [Evidence](docs/evidence/android-rotation-2026-11-17/results.json).
+First-visible-frame и физический Android rotation этим прогоном не подтверждены.
+Свой probe удалён с эмулятора, session/Device panel закрыты, воспроизводимые
+intermediates убраны; ранее работавший общий эмулятор оставлен включённым.
+
+2026-11-17: task-ветки crypto/lifecycle/edge отправлены на GitHub для remote CI;
+main не интегрирован, публикаций нет. Crypto JS/audit/Android прошли; macOS job
+отменён GitHub после нескольких неудачных попыток выделить hosted runner. Чистый CI lifecycle выявил legacy `react.JSX` augmentation в
+`@lynx-js/types@4.2.1`: локальный GlobalStore скрывал конфликт DOM/native refs.
+Dev-only patch удаляет только legacy augmentation; строгие JSX/ref fixtures,
+mutation control и version/hash guard сохраняют проверку типов. Lifecycle `d2eb9c2`
+и edge `f226ff6`: full checks/audit проходят с isolated и clean hoisted,
+независимое review завершено, runtime/dist bytes прежние. Повторный JS/audit/Android CI
+lifecycle проходит; macOS job ещё ожидает runner.
+Edge CI блокируется GitHub billing до выполнения steps; private repo отдельно
+блокирует npm provenance. npm trust не удалось прочитать (E401), environments
+отсутствуют; реальный OIDC exchange не проверен. [Readiness](docs/evidence/remote-ci-2026-11-17/oidc-readiness.json).
+
+Ниже — предыдущие проверки; при расхождении приоритет у более новых записей выше.
+
 2026-11-17: immutable release tooling готово локально: crypto `1508946`,
 app-lifecycle `0d1106e`, edge-to-edge `327ca4f`. Два manual этапа release.yml
 связывают final version/changelog, commit, tarball SHA и QA receipt; publish не
@@ -41,8 +67,8 @@ strict TS, форматирование в 4 пробела, проверки na
 |---|---|---|
 | crypto | `1508946` | Physical Debug/Release и native contracts; повторный Release smoke в финальном профиле |
 | secure-store | `006eb82` | Physical Debug/Release 10/10, persistence, direct Android 7/7; остаётся private |
-| app-lifecycle | `0d1106e` | Physical Debug/Release, две JS-подписки, ранний Android background и настоящее Activity recreation |
-| edge-to-edge | `327ca4f` | Debug/Release builds, реальные два view/late owner, UI matrix с ограничениями ниже |
+| app-lifecycle | `d2eb9c2` | Physical Debug/Release, две JS-подписки, ранний Android background и настоящее Activity recreation; dev-only JSX patch |
+| edge-to-edge | `f226ff6` | Debug/Release builds, реальные два view/late owner, Android16 Release rotation; dev-only JSX patch |
 
 Финальный consumer: ReactLynx 0.125.0 / Rsbuild 2.1.10, Sparkling 2.1.0-rc.36 /
 native Lynx 3.9.0. Probe source `6c57f33`, evidence `44f68fb`; [107 файлов evidence](docs/evidence/edge-2026-11-17/results.json).
@@ -53,8 +79,8 @@ Parent независимо сверил четыре tarball, source hashes, ч
 65 остальных файлов идентичны проверенному `5c235a69`, нового device-прогона для docs нет.
 
 Stable gate ещё открыт: first-visible-frame edge не подтверждён на обеих платформах;
-Android Release rotation tool-blocked, iOS Release keyboard не имеет host input.
-Minimum OS и remote CI не проверены. Старые ошибки TS и App test пробника исправлены в `6c21ab9`;
+Android Release rotation проверен на emulator, iOS Release keyboard не имеет host input.
+Minimum OS и полный remote CI не подтверждены. Старые ошибки TS и App test пробника исправлены в `6c21ab9`;
 собственные package checks проходят. Immutable release pipeline реализован; выпуск блокируется до
 готовности final version/QA receipt и remote configuration; два dev audit exceptions имеют
 срок пересмотра/expiry в декабре. Изменения сохранены в локальных невлитых task-ветках.

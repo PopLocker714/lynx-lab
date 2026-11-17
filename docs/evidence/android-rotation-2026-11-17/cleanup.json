@@ -1,0 +1,14 @@
+{
+  "removed": [
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/android/app/build",
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/probe-release.apk",
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/portrait-before.png",
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/landscape-left.png",
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/portrait-after.png",
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/landscape-insets.png",
+    "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/portrait-final.png"
+  ],
+  "allocatedBytesRemoved": 168132608,
+  "kept": "/Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/evidence-local/android-rotation-2026-11-17/probe-observable-release.apk",
+  "sharedCachesTouched": false
+}
