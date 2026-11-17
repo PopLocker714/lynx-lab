@@ -1,0 +1,76 @@
+$ bun scripts/check-publishable.mjs
+bun pack v1.4.0 (34cbb9a40)
+$ bun run build
+$ tsc -p tsconfig.build.json
+
+packed 4.25KB package.json
+packed 8.72KB CONTRIBUTING.md
+packed 11.50KB CONTRIBUTING.ru.md
+packed 1.1KB LICENSE
+packed 5.99KB README.md
+packed 8.22KB README.ru.md
+packed 2.92KB android/build.gradle.kts
+packed 443B android/consumer-rules.pro
+packed 357B android/src/main/AndroidManifest.xml
+packed 1.22KB android/src/main/java/dev/lynxlab/lifecycle/ActivityStateTracker.kt
+packed 1.19KB android/src/main/java/dev/lynxlab/lifecycle/AppLifecycleInitProvider.kt
+packed 3.0KB android/src/main/java/dev/lynxlab/lifecycle/AppLifecycleStore.kt
+packed 1.70KB android/src/main/java/dev/lynxlab/lifecycle/LynxAppLifecycleModule.kt
+packed 1.19KB dist/index.d.ts
+packed 0.60KB dist/index.d.ts.map
+packed 3.41KB dist/index.js
+packed 2.19KB dist/index.js.map
+packed 0.75KB dist/native.d.ts
+packed 448B dist/native.d.ts.map
+packed 1.93KB dist/native.js
+packed 0.86KB dist/native.js.map
+packed 1.14KB dist/react/index.d.ts
+packed 392B dist/react/index.d.ts.map
+packed 2.67KB dist/react/index.js
+packed 1.60KB dist/react/index.js.map
+packed 292B dist/snapshot.d.ts
+packed 254B dist/snapshot.d.ts.map
+packed 0.76KB dist/snapshot.js
+packed 0.79KB dist/snapshot.js.map
+packed 1.61KB dist/testing/create-fake-lifecycle.d.ts
+packed 0.73KB dist/testing/create-fake-lifecycle.d.ts.map
+packed 2.52KB dist/testing/create-fake-lifecycle.js
+packed 2.37KB dist/testing/create-fake-lifecycle.js.map
+packed 166B dist/testing/index.d.ts
+packed 201B dist/testing/index.d.ts.map
+packed 99B dist/testing/index.js
+packed 156B dist/testing/index.js.map
+packed 1.20KB dist/types.d.ts
+packed 379B dist/types.d.ts.map
+packed 44B dist/types.js
+packed 102B dist/types.js.map
+packed 4.22KB docs/compatibility.md
+packed 5.57KB docs/compatibility.ru.md
+packed 4.58KB docs/implementation.md
+packed 5.97KB docs/implementation.ru.md
+packed 7.33KB docs/releasing.md
+packed 10.11KB docs/releasing.ru.md
+packed 0.87KB ios/LynxAppLifecycle.podspec
+packed 391B ios/src/LALAppStateStore.h
+packed 3.46KB ios/src/LALAppStateStore.m
+packed 1.50KB ios/src/LynxAppLifecycleModule.h
+packed 1.28KB ios/src/LynxAppLifecycleModule.m
+packed 265B lynx.lib.json
+packed 4.32KB src/index.ts
+packed 3.1KB src/native.ts
+packed 2.85KB src/react/index.ts
+packed 0.81KB src/snapshot.ts
+packed 3.93KB src/testing/create-fake-lifecycle.ts
+packed 129B src/testing/index.ts
+packed 1.16KB src/types.ts
+
+/var/folders/2w/667p8dm55k95fh1p6c2rtz540000gn/T/lynx-app-lifecycle-pack-NkxGyV/package.tgz
+
+Total files: 60
+Shasum: f7d5f15fff8410f11dc117f6635f7ebda3190b60
+Integrity: sha512-RGezJSdNIJUQM[...]kl/2jCrjK2xPw==
+Unpacked size: 141.26KB
+Packed size: 44.78KB
+Source: 0d1106ee0f913fb64aec5c2190ec0ebdc01ed889
+check-publishable: 60 files; SHA256 5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/artifacts/app-lifecycle-5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc.tgz

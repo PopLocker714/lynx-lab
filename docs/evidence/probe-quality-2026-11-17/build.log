@@ -1,0 +1,16 @@
+Building Lynx bundle with config from app.config.ts
+  Rspeedy v0.16.5 (Rsbuild v2.1.10, Rspack v2.1.8)
+
+info    build started...
+ready   built in 0.93s
+
+File (lynx)               Size       
+dist/second.lynx.bundle   97.6 kB 
+dist/main.lynx.bundle     129.2 kB
+
+                 Total:   226.8 kB   226.8 kB
+
+Copying dist -> android/app/src/main/assets
+Copying dist -> ios/LynxResources
+Assets copied successfully.
+$ sparkling-app-cli build --copy

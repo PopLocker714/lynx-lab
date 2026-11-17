@@ -1,0 +1,4 @@
+Source: 22543e9222da26183df0aaded0807a2741f6fd25 (dirty)
+check-publishable: 60 files; SHA256 5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/artifacts/app-lifecycle-5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc.tgz
+$ bun scripts/check-publishable.mjs

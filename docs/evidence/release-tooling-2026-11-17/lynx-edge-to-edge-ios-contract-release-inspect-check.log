@@ -1,0 +1,4 @@
+Source: 1d74031c55a5d7604bb14509b26101f3d7daca92 (dirty)
+check-publishable: 71 files; SHA256 25a406e642d0749cbffa7825496a0b3c1a2800d936763ac61669d3bfb8eae37d
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/artifacts/edge-to-edge-25a406e642d0749cbffa7825496a0b3c1a2800d936763ac61669d3bfb8eae37d.tgz
+$ bun scripts/check-publishable.mjs

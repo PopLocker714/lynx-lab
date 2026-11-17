@@ -1,0 +1,4 @@
+Source: 2d874b4266af164f8ea89d3b823cbe915732fb5d (dirty)
+check-publishable: 54 files; SHA256 0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/artifacts/crypto-0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b.tgz
+$ bun scripts/check-publishable.mjs
