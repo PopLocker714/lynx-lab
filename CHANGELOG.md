@@ -117,3 +117,5 @@
 - README EN/RU для `edge-to-edge` (день 9), vitest 4.1.11 из-за `bun audit`.
 
 - 2026-11-17: Android16 emulator Release smoke: Secure10/10+persistence, crypto, lifecycle A/B PASS; edge rotation tool-blocked. Own probe removed and T3 session closed; evidence in docs/evidence/android-emulator-2026-11-17/.
+
+- 2026-11-17: Probe strict TS и актуальные component tests исправлены (6c21ab9); immutable prepare/QA/publish pipeline реализован в crypto1508946, lifecycle0d1106e, edge327ca4f. Full local checks,33 release tests per package и exact archive inspections прошли; remote/OIDC/publication не запускались. Baseline device artifacts сохранены.

@@ -1,0 +1,24 @@
+{
+    "sourceCommit": "6c21ab963e31b3bec35df63f1780d78573b142b9",
+    "checks": {
+        "typecheck": "pass",
+        "componentTests": "2/2 pass",
+        "biome": "pass 4-space format/lint on changed files",
+        "reactLynxScanner": "pass",
+        "jsBuild": "pass",
+        "independentReview": "no confirmed findings; reviewer independently repeated typecheck,2 tests,diff-check"
+    },
+    "warnings": [
+        "Upstream testing-environment/Vitest deprecation",
+        "Upstream missing sourcemap sources; retained in test.log"
+    ],
+    "nativeDeviceRerun": false,
+    "baselineAssetsRestoredAndParentHashVerified": true,
+    "nativeArtifactsUnchanged": true,
+    "sha256": {
+        "test.log": "929a0564f63169e9c8a20cc490debead296dd8e7549ebcafd64c8f8267006d39",
+        "new-assets.json": "1f8f9203f994742f116201348fe57ab1f46f05e47519636a60affef28f0ca791",
+        "original-assets.json": "dc626f108f3268262ddbf004441d408a01909fe6e1d4c299fd1df8b18fa9fd4a",
+        "build.log": "83effb638e910cbf513189f5f6215d7775c36d2c23d3724bd54e04656c29e8ee"
+    }
+}

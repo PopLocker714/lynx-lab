@@ -1,0 +1,32 @@
+{
+    "scope": "immutable release tooling only; runtime/native untouched",
+    "sourceBase": "2d874b4266af164f8ea89d3b823cbe915732fb5d",
+    "dirty": true,
+    "checks": {
+        "fullCheck": "passed",
+        "releaseTests": 33,
+        "releaseTestAssertions": 50,
+        "entrypointIntegration": "prepare clean synthetic Git repo -> commit QA -> verify with stub GitHub response; external-archive and source-drift rejection passed",
+        "audit": "passed with existing two bounded exceptions; original lock unchanged",
+        "dedupe": "passed",
+        "exactArchiveInspection": "passed, bytes unchanged, mode inspect, sourceCommit null",
+        "yamlSyntax": "Ruby Psych passed",
+        "diffCheck": "passed"
+    },
+    "archive": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/artifacts/crypto-0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b.tgz",
+    "sha256": "0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b",
+    "notRun": [
+        "native builds",
+        "devices",
+        "remote GitHub CI",
+        "OIDC exchange",
+        "registry publication"
+    ],
+    "cleanup": {
+        "activeProcesses": [],
+        "ports": [],
+        "temporaryTestDirs": "removed by afterEach",
+        "nativeBuildArtifactsCreated": false,
+        "newDependenciesInFinalLock": false
+    }
+}

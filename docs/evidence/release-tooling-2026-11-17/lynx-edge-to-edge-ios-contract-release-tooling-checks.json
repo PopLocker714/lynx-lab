@@ -1,0 +1,32 @@
+{
+    "scope": "immutable release tooling only; runtime/native untouched",
+    "sourceBase": "1d74031c55a5d7604bb14509b26101f3d7daca92",
+    "dirty": true,
+    "checks": {
+        "fullCheck": "passed",
+        "releaseTests": 33,
+        "releaseTestAssertions": 50,
+        "entrypointIntegration": "prepare clean synthetic Git repo -> commit QA -> verify with stub GitHub response; external-archive and source-drift rejection passed",
+        "audit": "passed with existing two bounded exceptions; original lock unchanged",
+        "dedupe": "passed",
+        "exactArchiveInspection": "passed, bytes unchanged, mode inspect, sourceCommit null",
+        "yamlSyntax": "Ruby Psych passed",
+        "diffCheck": "passed"
+    },
+    "archive": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/artifacts/edge-to-edge-25a406e642d0749cbffa7825496a0b3c1a2800d936763ac61669d3bfb8eae37d.tgz",
+    "sha256": "25a406e642d0749cbffa7825496a0b3c1a2800d936763ac61669d3bfb8eae37d",
+    "notRun": [
+        "native builds",
+        "devices",
+        "remote GitHub CI",
+        "OIDC exchange",
+        "registry publication"
+    ],
+    "cleanup": {
+        "activeProcesses": [],
+        "ports": [],
+        "temporaryTestDirs": "removed by afterEach",
+        "nativeBuildArtifactsCreated": false,
+        "newDependenciesInFinalLock": false
+    }
+}

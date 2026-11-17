@@ -221,3 +221,27 @@ Rspeedy 0.16.5, Rsbuild 2.1.10, Rspack 2.1.8, QR plugin 0.6.0. JS build и пр�
 для isolated Bun; runtime-файлы не изменены. Финальный edge consumer проверен
 (evidence `44f68fb`) с явными first-frame/Release rotation/keyboard ограничениями.
 Это не завершённый stable gate и не разрешение публикации.
+
+## D14 · Проверка и публикация одного неизменяемого архива
+
+2026-11-17. Пользователь разрешил довести пробник и release pipeline без публикации.
+Прежний semantic-release меняет version/changelog и перепаковывает после QA;
+предыдущий tarball hash тогда не доказывает идентичность опубликованного пакета.
+
+Выбран небольшой pipeline в scripts пакета, без изменения runtime/public API:
+финальные version/changelog фиксируются заранее; ручной prepare выполняет проверки
+на этом commit и сохраняет tarball с manifest source/version/SHA256. QA проводится
+над этим архивом, результаты привязаны к hash, host profile и исходным evidence.
+Отдельный ручной publish получает artifact конкретного успешного prepare run,
+проверяет receipt и публикует тот же tarball без повторной упаковки. Открытые
+обязательные проверки и несовпадающие hashes блокируют выпуск. Receipt — проверяемая
+декларация ответственного, а не автоматическое доказательство физического теста.
+
+Bun остаётся инструментом установки, проверки и упаковки. Только publisher для
+GitHub OIDC/provenance использует npm CLI: Bun publish пока не поддерживает
+provenance. Долгоживущий NPM_TOKEN не вводится. Источники:
+[Bun publish](https://bun.sh/docs/pm/cli/publish),
+[npm trusted publishing](https://docs.npmjs.com/trusted-publishers/).
+Secure Store остаётся private; включение его публикации — отдельное решение.
+Наличие workflow не означает настроенный npm trust, пройденный remote CI или stable.
+Реализация и локальные проверки фиксируются в STATE.md после review.

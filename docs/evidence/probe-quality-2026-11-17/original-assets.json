@@ -1,0 +1,18 @@
+{
+  "dist": {
+    "main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d",
+    "second.lynx.bundle": "af78e1dcb22700a6fc79c56cc54905179bc62072a7a7d90ccedc63bce9f0ff86"
+  },
+  "android/app/src/main/assets": {
+    "main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d",
+    ".placeholder": "76b2358e4c84d5a540e451dafe940962d0c8764047fedfca2f3c856371394603",
+    "second.lynx.bundle": "af78e1dcb22700a6fc79c56cc54905179bc62072a7a7d90ccedc63bce9f0ff86",
+    "static/image/sparkling_icon.781d0b63.png": "50ad49246c805b0928e58aa744a68d948c92e7f72a8bf064f0187008553e5a10"
+  },
+  "ios/LynxResources": {
+    "main.lynx.bundle": "a733091ebc094842fd3f6d04f9bb82acd070d3442c9e83381e2d13b4859dde2d",
+    ".placeholder": "f833d0923cb161356af6ce61c969803198f42981476ba8909198097fc5ed9a39",
+    "second.lynx.bundle": "af78e1dcb22700a6fc79c56cc54905179bc62072a7a7d90ccedc63bce9f0ff86",
+    "static/image/sparkling_icon.781d0b63.png": "50ad49246c805b0928e58aa744a68d948c92e7f72a8bf064f0187008553e5a10"
+  }
+}

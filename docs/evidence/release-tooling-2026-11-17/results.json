@@ -1,0 +1,42 @@
+{
+    "lynx-crypto-standard-v1": {
+        "sourceCommit": "1508946f2e31b46d116fcd408ad78cafb0eaa45b",
+        "inspectorCommit": "1508946f2e31b46d116fcd408ad78cafb0eaa45b",
+        "mode": "pack",
+        "dirty": false,
+        "sha256": "0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b",
+        "tarball": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/artifacts/crypto-0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b.tgz"
+    },
+    "lynx-app-lifecycle-standard-v1": {
+        "sourceCommit": "0d1106ee0f913fb64aec5c2190ec0ebdc01ed889",
+        "inspectorCommit": "0d1106ee0f913fb64aec5c2190ec0ebdc01ed889",
+        "mode": "pack",
+        "dirty": false,
+        "sha256": "5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc",
+        "tarball": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/artifacts/app-lifecycle-5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc.tgz"
+    },
+    "lynx-edge-to-edge-ios-contract": {
+        "sourceCommit": "327ca4f9c53b4842bd0df79d237520a4d18ecfa2",
+        "inspectorCommit": "327ca4f9c53b4842bd0df79d237520a4d18ecfa2",
+        "mode": "pack",
+        "dirty": false,
+        "sha256": "25a406e642d0749cbffa7825496a0b3c1a2800d936763ac61669d3bfb8eae37d",
+        "tarball": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/artifacts/edge-to-edge-25a406e642d0749cbffa7825496a0b3c1a2800d936763ac61669d3bfb8eae37d.tgz"
+    },
+    "parentReview": {
+        "finalReleaseTests": "33 pass,50 assertions, entrypoint synthetic integration",
+        "runtimeNativeDeclarationsByteIdentical": {
+            "crypto": 37,
+            "app-lifecycle": 47,
+            "edge-to-edge": 58
+        },
+        "sharedScriptsAndWorkflowByteIdentical": true,
+        "independentReview": "no additional blocking findings; lock drift/extra reviewer requirement resolved; parent reviewed final inspect/version/tag fixes",
+        "notRun": [
+            "remote CI",
+            "OIDC",
+            "publication",
+            "new device QA"
+        ]
+    }
+}

@@ -23,7 +23,8 @@ first-visible-frame, Android Release rotation и iOS Release keyboard остаю
    проверить итоговый `tsc --showConfig`. Исключения фиксировать по стандарту.
 3. Объединить scripts из package-scripts.json с имеющимся package.json; test/build
    остаются настоящими командами пакета. Существующие prepack/prepublish/release
-   hooks сохранить. Сначала проверить, что check-publishable.mjs действительно
+   hooks менять только вместе с проверкой их контракта; для immutable release
+   pipeline действует D14 в DECISIONS.md. Сначала проверить, что check-publishable.mjs действительно
    существует и проверяет актуальные exports/native/docs в tarball; не подставлять
    команду, которая всегда успешна. Реализации уже проверены в рабочих ветках
    crypto, secure-store и app-lifecycle.
@@ -52,6 +53,9 @@ first-visible-frame, Android Release rotation и iOS Release keyboard остаю
 | bun run check:android | Kotlin/formatter/Android Lint/native compile и нужные native tests |
 | bun run check:ios | ObjC/formatter/compiler/static analysis и нужные native tests |
 | bun run check:consumer | Consumer tarball integration Debug/Release, Android R8 |
+| bun run test:release | Synthetic tests manifest/QA gate and prepare→verify entrypoints; no publication |
+| bun run release:prepare | GitHub manual prepare: final committed version/changelog → inspected immutable tarball |
+| bun run release:verify | Validate exact candidate/run/source/policy and committed QA receipt; no publication |
 
 package-scripts.json содержит готовые значения только для общего TS gate. Native
 и consumer команды реализуются в конкретном пакете после проверки его Gradle/Xcode
@@ -102,10 +106,31 @@ Sparkling 2.1.0-rc.36, probe `c3e957d`; результаты в
   отдельного результата. Чувствительность QA проверяется дефектными заглушками.
 - Проверять actual native source roots и используемую autolink registry наряду с
   installed-file identity. Secure-store review выявило, что stale Pods/Gradle paths
-  иначе проходят gate. Secure-store gate исправлен, перенесён в app-lifecycle;
-  backport в crypto ещё предстоит. iOS-фильтры исходников также учитываются:
+  иначе проходят gate. Secure-store gate исправлен и перенесён в app-lifecycle и crypto
+  (crypto backport `6805c374`). iOS-фильтры исходников также учитываются:
   PBXSources membership не гарантирует компиляцию; ограниченный adapter отклоняет
   неподдерживаемые source/platform filters, а прочитанные xcconfigs входят в hashes.
 - Публикация crypto заблокирована до реализации цепочки final version/changelog →
   immutable tarball → consumer QA → публикация того же tarball. Обычная повторная
   упаковка semantic-release после QA не подтверждает идентичность артефакта.
+
+## Immutable release pipeline (2026-11-17)
+
+В локальных ветках crypto, app-lifecycle и edge-to-edge реализованы два ручных
+режима release.yml: prepare → QA → publish. Общие scripts/release и workflow
+одинаковы, release/policy.json содержит сценарии конкретного пакета. Secure Store
+остаётся private и не получает publish workflow.
+
+prepare зависит от CI того же commit. После него разрешены только QA receipt и
+его evidence; source/workflow/docs drift требует нового prepare. Проверяются
+происхождение run, точный SHA256 tarball, metadata, policy и все required checks.
+Перед публикацией audit запускается снова, чтобы старый prepare не обходил новые
+advisories или истечение исключений. npm CLI используется только для публикации
+готового tarball с OIDC/provenance; Bun устанавливает, проверяет и упаковывает.
+В итоговом изменении нет новых зависимостей или lockfile drift.
+
+Локальные release/prepublishOnly остаются заблокированы. Remote CI/OIDC/trust и
+реальная публикация не проверены этой реализацией. Ручной publish требует отдельной
+команды пользователя. Version/changelog выбираются явно до prepare; git tag после
+подтверждения публикации указывает на manifest.sourceCommit, не на commit QA.
+Подробная EN/RU инструкция — docs/releasing.md каждого из трёх пакетов; решение D14.

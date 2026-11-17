@@ -1,0 +1,32 @@
+{
+    "scope": "immutable release tooling only; runtime/native untouched",
+    "sourceBase": "22543e9222da26183df0aaded0807a2741f6fd25",
+    "dirty": true,
+    "checks": {
+        "fullCheck": "passed",
+        "releaseTests": 33,
+        "releaseTestAssertions": 50,
+        "entrypointIntegration": "prepare clean synthetic Git repo -> commit QA -> verify with stub GitHub response; external-archive and source-drift rejection passed",
+        "audit": "passed with existing two bounded exceptions; original lock unchanged",
+        "dedupe": "passed",
+        "exactArchiveInspection": "passed, bytes unchanged, mode inspect, sourceCommit null",
+        "yamlSyntax": "Ruby Psych passed",
+        "diffCheck": "passed"
+    },
+    "archive": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/artifacts/app-lifecycle-5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc.tgz",
+    "sha256": "5914d8a9f50751e1958d02865e9ec03108eb41396549a1c38f42f58e8c1208fc",
+    "notRun": [
+        "native builds",
+        "devices",
+        "remote GitHub CI",
+        "OIDC exchange",
+        "registry publication"
+    ],
+    "cleanup": {
+        "activeProcesses": [],
+        "ports": [],
+        "temporaryTestDirs": "removed by afterEach",
+        "nativeBuildArtifactsCreated": false,
+        "newDependenciesInFinalLock": false
+    }
+}

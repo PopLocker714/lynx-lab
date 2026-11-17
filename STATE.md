@@ -7,6 +7,23 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-17: immutable release tooling готово локально: crypto `1508946`,
+app-lifecycle `0d1106e`, edge-to-edge `327ca4f`. Два manual этапа release.yml
+связывают final version/changelog, commit, tarball SHA и QA receipt; publish не
+перепаковывает архив и повторяет audit. Все три full checks и по 33 release tests
+проходят; parent повторил integration test, independent review без оставшихся
+блокеров. [Evidence](docs/evidence/release-tooling-2026-11-17/results.json), D14.
+Runtime/native/declarations побайтно прежние. Новые архивы — проверки tooling,
+не финальные accepted releases. Remote CI/OIDC, настройка trust, выбор версий,
+полная QA-матрица, merge/push/publish остаются отдельными шагами. Secure Store private.
+
+2026-11-17: probe `6c21ab9` — три старые TS-ошибки устранены, устаревший App
+test заменён двумя проверками реальных QA-панелей и cleanup подписок. Strict TS,
+2/2 tests, Biome/scanner и JS build проходят; independent review без findings.
+Upstream warnings тестового окружения остаются видимыми. Сохранённые native
+сборки и ресурсы прежнего QA восстановлены побайтно; новая JS-сборка не прошла
+новый device-прогон. [Evidence](docs/evidence/probe-quality-2026-11-17/results.json).
+
 2026-11-17: дополнительный Release-прогон на общем Android16/API36 эмуляторе:
 Secure Store 10/10 и persistence после relaunch, Crypto native smoke, lifecycle
 A/B background g2 → active g3 прошли. Edge portrait snapshot: top51.81/bottom24/g1.
@@ -22,10 +39,10 @@ strict TS, форматирование в 4 пробела, проверки na
 
 | Пакет | Текущий локальный commit | Проверенная граница |
 |---|---|---|
-| crypto | `2d874b4` | Physical Debug/Release и native contracts; повторный Release smoke в финальном профиле |
+| crypto | `1508946` | Physical Debug/Release и native contracts; повторный Release smoke в финальном профиле |
 | secure-store | `006eb82` | Physical Debug/Release 10/10, persistence, direct Android 7/7; остаётся private |
-| app-lifecycle | `22543e9` | Physical Debug/Release, две JS-подписки, ранний Android background и настоящее Activity recreation |
-| edge-to-edge | `1d74031` | Debug/Release builds, реальные два view/late owner, UI matrix с ограничениями ниже |
+| app-lifecycle | `0d1106e` | Physical Debug/Release, две JS-подписки, ранний Android background и настоящее Activity recreation |
+| edge-to-edge | `327ca4f` | Debug/Release builds, реальные два view/late owner, UI matrix с ограничениями ниже |
 
 Финальный consumer: ReactLynx 0.125.0 / Rsbuild 2.1.10, Sparkling 2.1.0-rc.36 /
 native Lynx 3.9.0. Probe source `6c57f33`, evidence `44f68fb`; [107 файлов evidence](docs/evidence/edge-2026-11-17/results.json).
@@ -37,9 +54,9 @@ Parent независимо сверил четыре tarball, source hashes, ч
 
 Stable gate ещё открыт: first-visible-frame edge не подтверждён на обеих платформах;
 Android Release rotation tool-blocked, iOS Release keyboard не имеет host input.
-Minimum OS и remote CI не проверены. Сохраняются три старые TS-ошибки и один устаревший
-App test пробника; собственные package checks проходят. Выпуск блокируется до
-публикации именно проверенного финального архива; два dev audit exceptions имеют
+Minimum OS и remote CI не проверены. Старые ошибки TS и App test пробника исправлены в `6c21ab9`;
+собственные package checks проходят. Immutable release pipeline реализован; выпуск блокируется до
+готовности final version/QA receipt и remote configuration; два dev audit exceptions имеют
 срок пересмотра/expiry в декабре. Изменения сохранены в локальных невлитых task-ветках.
 
 После проверки самодостаточности приложений удалены только воспроизводимые
