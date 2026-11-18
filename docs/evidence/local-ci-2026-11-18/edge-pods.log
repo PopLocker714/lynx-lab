@@ -1,0 +1,12 @@
+Analyzing dependencies
+/opt/homebrew/lib/ruby/gems/4.0.0/gems/molinillo-0.8.0/lib/molinillo/dependency_graph.rb:3: warning: tsort was loaded from the standard library, but will no longer be part of the default gems starting from Ruby 4.1.0
+You can add tsort to your Gemfile or gemspec to silence this warning.
+Verifying no changes
+[!] There were changes to the lockfile in deployment mode:
+SPEC CHECKSUMS:
+  LynxEdgeToEdge:
+    New Lockfile: c25f9d1eeb954235089e56153faef1f506a27c42
+    Old Lockfile: 8a6f17b95845e8bd1136b009994943e8bdefed2a
+
+[!] The Podfile contains framework or static library targets (EdgeCheck), for which the Podfile does not contain host targets (targets which embed the framework).
+If this project is for doing framework development, you can ignore this message. Otherwise, add a target to the Podfile that embeds these frameworks to make this message go away (e.g. a test target).

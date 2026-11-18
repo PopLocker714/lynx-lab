@@ -1,0 +1,19 @@
+Dependency audit	Run bun run check:audit	﻿2026-11-18T14:22:46.2322280Z ##[group]Run bun run check:audit
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.2322835Z ^[[36;1mbun run check:audit^[[0m
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.2352089Z shell: /usr/bin/bash -e {0}
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.2352586Z ##[endgroup]
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.2413533Z $ bun scripts/check-audit.mjs
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.2601845Z bun audit v1.4.0 (34cbb9a40)
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.2602301Z 
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3300212Z picomatch@4.0.5, 2.3.2
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3300596Z   vitest > vite > tinyglobby > fdir > picomatch
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3300910Z   @semantic-release/git > micromatch > picomatch
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3301373Z   semantic-release > @semantic-release/commit-analyzer > micromatch > picomatch
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3302004Z   high: picomatch vulnerable to ReDoS through single-branch repeated extglobs (<=4.0.7) - https://github.com/advisories/GHSA-fc5q-39xc-vjpf
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3303326Z 
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3303447Z 1 vulnerability (1 high)
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3303610Z 
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3303792Z   bun audit fix           upgrade the vulnerable packages within their ranges
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3304239Z   bun audit fix --latest  also cross major versions
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3317754Z error: script "check:audit" exited with code 1
+Dependency audit	Run bun run check:audit	2026-11-18T14:22:46.3332187Z ##[error]Process completed with exit code 1.

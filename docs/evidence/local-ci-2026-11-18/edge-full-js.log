@@ -1,0 +1,173 @@
+$ bun run lint && bun run typecheck && bun run check:types-compat && bun run test && bun run test:release && bun run test:tooling && bun run build && bun run check:package
+$ biome check --error-on-warnings .
+Checked 43 files in 40ms. No fixes applied.
+$ tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit
+$ bun scripts/check-types-compat.mjs
+PASS negative control: unmodified ReactLynx declarations fail only on omitted ElementNode
+$ vitest run
+
+ RUN  v4.1.12 /Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract
+
+
+ Test Files  4 passed (4)
+      Tests  31 passed (31)
+   Start at  17:13:58
+   Duration  260ms (transform 237ms, setup 0ms, import 343ms, tests 21ms, environment 0ms)
+
+$ bun test scripts/release/*.test.mjs
+bun test v1.4.0 (34cbb9a40)
+
+scripts/release/artifact.test.mjs:
+(pass) immutable candidate and reviewed QA > accepts the exact archive and complete bound QA receipt [65.75ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 0.0.0-development [12.41ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 1.2.3-beta.1 [12.46ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 01.2.3 [13.16ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 1.2 [12.52ms]
+(pass) immutable candidate and reviewed QA > rejects private package and missing final changelog [14.33ms]
+(pass) immutable candidate and reviewed QA > rejects changed tarball bytes [11.47ms]
+(pass) immutable candidate and reviewed QA > rejects manifest sourceCommit mismatch [12.67ms]
+(pass) immutable candidate and reviewed QA > rejects manifest prepareRunId mismatch [10.81ms]
+(pass) immutable candidate and reviewed QA > rejects manifest repository mismatch [13.93ms]
+(pass) immutable candidate and reviewed QA > rejects manifest name mismatch [16.47ms]
+(pass) immutable candidate and reviewed QA > rejects manifest version mismatch [16.59ms]
+(pass) immutable candidate and reviewed QA > rejects manifest policySha256 mismatch [12.53ms]
+(pass) immutable candidate and reviewed QA > rejects archive metadata even with updated hash [56.69ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA sourceCommit [21.47ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA prepareRunId [9.58ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA sha256 [10.11ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA version [8.77ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA name [10.20ms]
+(pass) immutable candidate and reviewed QA > rejects missing, failed, duplicate and unresolved checks [9.79ms]
+(pass) immutable candidate and reviewed QA > requires accountable reviewer/profile and actual unchanged evidence [12.59ms]
+(pass) immutable candidate and reviewed QA > rejects empty and escaping evidence [15.01ms]
+(pass) prepare provenance > accepts only the identified successful manual main run [9.96ms]
+(pass) prepare provenance > rejects wrong id [12.06ms]
+(pass) prepare provenance > rejects wrong event [9.27ms]
+(pass) prepare provenance > rejects wrong path [10.04ms]
+(pass) prepare provenance > rejects wrong head_branch [9.54ms]
+(pass) prepare provenance > rejects wrong status [10.89ms]
+(pass) prepare provenance > rejects wrong conclusion [9.33ms]
+(pass) prepare provenance > rejects wrong head_sha [9.64ms]
+(pass) prepare provenance > rejects cross-repository and fork artifacts [9.54ms]
+(pass) prepare provenance > rejects dirty source before preparing an archive [74.21ms]
+(pass) prepare → committed QA → verify entrypoints, without registry or GitHub writes [1171.68ms]
+
+ 33 pass
+ 0 fail
+ 50 expect() calls
+Ran 33 tests across 1 file. [1.82s]
+$ bun test scripts/consumer/*.test.mjs
+bun test v1.4.0 (34cbb9a40)
+
+scripts/consumer/bindings.test.mjs:
+(pass) binds compiler inputs and records hashes; changed inputs fail after build [10.73ms]
+(pass) rejects a stale GlobalStore Gradle directory despite matching node_modules [7.09ms]
+(pass) detects changes to inspected iOS source configurations after build [7.25ms]
+(pass) rejects package project absent from Release runtime graph [7.00ms]
+(pass) rejects stale Kotlin source even with a correct projectDir [7.80ms]
+(pass) rejects registry outside actual supported Java compiler input [12.31ms]
+(pass) rejects compiled registry without provider; a commented registration does not count [7.69ms]
+(pass) rejects stale Pod lock path and stale PBXSources independently [6.45ms]
+(pass) rejects stale iOS registry source phase and missing module registration [6.75ms]
+(pass) rejects a missing Android provider compiler input [6.96ms]
+(pass) rejects missing iOS state owner source or header [6.43ms]
+(pass) rejects the historical probe peer mismatch before native compilation [7.31ms]
+
+ 12 pass
+ 0 fail
+ 18 expect() calls
+Ran 12 tests across 1 file. [177.00ms]
+$ tsc -p tsconfig.build.json
+$ bun scripts/check-publishable.mjs
+bun pack v1.4.0 (34cbb9a40)
+$ bun run build
+$ tsc -p tsconfig.build.json
+
+packed 4.51KB package.json
+packed 5.54KB CONTRIBUTING.md
+packed 7.51KB CONTRIBUTING.ru.md
+packed 1.1KB LICENSE
+packed 8.35KB README.md
+packed 11.46KB README.ru.md
+packed 2.97KB THIRD_PARTY_NOTICES.md
+packed 4.12KB THIRD_PARTY_NOTICES.ru.md
+packed 3.75KB android/build.gradle.kts
+packed 0.74KB android/consumer-rules.pro
+packed 1.13KB android/src/main/AndroidManifest.xml
+packed 14.39KB android/src/main/java/dev/lynxlab/edgetoedge/EdgeToEdge.kt
+packed 1.65KB android/src/main/java/dev/lynxlab/edgetoedge/EdgeToEdgeInitProvider.kt
+packed 3.35KB android/src/main/java/dev/lynxlab/edgetoedge/LynxEdgeToEdgeModule.kt
+packed 0.89KB android/src/main/java/dev/lynxlab/edgetoedge/SafeAreaGeometry.kt
+packed 2.45KB android/src/main/java/dev/lynxlab/edgetoedge/SafeAreaStore.kt
+packed 3.96KB dist/core.d.ts
+packed 0.97KB dist/core.d.ts.map
+packed 8.26KB dist/core.js
+packed 5.14KB dist/core.js.map
+packed 0.62KB dist/globals.d.ts
+packed 262B dist/globals.d.ts.map
+packed 46B dist/globals.js
+packed 106B dist/globals.js.map
+packed 0.75KB dist/index.d.ts
+packed 0.65KB dist/index.d.ts.map
+packed 502B dist/index.js
+packed 457B dist/index.js.map
+packed 1.69KB dist/native.d.ts
+packed 0.79KB dist/native.d.ts.map
+packed 0.88KB dist/native.js
+packed 0.56KB dist/native.js.map
+packed 3.51KB dist/react/index.d.ts
+packed 1.12KB dist/react/index.d.ts.map
+packed 2.91KB dist/react/index.js
+packed 2.83KB dist/react/index.js.map
+packed 1.50KB dist/system-bars.d.ts
+packed 1.12KB dist/system-bars.d.ts.map
+packed 4.0KB dist/system-bars.js
+packed 3.77KB dist/system-bars.js.map
+packed 2.35KB dist/testing/create-fake-edge-to-edge.d.ts
+packed 1.16KB dist/testing/create-fake-edge-to-edge.d.ts.map
+packed 3.1KB dist/testing/create-fake-edge-to-edge.js
+packed 2.63KB dist/testing/create-fake-edge-to-edge.js.map
+packed 198B dist/testing/index.d.ts
+packed 214B dist/testing/index.d.ts.map
+packed 103B dist/testing/index.js
+packed 156B dist/testing/index.js.map
+packed 1.60KB dist/types.d.ts
+packed 0.79KB dist/types.d.ts.map
+packed 465B dist/types.js
+packed 235B dist/types.js.map
+packed 4.74KB docs/compatibility.md
+packed 6.79KB docs/compatibility.ru.md
+packed 4.52KB docs/implementation.md
+packed 6.42KB docs/implementation.ru.md
+packed 7.33KB docs/releasing.md
+packed 10.11KB docs/releasing.ru.md
+packed 1.14KB ios/LynxEdgeToEdge.podspec
+packed 0.69KB ios/src/LEESafeAreaStore.h
+packed 8.51KB ios/src/LEESafeAreaStore.m
+packed 1.23KB ios/src/LynxEdgeToEdgeModule.h
+packed 3.29KB ios/src/LynxEdgeToEdgeModule.m
+packed 10.18KB licenses/AndroidX-Apache-2.0.txt
+packed 1.1KB licenses/react-native-MIT.txt
+packed 1.1KB licenses/react-native-edge-to-edge-MIT.txt
+packed 1.1KB licenses/react-native-safe-area-context-MIT.txt
+packed 264B lynx.lib.json
+packed 9.99KB src/core.ts
+packed 0.58KB src/globals.ts
+packed 0.79KB src/index.ts
+packed 2.53KB src/native.ts
+packed 5.69KB src/react/index.tsx
+packed 5.0KB src/system-bars.ts
+packed 5.18KB src/testing/create-fake-edge-to-edge.ts
+packed 169B src/testing/index.ts
+packed 1.59KB src/types.ts
+
+/var/folders/2w/667p8dm55k95fh1p6c2rtz540000gn/T/lynx-edge-to-edge-pack-Q2dbeq/package.tgz
+
+Total files: 77
+Shasum: c57b6dafcd79660439595b4ee594c50684e61bce
+Integrity: sha512-p2x55ORABAP2r[...]wJAwFPRFPPdTw==
+Unpacked size: 233.28KB
+Packed size: 71.0KB
+Source: f226ff61fc1fe702ac81654fa3fe3c1b33a3ccee (dirty)
+check-publishable: 77 files; SHA256 ecc8f11549e4fb1554a08017acc9e2d5c0dc3e2191cb3b80cd77d5267f80c5ae
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/artifacts/edge-to-edge-ecc8f11549e4fb1554a08017acc9e2d5c0dc3e2191cb3b80cd77d5267f80c5ae.tgz

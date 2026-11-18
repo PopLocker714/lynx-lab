@@ -1,0 +1,229 @@
+{
+    "date": "2026-11-18",
+    "environment": {
+        "java": "OpenJDK 17.0.20 Homebrew 17.0.20+0",
+        "JAVA_HOME": "/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home",
+        "ANDROID_HOME": "/Users/REDACTED_LOCAL_USER/Library/Android/sdk",
+        "gradle": "8.9",
+        "compileSdk": 35,
+        "declaredMinSdk": 23,
+        "minOsExecutionVerified": false
+    },
+    "scope": "Kotlin format, Debug/Release library compilation and Android Lint; lifecycle/edge also JVM unit tests; no devices or instrumentation",
+    "results": [
+        {
+            "package": "@lynx-lab/crypto",
+            "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1",
+            "head": "cfffe739fe9387fa2f55ac64def8e4b0eb85827d",
+            "command": "bun run check:android",
+            "exitCode": 0,
+            "status": "passed",
+            "execution": "incremental Gradle, local caches retained; not a clean hosted CI run",
+            "summary": "BUILD SUCCESSFUL in 26s\n76 actionable tasks: 69 executed, 7 up-to-date",
+            "log": "crypto-android.log",
+            "logSha256": "15bf40205b0f3bfe0b90df6990b4315e3c4456ec1ef4385d0a28953cb36e7e9c",
+            "nativeCheckInputs": {
+                "scripts/check-android.mjs": "5d0603696e21f12705d5b9e5f27bd8f1df9d0ce55e28e09b68bca2e66b30c5d9",
+                "scripts/native-tools.mjs": "b8be999d259f351c7df49bba8a226861d1792ad3bd6ed52cf38728c12d035811",
+                "android/build.gradle.kts": "e904b97c712875f6d64fce2dcefe8d06c474e6c04ef85ffe1134b9014e1b5b45",
+                "android-check/settings.gradle.kts": "156292a4f4a605bd9966d69eac27e8ee3a20ee183ab1cedddec56d0bdaf1558d",
+                "android-check/gradle/wrapper/gradle-wrapper.properties": "d2d701eddb72edc8ae89bc0bb67bab1b887e3c2a1ba499be1a45292828b800ae"
+            },
+            "lint": {
+                "debug": {
+                    "sha256": "ed8f5a002266f5dcb76117eb1ec7b242a8547751f5614ff21c1b88ad035d88b0",
+                    "issues": []
+                },
+                "release": {
+                    "sha256": "ed8f5a002266f5dcb76117eb1ec7b242a8547751f5614ff21c1b88ad035d88b0",
+                    "issues": []
+                }
+            },
+            "unitTestTasks": [],
+            "unitTestResults": [],
+            "upstreamWarnings": [
+                "Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.",
+                "warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'"
+            ],
+            "ktlintDownloadedDuringRun": false,
+            "generatedPaths": [
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/android/build",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/android-check/.gradle"
+            ]
+        },
+        {
+            "package": "@lynx-lab/app-lifecycle",
+            "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1",
+            "head": "d2eb9c22dfd1672e09688d015b486882274ca0e3",
+            "command": "bun run check:android",
+            "exitCode": 0,
+            "status": "passed",
+            "execution": "incremental Gradle, local caches retained; not a clean hosted CI run",
+            "summary": "BUILD SUCCESSFUL in 11s\n84 actionable tasks: 2 executed, 82 up-to-date",
+            "log": "lifecycle-android.log",
+            "logSha256": "5d5041fce0075b3d986a9a5a33d3332fca25e83d3948fdc18d6d8d5491398d0d",
+            "nativeCheckInputs": {
+                "scripts/check-android.mjs": "a91fdbe8206d6643b3c1695fb8e9e9ef4434ef4f1d50106856fc3006cf89b1b9",
+                "scripts/native-tools.mjs": "6bf6912e45fd7573f5d345f6e74b4cab465708c0e1cadb018ded342e1d01b666",
+                "android/build.gradle.kts": "3a5687e8a19d8de995f5096e00e0e47fd3a212e8fa189085ecae6ae6972140f6",
+                "android-check/settings.gradle.kts": "a1c4a1972a69b648f2879659336ec840c9e8cbd9e38377f54ed603f7255b0a67",
+                "android-check/gradle/wrapper/gradle-wrapper.properties": "d2d701eddb72edc8ae89bc0bb67bab1b887e3c2a1ba499be1a45292828b800ae"
+            },
+            "lint": {
+                "debug": {
+                    "sha256": "ed8f5a002266f5dcb76117eb1ec7b242a8547751f5614ff21c1b88ad035d88b0",
+                    "issues": []
+                },
+                "release": {
+                    "sha256": "ed8f5a002266f5dcb76117eb1ec7b242a8547751f5614ff21c1b88ad035d88b0",
+                    "issues": []
+                }
+            },
+            "unitTestTasks": [
+                "> Task :lynx-app-lifecycle:testDebugUnitTest UP-TO-DATE"
+            ],
+            "unitTestResults": [
+                {
+                    "name": "dev.lynxlab.lifecycle.ActivityStateTrackerTest",
+                    "tests": "6",
+                    "failures": "0",
+                    "errors": "0",
+                    "skipped": "0",
+                    "timestamp": "2026-11-16T21:37:57"
+                }
+            ],
+            "upstreamWarnings": [
+                "Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times."
+            ],
+            "ktlintDownloadedDuringRun": true,
+            "generatedPaths": [
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/android/build",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/android-check/.gradle",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/.tools/ktlint-1.7.1.jar"
+            ]
+        },
+        {
+            "package": "@lynx-lab/edge-to-edge",
+            "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract",
+            "head": "f226ff61fc1fe702ac81654fa3fe3c1b33a3ccee",
+            "command": "bun run check:android",
+            "exitCode": 0,
+            "status": "passed",
+            "execution": "incremental Gradle, local caches retained; not a clean hosted CI run",
+            "summary": "BUILD SUCCESSFUL in 14s\n84 actionable tasks: 77 executed, 7 up-to-date",
+            "log": "edge-android.log",
+            "logSha256": "22ce8480b4358b502b2b06637f2876669a43dc352a7fc74d043062e943a55021",
+            "nativeCheckInputs": {
+                "scripts/check-android.mjs": "f7589b7cfff7eb0e4ad477715238a93f98a779f3399c2fdf8cfca143fcfc2431",
+                "scripts/native-tools.mjs": "998f91b6ac0c9864dc99b641f986f7826ec3d3a4f6109f745ab3aca933544e98",
+                "android/build.gradle.kts": "aaa826dba54573906fa7aeec06a5296beb70a8e5bf13bbd9c013cda44c177fe3",
+                "android-check/settings.gradle.kts": "c48964735d7e0f2153ba800d34a31d18f4aa2eeda3a05ad0229093710bd75a3c",
+                "android-check/gradle/wrapper/gradle-wrapper.properties": "d2d701eddb72edc8ae89bc0bb67bab1b887e3c2a1ba499be1a45292828b800ae"
+            },
+            "lint": {
+                "debug": {
+                    "sha256": "a9918048d629b8782f712432b11efad80c61f0c8aa3ae8268d30eb7b2a72c637",
+                    "issues": [
+                        {
+                            "id": "KtxExtensionAvailable",
+                            "severity": "Information",
+                            "message": "Add suffix `-ktx` to enable the Kotlin extensions for this library"
+                        }
+                    ]
+                },
+                "release": {
+                    "sha256": "a9918048d629b8782f712432b11efad80c61f0c8aa3ae8268d30eb7b2a72c637",
+                    "issues": [
+                        {
+                            "id": "KtxExtensionAvailable",
+                            "severity": "Information",
+                            "message": "Add suffix `-ktx` to enable the Kotlin extensions for this library"
+                        }
+                    ]
+                }
+            },
+            "unitTestTasks": [
+                "> Task :lynx-edge-to-edge:testDebugUnitTest"
+            ],
+            "unitTestResults": [
+                {
+                    "name": "dev.lynxlab.edgetoedge.SafeAreaGeometryTest",
+                    "tests": "3",
+                    "failures": "0",
+                    "errors": "0",
+                    "skipped": "0",
+                    "timestamp": "2026-11-18T14:21:14"
+                },
+                {
+                    "name": "dev.lynxlab.edgetoedge.SafeAreaStoreTest",
+                    "tests": "2",
+                    "failures": "0",
+                    "errors": "0",
+                    "skipped": "0",
+                    "timestamp": "2026-11-18T14:21:14"
+                }
+            ],
+            "upstreamWarnings": [
+                "Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.",
+                "warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'"
+            ],
+            "ktlintDownloadedDuringRun": true,
+            "generatedPaths": [
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/android/build",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/android-check/.gradle",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/.tools/ktlint-1.7.1.jar"
+            ]
+        },
+        {
+            "package": "@lynx-lab/secure-store",
+            "worktree": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation",
+            "head": "006eb826489d005d558c8f9d67ea553230056dec",
+            "command": "bun run check:android",
+            "exitCode": 0,
+            "status": "passed",
+            "execution": "incremental Gradle, local caches retained; not a clean hosted CI run",
+            "summary": "BUILD SUCCESSFUL in 17s\n76 actionable tasks: 69 executed, 7 up-to-date",
+            "log": "secure-android.log",
+            "logSha256": "522daa1cc6184b6b57370f26ca1928dd3f17d390885712b942eed448b8bc1122",
+            "nativeCheckInputs": {
+                "scripts/check-android.mjs": "472f09d7625d068c89d9e2f97bd643a02c7700def25b2daf975938a57c435541",
+                "scripts/native-tools.mjs": "2c00a0356b1fecaac11b7c69838311fc02e1448a56981dd46742e9e441ae7b88",
+                "android/build.gradle.kts": "4fc2098463ff41d32ea96929fe169358a54264da67dcf60563bb1558860a791c",
+                "android-check/settings.gradle.kts": "966c6d01f12d71bbc2f968e9b2c4d1bba4bb19a499c92d0d227b76ce1cf86360",
+                "android-check/gradle/wrapper/gradle-wrapper.properties": "d2d701eddb72edc8ae89bc0bb67bab1b887e3c2a1ba499be1a45292828b800ae"
+            },
+            "lint": {
+                "debug": {
+                    "sha256": "ed8f5a002266f5dcb76117eb1ec7b242a8547751f5614ff21c1b88ad035d88b0",
+                    "issues": []
+                },
+                "release": {
+                    "sha256": "ed8f5a002266f5dcb76117eb1ec7b242a8547751f5614ff21c1b88ad035d88b0",
+                    "issues": []
+                }
+            },
+            "unitTestTasks": [],
+            "unitTestResults": [],
+            "upstreamWarnings": [
+                "Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.",
+                "warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'"
+            ],
+            "ktlintDownloadedDuringRun": true,
+            "generatedPaths": [
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/android/build",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/android-check/.gradle",
+                "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/.tools/ktlint-1.7.1.jar"
+            ]
+        }
+    ],
+    "trackedChangesByThisAgent": [],
+    "sessionsFinished": [
+        40150,
+        1207,
+        92796,
+        91317
+    ],
+    "devicesOpened": [],
+    "cleanup": "Completed owned-output cleanup; see cleanup-fixtures.json. Three newly created Android build directories and three downloaded ktlint jars removed. Pre-existing lifecycle android/build and all android-check/.gradle directories retained. Shared caches untouched.",
+    "cleanupReceipt": "cleanup-fixtures.json"
+}

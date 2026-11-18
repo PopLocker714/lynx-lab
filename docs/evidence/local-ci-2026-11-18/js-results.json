@@ -1,0 +1,22 @@
+[
+  {
+    "repo": "lynx-crypto-standard-v1",
+    "command": [
+      "bun",
+      "run",
+      "check"
+    ],
+    "exitCode": 0,
+    "log": "lynx-crypto-standard-v1-0.log"
+  },
+  {
+    "repo": "lynx-crypto-standard-v1",
+    "command": [
+      "bun",
+      "run",
+      "check:audit"
+    ],
+    "exitCode": 1,
+    "log": "lynx-crypto-standard-v1-1.log"
+  }
+]

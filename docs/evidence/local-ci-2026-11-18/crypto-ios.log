@@ -1,0 +1,2 @@
+$ bun scripts/check-ios.mjs
+iOS standalone compile/static analysis passed; real header: /Users/REDACTED_LOCAL_USER/Documents/dev/probe-e2e-android-verification/ios/Pods/Lynx/platform/darwin/common/lynx/public/module/LynxModule.h

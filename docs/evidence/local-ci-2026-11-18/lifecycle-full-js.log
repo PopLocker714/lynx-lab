@@ -1,0 +1,156 @@
+$ bun run lint && bun run typecheck && bun run check:types-compat && bun run test && bun run test:release && bun run test:tooling && bun run build && bun run check:package
+$ biome check --error-on-warnings .
+Checked 40 files in 10ms. No fixes applied.
+$ tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit
+$ bun scripts/check-types-compat.mjs
+PASS negative control: unmodified ReactLynx declarations fail only on omitted ElementNode
+$ vitest run
+
+ RUN  v4.1.12 /Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1
+
+
+ Test Files  3 passed (3)
+      Tests  37 passed (37)
+   Start at  17:10:01
+   Duration  119ms (transform 74ms, setup 0ms, import 104ms, tests 11ms, environment 0ms)
+
+$ bun test scripts/release/*.test.mjs
+bun test v1.4.0 (34cbb9a40)
+
+scripts/release/artifact.test.mjs:
+(pass) immutable candidate and reviewed QA > accepts the exact archive and complete bound QA receipt [11.30ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 0.0.0-development [5.73ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 1.2.3-beta.1 [6.01ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 01.2.3 [5.75ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 1.2 [6.20ms]
+(pass) immutable candidate and reviewed QA > rejects private package and missing final changelog [5.83ms]
+(pass) immutable candidate and reviewed QA > rejects changed tarball bytes [6.19ms]
+(pass) immutable candidate and reviewed QA > rejects manifest sourceCommit mismatch [5.77ms]
+(pass) immutable candidate and reviewed QA > rejects manifest prepareRunId mismatch [5.51ms]
+(pass) immutable candidate and reviewed QA > rejects manifest repository mismatch [5.38ms]
+(pass) immutable candidate and reviewed QA > rejects manifest name mismatch [5.41ms]
+(pass) immutable candidate and reviewed QA > rejects manifest version mismatch [5.40ms]
+(pass) immutable candidate and reviewed QA > rejects manifest policySha256 mismatch [5.30ms]
+(pass) immutable candidate and reviewed QA > rejects archive metadata even with updated hash [11.83ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA sourceCommit [5.34ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA prepareRunId [5.08ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA sha256 [5.06ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA version [5.13ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA name [5.22ms]
+(pass) immutable candidate and reviewed QA > rejects missing, failed, duplicate and unresolved checks [5.52ms]
+(pass) immutable candidate and reviewed QA > requires accountable reviewer/profile and actual unchanged evidence [5.63ms]
+(pass) immutable candidate and reviewed QA > rejects empty and escaping evidence [5.47ms]
+(pass) prepare provenance > accepts only the identified successful manual main run [5.19ms]
+(pass) prepare provenance > rejects wrong id [5.45ms]
+(pass) prepare provenance > rejects wrong event [5.79ms]
+(pass) prepare provenance > rejects wrong path [5.29ms]
+(pass) prepare provenance > rejects wrong head_branch [5.29ms]
+(pass) prepare provenance > rejects wrong status [5.18ms]
+(pass) prepare provenance > rejects wrong conclusion [5.70ms]
+(pass) prepare provenance > rejects wrong head_sha [6.04ms]
+(pass) prepare provenance > rejects cross-repository and fork artifacts [6.03ms]
+(pass) prepare provenance > rejects dirty source before preparing an archive [51.05ms]
+(pass) prepare → committed QA → verify entrypoints, without registry or GitHub writes [475.67ms]
+
+ 33 pass
+ 0 fail
+ 50 expect() calls
+Ran 33 tests across 1 file. [773.00ms]
+$ bun test scripts/consumer/*.test.mjs
+bun test v1.4.0 (34cbb9a40)
+
+scripts/consumer/bindings.test.mjs:
+(pass) binds compiler inputs and records hashes; changed inputs fail after build [7.75ms]
+(pass) rejects a stale GlobalStore Gradle directory despite matching node_modules [5.60ms]
+(pass) detects changes to inspected iOS source configurations after build [6.66ms]
+(pass) rejects package project absent from Release runtime graph [5.37ms]
+(pass) rejects stale Kotlin source even with a correct projectDir [5.33ms]
+(pass) rejects registry outside actual supported Java compiler input [5.84ms]
+(pass) rejects compiled registry without provider; a commented registration does not count [5.82ms]
+(pass) rejects stale Pod lock path and stale PBXSources independently [5.35ms]
+(pass) rejects stale iOS registry source phase and missing module registration [5.44ms]
+(pass) rejects a missing Android provider compiler input [5.90ms]
+(pass) rejects missing iOS state owner source or header [5.37ms]
+(pass) rejects the historical probe peer mismatch before native compilation [6.11ms]
+
+ 12 pass
+ 0 fail
+ 18 expect() calls
+Ran 12 tests across 1 file. [97.00ms]
+$ tsc -p tsconfig.build.json
+$ bun scripts/check-publishable.mjs
+bun pack v1.4.0 (34cbb9a40)
+$ bun run build
+$ tsc -p tsconfig.build.json
+
+packed 4.35KB package.json
+packed 9.64KB CONTRIBUTING.md
+packed 12.73KB CONTRIBUTING.ru.md
+packed 1.1KB LICENSE
+packed 5.99KB README.md
+packed 8.22KB README.ru.md
+packed 2.92KB android/build.gradle.kts
+packed 443B android/consumer-rules.pro
+packed 357B android/src/main/AndroidManifest.xml
+packed 1.22KB android/src/main/java/dev/lynxlab/lifecycle/ActivityStateTracker.kt
+packed 1.19KB android/src/main/java/dev/lynxlab/lifecycle/AppLifecycleInitProvider.kt
+packed 3.0KB android/src/main/java/dev/lynxlab/lifecycle/AppLifecycleStore.kt
+packed 1.70KB android/src/main/java/dev/lynxlab/lifecycle/LynxAppLifecycleModule.kt
+packed 1.19KB dist/index.d.ts
+packed 0.60KB dist/index.d.ts.map
+packed 3.41KB dist/index.js
+packed 2.19KB dist/index.js.map
+packed 0.75KB dist/native.d.ts
+packed 448B dist/native.d.ts.map
+packed 1.93KB dist/native.js
+packed 0.86KB dist/native.js.map
+packed 1.14KB dist/react/index.d.ts
+packed 392B dist/react/index.d.ts.map
+packed 2.67KB dist/react/index.js
+packed 1.60KB dist/react/index.js.map
+packed 292B dist/snapshot.d.ts
+packed 254B dist/snapshot.d.ts.map
+packed 0.76KB dist/snapshot.js
+packed 0.79KB dist/snapshot.js.map
+packed 1.61KB dist/testing/create-fake-lifecycle.d.ts
+packed 0.73KB dist/testing/create-fake-lifecycle.d.ts.map
+packed 2.52KB dist/testing/create-fake-lifecycle.js
+packed 2.37KB dist/testing/create-fake-lifecycle.js.map
+packed 166B dist/testing/index.d.ts
+packed 201B dist/testing/index.d.ts.map
+packed 99B dist/testing/index.js
+packed 156B dist/testing/index.js.map
+packed 1.20KB dist/types.d.ts
+packed 379B dist/types.d.ts.map
+packed 44B dist/types.js
+packed 102B dist/types.js.map
+packed 4.22KB docs/compatibility.md
+packed 5.57KB docs/compatibility.ru.md
+packed 4.58KB docs/implementation.md
+packed 5.97KB docs/implementation.ru.md
+packed 7.33KB docs/releasing.md
+packed 10.11KB docs/releasing.ru.md
+packed 0.87KB ios/LynxAppLifecycle.podspec
+packed 391B ios/src/LALAppStateStore.h
+packed 3.46KB ios/src/LALAppStateStore.m
+packed 1.50KB ios/src/LynxAppLifecycleModule.h
+packed 1.28KB ios/src/LynxAppLifecycleModule.m
+packed 265B lynx.lib.json
+packed 4.32KB src/index.ts
+packed 3.1KB src/native.ts
+packed 2.85KB src/react/index.ts
+packed 0.81KB src/snapshot.ts
+packed 3.93KB src/testing/create-fake-lifecycle.ts
+packed 129B src/testing/index.ts
+packed 1.16KB src/types.ts
+
+/var/folders/2w/667p8dm55k95fh1p6c2rtz540000gn/T/lynx-app-lifecycle-pack-k01d4O/package.tgz
+
+Total files: 60
+Shasum: 9af9a654082c4755059b206eac404b76b1f046a9
+Integrity: sha512-uZQetHn9j4Si7[...]FP6/MEHwwaxaA==
+Unpacked size: 143.52KB
+Packed size: 45.43KB
+Source: d2eb9c22dfd1672e09688d015b486882274ca0e3 (dirty)
+check-publishable: 60 files; SHA256 d45589279008d54073ab372685003a1f718aa56c60fc258e7b8a908620befbe6
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/artifacts/app-lifecycle-d45589279008d54073ab372685003a1f718aa56c60fc258e7b8a908620befbe6.tgz

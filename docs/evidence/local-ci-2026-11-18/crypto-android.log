@@ -1,0 +1,111 @@
+$ bun scripts/check-android.mjs
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+> Task :lynx-crypto:preBuild UP-TO-DATE
+> Task :lynx-crypto:preDebugBuild UP-TO-DATE
+> Task :lynx-crypto:mergeDebugJniLibFolders
+> Task :lynx-crypto:mergeDebugNativeLibs NO-SOURCE
+> Task :lynx-crypto:stripDebugDebugSymbols NO-SOURCE
+> Task :lynx-crypto:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lynx-crypto:copyDebugJniLibsProjectAndLocalJars
+> Task :lynx-crypto:generateDebugResValues
+> Task :lynx-crypto:generateDebugResources
+> Task :lynx-crypto:packageDebugResources
+> Task :lynx-crypto:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :lynx-crypto:mergeDebugShaders
+> Task :lynx-crypto:compileDebugShaders NO-SOURCE
+> Task :lynx-crypto:generateDebugAssets UP-TO-DATE
+> Task :lynx-crypto:javaPreCompileDebug
+> Task :lynx-crypto:parseDebugLocalResources
+> Task :lynx-crypto:packageDebugAssets
+> Task :lynx-crypto:prepareDebugArtProfile UP-TO-DATE
+> Task :lynx-crypto:prepareLintJarForPublish UP-TO-DATE
+> Task :lynx-crypto:preReleaseBuild UP-TO-DATE
+> Task :lynx-crypto:mergeReleaseJniLibFolders
+> Task :lynx-crypto:mergeReleaseNativeLibs NO-SOURCE
+> Task :lynx-crypto:stripReleaseDebugSymbols NO-SOURCE
+> Task :lynx-crypto:writeDebugAarMetadata
+> Task :lynx-crypto:generateDebugRFile
+> Task :lynx-crypto:copyReleaseJniLibsProjectAndLocalJars
+> Task :lynx-crypto:processDebugManifest
+> Task :lynx-crypto:generateReleaseResValues
+> Task :lynx-crypto:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :lynx-crypto:generateReleaseResources
+> Task :lynx-crypto:packageReleaseResources
+> Task :lynx-crypto:parseReleaseLocalResources
+> Task :lynx-crypto:javaPreCompileRelease
+> Task :lynx-crypto:mergeReleaseShaders
+> Task :lynx-crypto:compileReleaseShaders NO-SOURCE
+> Task :lynx-crypto:generateReleaseAssets UP-TO-DATE
+> Task :lynx-crypto:generateReleaseRFile
+> Task :lynx-crypto:packageReleaseAssets
+> Task :lynx-crypto:prepareReleaseArtProfile UP-TO-DATE
+> Task :lynx-crypto:writeReleaseAarMetadata
+> Task :lynx-crypto:processReleaseManifest
+> Task :lynx-crypto:mapReleaseSourceSetPaths
+> Task :lynx-crypto:mergeReleaseResources
+> Task :lynx-crypto:preDebugAndroidTestBuild UP-TO-DATE
+> Task :lynx-crypto:generateDebugAndroidTestResValues
+> Task :lynx-crypto:writeDebugLintModelMetadata
+> Task :lynx-crypto:extractProguardFiles
+> Task :lynx-crypto:preDebugUnitTestBuild UP-TO-DATE
+> Task :lynx-crypto:preReleaseUnitTestBuild UP-TO-DATE
+> Task :lynx-crypto:writeReleaseLintModelMetadata
+> Task :lynx-crypto:verifyReleaseResources
+> Task :lynx-crypto:kaptGenerateStubsDebugKotlin
+> Task :lynx-crypto:kaptGenerateStubsReleaseKotlin
+
+> Task :lynx-crypto:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-crypto:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-crypto:compileDebugKotlin
+> Task :lynx-crypto:compileReleaseKotlin
+> Task :lynx-crypto:extractDebugAnnotations
+> Task :lynx-crypto:compileDebugJavaWithJavac NO-SOURCE
+> Task :lynx-crypto:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :lynx-crypto:mergeDebugConsumerProguardFiles
+> Task :lynx-crypto:processDebugJavaRes
+> Task :lynx-crypto:extractReleaseAnnotations
+> Task :lynx-crypto:compileReleaseJavaWithJavac NO-SOURCE
+> Task :lynx-crypto:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :lynx-crypto:mergeReleaseConsumerProguardFiles
+> Task :lynx-crypto:processReleaseJavaRes
+> Task :lynx-crypto:bundleLibRuntimeToJarDebug
+> Task :lynx-crypto:mergeReleaseJavaResource
+> Task :lynx-crypto:mergeDebugJavaResource
+> Task :lynx-crypto:generateDebugLintReportModel
+> Task :lynx-crypto:syncDebugLibJars
+> Task :lynx-crypto:bundleDebugAar
+> Task :lynx-crypto:assembleDebug
+> Task :lynx-crypto:syncReleaseLibJars
+> Task :lynx-crypto:bundleReleaseAar
+> Task :lynx-crypto:assembleRelease
+> Task :lynx-crypto:bundleDebugLocalLintAar
+> Task :lynx-crypto:createFullJarDebug
+> Task :lynx-crypto:generateDebugAndroidTestLintModel
+> Task :lynx-crypto:generateDebugUnitTestLintModel
+> Task :lynx-crypto:generateReleaseLintReportModel
+> Task :lynx-crypto:bundleReleaseLocalLintAar
+> Task :lynx-crypto:bundleLibRuntimeToJarRelease
+> Task :lynx-crypto:createFullJarRelease
+> Task :lynx-crypto:generateReleaseUnitTestLintModel
+> Task :lynx-crypto:lintAnalyzeDebugUnitTest
+> Task :lynx-crypto:lintAnalyzeDebugAndroidTest
+> Task :lynx-crypto:lintAnalyzeReleaseUnitTest
+> Task :lynx-crypto:lintAnalyzeDebug
+> Task :lynx-crypto:lintAnalyzeRelease
+> Task :lynx-crypto:lintReportDebug
+> Task :lynx-crypto:lintReportRelease
+> Task :lynx-crypto:lintDebug
+> Task :lynx-crypto:lintRelease
+
+BUILD SUCCESSFUL in 26s
+76 actionable tasks: 69 executed, 7 up-to-date

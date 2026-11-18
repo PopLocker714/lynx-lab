@@ -1,0 +1,124 @@
+{
+    "preflightAt": "2026-11-18T14:45:27Z",
+    "freeBytesBefore": 36501561344,
+    "targets": [
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/ios-check/build",
+            "ownership": "Parent confirmed this session created and completed the fixture build; accepted build/analysis logs preserved.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 4295983104,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/ios-check/build",
+            "ownership": "Parent confirmed this session created and completed the fixture build; accepted build/analysis logs preserved.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 4402479104,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/android/build",
+            "ownership": "Absent before this agent ran check:android; completed successfully.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 6492160,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/android/build",
+            "ownership": "Absent before this agent ran check:android; completed successfully.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 13320192,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/android/build",
+            "ownership": "Absent before this agent ran check:android; completed successfully.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 7131136,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-app-lifecycle-standard-v1/.tools/ktlint-1.7.1.jar",
+            "ownership": "Downloaded by this check:android run, confirmed in lifecycle-android.log.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 70258688,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-edge-to-edge-ios-contract/.tools/ktlint-1.7.1.jar",
+            "ownership": "Downloaded by this check:android run, confirmed in edge-android.log.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 70258688,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        },
+        {
+            "path": "/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/.tools/ktlint-1.7.1.jar",
+            "ownership": "Downloaded by this check:android run, confirmed in secure-android.log.",
+            "trackedFiles": [],
+            "openHandles": [],
+            "activeBuildProcesses": [],
+            "allocatedBytesBefore": 70258688,
+            "deleted": true,
+            "allocatedBytesAfter": 0
+        }
+    ],
+    "totalAllocatedBytesBefore": 8936181760,
+    "completedAt": "2026-11-18T14:45:57Z",
+    "freeBytesAfter": 45469872128,
+    "freeBytesDelta": 8968310784,
+    "removedAllocatedBytes": 8936181760,
+    "totalAllocatedBytesAfter": 0,
+    "measurementNote": "Allocated bytes measured using du -sk before removal. Free filesystem delta may include concurrent work by other agents and filesystem accounting.",
+    "retained": [
+        "Pre-existing lifecycle android/build",
+        "All android-check/.gradle directories",
+        "All Pods and node_modules",
+        "Shared caches",
+        "Crypto clang-format environment and pre-existing ktlint jar",
+        "Probe project and all probe builds/artifacts",
+        "All worktrees and Git refs"
+    ],
+    "gitAfter": {
+        "lynx-crypto-standard-v1": {
+            "branch": "refactor/package-standard-v1",
+            "head": "cfffe739fe9387fa2f55ac64def8e4b0eb85827d",
+            "androidCheckAndToolPathsStatus": ""
+        },
+        "lynx-app-lifecycle-standard-v1": {
+            "branch": "refactor/package-standard-v1",
+            "head": "96e9ed204e4b5d1395a83b94cd2da07a3a0f20f4",
+            "androidCheckAndToolPathsStatus": ""
+        },
+        "lynx-edge-to-edge-ios-contract": {
+            "branch": "docs/ios-host-contract",
+            "head": "b9a27f9227838f1d592b69015aec8e9a8322f824",
+            "androidCheckAndToolPathsStatus": ""
+        },
+        "lynx-secure-store-implementation": {
+            "branch": "feat/secure-store",
+            "head": "0ac0db76b53126195d73382d8280bb25b78f1844",
+            "androidCheckAndToolPathsStatus": ""
+        }
+    }
+}

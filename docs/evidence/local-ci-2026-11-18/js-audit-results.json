@@ -1,0 +1,190 @@
+[
+  {
+    "package": "crypto",
+    "commit": "1508946f2e31b46d116fcd408ad78cafb0eaa45b",
+    "timestamp": "2026-11-18T14:09:52.740569+00:00",
+    "commands": [
+      {
+        "command": "bun run check",
+        "exitCode": 0,
+        "log": "crypto-full-js.log"
+      },
+      {
+        "command": "bun audit --json",
+        "exitCode": 1,
+        "log": "crypto-audit.log"
+      },
+      {
+        "command": "bun dedupe --check",
+        "exitCode": 0,
+        "log": "crypto-dedupe.log"
+      },
+      {
+        "command": "bun pm licenses",
+        "exitCode": 0,
+        "log": "crypto-licenses.log"
+      },
+      {
+        "command": "bun run check:audit",
+        "exitCode": 1,
+        "log": "crypto-audit-gate.log"
+      }
+    ],
+    "distComparison": {
+      "filesBefore": 24,
+      "filesAfter": 24,
+      "identical": true,
+      "changed": []
+    },
+    "scope": "Independent local JS/pack/audit checks only; parent is editing CI/native toolchain and another agent notices; not a clean-source release acceptance.",
+    "lockSha256": "bcadd6e3d33b25601c57d3a29a4730fe5c0669c578e81129b3d59c1e824ff967",
+    "dirtyPathsAfterChecks": [
+      " M .github/workflows/ci.yml"
+    ],
+    "installationChanged": false
+  },
+  {
+    "package": "lifecycle",
+    "commit": "d2eb9c22dfd1672e09688d015b486882274ca0e3",
+    "timestamp": "2026-11-18T14:09:57.425678+00:00",
+    "commands": [
+      {
+        "command": "bun run check",
+        "exitCode": 0,
+        "log": "lifecycle-full-js.log"
+      },
+      {
+        "command": "bun audit --json",
+        "exitCode": 1,
+        "log": "lifecycle-audit.log"
+      },
+      {
+        "command": "bun dedupe --check",
+        "exitCode": 0,
+        "log": "lifecycle-dedupe.log"
+      },
+      {
+        "command": "bun pm licenses",
+        "exitCode": 0,
+        "log": "lifecycle-licenses.log"
+      },
+      {
+        "command": "bun run check:audit",
+        "exitCode": 1,
+        "log": "lifecycle-audit-gate.log"
+      }
+    ],
+    "distComparison": {
+      "filesBefore": 28,
+      "filesAfter": 28,
+      "identical": true,
+      "changed": []
+    },
+    "scope": "Independent local JS/pack/audit checks only; parent is editing CI/native toolchain and another agent notices; not a clean-source release acceptance.",
+    "lockSha256": "37addcbc6a75addd2cab7d70f17fcbbfad43ca4cefb9ccfb4ee30de1973d552a",
+    "dirtyPathsAfterChecks": [
+      " M .github/workflows/ci.yml",
+      " M ios-check/Gemfile.lock"
+    ],
+    "installationChanged": false
+  },
+  {
+    "package": "secure-store",
+    "commit": "006eb826489d005d558c8f9d67ea553230056dec",
+    "timestamp": "2026-11-18T14:10:06.716934+00:00",
+    "commands": [
+      {
+        "command": "bun run check",
+        "exitCode": 0,
+        "log": "secure-store-full-js.log"
+      },
+      {
+        "command": "bun audit --json",
+        "exitCode": 0,
+        "log": "secure-store-audit.log"
+      },
+      {
+        "command": "bun dedupe --check",
+        "exitCode": 0,
+        "log": "secure-store-dedupe.log"
+      },
+      {
+        "command": "bun pm licenses",
+        "exitCode": 0,
+        "log": "secure-store-licenses.log"
+      }
+    ],
+    "distComparison": {
+      "filesBefore": 8,
+      "filesAfter": 8,
+      "identical": true,
+      "changed": []
+    },
+    "scope": "Independent local JS/pack/audit checks only; parent is editing CI/native toolchain and another agent notices; not a clean-source release acceptance.",
+    "lockSha256": "6ba7e588210a149cffd93eab9c49cb0173b7ea24a31229a536a80da718714b3d",
+    "dirtyPathsAfterChecks": [
+      " M .github/workflows/ci.yml",
+      " M CONTRIBUTING.md",
+      " M CONTRIBUTING.ru.md"
+    ],
+    "installationChanged": false
+  },
+  {
+    "package": "edge",
+    "commit": "f226ff61fc1fe702ac81654fa3fe3c1b33a3ccee",
+    "timestamp": "2026-11-18T14:14:09.872564+00:00",
+    "commands": [
+      {
+        "command": "bun run check",
+        "exitCode": 0,
+        "log": "edge-full-js.log"
+      },
+      {
+        "command": "bun audit --json",
+        "exitCode": 1,
+        "log": "edge-audit.log"
+      },
+      {
+        "command": "bun run check:audit",
+        "exitCode": 1,
+        "log": "edge-audit-gate.log"
+      },
+      {
+        "command": "bun dedupe --check",
+        "exitCode": 0,
+        "log": "edge-dedupe.log"
+      },
+      {
+        "command": "bun pm licenses",
+        "exitCode": 0,
+        "log": "edge-licenses.log"
+      }
+    ],
+    "lockSha256": "b95f49375a7229b3e193fbcb67c32562e28471b48971a8e666b6c65ed85c4fd5",
+    "installationChanged": false,
+    "distComparison": {
+      "filesBefore": 36,
+      "filesAfter": 36,
+      "identical": true,
+      "changed": []
+    },
+    "scope": "Independent local JS/pack/audit checks only; parent is editing CI/native toolchain and another agent notices; not a clean-source release acceptance.",
+    "dirtyPathsAfterChecks": [
+      " M .github/workflows/ci.yml",
+      " M CONTRIBUTING.md",
+      " M CONTRIBUTING.ru.md",
+      " M README.md",
+      " M README.ru.md",
+      " M docs/implementation.md",
+      " M docs/implementation.ru.md",
+      " M ios-check/Gemfile.lock",
+      " M ios-check/Podfile",
+      " M ios-check/Podfile.lock",
+      " M package.json",
+      " M scripts/check-publishable.mjs",
+      "?? THIRD_PARTY_NOTICES.md",
+      "?? THIRD_PARTY_NOTICES.ru.md",
+      "?? licenses/"
+    ]
+  }
+]

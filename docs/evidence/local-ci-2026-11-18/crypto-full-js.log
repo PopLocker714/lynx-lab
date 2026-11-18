@@ -1,0 +1,127 @@
+$ bun run lint && bun run typecheck && bun run test && bun run test:release && bun run build && bun run check:package
+$ biome check --error-on-warnings .
+Checked 35 files in 39ms. No fixes applied.
+$ tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit
+$ vitest run
+
+ RUN  v4.1.12 /Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1
+
+
+ Test Files  4 passed (4)
+      Tests  50 passed (50)
+   Start at  17:09:54
+   Duration  176ms (transform 105ms, setup 0ms, import 148ms, tests 81ms, environment 0ms)
+
+$ bun test scripts/release/*.test.mjs
+bun test v1.4.0 (34cbb9a40)
+
+scripts/release/artifact.test.mjs:
+(pass) immutable candidate and reviewed QA > accepts the exact archive and complete bound QA receipt [10.52ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 0.0.0-development [5.24ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 1.2.3-beta.1 [5.22ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 01.2.3 [4.84ms]
+(pass) immutable candidate and reviewed QA > rejects unfinished/nonstable version 1.2 [4.79ms]
+(pass) immutable candidate and reviewed QA > rejects private package and missing final changelog [4.70ms]
+(pass) immutable candidate and reviewed QA > rejects changed tarball bytes [4.75ms]
+(pass) immutable candidate and reviewed QA > rejects manifest sourceCommit mismatch [6.05ms]
+(pass) immutable candidate and reviewed QA > rejects manifest prepareRunId mismatch [5.96ms]
+(pass) immutable candidate and reviewed QA > rejects manifest repository mismatch [5.82ms]
+(pass) immutable candidate and reviewed QA > rejects manifest name mismatch [6.01ms]
+(pass) immutable candidate and reviewed QA > rejects manifest version mismatch [7.71ms]
+(pass) immutable candidate and reviewed QA > rejects manifest policySha256 mismatch [6.36ms]
+(pass) immutable candidate and reviewed QA > rejects archive metadata even with updated hash [14.28ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA sourceCommit [6.21ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA prepareRunId [6.12ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA sha256 [6.45ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA version [6.03ms]
+(pass) immutable candidate and reviewed QA > rejects stale QA name [6.59ms]
+(pass) immutable candidate and reviewed QA > rejects missing, failed, duplicate and unresolved checks [7.14ms]
+(pass) immutable candidate and reviewed QA > requires accountable reviewer/profile and actual unchanged evidence [7.01ms]
+(pass) immutable candidate and reviewed QA > rejects empty and escaping evidence [6.55ms]
+(pass) prepare provenance > accepts only the identified successful manual main run [6.09ms]
+(pass) prepare provenance > rejects wrong id [6.80ms]
+(pass) prepare provenance > rejects wrong event [6.70ms]
+(pass) prepare provenance > rejects wrong path [6.36ms]
+(pass) prepare provenance > rejects wrong head_branch [6.19ms]
+(pass) prepare provenance > rejects wrong status [6.20ms]
+(pass) prepare provenance > rejects wrong conclusion [6.43ms]
+(pass) prepare provenance > rejects wrong head_sha [6.35ms]
+(pass) prepare provenance > rejects cross-repository and fork artifacts [7.44ms]
+(pass) prepare provenance > rejects dirty source before preparing an archive [59.86ms]
+(pass) prepare → committed QA → verify entrypoints, without registry or GitHub writes [484.05ms]
+
+ 33 pass
+ 0 fail
+ 50 expect() calls
+Ran 33 tests across 1 file. [755.00ms]
+$ tsc -p tsconfig.build.json
+$ bun scripts/check-publishable.mjs
+bun pack v1.4.0 (34cbb9a40)
+$ bun run build
+$ tsc -p tsconfig.build.json
+
+packed 3.58KB package.json
+packed 9.35KB CONTRIBUTING.md
+packed 12.86KB CONTRIBUTING.ru.md
+packed 1.1KB LICENSE
+packed 3.57KB README.md
+packed 5.1KB README.ru.md
+packed 3.60KB android/build.gradle.kts
+packed 0.59KB android/consumer-rules.pro
+packed 72B android/src/main/AndroidManifest.xml
+packed 2.37KB android/src/main/java/dev/lynxlab/crypto/LynxCryptoModule.kt
+packed 1.0KB dist/base64.d.ts
+packed 341B dist/base64.d.ts.map
+packed 2.86KB dist/base64.js
+packed 2.98KB dist/base64.js.map
+packed 0.62KB dist/errors.d.ts
+packed 193B dist/errors.d.ts.map
+packed 0.89KB dist/errors.js
+packed 485B dist/errors.js.map
+packed 2.11KB dist/index.d.ts
+packed 0.61KB dist/index.d.ts.map
+packed 4.95KB dist/index.js
+packed 2.80KB dist/index.js.map
+packed 0.63KB dist/native.d.ts
+packed 360B dist/native.d.ts.map
+packed 2.0KB dist/native.js
+packed 0.96KB dist/native.js.map
+packed 1.26KB dist/testing/create-fake-crypto.d.ts
+packed 0.52KB dist/testing/create-fake-crypto.d.ts.map
+packed 1.74KB dist/testing/create-fake-crypto.js
+packed 1.46KB dist/testing/create-fake-crypto.js.map
+packed 161B dist/testing/index.d.ts
+packed 203B dist/testing/index.d.ts.map
+packed 93B dist/testing/index.js
+packed 156B dist/testing/index.js.map
+packed 2.15KB docs/api.md
+packed 3.1KB docs/api.ru.md
+packed 4.24KB docs/compatibility.md
+packed 5.99KB docs/compatibility.ru.md
+packed 2.13KB docs/implementation.md
+packed 3.0KB docs/implementation.ru.md
+packed 1.0KB docs/integration.md
+packed 1.39KB docs/integration.ru.md
+packed 7.33KB docs/releasing.md
+packed 10.10KB docs/releasing.ru.md
+packed 1.24KB ios/LynxCrypto.podspec
+packed 2.0KB ios/src/LynxCryptoModule.h
+packed 2.21KB ios/src/LynxCryptoModule.m
+packed 256B lynx.lib.json
+packed 2.80KB src/base64.ts
+packed 0.94KB src/errors.ts
+packed 5.62KB src/index.ts
+packed 3.0KB src/native.ts
+packed 2.30KB src/testing/create-fake-crypto.ts
+packed 124B src/testing/index.ts
+
+/var/folders/2w/667p8dm55k95fh1p6c2rtz540000gn/T/lynx-crypto-pack-xoFrdV/package.tgz
+
+Total files: 54
+Shasum: b81b537b9c111fa7968881df6ad51deefb3f08d7
+Integrity: sha512-bnMfRgQXpjkL8[...]EDkfRsChegJeA==
+Unpacked size: 132.54KB
+Packed size: 44.69KB
+Source: 1508946f2e31b46d116fcd408ad78cafb0eaa45b (dirty)
+check-publishable: 54 files; SHA256 0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-crypto-standard-v1/artifacts/crypto-0a56c03b901730b633538d607e56dbb1b8146fb2eb312e380a1d77d7dc79621b.tgz

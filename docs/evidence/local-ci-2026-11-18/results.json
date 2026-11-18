@@ -1,0 +1,240 @@
+{
+    "date": "2026-11-18",
+    "localToolchain": {
+        "xcode": "27.2",
+        "build": "27B52",
+        "macOS": "26.6.1",
+        "macOSBuild": "25G76",
+        "installedXcodeCount": 1,
+        "secondXcodeRequired": false
+    },
+    "remoteProfile": {
+        "runner": "xcode-27",
+        "xcode": "27.2",
+        "operatingSystemMatchesLocal": false
+    },
+    "sources": [
+        "https://developer.apple.com/xcode/system-requirements",
+        "https://github.blog/changelog/2026-10-15-xcode-27-runner-image-generally-available/",
+        "https://github.com/actions/runner-images/blob/main/images/macos/xcode-27-arm64-Readme.md"
+    ],
+    "packages": {
+        "crypto": {
+            "sourceCommit": "cfffe739fe9387fa2f55ac64def8e4b0eb85827d",
+            "iosCheck": "pass",
+            "iosLog": "crypto-ios.log",
+            "jsCheck": "pass",
+            "androidCheck": "pass",
+            "audit": "fail: GHSA-fc5q-39xc-vjpf; no published fixed version at observation; no new exception",
+            "remoteRunAtObservation": 44323550710,
+            "repository": {
+                "url": "https://github.com/PopLocker714/lynx-crypto",
+                "visibility": "public",
+                "sourceLicense": "MIT",
+                "licenseScope": "package source at sourceCommit; third-party notices retained"
+            },
+            "remote": {
+                "runUrl": "https://github.com/PopLocker714/lynx-crypto/actions/runs/44323550710",
+                "headSha": "cfffe739fe9387fa2f55ac64def8e4b0eb85827d",
+                "status": "completed",
+                "conclusion": "failure",
+                "jobs": {
+                    "js": "success",
+                    "android": "success",
+                    "ios": "success",
+                    "audit": "failure"
+                },
+                "verification": "Read-only gh run view checked against the exact sourceCommit on2026-11-18"
+            }
+        },
+        "secure-store": {
+            "sourceCommit": "0ac0db76b53126195d73382d8280bb25b78f1844",
+            "iosCheck": "pass",
+            "iosLog": "secure-ios.log",
+            "jsCheck": "pass",
+            "androidCheck": "pass",
+            "audit": "pass",
+            "remoteRunAtObservation": 44323793714,
+            "repository": {
+                "url": "https://github.com/PopLocker714/lynx-secure-store",
+                "visibility": "public",
+                "sourceLicense": "MIT",
+                "licenseScope": "package source at sourceCommit; third-party notices retained",
+                "defaultBranchLicenseDetection": null,
+                "licenseNote": "MIT LICENSE is committed on feat/secure-store; default main is still the initialization branch and is not merged."
+            },
+            "remote": {
+                "runUrl": "https://github.com/PopLocker714/lynx-secure-store/actions/runs/44323793714",
+                "headSha": "0ac0db76b53126195d73382d8280bb25b78f1844",
+                "status": "completed",
+                "conclusion": "success",
+                "jobs": {
+                    "js": "success",
+                    "android": "success",
+                    "ios": "success",
+                    "audit": "success"
+                },
+                "verification": "Read-only gh run view checked against the exact sourceCommit on2026-11-18"
+            },
+            "npmPrivateGuard": true
+        },
+        "edge": {
+            "sourceCommit": "b9a27f9227838f1d592b69015aec8e9a8322f824",
+            "iosCheck": "pass",
+            "iosLog": "edge-ios.log",
+            "jsCheck": "pass",
+            "androidCheck": "pass",
+            "audit": "fail: GHSA-fc5q-39xc-vjpf; no published fixed version at observation; no new exception",
+            "remoteRunAtObservation": 44325784002,
+            "repository": {
+                "url": "https://github.com/PopLocker714/lynx-edge-to-edge",
+                "visibility": "public",
+                "sourceLicense": "MIT",
+                "licenseScope": "package source at sourceCommit; third-party notices retained"
+            },
+            "remote": {
+                "runUrl": "https://github.com/PopLocker714/lynx-edge-to-edge/actions/runs/44325784002",
+                "headSha": "b9a27f9227838f1d592b69015aec8e9a8322f824",
+                "status": "completed",
+                "conclusion": "failure",
+                "jobs": {
+                    "js": "success",
+                    "android": "success",
+                    "ios": "success",
+                    "audit": "failure"
+                },
+                "verification": "Read-only gh run view checked against the exact sourceCommit on2026-11-18"
+            }
+        },
+        "lifecycle": {
+            "sourceCommit": "96e9ed204e4b5d1395a83b94cd2da07a3a0f20f4",
+            "iosCheck": "pass",
+            "iosLog": "lifecycle-ios.log",
+            "jsCheck": "pass",
+            "androidCheck": "pass",
+            "audit": "fail: GHSA-fc5q-39xc-vjpf; no published fixed version at observation; no new exception",
+            "remoteRunAtObservation": 44325785411,
+            "repository": {
+                "url": "https://github.com/PopLocker714/lynx-app-lifecycle",
+                "visibility": "public",
+                "sourceLicense": "MIT",
+                "licenseScope": "package source at sourceCommit; third-party notices retained"
+            },
+            "remote": {
+                "runUrl": "https://github.com/PopLocker714/lynx-app-lifecycle/actions/runs/44325785411",
+                "headSha": "96e9ed204e4b5d1395a83b94cd2da07a3a0f20f4",
+                "status": "completed",
+                "conclusion": "failure",
+                "jobs": {
+                    "js": "success",
+                    "android": "success",
+                    "ios": "success",
+                    "audit": "failure"
+                },
+                "verification": "Read-only gh run view checked against the exact sourceCommit on2026-11-18"
+            }
+        }
+    },
+    "limitations": [
+        "Local checks used existing dependencies and incremental build products; remote CI separately records clean hosted execution.",
+        "Fixture deployment15.0 and simulator host15.6 do not verify declared minimumOS12.",
+        "Lynx3.9 SDK warnings retained with scoped no-error categories; own module -Werror unchanged.",
+        "No package version/tag/npm publication or package main merge.",
+        "The final simulator consumer is a separate acceptance scope from local/remote package checks; it does not prove minimum OS or physical keyboard behavior.",
+        "Lab public-history preparation has not changed the original source refs or published the sanitized history."
+    ],
+    "auditAdvisoryEvidence": "picomatch-advisory.json",
+    "supersededStatuses": [
+        "Package repository private visibility",
+        "Edge CI blocked before steps by private-repository billing",
+        "macOS hosted-runner capacity blocked all iOS execution"
+    ],
+    "consumerQA": {
+        "sourceCommit": "9874e6ce018dd46562d1c089f046533d954f5988",
+        "configuration": "Release",
+        "platform": "iPhone18Pro iOS27.0 Simulator",
+        "evidenceWorkspacePath": "probe-e2e-android-verification/evidence-local/ios-keyboard-2026-11-18",
+        "secureStore": {
+            "status": "pass",
+            "scenarios": "10/10",
+            "persistenceAfterRelaunch": "pass",
+            "evidence": [
+                "secure-final.json",
+                "secure-persistence.json"
+            ]
+        },
+        "crypto": {
+            "status": "pass",
+            "scope": "native bridge contract/smoke, not an entropy measurement",
+            "evidence": "crypto-final.json"
+        },
+        "lifecycle": {
+            "status": "pass",
+            "scope": "A/B background g1 to active g2, gap=false",
+            "evidence": "lifecycle-final.json"
+        },
+        "keyboard": {
+            "status": "pass",
+            "sourceCommit": "9874e6ce018dd46562d1c089f046533d954f5988",
+            "scope": "simulator Release via opt-in native host input",
+            "shown": {
+                "keyboardHeight": 349,
+                "generation": 2,
+                "top": 62,
+                "bottom": 34
+            },
+            "dismissed": {
+                "keyboardHeight": 0,
+                "generation": 3,
+                "top": 62,
+                "bottom": 34
+            },
+            "evidence": [
+                "keyboard-final-shown.json",
+                "keyboard-final-dismissed.json"
+            ],
+            "physicalReleaseVerified": false
+        },
+        "firstFrame": {
+            "status": "fail",
+            "reproduced": "3/3 cold relaunches",
+            "observed": "Visible top0/bottom0/generation-1 fallback changes to top62/bottom34/generation1 globalProps; content jumps down approximately62pt.",
+            "observedUnpaddedSpanMilliseconds": [
+                128.334,
+                126.667,
+                120.0
+            ],
+            "decodedFramesVerified": 261,
+            "evidence": "frame-analysis/results.json",
+            "fixAccepted": false,
+            "scope": "VFR simulator recording proves the observed defect; no claim about every physical display frame."
+        },
+        "simulatorEntitlements": {
+            "scope": "CODE_SIGN_ENTITLEMENTS only for iphonesimulator SDK; physical signing unchanged",
+            "reason": "Unsigned probe lacked Keychain application identifier/access groups and returned -34018",
+            "generatedBy": "Xcode simulated entitlements processing"
+        }
+    },
+    "labPublicHistory": {
+        "status": "candidate-prepared-not-published",
+        "privateOriginalArchiveVerified": true,
+        "originalSourceRefsAndWorktreesPreserved": true,
+        "finalSourceSnapshotStillRequired": true,
+        "publicationBoundary": "Rewriting reachable Git refs alone does not guarantee removal of old cached objects from an existing GitHub repository."
+    },
+    "cleanup": {
+        "receipt": "cleanup-fixtures.json",
+        "ownedNativeFixtureAllocatedBytesRemoved": 8936181760,
+        "ownedNativeFixtureGiBRemovedApprox": 8.32,
+        "activeProbeBuildGiBRetainedApprox": 6.5,
+        "activeProbeBuildState": "retained for ongoing QA",
+        "sharedCachesRemoved": false
+    },
+    "remainingGates": [
+        "First-frame fix and repeated consumer QA",
+        "Minimum supported OS execution",
+        "Physical iOS Release keyboard QA",
+        "OIDC/trusted publishing verification",
+        "Resolve picomatch audit failure for crypto/lifecycle/edge before release"
+    ]
+}

@@ -1,0 +1,128 @@
+$ bun run lint && bun run typecheck && bun run test && bun run build && bun run check:package
+$ biome check --error-on-warnings .
+Checked 25 files in 48ms. No fixes applied.
+$ tsc -p tsconfig.json --noEmit && tsc -p tsconfig.test.json --noEmit
+$ bun test
+bun test v1.4.0 (34cbb9a40)
+
+test/bridge.test.ts:
+(pass) NUL survives the Android JNI string boundary without changing stored data [1.23ms]
+(pass) an absent native module rejects instead of claiming successful storage [0.61ms]
+(pass) invalid input is rejected before touching the bridge [0.53ms]
+
+test/contracts.test.ts:
+(pass) malformed callback rejects protocol_error: undefined [0.10ms]
+(pass) malformed callback rejects protocol_error: null [0.01ms]
+(pass) malformed callback rejects protocol_error: object
+(pass) malformed callback rejects protocol_error: number
+(pass) malformed callback rejects protocol_error: invalid JSON [0.23ms]
+(pass) malformed callback rejects protocol_error: JSON null [0.19ms]
+(pass) malformed callback rejects protocol_error: array
+(pass) malformed callback rejects protocol_error: missing status
+(pass) malformed callback rejects protocol_error: unknown status
+(pass) malformed callback rejects protocol_error: missing value
+(pass) malformed callback rejects protocol_error: boolean value
+(pass) malformed callback rejects protocol_error: missing error code
+(pass) malformed callback rejects protocol_error: unknown error code [0.03ms]
+(pass) malformed callback rejects protocol_error: prototype code
+(pass) malformed callback rejects protocol_error: constructor code
+(pass) malformed callback rejects protocol_error: wrong code type
+(pass) malformed callback rejects protocol_error: truncated percent [0.17ms]
+(pass) malformed callback rejects protocol_error: invalid hex
+(pass) malformed callback rejects protocol_error: malformed UTF-8
+(pass) malformed callback rejects protocol_error: encoded lone surrogate
+(pass) native invalid_argument is distinct from absence and sanitized [0.30ms]
+(pass) native unavailable is distinct from absence and sanitized [0.01ms]
+(pass) native locked is distinct from absence and sanitized
+(pass) native key_unavailable is distinct from absence and sanitized
+(pass) native corrupt_data is distinct from absence and sanitized
+(pass) native storage_error is distinct from absence and sanitized
+(pass) native protocol_error is distinct from absence and sanitized
+(pass) absence, empty string and percent-encoded content are different values [0.11ms]
+(pass) mutations reject non-null acknowledgements [0.13ms]
+(pass) delete forwards exactly one key and accepts an absent item acknowledgement [0.65ms]
+(pass) mutation promise remains pending until the native acknowledgement [0.30ms]
+(pass) the first callback determines the result even if native calls again or throws [0.10ms]
+(pass) synchronous bridge exceptions do not expose values or causes [0.08ms]
+(pass) partial native registrations reject unavailable [0.08ms]
+(pass) key validation covers exact bounds and prevents native access for every operation [0.18ms]
+(pass) value validation measures UTF-8 before transport encoding and preserves empty/NUL [0.56ms]
+
+scripts/consumer/bindings.test.mjs:
+(pass) binds compiler inputs and records hashes; changed inputs fail after build [7.39ms]
+(pass) rejects a stale GlobalStore Gradle directory despite matching node_modules [7.00ms]
+(pass) detects changes to inspected iOS source configurations after build [8.32ms]
+(pass) rejects package project absent from Release runtime graph [6.68ms]
+(pass) rejects stale Kotlin source even with a correct projectDir [8.45ms]
+(pass) rejects registry outside actual supported Java compiler input [7.79ms]
+(pass) rejects compiled registry without provider; a commented registration does not count [7.16ms]
+(pass) rejects stale Pod lock path and stale PBXSources independently [6.55ms]
+(pass) rejects stale iOS registry source phase and missing module registration [8.72ms]
+
+scripts/consumer/instrumentation.test.mjs:
+(pass) accepts exactly seven unique cases with paired start/pass and final runner success [0.71ms]
+(pass) rejects failed case [0.10ms]
+(pass) rejects skipped case [0.03ms]
+(pass) rejects wrong class [0.02ms]
+(pass) rejects unknown case [0.03ms]
+(pass) rejects wrong count [0.02ms]
+(pass) rejects duplicate case [0.02ms]
+(pass) rejects pass without start [0.03ms]
+(pass) rejects unfinished case [0.02ms]
+(pass) rejects incomplete run [0.02ms]
+(pass) rejects missing final OK [0.01ms]
+(pass) rejects wrong final code
+(pass) rejects duplicate final code
+(pass) rejects abort even after successful cases
+(pass) rejects runner stack
+(pass) rejects runner short message
+(pass) rejects duplicate status field
+
+ 65 pass
+ 0 fail
+ 139 expect() calls
+Ran 65 tests across 4 files. [93.00ms]
+$ tsc -p tsconfig.build.json
+$ bun scripts/check-publishable.mjs
+bun pack v1.4.0 (34cbb9a40)
+$ bun run build
+$ tsc -p tsconfig.build.json
+
+packed 2.0KB package.json
+packed 9.71KB CONTRIBUTING.md
+packed 12.89KB CONTRIBUTING.ru.md
+packed 1.1KB LICENSE
+packed 4.77KB README.md
+packed 6.86KB README.ru.md
+packed 1.22KB android/build.gradle.kts
+packed 132B android/consumer-rules.pro
+packed 72B android/src/main/AndroidManifest.xml
+packed 3.37KB android/src/main/java/dev/lynxlab/securestore/LynxSecureStoreModule.kt
+packed 6.48KB android/src/main/java/dev/lynxlab/securestore/SecureStore.kt
+packed 1.16KB dist/errors.d.ts
+packed 1.19KB dist/errors.js
+packed 0.56KB dist/index.d.ts
+packed 1.40KB dist/index.js
+packed 413B dist/native.d.ts
+packed 2.36KB dist/native.js
+packed 269B dist/validation.d.ts
+packed 1.31KB dist/validation.js
+packed 5.15KB docs/compatibility.md
+packed 6.88KB docs/compatibility.ru.md
+packed 3.48KB docs/implementation.md
+packed 5.0KB docs/implementation.ru.md
+packed 0.83KB ios/LynxSecureStore.podspec
+packed 392B ios/src/LynxSecureStoreModule.h
+packed 6.85KB ios/src/LynxSecureStoreModule.m
+packed 234B lynx.lib.json
+
+/var/folders/2w/667p8dm55k95fh1p6c2rtz540000gn/T/lynx-secure-store-pack-xm3Dq9/package.tgz
+
+Total files: 27
+Shasum: cde33d06d07d39a65489b89d59224acc63fcb204
+Integrity: sha512-p+PGuYxAIwHJu[...]lRLNfkdVXK5JA==
+Unpacked size: 86.12KB
+Packed size: 28.59KB
+Source: 006eb826489d005d558c8f9d67ea553230056dec (dirty)
+check-publishable: 27 files; SHA256 b619593cdecbe5762524b1dfae6a01906ccdb71ea996f8a1440499758ae15420
+/Users/REDACTED_LOCAL_USER/Documents/dev/lynx-secure-store-implementation/artifacts/secure-store-b619593cdecbe5762524b1dfae6a01906ccdb71ea996f8a1440499758ae15420.tgz

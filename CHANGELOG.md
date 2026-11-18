@@ -2,6 +2,18 @@
 
 Формат: дата, что изменилось, чем подтверждено.
 
+## 2026-11-18
+
+- Все четыре package-репозитория публичны. Локальные JS/native checks и remote
+  JS/Android/iOS jobs прошли на task-ветках с Xcode 27.2. Audit Secure Store
+  проходит; crypto/lifecycle/edge блокирует GHSA-fc5q-39xc-vjpf, без нового ignore.
+- Simulator Release probe `9874e6c`: Secure Store 10/10 и persistence, crypto,
+  lifecycle A/B, UIKit keyboard `0 → 349 → 0` прошли. Три видеозаписи выявили
+  first-frame дефект edge: сначала fallback, затем сдвиг на 62 pt; расследуется.
+- Подготовлена очистка истории лаборатории с приватным Git bundle и оригиналами
+  evidence. Добавлены MIT, исходные third-party notices и EN/RU правила публичных
+  производных; неподтверждённый сторонний snapshot исключается из экспорта.
+
 ## 2026-11-17
 
 - Probe `e806327`: убрана Release portrait-блокировка host, диагностические строки

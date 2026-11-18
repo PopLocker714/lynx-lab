@@ -1,11 +1,57 @@
 ---
-last_updated: 2026-11-17
+last_updated: 2026-11-18
 lynx_version: 4.0.1 (Maven) / 4.0.0 (CocoaPods)
 sparkling: 2.0.1 (latest) / 2.1.0-rc.36 (rc)
 bun: 1.4.0
 ---
 
 # Состояние проекта
+
+2026-11-18: все четыре репозитория пакетов публичны; исходники пакетов имеют MIT,
+лицензии заимствованного кода сохранены отдельно. Текущие task-ветки:
+
+| Пакет | Commit | Локальные JS / Android / iOS | Remote JS / Android / iOS | Audit |
+|---|---|---|---|---|
+| crypto | `cfffe739` | PASS | PASS | FAIL |
+| app-lifecycle | `96e9ed2` | PASS | PASS | FAIL |
+| edge-to-edge | `b9a27f9` | PASS | PASS | FAIL |
+| secure-store | `0ac0db7` | PASS | PASS | PASS |
+
+У crypto/lifecycle/edge общий блокер audit — `GHSA-fc5q-39xc-vjpf` в picomatch;
+на дату проверки исправленной опубликованной версии нет, новое исключение не добавлено.
+Поэтому три workflow в целом завершились FAIL, несмотря на успешные JS/native jobs.
+Secure Store CI полностью PASS. [Результаты и ссылки на CI](docs/evidence/local-ci-2026-11-18/results.json).
+На Mac установлен один Xcode 27.2 (`27B52`); CI использует тот же компилятор на
+`xcode-27`, но версии macOS/SDK фиксируются отдельно. Xcode 16.4 не требуется.
+Старые записи ниже о private-репозиториях пакетов, edge billing и недоступности
+macOS runners заменены этими результатами. Это не новый npm-релиз и не merge в main;
+у Secure Store `private: true` остаётся предохранителем публикации в npm.
+
+2026-11-18: Release probe `9874e6c` на общем iPhone 18 Pro / iOS 27 Simulator:
+Secure Store 10/10 и persistence после relaunch PASS, Crypto native smoke PASS,
+lifecycle A/B background → active PASS. Клавиатура проверена на этой же финальной
+сборке через opt-in native host input: `kb=349/g2` → Done → `kb=0/g3`,
+`top=62/bottom=34` сохраняются. Это проверка симулятора; физический iOS Release
+keyboard остаётся открытым. Предыдущая unsigned-сборка получала Keychain `-34018`;
+Xcode теперь формирует только simulator entitlements, физическая подпись не изменена.
+
+First-frame теперь **FAIL, 3/3 cold relaunch**, а не просто unverified: на записи
+виден `top=0/bottom=0/g=-1 fallback`, затем контент смещается примерно на 62 pt
+при `top=62/bottom=34/g1 globalProps`. Неправильный отступ различим около 120–128 мс.
+261 декодированный кадр сверены с исходными видео; VFR-запись не доказывает каждый
+физически показанный кадр, но подтверждает наблюдаемый дефект. Исправление ещё не принято.
+Артефакты — `probe-e2e-android-verification/evidence-local/ios-keyboard-2026-11-18/`,
+включая `frame-analysis/results.json` с PTS и контрольными суммами.
+
+До stable остаются исправление first-frame с повторным QA, minimum OS,
+физическая проверка iOS Release keyboard и OIDC/trusted publishing; audit блокирует
+выпуск трёх пакетов. Для самой лаборатории подготовлен отдельный очищенный кандидат
+истории и проверенный приватный архив оригиналов; публичная история ещё не опубликована.
+Исходные worktree и refs сохранены. Удалено 8.32 ГиБ завершённых собственных native
+fixtures ([receipt](docs/evidence/local-ci-2026-11-18/cleanup-fixtures.json));
+около 6.5 ГиБ активной сборки probe пока сохранено для дальнейшего QA.
+
+Ниже — история предыдущих проверок; актуальные границы и блокеры указаны выше.
 
 2026-11-17: Android Release rotation подтверждён на общем Android16/API36 emulator.
 Причина прежнего отказа — `screen_orientation=portrait` в Release host URL;

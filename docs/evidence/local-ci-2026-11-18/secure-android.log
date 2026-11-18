@@ -1,0 +1,114 @@
+$ bun scripts/check-android.mjs
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  3 67.0M    3 2195k    0     0  1866k      0  0:00:36  0:00:01  0:00:35 1865k  8 67.0M    8 5919k    0     0  2762k      0  0:00:24  0:00:02  0:00:22 2762k 11 67.0M   11 7999k    0     0  2543k      0  0:00:26  0:00:03  0:00:23 2542k 27 67.0M   27 18.0M    0     0  4484k      0  0:00:15  0:00:04  0:00:11 4483k 33 67.0M   33 22.3M    0     0  4461k      0  0:00:15  0:00:05  0:00:10 4586k 37 67.0M   37 25.4M    0     0  4252k      0  0:00:16  0:00:06  0:00:10 4818k 42 67.0M   42 28.7M    0     0  4127k      0  0:00:16  0:00:07  0:00:09 4714k 47 67.0M   47 32.0M    0     0  4015k      0  0:00:17  0:00:08  0:00:09 4934k 51 67.0M   51 34.7M    0     0  3895k      0  0:00:17  0:00:09  0:00:08 3409k 55 67.0M   55 37.0M    0     0  3750k      0  0:00:18  0:00:10  0:00:08 3020k 58 67.0M   58 39.3M    0     0  3597k      0  0:00:19  0:00:11  0:00:08 2805k 60 67.0M   60 40.4M    0     0  3407k      0  0:00:20  0:00:12  0:00:08 2385k 61 67.0M   61 41.3M    0     0  3228k      0  0:00:21  0:00:13  0:00:08 1925k 63 67.0M   63 42.4M    0     0  3076k      0  0:00:22  0:00:14  0:00:08 1575k 65 67.0M   65 43.5M    0     0  2948k      0  0:00:23  0:00:15  0:00:08 1325k 66 67.0M   66 44.7M    0     0  2838k      0  0:00:24  0:00:16  0:00:08 1118k 68 67.0M   68 45.9M    0     0  2748k      0  0:00:24  0:00:17  0:00:07 1144k 70 67.0M   70 47.1M    0     0  2660k      0  0:00:25  0:00:18  0:00:07 1174k 72 67.0M   72 48.4M    0     0  2592k      0  0:00:26  0:00:19  0:00:07 1231k 74 67.0M   74 49.6M    0     0  2527k      0  0:00:27  0:00:20  0:00:07 1251k 76 67.0M   76 50.9M    0     0  2469k      0  0:00:27  0:00:21  0:00:06 1281k 77 67.0M   77 52.2M    0     0  2417k      0  0:00:28  0:00:22  0:00:06 1281k 80 67.0M   80 53.7M    0     0  2374k      0  0:00:28  0:00:23  0:00:05 1340k 82 67.0M   82 55.3M    0     0  2347k      0  0:00:29  0:00:24  0:00:05 1404k 85 67.0M   85 57.2M    0     0  2330k      0  0:00:29  0:00:25  0:00:04 1539k 88 67.0M   88 59.0M    0     0  2314k      0  0:00:29  0:00:26  0:00:03 1655k 90 67.0M   90 60.4M    0     0  2283k      0  0:00:30  0:00:27  0:00:03 1687k 91 67.0M   91 61.6M    0     0  2243k      0  0:00:30  0:00:28  0:00:02 1632k 93 67.0M   93 62.4M    0     0  2195k      0  0:00:31  0:00:29  0:00:02 1460k 94 67.0M   94 63.3M    0     0  2151k      0  0:00:31  0:00:30  0:00:01 1252k 96 67.0M   96 64.4M    0     0  2118k      0  0:00:32  0:00:31  0:00:01 1097k 97 67.0M   97 65.5M    0     0  2089k      0  0:00:32  0:00:32 --:--:-- 1040k 99 67.0M   99 66.3M    0     0  2052k      0  0:00:33  0:00:33 --:--:--  974k100 67.0M  100 67.0M    0     0  2026k      0  0:00:33  0:00:33 --:--:--  987k
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+> Task :lynx-secure-store:preBuild UP-TO-DATE
+> Task :lynx-secure-store:preDebugBuild UP-TO-DATE
+> Task :lynx-secure-store:mergeDebugJniLibFolders
+> Task :lynx-secure-store:mergeDebugNativeLibs NO-SOURCE
+> Task :lynx-secure-store:stripDebugDebugSymbols NO-SOURCE
+> Task :lynx-secure-store:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lynx-secure-store:copyDebugJniLibsProjectAndLocalJars
+> Task :lynx-secure-store:generateDebugResValues
+> Task :lynx-secure-store:generateDebugResources
+> Task :lynx-secure-store:packageDebugResources
+> Task :lynx-secure-store:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :lynx-secure-store:mergeDebugShaders
+> Task :lynx-secure-store:compileDebugShaders NO-SOURCE
+> Task :lynx-secure-store:generateDebugAssets UP-TO-DATE
+> Task :lynx-secure-store:javaPreCompileDebug
+> Task :lynx-secure-store:parseDebugLocalResources
+> Task :lynx-secure-store:packageDebugAssets
+> Task :lynx-secure-store:prepareDebugArtProfile UP-TO-DATE
+> Task :lynx-secure-store:prepareLintJarForPublish UP-TO-DATE
+> Task :lynx-secure-store:preReleaseBuild UP-TO-DATE
+> Task :lynx-secure-store:mergeReleaseJniLibFolders
+> Task :lynx-secure-store:mergeReleaseNativeLibs NO-SOURCE
+> Task :lynx-secure-store:writeDebugAarMetadata
+> Task :lynx-secure-store:stripReleaseDebugSymbols NO-SOURCE
+> Task :lynx-secure-store:generateDebugRFile
+> Task :lynx-secure-store:copyReleaseJniLibsProjectAndLocalJars
+> Task :lynx-secure-store:generateReleaseResValues
+> Task :lynx-secure-store:processDebugManifest
+> Task :lynx-secure-store:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :lynx-secure-store:generateReleaseResources
+> Task :lynx-secure-store:packageReleaseResources
+> Task :lynx-secure-store:parseReleaseLocalResources
+> Task :lynx-secure-store:javaPreCompileRelease
+> Task :lynx-secure-store:mergeReleaseShaders
+> Task :lynx-secure-store:compileReleaseShaders NO-SOURCE
+> Task :lynx-secure-store:generateReleaseAssets UP-TO-DATE
+> Task :lynx-secure-store:generateReleaseRFile
+> Task :lynx-secure-store:packageReleaseAssets
+> Task :lynx-secure-store:prepareReleaseArtProfile UP-TO-DATE
+> Task :lynx-secure-store:writeReleaseAarMetadata
+> Task :lynx-secure-store:processReleaseManifest
+> Task :lynx-secure-store:mapReleaseSourceSetPaths
+> Task :lynx-secure-store:mergeReleaseResources
+> Task :lynx-secure-store:preDebugAndroidTestBuild UP-TO-DATE
+> Task :lynx-secure-store:generateDebugAndroidTestResValues
+> Task :lynx-secure-store:writeDebugLintModelMetadata
+> Task :lynx-secure-store:extractProguardFiles
+> Task :lynx-secure-store:preDebugUnitTestBuild UP-TO-DATE
+> Task :lynx-secure-store:preReleaseUnitTestBuild UP-TO-DATE
+> Task :lynx-secure-store:writeReleaseLintModelMetadata
+> Task :lynx-secure-store:verifyReleaseResources
+> Task :lynx-secure-store:kaptGenerateStubsReleaseKotlin
+> Task :lynx-secure-store:kaptGenerateStubsDebugKotlin
+
+> Task :lynx-secure-store:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-secure-store:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-secure-store:compileDebugKotlin
+> Task :lynx-secure-store:compileReleaseKotlin
+> Task :lynx-secure-store:extractDebugAnnotations
+> Task :lynx-secure-store:compileDebugJavaWithJavac NO-SOURCE
+> Task :lynx-secure-store:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :lynx-secure-store:mergeDebugConsumerProguardFiles
+> Task :lynx-secure-store:processDebugJavaRes
+> Task :lynx-secure-store:extractReleaseAnnotations
+> Task :lynx-secure-store:compileReleaseJavaWithJavac NO-SOURCE
+> Task :lynx-secure-store:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :lynx-secure-store:mergeReleaseConsumerProguardFiles
+> Task :lynx-secure-store:processReleaseJavaRes
+> Task :lynx-secure-store:bundleLibRuntimeToJarDebug
+> Task :lynx-secure-store:mergeDebugJavaResource
+> Task :lynx-secure-store:mergeReleaseJavaResource
+> Task :lynx-secure-store:generateDebugLintReportModel
+> Task :lynx-secure-store:syncDebugLibJars
+> Task :lynx-secure-store:bundleDebugAar
+> Task :lynx-secure-store:assembleDebug
+> Task :lynx-secure-store:syncReleaseLibJars
+> Task :lynx-secure-store:bundleReleaseAar
+> Task :lynx-secure-store:assembleRelease
+> Task :lynx-secure-store:bundleDebugLocalLintAar
+> Task :lynx-secure-store:createFullJarDebug
+> Task :lynx-secure-store:generateDebugAndroidTestLintModel
+> Task :lynx-secure-store:generateDebugUnitTestLintModel
+> Task :lynx-secure-store:generateReleaseLintReportModel
+> Task :lynx-secure-store:bundleReleaseLocalLintAar
+> Task :lynx-secure-store:bundleLibRuntimeToJarRelease
+> Task :lynx-secure-store:createFullJarRelease
+> Task :lynx-secure-store:generateReleaseUnitTestLintModel
+> Task :lynx-secure-store:lintAnalyzeDebugUnitTest
+> Task :lynx-secure-store:lintAnalyzeDebugAndroidTest
+> Task :lynx-secure-store:lintAnalyzeReleaseUnitTest
+> Task :lynx-secure-store:lintAnalyzeDebug
+> Task :lynx-secure-store:lintAnalyzeRelease
+> Task :lynx-secure-store:lintReportDebug
+> Task :lynx-secure-store:lintReportRelease
+> Task :lynx-secure-store:lintDebug
+> Task :lynx-secure-store:lintRelease
+
+BUILD SUCCESSFUL in 17s
+76 actionable tasks: 69 executed, 7 up-to-date

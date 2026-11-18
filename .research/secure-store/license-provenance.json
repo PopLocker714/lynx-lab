@@ -1,0 +1,98 @@
+{
+    "verified": "2026-11-18",
+    "scope": "License provenance for previously saved research code snapshots; not a runtime dependency list.",
+    "licenses": [
+        {
+            "file": "licenses/expo-MIT.txt",
+            "url": "https://raw.githubusercontent.com/expo/expo/5a97a546476fd0bea35227b60297ad472f065168/LICENSE",
+            "sha256": "fb3ca4a837f5779e83cef89b78253a8949cfb9429c340309f62d0465ec6610b4",
+            "bytes": 1106
+        },
+        {
+            "file": "licenses/react-native-keychain-MIT.txt",
+            "url": "https://raw.githubusercontent.com/oblador/react-native-keychain/ff42a81f957a82485f9f9574ad3ccef92f648c93/LICENSE",
+            "sha256": "000a66d1bc9e206b5963ba9370cd03350a4b26e205b5880e8e0f882a51951178",
+            "bytes": 1082,
+            "verbatimWhitespace": "Upstream LICENSE has trailing blank lines; preserved byte for byte, so git diff --check reports a new blank line at EOF."
+        }
+    ],
+    "sourceMatches": [
+        {
+            "file": "expo-secure-store.swift",
+            "originalRecordedUrl": "https://raw.githubusercontent.com/expo/expo/main/packages/expo-secure-store/ios/SecureStoreModule.swift",
+            "matchingUpstreamCommit": "5a97a546476fd0bea35227b60297ad472f065168",
+            "verifiedUrl": "https://raw.githubusercontent.com/expo/expo/5a97a546476fd0bea35227b60297ad472f065168/packages/expo-secure-store/ios/SecureStoreModule.swift",
+            "sha256": "5249d51f096a3d4ee3a536d855588c3bafde8e35408fb5d3c47c155faebe5dd7",
+            "relationship": "Byte-identical upstream revision verified now; original download commit was not recorded."
+        },
+        {
+            "file": "expo-aes.kt",
+            "originalRecordedUrl": "https://raw.githubusercontent.com/expo/expo/main/packages/expo-secure-store/android/src/main/java/expo/modules/securestore/encryptors/AESEncryptor.kt",
+            "matchingUpstreamCommit": "5a97a546476fd0bea35227b60297ad472f065168",
+            "verifiedUrl": "https://raw.githubusercontent.com/expo/expo/5a97a546476fd0bea35227b60297ad472f065168/packages/expo-secure-store/android/src/main/java/expo/modules/securestore/encryptors/AESEncryptor.kt",
+            "sha256": "40d0f6d800718537c85bda8be145ba02f7e4321d23bddad6417b901e13b94daa",
+            "relationship": "Byte-identical upstream revision verified now; original download commit was not recorded."
+        },
+        {
+            "file": "rn-keychain-package.json",
+            "originalRecordedUrl": "https://raw.githubusercontent.com/oblador/react-native-keychain/master/package.json",
+            "matchingUpstreamCommit": "ff42a81f957a82485f9f9574ad3ccef92f648c93",
+            "verifiedUrl": "https://raw.githubusercontent.com/oblador/react-native-keychain/ff42a81f957a82485f9f9574ad3ccef92f648c93/package.json",
+            "sha256": "fd9bd938c6a30af6ae71ccb0993a6b91e8ed219ec052d8fce0cc965cb6c4a2cb",
+            "relationship": "Byte-identical upstream revision verified now; original download commit was not recorded."
+        },
+        {
+            "file": "rn-keychain-module.kt",
+            "originalRecordedUrl": "https://raw.githubusercontent.com/oblador/react-native-keychain/master/android/src/main/java/com/oblador/keychain/KeychainModule.kt",
+            "matchingUpstreamCommit": "ff42a81f957a82485f9f9574ad3ccef92f648c93",
+            "verifiedUrl": "https://raw.githubusercontent.com/oblador/react-native-keychain/ff42a81f957a82485f9f9574ad3ccef92f648c93/android/src/main/java/com/oblador/keychain/KeychainModule.kt",
+            "sha256": "0366e13a0d4b63863f61fb28f3d974973304b94627315a6753cb3c77e382c2c7",
+            "relationship": "Byte-identical upstream revision verified now; original download commit was not recorded."
+        }
+    ],
+    "tamer4lynx": {
+        "package": "@tamer4lynx/tamer-secure-store",
+        "version": "0.0.3",
+        "declaredLicense": "MIT",
+        "declaredAuthor": "Nanofuxion",
+        "tarballUrl": "https://registry.npmjs.org/@tamer4lynx/tamer-secure-store/-/tamer-secure-store-0.0.3.tgz",
+        "tarballSha1": "82aef597800313f8c91be79ddf84e5e22e82bfee",
+        "tarballIntegrity": "sha512-LM9A0Ig+TrMWilgSTyYNtqpxWkp+BP5WAABxsEU3W7FglWro+E/GXp94uEm4KnGcgOqwe3pvyWokFi711ezDyA==",
+        "tarballSha256": "c3caaea1a159e552dae4e1fd81a347568acde51c6158e03b15fdfee512d52db2",
+        "tarballFileCount": 20,
+        "localSnapshotMatchedAllTarballFiles": true,
+        "checkedRepository": "https://github.com/tamer4lynx/tamer-secure-store",
+        "checkedCommits": [
+            "0fe9b68e4434c90510cc4f371f4a70d2b2d5389c",
+            "05cfec7d8492050ed90befd9ff9a1c90e4e93033",
+            "c051da53829810a1178c7925076d21affe1ad92d",
+            "169c7154dcc87da5c26f42cdb70e2d6865b195b7",
+            "6c9e317c6e0c70f62301c0b60612c9f2d5f5aad7"
+        ],
+        "licenseNoticeFound": false,
+        "copyrightNoticeFoundInSnapshot": false,
+        "finding": "No LICENSE, COPYING or NOTICE file in the published archive or any of the five non-truncated repository trees; metadata declares MIT but an original license/copyright notice was not verified.",
+        "publicExportPolicy": "Exclude tamer4lynx/package/ source snapshots until the upstream notice is verified; retain the original research copy privately and preserve this npm provenance."
+    },
+    "appleDocumentation": {
+        "publicExportPolicy": "Exclude the full documentation snapshots from public exports; preserve their original bytes in the private research archive, source URLs and hashes here and in sources.json, and Lynx Lab research conclusions.",
+        "rootMitLicenseApplies": false,
+        "snapshots": [
+            {
+                "file": "apple-keychain.md",
+                "originalSourceUrl": "https://developer.apple.com/documentation/security/keychain-services.md",
+                "sha256": "ab3f36fc07fd6ee58976ba4db5cb8dfe58a1b1f8d0d35255177685bfafbf0cb2"
+            },
+            {
+                "file": "apple-accessibility.md",
+                "originalSourceUrl": "https://developer.apple.com/documentation/security/ksecattraccessibleafterfirstunlockthisdeviceonly.md",
+                "sha256": "fb3b8740cec37d8027a1183fce658cfebb5aed5d9cacae34f12b9daf07e0aa04"
+            }
+        ]
+    },
+    "expectedPublicExportExclusions": [
+        ".research/secure-store/tamer4lynx/package/",
+        ".research/secure-store/apple-accessibility.md",
+        ".research/secure-store/apple-keychain.md"
+    ]
+}

@@ -1,0 +1,128 @@
+$ bun scripts/check-android.mjs
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0 67.0M    0  534k    0     0   550k      0  0:02:04 --:--:--  0:02:04  549k  1 67.0M    1 1358k    0     0   699k      0  0:01:38  0:00:01  0:01:37  699k  3 67.0M    3 2348k    0     0   798k      0  0:01:25  0:00:02  0:01:23  798k  5 67.0M    5 3766k    0     0   955k      0  0:01:11  0:00:03  0:01:08  955k  7 67.0M    7 5407k    0     0  1095k      0  0:01:02  0:00:04  0:00:58 1095k 10 67.0M   10 6985k    0     0  1176k      0  0:00:58  0:00:05  0:00:53 1298k 12 67.0M   12 8825k    0     0  1272k      0  0:00:53  0:00:06  0:00:47 1494k 16 67.0M   16 10.8M    0     0  1396k      0  0:00:49  0:00:07  0:00:42 1748k 19 67.0M   19 13.2M    0     0  1523k      0  0:00:45  0:00:08  0:00:37 1971k 23 67.0M   23 15.4M    0     0  1594k      0  0:00:43  0:00:09  0:00:34 2087k 26 67.0M   26 17.9M    0     0  1680k      0  0:00:40  0:00:10  0:00:30 2279k 30 67.0M   30 20.6M    0     0  1774k      0  0:00:38  0:00:11  0:00:27 2472k 35 67.0M   35 23.7M    0     0  1881k      0  0:00:36  0:00:12  0:00:24 2652k 40 67.0M   40 27.2M    0     0  2001k      0  0:00:34  0:00:13  0:00:21 2855k 45 67.0M   45 30.6M    0     0  2102k      0  0:00:32  0:00:14  0:00:18 3107k 50 67.0M   50 34.0M    0     0  2184k      0  0:00:31  0:00:15  0:00:16 3284k 55 67.0M   55 37.2M    0     0  2250k      0  0:00:30  0:00:16  0:00:14 3383k 58 67.0M   58 39.0M    0     0  2229k      0  0:00:30  0:00:17  0:00:13 3131k 60 67.0M   60 40.7M    0     0  2206k      0  0:00:31  0:00:18  0:00:13 2778k 64 67.0M   64 42.8M    0     0  2202k      0  0:00:31  0:00:19  0:00:12 2504k 67 67.0M   67 45.3M    0     0  2217k      0  0:00:30  0:00:20  0:00:10 2320k 71 67.0M   71 48.1M    0     0  2245k      0  0:00:30  0:00:21  0:00:09 2228k 76 67.0M   76 51.0M    0     0  2274k      0  0:00:30  0:00:22  0:00:08 2431k 79 67.0M   79 53.5M    0     0  2289k      0  0:00:29  0:00:23  0:00:06 2605k 84 67.0M   84 56.5M    0     0  2321k      0  0:00:29  0:00:24  0:00:05 2795k 89 67.0M   89 59.7M    0     0  2359k      0  0:00:29  0:00:25  0:00:04 2952k 94 67.0M   94 63.2M    0     0  2403k      0  0:00:28  0:00:26  0:00:02 3093k 99 67.0M   99 66.9M    0     0  2453k      0  0:00:27  0:00:27 --:--:-- 3288k100 67.0M  100 67.0M    0     0  2455k      0  0:00:27  0:00:27 --:--:-- 3449k
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+Warning: SDK processing. This version only understands SDK XML versions up to 3 but an SDK XML file of version 4 was encountered. This can happen if you use versions of Android Studio and the command-line tools that were released at different times.
+> Task :lynx-edge-to-edge:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :lynx-edge-to-edge:preBuild UP-TO-DATE
+> Task :lynx-edge-to-edge:preDebugBuild UP-TO-DATE
+> Task :lynx-edge-to-edge:generateDebugResValues
+> Task :lynx-edge-to-edge:generateDebugResources
+> Task :lynx-edge-to-edge:packageDebugResources
+> Task :lynx-edge-to-edge:preDebugUnitTestBuild UP-TO-DATE
+> Task :lynx-edge-to-edge:javaPreCompileDebug
+> Task :lynx-edge-to-edge:javaPreCompileDebugUnitTest
+> Task :lynx-edge-to-edge:mergeDebugJniLibFolders
+> Task :lynx-edge-to-edge:mergeDebugNativeLibs NO-SOURCE
+> Task :lynx-edge-to-edge:stripDebugDebugSymbols NO-SOURCE
+> Task :lynx-edge-to-edge:parseDebugLocalResources
+> Task :lynx-edge-to-edge:copyDebugJniLibsProjectAndLocalJars
+> Task :lynx-edge-to-edge:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :lynx-edge-to-edge:mergeDebugShaders
+> Task :lynx-edge-to-edge:compileDebugShaders NO-SOURCE
+> Task :lynx-edge-to-edge:generateDebugAssets UP-TO-DATE
+> Task :lynx-edge-to-edge:packageDebugAssets
+> Task :lynx-edge-to-edge:prepareDebugArtProfile UP-TO-DATE
+> Task :lynx-edge-to-edge:generateDebugRFile
+> Task :lynx-edge-to-edge:prepareLintJarForPublish UP-TO-DATE
+> Task :lynx-edge-to-edge:preReleaseBuild UP-TO-DATE
+> Task :lynx-edge-to-edge:mergeReleaseJniLibFolders
+> Task :lynx-edge-to-edge:generateDebugUnitTestStubRFile
+> Task :lynx-edge-to-edge:mergeReleaseNativeLibs NO-SOURCE
+> Task :lynx-edge-to-edge:writeDebugAarMetadata
+> Task :lynx-edge-to-edge:stripReleaseDebugSymbols NO-SOURCE
+> Task :lynx-edge-to-edge:copyReleaseJniLibsProjectAndLocalJars
+> Task :lynx-edge-to-edge:generateReleaseResValues
+> Task :lynx-edge-to-edge:extractDeepLinksForAarRelease UP-TO-DATE
+> Task :lynx-edge-to-edge:generateReleaseResources
+> Task :lynx-edge-to-edge:packageReleaseResources
+> Task :lynx-edge-to-edge:parseReleaseLocalResources
+> Task :lynx-edge-to-edge:javaPreCompileRelease
+> Task :lynx-edge-to-edge:mergeReleaseShaders
+> Task :lynx-edge-to-edge:compileReleaseShaders NO-SOURCE
+> Task :lynx-edge-to-edge:generateReleaseAssets UP-TO-DATE
+> Task :lynx-edge-to-edge:generateReleaseRFile
+> Task :lynx-edge-to-edge:packageReleaseAssets
+> Task :lynx-edge-to-edge:processDebugManifest
+> Task :lynx-edge-to-edge:prepareReleaseArtProfile UP-TO-DATE
+> Task :lynx-edge-to-edge:writeReleaseAarMetadata
+> Task :lynx-edge-to-edge:processReleaseManifest
+> Task :lynx-edge-to-edge:mapReleaseSourceSetPaths
+> Task :lynx-edge-to-edge:mergeReleaseResources
+> Task :lynx-edge-to-edge:preDebugAndroidTestBuild UP-TO-DATE
+> Task :lynx-edge-to-edge:generateDebugAndroidTestResValues
+> Task :lynx-edge-to-edge:writeDebugLintModelMetadata
+> Task :lynx-edge-to-edge:extractProguardFiles
+> Task :lynx-edge-to-edge:preReleaseUnitTestBuild UP-TO-DATE
+> Task :lynx-edge-to-edge:writeReleaseLintModelMetadata
+> Task :lynx-edge-to-edge:verifyReleaseResources
+> Task :lynx-edge-to-edge:kaptGenerateStubsDebugKotlin
+> Task :lynx-edge-to-edge:kaptGenerateStubsReleaseKotlin
+
+> Task :lynx-edge-to-edge:kaptDebugKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-edge-to-edge:kaptReleaseKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-edge-to-edge:compileDebugKotlin
+> Task :lynx-edge-to-edge:compileReleaseKotlin
+> Task :lynx-edge-to-edge:compileDebugJavaWithJavac NO-SOURCE
+> Task :lynx-edge-to-edge:processDebugJavaRes
+> Task :lynx-edge-to-edge:bundleLibRuntimeToJarDebug
+> Task :lynx-edge-to-edge:bundleLibCompileToJarDebug
+> Task :lynx-edge-to-edge:extractDebugAnnotations
+> Task :lynx-edge-to-edge:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :lynx-edge-to-edge:mergeDebugConsumerProguardFiles
+> Task :lynx-edge-to-edge:extractReleaseAnnotations
+> Task :lynx-edge-to-edge:compileReleaseJavaWithJavac NO-SOURCE
+> Task :lynx-edge-to-edge:mergeReleaseGeneratedProguardFiles UP-TO-DATE
+> Task :lynx-edge-to-edge:mergeReleaseConsumerProguardFiles
+> Task :lynx-edge-to-edge:processReleaseJavaRes
+> Task :lynx-edge-to-edge:createFullJarDebug
+> Task :lynx-edge-to-edge:mergeDebugJavaResource
+> Task :lynx-edge-to-edge:mergeReleaseJavaResource
+> Task :lynx-edge-to-edge:generateDebugLintReportModel
+> Task :lynx-edge-to-edge:syncDebugLibJars
+> Task :lynx-edge-to-edge:bundleDebugAar
+> Task :lynx-edge-to-edge:assembleDebug
+> Task :lynx-edge-to-edge:syncReleaseLibJars
+> Task :lynx-edge-to-edge:bundleReleaseAar
+> Task :lynx-edge-to-edge:assembleRelease
+> Task :lynx-edge-to-edge:bundleDebugLocalLintAar
+> Task :lynx-edge-to-edge:generateDebugAndroidTestLintModel
+> Task :lynx-edge-to-edge:generateDebugUnitTestLintModel
+> Task :lynx-edge-to-edge:generateReleaseLintReportModel
+> Task :lynx-edge-to-edge:bundleReleaseLocalLintAar
+> Task :lynx-edge-to-edge:bundleLibRuntimeToJarRelease
+> Task :lynx-edge-to-edge:createFullJarRelease
+> Task :lynx-edge-to-edge:generateReleaseUnitTestLintModel
+> Task :lynx-edge-to-edge:kaptGenerateStubsDebugUnitTestKotlin
+
+> Task :lynx-edge-to-edge:kaptDebugUnitTestKotlin
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+warning: Supported source version 'RELEASE_8' from annotation processor 'org.jetbrains.kotlin.kapt3.base.ProcessorWrapper' less than -source '11'
+
+> Task :lynx-edge-to-edge:compileDebugUnitTestKotlin
+> Task :lynx-edge-to-edge:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :lynx-edge-to-edge:processDebugUnitTestJavaRes
+> Task :lynx-edge-to-edge:testDebugUnitTest
+> Task :lynx-edge-to-edge:lintAnalyzeDebugAndroidTest
+> Task :lynx-edge-to-edge:lintAnalyzeDebugUnitTest
+> Task :lynx-edge-to-edge:lintAnalyzeReleaseUnitTest
+> Task :lynx-edge-to-edge:lintAnalyzeRelease
+> Task :lynx-edge-to-edge:lintReportRelease
+> Task :lynx-edge-to-edge:lintRelease
+> Task :lynx-edge-to-edge:lintAnalyzeDebug
+> Task :lynx-edge-to-edge:lintReportDebug
+> Task :lynx-edge-to-edge:lintDebug
+
+BUILD SUCCESSFUL in 14s
+84 actionable tasks: 77 executed, 7 up-to-date

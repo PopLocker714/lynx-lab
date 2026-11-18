@@ -52,7 +52,10 @@ Android создаёт отдельный Thread на вызов. Подключ
 адаптации и проверки; простой установки зависимости недостаточно доказать.
 
 Источник: [npm](https://www.npmjs.com/package/@tamer4lynx/tamer-secure-store).
-Локальная копия: `.research/secure-store/tamer4lynx/package/`.
+Оригинальный snapshot хранится в приватном архиве; из публичной истории он
+исключён до подтверждения оригинального license notice. Точные npm URL/hash —
+[provenance](../.research/secure-store/license-provenance.json);
+[правила публичных evidence](./public-evidence.ru.md).
 
 ### @sigx/lynx-secure-storage 0.35.0
 

@@ -1,0 +1,14 @@
+$ bun scripts/check-audit.mjs
+bun audit v1.4.0 (34cbb9a40)
+
+picomatch@4.0.7, 2.3.2
+  vitest > vite > tinyglobby > fdir > picomatch
+  @semantic-release/git > micromatch > picomatch
+  semantic-release > @semantic-release/commit-analyzer > micromatch > picomatch
+  high: picomatch vulnerable to ReDoS through single-branch repeated extglobs (<=4.0.7) - https://github.com/advisories/GHSA-fc5q-39xc-vjpf
+
+1 vulnerability (1 high)
+
+  bun audit fix           upgrade the vulnerable packages within their ranges
+  bun audit fix --latest  also cross major versions
+error: script "check:audit" exited with code 1
