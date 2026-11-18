@@ -6,6 +6,9 @@ Public history and QA evidence are sanitized derivatives. Physical-device serial
 numbers, UDIDs, CoreDevice identifiers, vendor device identifiers and crash-reporter
 identifiers have been replaced with explicit `REDACTED_*` labels. Hardware models,
 OS versions, observed results and documented limitations are retained.
+Personal signing metadata and the local home-directory prefix are also replaced
+with explicit labels. Individual author names and third-party copyright/license
+texts are not anonymized by these exact-value rules.
 
 The vendored research snapshot under `.research/secure-store/tamer4lynx/package/`
 is withheld from public history because its original copyright/license notice

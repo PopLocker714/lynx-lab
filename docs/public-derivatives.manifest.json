@@ -1,0 +1,733 @@
+{
+  "schemaVersion": 1,
+  "meaning": "Public files are sanitized derivatives, not original QA artifacts. candidateRefs describe the pre-publication sanitized snapshot, not subsequent public branch tips.",
+  "redactions": [
+    "REDACTED_IPHONE_UDID",
+    "REDACTED_PIXEL_SERIAL",
+    "REDACTED_COREDEVICE_ID",
+    "REDACTED_VENDOR_DEVICE_ID",
+    "REDACTED_CRASH_REPORTER_KEY",
+    "REDACTED_SIGNING_IDENTITY",
+    "REDACTED_DEVELOPMENT_TEAM",
+    "REDACTED_CERTIFICATE_FINGERPRINT",
+    "REDACTED_PROVISIONING_PROFILE_UUID",
+    "/Users/REDACTED_LOCAL_USER"
+  ],
+  "withheldPaths": [
+    ".research/secure-store/tamer4lynx/package/",
+    ".research/secure-store/apple-accessibility.md",
+    ".research/secure-store/apple-keychain.md"
+  ],
+  "files": [
+    {
+      "path": "STATE.md",
+      "blob": "0c95a48a55e62db9e0cad47a68f236c75611b8c3",
+      "sha256": "782924a8b120779204c72aa7fdae4e9c93b67b983ef7c0f0785c7baea88027f4"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "0fc3a2fea4ea0d50138a7f60a060787f2eb22256",
+      "sha256": "b5a210d72f976f9f666be4c95e27030b72c523103b5a2476ef4c319bb8f42d18"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "12362e5009efd443b5d048da78fcf176d6f144ae",
+      "sha256": "e50c98635a9b2f654faf968a16566bfbad4f1ce8747cb581fd83b0d63918c5c5"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "238e251c4ad9eb23e95c993e6153f742fe3617eb",
+      "sha256": "7d92a4a15e3a83d162536d4bfd3186cbb3140dfc683488169acebc8e9d2d6070"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "35fce51785096fb64f81da3241b57a864bd3d259",
+      "sha256": "87860d7dedc58bb2f1f15840f2e3ebe0d34c7c5696c79b0084d8f7e9f33523cf"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "3dc75e2ea15081bfd586636287f98ba86b348b9b",
+      "sha256": "32bd44f940de77eba5c96daac4fd9466875fad15f6a1438650b2d08270d1bbc4"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "4b30429e0e6989282fcb7035ea093e326d9461d0",
+      "sha256": "116c02769bda12f83a9fdad2be33a025d967b0ce1b0f32295c672a8adcd2ca13"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "4c8f610e4bbd213f8f1a137c4766498ef909e966",
+      "sha256": "3ec5288fce6103c9957ac6c69697b901f20ef0d7e98733a8282a0ed08e83ef82"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "595b2d1802354157613e7848d44f074ff5a4572e",
+      "sha256": "cb0941eb81c9863048130dd7734849a86fd67c5f7d15e784e50699f0a9445023"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "5e12486dffe3fac643ef2c3dc29f74055a3608df",
+      "sha256": "d8a05596cc3b7e099a72e9edd6d97d5d18444da3c49b2b6cf844345ae51649e3"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "6f49084e63bf5ca807a04741a6c1a223d1ce9ef0",
+      "sha256": "5af898e23ca6b425d8157396a6182ee640dfb0ef77e7667a90526a26b2636b2d"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "8919e9b135dd657097d95688d1148321be46a227",
+      "sha256": "66355253c6c026ee2b7bfba2b70ed43846a1a68cbb1f5e5a976bc48f01ce64b9"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "91201a1bc3869dacaa83d2ee3f70e8edb271ce05",
+      "sha256": "581cf4356f3a8b2d3070511d4b02362c703c7253c83764f02cedec549d03ce15"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "a965f9da8f41b838752b369b2a131dff711087a3",
+      "sha256": "ed97cc5fdc05b900c01ffb30430262e38af8433fde343dd133ee4954d25f164b"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "c35773c89d5d4a3d472888bd2cb24207fd74d50e",
+      "sha256": "2fba6e0a069d6a0b23b9902aaebde89e59451a79e8023d12338e4ddc39172480"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "cb21ac58e4be031e5443b52f754dec521186f3de",
+      "sha256": "4662dbecaca3772eb7f72ee17fdad9a2d7b8f1d3a8eb09274f887ebba7d16e02"
+    },
+    {
+      "path": "STATE.md",
+      "blob": "da9cd09735a4580630141d536b4bfe3a976d6168",
+      "sha256": "7c17e3904b6332a3c79e342ac69037d3c5ba1000a6d41732bd03de062ed8a698"
+    },
+    {
+      "path": "docs/evidence/android-2026-11-16/results.json",
+      "blob": "b33d7ed517d67c1a1feb622dd428a251039df2b0",
+      "sha256": "08e507c12479bab22c9b9dc24b63619b521e65ca7d2021692765936802764181"
+    },
+    {
+      "path": "docs/evidence/android-rotation-2026-11-17/cleanup.json",
+      "blob": "18f4c2fb8b40e6854016520ab58cfb88a247aedf",
+      "sha256": "9954d64e44dac7f91dbbd0542e79fe7b6d7fc83847126952664bdd7608240dbe"
+    },
+    {
+      "path": "docs/evidence/android-rotation-2026-11-17/results.json",
+      "blob": "8e906769a08e83d07b61dfe0b79c82bd9f0e6d2a",
+      "sha256": "43fb860ed573f090c5a26aa96ecc6f7f836a0bc2f752ef3e9e0a3dda3284f554"
+    },
+    {
+      "path": "docs/evidence/crypto-2026-11-16/Podfile.lock",
+      "blob": "88dbe03e71051b1ab46d651423c550499af0ac37",
+      "sha256": "23e0a5861d04e91d02440459c9b8f769b1dc9d88c279cd9d6f43dfdef64c95bc"
+    },
+    {
+      "path": "docs/evidence/crypto-2026-11-16/build-android-native.txt",
+      "blob": "2fc95e8a006e7b8b3d01f0a09004ba56ea6ebcf8",
+      "sha256": "7d187c1ce777e1286971d7950d6545d93c160ef723a7b7d1c9d69ad0935f9cae"
+    },
+    {
+      "path": "docs/evidence/crypto-2026-11-16/build-ios-debug.txt",
+      "blob": "4c7f16dca1d5f45a5d5a7e19248bef3044913e20",
+      "sha256": "80fab34d7cc815cb9b0df1298d92c27f52247a0396484aa7145140482379e286"
+    },
+    {
+      "path": "docs/evidence/crypto-2026-11-16/build-ios-release.txt",
+      "blob": "06af4bb536563acef0d30e57bd2e1bb51123c524",
+      "sha256": "eabdeb433e9c3365aca5daf7be55a258c76996a08206788b57eba61b2f2741ac"
+    },
+    {
+      "path": "docs/evidence/crypto-2026-11-16/cleanup.json",
+      "blob": "1cc7c539b0756943df59b972450f5e92a29d5eb8",
+      "sha256": "81d10ccb02786f6ec5c78964fe0a3a7eb4dd55951e29d1e431e684bda14fb1a1"
+    },
+    {
+      "path": "docs/evidence/crypto-2026-11-16/results.json",
+      "blob": "994c2a8f8377f388e7a70297ba3524dc4cc81c55",
+      "sha256": "2066401b113216f06eb90f2d74f9a4d1b33cb36a0f7952110c1d8e710c27a76f"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/Podfile.lock",
+      "blob": "e16e264e8a863e8c39bf3ad07905d06cefec4fa4",
+      "sha256": "51e1b7a3eea589fdf49eee084d8e5d1cb7504609a7855e8c4c894a903a78d28f"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/SparklingGoInHouse-2026-11-17-013702.ips",
+      "blob": "d0228b4d360e97c828850ac6e6b1844ce903b6f7",
+      "sha256": "f2a2189323bf3138ec9d144b692a5ad15d63fb16b80f804328e4fdc0faa1498c"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/android-geometry-run.json",
+      "blob": "a1cd69f5bf17b08695422f9c2ebaa93c720308d2",
+      "sha256": "9a871285869b2779ce30053a4b9dcd88728c4b40e107751c4e52345a0edadc3f"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/android-record-start.txt",
+      "blob": "fc8bfb0fce2e3352691980f220f9b0ab3138276f",
+      "sha256": "6e0fd608e464bb53def40d445952b7fd4e948f93e7216094ddddfee1c0a2b355"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/android-record-stop.txt",
+      "blob": "14f8d074186a5eda7d4654095ba20c79e8e0c577",
+      "sha256": "05ac44e7e876697b6ecba5ad185314ba252eca3fe0fa37e2a9d958c5ccb3828c"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/build-android-harness-signature-failure.txt",
+      "blob": "38569da028feda0249c5ce6f11be581db07022ff",
+      "sha256": "9c8b379b05eb9d4e38dc48a0951b4a9c1844eb2e3346bcf967dc31b2223e2b78"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/build-ios-debug-pipe-final.txt",
+      "blob": "ea05a2b9f959cde04200b45853cbf7cdec973d64",
+      "sha256": "6d20f2c14e12329af6289733621663c2d63c500ffea34844e7a5336f85d14b69"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/build-ios-debug-pipe-setup.txt",
+      "blob": "0c250c11b6f02d62fe2151381b3372c82cc31dea",
+      "sha256": "4ec55cbb50b04b7753c1e004c92c1d42e9d7f68fb8466288a1704d5833cbd163"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/build-ios-debug-raw.txt",
+      "blob": "1724f53b2136c774cf2fd97ba329636127343070",
+      "sha256": "763f6cf3b909ab12e2aebda289d6ef5a6b5a56225300e4fd78914f4da933cc20"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/build-ios-debug.txt",
+      "blob": "31d9c3a993e33fd4cd6606105713fe3a635e920f",
+      "sha256": "ab915457a141939873dd446f6376b0a469e1d08f7a95ebcbad0c59e555038f26"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/build-ios-release.txt",
+      "blob": "68544232c3e715f1cde3fbf46e2e61828e98e027",
+      "sha256": "93b0a096e35819686b2e57a0cefeea1197457e8b40819bd1b6cb9da4e122206d"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/cleanup.json",
+      "blob": "14fb487f95d37496b3e84520930cb66d0bfd8b4b",
+      "sha256": "c932b89675f013fed56f55e707bd676ac502d370436cbeeac1b5c2d8266fd675"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/commands.json",
+      "blob": "3eaa3de8399eaee9c5331adeb3942b1e46a83fa2",
+      "sha256": "4667722495757a758d51fd8cb822c9d3748704b6f63501f89d6b3b8d4148248e"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/crypto-consumer-bindings.json",
+      "blob": "7e401378c55cd64a3252e495c6863b1b45d5520a",
+      "sha256": "87256483a1f0a742c3240e627ae5026005e47ca31d4df0b04e91d342034dc684"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/edge-consumer-bindings.json",
+      "blob": "10fe594ca3b10e38731fa9a8d59a435e7d3d2863",
+      "sha256": "43a3dc2378d99aa71034954caeb2478312833515960498cc347eb94f8f65fdb2"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/installed-identity-final.json",
+      "blob": "de6e570bb99155837af9aea2f4fed4e80919615b",
+      "sha256": "7d016c14e88e2150e2aa0c93e21e7fae3ab38148e5eb95507af7647c88f12d0e"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/installed-identity.json",
+      "blob": "bea60821cbffb5980682ce55c2a52864866231ad",
+      "sha256": "a1ba93c5e84ef702d780ed834065d046cb5464ecb732c29e6953412087385660"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/ios-record-start.txt",
+      "blob": "d5ceb9679c3d0d7dae375226c35d95ba08168565",
+      "sha256": "4ae93d833c487af3280cb7781500ea7bc07ddcb9211ed34d542bfb8cd98022e1"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/ios-record-stop-retry.txt",
+      "blob": "41218c07caab9dd2c6aaeec6aeed3a548dcd798b",
+      "sha256": "11f9c926c0e7b059c55c45a8422353c72ef40f6f6ee47557dbd0fd0bc38cc62c"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/ios-recording-06f388353f1dac1c.ndjson",
+      "blob": "a90e0ccf1cc3e4bfad74d45dcb75a5021a793432",
+      "sha256": "f10fcfb832ddbf7a550b6c63b9a4e3f1085af510e54bae5c6e05aa86f44de620"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/ios-recording-b827459e890f58c7.ndjson",
+      "blob": "f7f7c430e57b247e9fba26907024893fe3ce0d20",
+      "sha256": "99b91d34c4c81369cc1af567b14ab32b764295954ce644e283fc6952f43d4e41"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/ios-recording-bd0abf7fe28b1dcb.ndjson",
+      "blob": "ec3d19291c4898698ccc6138b6a29bc702e09b33",
+      "sha256": "aa0c7d7b26662de3ea3be8caf2e6ce91bbec277f19902696a835f563c9545481"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/ios-recording-resource.json",
+      "blob": "8026b092babdc014e6736e9e39480667077fcf02",
+      "sha256": "296ad4705e109aa195649f19fd580fbfd2d6cc25b85b1a3451b15b761076f561"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/lifecycle-consumer-bindings.json",
+      "blob": "fde75b0efceb2983b5426f4fee3f3c527d192292",
+      "sha256": "95efa8988818e676b4eb034a402c932480f55e05d59efed8109579dcd64188d4"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/parent-cleanup.json",
+      "blob": "8950e547beeb315703c142215a1f46ca409db908",
+      "sha256": "858ced9668bc69147a174fff163523559808f881b67305ee92ca61916fe10887"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/results.json",
+      "blob": "1f7d97bb656eca0e597a65c2a16b382688a5a62e",
+      "sha256": "29178f17edda862e22ad76ae283359984a07c20cc1ba60e67762bfc49d8f2b6f"
+    },
+    {
+      "path": "docs/evidence/edge-2026-11-17/secure-consumer-bindings.json",
+      "blob": "748b737a3baf2260d65ff0012027f1875b7dfea2",
+      "sha256": "0b4d1ff0bbb8facb03258afcc28ae90202134e807034c936a039d73d9bddf781"
+    },
+    {
+      "path": "docs/evidence/ios-2026-11-16/Podfile.lock",
+      "blob": "aade0154003779f07d9d5d0534972c3a70870a38",
+      "sha256": "1991cd56b7ace3b4388b35bad2a8c30d3dd53c8eae0cd0145dbf0c8d24ea541e"
+    },
+    {
+      "path": "docs/evidence/ios-2026-11-16/build-debug.txt",
+      "blob": "2c6dfb197351d7fe4454eb53e9b03ec813c37280",
+      "sha256": "5035d773e1a4128cf83c6373a891fe8edf3462840e295657f4fea38092065011"
+    },
+    {
+      "path": "docs/evidence/ios-2026-11-16/build-release.txt",
+      "blob": "2c6dfb197351d7fe4454eb53e9b03ec813c37280",
+      "sha256": "5035d773e1a4128cf83c6373a891fe8edf3462840e295657f4fea38092065011"
+    },
+    {
+      "path": "docs/evidence/ios-2026-11-16/cleanup.json",
+      "blob": "fcd0a83e5b3f7ebcc0b854bca45e0c960bff619e",
+      "sha256": "3dd8ad902624d2943ecef4cbf7f214c9c9ccdd40feca6d35c11979e2e551f973"
+    },
+    {
+      "path": "docs/evidence/ios-rendering-2026-11-16/results.json",
+      "blob": "17a4731402e16559d7c6032f0c1d677772cfbdc2",
+      "sha256": "03833339452de40ae716de2f898cf0359f9fd1dc5992e975ceee078a1812fa14"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/Podfile.lock",
+      "blob": "4afd3318e79b00548d603fb0b499641d9a1a2e80",
+      "sha256": "7ad5a740f03f9b6128ca92812e23f57933d91d5cc54554e4ded54811a98ae89d"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/Podfile.postpatch.lock",
+      "blob": "78d99142e7f6f6e4a5a0aaaea56b185ee676b911",
+      "sha256": "8f483c8f06780ec80df75659bfd13b875a0815b6a26cb28edfa98e2ba9792ef1"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/android-artifacts.json",
+      "blob": "76e6234fa251751defd1d6336e85c4a598eea73e",
+      "sha256": "0d190b141d524bbea6c18c6414f108717ce9f9d301313fb8277bf2fa714af4a9"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/android-instrumentation-run.json",
+      "blob": "25670264a0c751d15536b9456ff86169ff00564c",
+      "sha256": "40f6ab273d2ccb37e45cec7952730c62217b74902226d9822bb3054d000670bc"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/binding-gate.txt",
+      "blob": "f8d6d78968f4a3cd71f5698b894b9ad395adbd7d",
+      "sha256": "79eb4a9707ac4e74ebea2b2afd016ed2f561ca2b8d48d88ee7791d145baeec21"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/build-android-interrupted-before-binding.txt",
+      "blob": "67f79c0b91db94c09c66553e7c589326575a3fe4",
+      "sha256": "7a0297d11de4a3bf4061c44ad02ccd9a66609af063ad682215df3cef5c26e56e"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/build-android.txt",
+      "blob": "e97e0d426f0ccbc25ceb179b1a90dc7760500d9e",
+      "sha256": "3b5e2f4ba3ca99a518cdc994557ab1c51c865f21aca905bc340c4f9d1a14e093"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/build-ios-debug.txt",
+      "blob": "51b5497662a4f6a9525cd7392cef5f6a48b146e7",
+      "sha256": "cd109822265fa184ecad29ee6dc8e4a45d5af76b5bff3f770baabbfd99cf1e59"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/build-ios-release.txt",
+      "blob": "bc363fce7f47e6da8c38799d90a4f4d8b4048000",
+      "sha256": "819577bd805452f97fdb6ed176f5a39affb6932180d4e0ac8dec8b944f2bc613"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/cleanup.json",
+      "blob": "47dd11fe50fa90deaa77efa01f7899a857a9ced8",
+      "sha256": "70b0e3d4604a31e64f2ad29a0a260bbced03228a327dd777a4ff1b2a19a5d185"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/commands.json",
+      "blob": "001335deab9c0634ad72f5c338b9065e227a0a79",
+      "sha256": "771b0b03e432a240f149149bbef64f128ce2397dff9df4619a26f0b13ef3f553"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/consumer-bindings.json",
+      "blob": "1787d351faee49b2446232b1c94c2d376f53de91",
+      "sha256": "47964e90520dee5312a9ca160805c6783cdd0e8257948174a736b942aa90f69e"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/crypto-consumer-bindings.json",
+      "blob": "6e098f659e7ea4e91db6c84c942cdd13e7ba4f1c",
+      "sha256": "720fbebc20659a47de2bea1b7579e01e9a0c7fbbe7e02f95e6e16b9aa0b610ae"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/existing-tests-after-patch-relink.txt",
+      "blob": "76eba5250d2ab65fc68831d65fd68e2c3b21653d",
+      "sha256": "b978ee3202a637d74f7cc1d4726de4274f6283fab299d3c2c1cbf6899feccefd"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/existing-tests-after-patch.txt",
+      "blob": "fdcb5de3a896399536dcb54c15c2b6a828f6f813",
+      "sha256": "d374d4dbe0c6460a5d14c77528c2e44cce6c4464a39dc917290d0195b3825325"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/existing-tests-final.txt",
+      "blob": "8d1457fae0861c8670aba36804acfcc565fd38b0",
+      "sha256": "fd0b9af074499f7c467a4104c60a56a72fa67f72b2c7aaa81184736924c98062"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/existing-tests.txt",
+      "blob": "5f416557f4e27c7d1e8ef4535ba685ddfbb682f6",
+      "sha256": "48c16d86e81907856678e22b9a10f3c93b6a88e28261fd942bf62d180b8c330f"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/installed-identity-final.json",
+      "blob": "d76545275877186572af90a4453fdbf588d8d5ec",
+      "sha256": "051f37304d377d8d1d5c2db006b98f0b51982e552b60f78bc3620d50114bc22d"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/installed-identity-postpatch.json",
+      "blob": "31f97ad3c21872899e311547dc24019e731b2d53",
+      "sha256": "425950d9eb54a49045044924106c12983b65e9c2d7e7041a84e9b65da2361ea4"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/installed-identity.json",
+      "blob": "27254091fe094b1125e8a4ff6a4d91090c61b2f6",
+      "sha256": "95469fd8ee4fd8fc4d01719af777257b07f67fa9179cde98c10f756b2a8734c5"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/patched-react-resolution.json",
+      "blob": "574e27425c264c5f12e8b1363c5c56a1f34e6bb3",
+      "sha256": "5e60340b5483fc59f3a65fd056bd665b0d9839519fa78b146663f2b5fce677f0"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/react-patch-delta.json",
+      "blob": "f61b7f201c4334cbc22a127d9735ac1a0233b262",
+      "sha256": "2bc9cc5381c75f8b54925de55ec89de63274f6c4ad0e11a6acb8e99e9031b2af"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/results.json",
+      "blob": "a74549fdee525debe7c4ab6da84b0f3fb7f696a5",
+      "sha256": "8d6c32e19e877a854a49da4fb1cbee0c6e6ba8dddbd1bc593f8e4c8befc8f7a4"
+    },
+    {
+      "path": "docs/evidence/lifecycle-2026-11-17/secure-consumer-bindings.json",
+      "blob": "8ac253eac7775770d219df1a25e60a0fe90c8c7c",
+      "sha256": "4e868ccf84b27ab23d881e6d5fd387c4f6aeef3a153746dea0d5d15247d436e1"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/android-results.json",
+      "blob": "6d45d7d925e785936ecf6169e15224df68f573ff",
+      "sha256": "e3674f786e3843d5cf5c0b798db0131b64ce33dc81fb3f5cc4fd5d3a890286a7"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/cleanup-fixtures.json",
+      "blob": "76157395bff69c898cb1579070c0fb235d45a87a",
+      "sha256": "08edf523249cc4d3d26576d75d777acfa68ce07ccb699a325b10742c9d97b800"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/crypto-full-js.log",
+      "blob": "6dcdea02bcedf2d0707a19e4fd9b2472d1b30908",
+      "sha256": "3e9eb50dd00c8db87e54ee2d63b0a7afd8886573ac8b3d6b5e228a2aafbf0bc3"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/crypto-ios.log",
+      "blob": "f985963c16c8aa4c1192cc9f189dd72413673c47",
+      "sha256": "e01a8978970e2c677b62d75601e1c8424ffaf81bb3883e11f8ed96751f9356d1"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-final-package.log",
+      "blob": "5bd33e80ef5f41457541fef7bb220aa49a26e5ac",
+      "sha256": "14fb60d5951fb82353d1b3f7bbb528dd4379df2793670ab79b0ae7e17c781c09"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-full-js.log",
+      "blob": "959857e745b9216d1ef1cd65eb50f166c04783b2",
+      "sha256": "252952ed5457daaa1b08240f7fc7a81da01a83a8fac839c1c5e13bc7246430a5"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture-accepted.log",
+      "blob": "fb532bfd8606b06e5cb49d161e088c4e2e2a43a1",
+      "sha256": "e501dd2dd83dd386513c1a40ff2a5cd06e4ab9869259f908913a2f093fa3e760"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture-current.log",
+      "blob": "f808063980300c7fab9732fe7a0489f6c7ba97e1",
+      "sha256": "271ba358708da3c26fdefe93106102b76400943eb15e94288858d2055551ad68"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture-final.log",
+      "blob": "e5d8474fcb37ad4012f7133f419df0ef17fc2a4a",
+      "sha256": "6618d3b911cc76a33e260e8e672d774c3ee6eacb6d835fa41321cad6a0788cdb"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture-pass.log",
+      "blob": "3fd644821fc6d23432cbd8e904a9ce89686fc9f8",
+      "sha256": "5d872369da9a226a3991480a1eaf0b89905e047cb7f79ccac5b2f2180b4936a4"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture-target.log",
+      "blob": "639b5196b7d7b82fd4dd93b2333971c6ca0d64c5",
+      "sha256": "b0ffb3c72127a09892803d4a6be9be112b7fde82ce9c989b4214f2c2831ecb30"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture.log",
+      "blob": "7007c7cb27adfc5c5761674eb8ea4b60c53bf8f7",
+      "sha256": "78f584b498b2ce85daa091c9b1a9e68dcc08dcd9b00643d0ac54df65f1fc4ed8"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture15-raw.log",
+      "blob": "124f90908ec19850a081c79c5e8cd8a8c0add8c7",
+      "sha256": "a4e48c73333b311a92058d465080f166a4b75914f577171f44514463f1441365"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios-fixture15.log",
+      "blob": "b35349bc5e37aa47fd2c45d67e9d3e35fbae7ded",
+      "sha256": "e3c2e3ea31cfb67fd3b488afcf5da1cc4d37aa4bf62a7320aeafa8ea63ab1b70"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/edge-ios.log",
+      "blob": "3bcd4dfce553df78a464711279ee3f0e48047f79",
+      "sha256": "c9d24d76b08bf4bd9d3431e2370ec346362d6b49addc9768773d1eae271c8aa6"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/lifecycle-final-package.log",
+      "blob": "26f1ab1bc801f2113a7a1ad72fa5ba98aa2f91a8",
+      "sha256": "37a6a089e46bce161108066405782c2c54a2bb820ec620552a44b0eac44b997b"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/lifecycle-full-js.log",
+      "blob": "27d307643dc8e0554cd9f5c29887de5c6db71a5d",
+      "sha256": "d6934a6e6810b3df443c78323c16647030e0af51409bc7f3741eb2c7bcd8695a"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/lifecycle-ios-fixture.log",
+      "blob": "2995c33bdd6f0d38c7ecb42de21676746f79a763",
+      "sha256": "22bbb7200c45ab8cff54940063899fd4ea305fa16f36399a91d23820f1aacfef"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/lifecycle-ios.log",
+      "blob": "4fe4c7b0ecbe6b691aa8abaf626a5afea6abbcad",
+      "sha256": "8c9143a31df022ebceae2a8a91b8e66a97bacd6166955b98b66ef2bd7555c0e7"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/lynx-crypto-standard-v1-0.log",
+      "blob": "3f81df3e872e3d3352faff8784ed1f754d67d6d2",
+      "sha256": "0c73bc065ca405b272d9d6afaaa54e04945f78204234db7ae807d6e699a79a35"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/secure-final-check.log",
+      "blob": "208fd1ee1a9c8bd534b69a858157f58246228690",
+      "sha256": "94bd53c7659a797175c8624defc4bc1c0c8688f37c70d057c721b312e0846c8a"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/secure-ios.log",
+      "blob": "f985963c16c8aa4c1192cc9f189dd72413673c47",
+      "sha256": "e01a8978970e2c677b62d75601e1c8424ffaf81bb3883e11f8ed96751f9356d1"
+    },
+    {
+      "path": "docs/evidence/local-ci-2026-11-18/secure-store-full-js.log",
+      "blob": "110d211c7318a4cd2ab8d9fcb974833a06790ff6",
+      "sha256": "328c5e158e141d0cade0b7cd3c85676cdff14ee73f2954250fba232447f08da6"
+    },
+    {
+      "path": "docs/evidence/probe-quality-2026-11-17/test.log",
+      "blob": "2c155241d1441ed029f2c53c11db04db9348aa0d",
+      "sha256": "a5eba2424e22c263e4cd93c90d80b3e40425ad1ddcfd01fb59bfdce851fac99d"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-app-lifecycle-standard-v1-release-final-package-check.log",
+      "blob": "4a44003297d4b7dc485431b7ae7bbe3c9fda5306",
+      "sha256": "c780aed6bb072e4e533b7b692e1b6fbd4ce8075beaa3e98979e85f1dca43ecc3"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-app-lifecycle-standard-v1-release-inspect-check.log",
+      "blob": "663e2c8c249b18df5f588b55d2106b1df33fc7b2",
+      "sha256": "90e3d143a9eecbbffd17a92bd8a7e6f42fe6fdd29397ab7abbc2230c5339e2d0"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-app-lifecycle-standard-v1-release-tooling-checks.json",
+      "blob": "1a90da0ea917da1b3df0be64ddde740a69a33b47",
+      "sha256": "4c8945df719fc96b369a00248d2cf9278d0aba1900f54a3aabc631fffa0e5f41"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-crypto-standard-v1-release-final-package-check.log",
+      "blob": "773342c7789713847d027e9fd90531030d414f4d",
+      "sha256": "ef16d4ca376967593468ca7dfa9fb416b00da92c561b603a4e8010bb8ac66e76"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-crypto-standard-v1-release-inspect-check.log",
+      "blob": "326386587a3d3bba4f0418e7f47f5e4b2f21f02d",
+      "sha256": "d3a3c612033813c7d198e0f0b6be4cf026c4847f47e3d9f9613410f6fb6aaf11"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-crypto-standard-v1-release-tooling-checks.json",
+      "blob": "f099b604d4385e6fcbb0f8f7b732d4446ddfacd1",
+      "sha256": "706b2103bf3e503134015104608cf740a6c79a29a899a54c8bfa1f24c4946476"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-edge-to-edge-ios-contract-release-final-package-check.log",
+      "blob": "429ecaff788a0c224c27b2254ad38f5e5f16d548",
+      "sha256": "cd6a1162c9e56c01e87ad5f5e4342c9e3550b7434f18d770b43120cda28882e4"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-edge-to-edge-ios-contract-release-inspect-check.log",
+      "blob": "1789f969353f193958a8ebd7aad966ae721d1c94",
+      "sha256": "5b610f8d749802940ef167a7afbb414239a0bb67aac4c225bdadd3a200b71ff8"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/lynx-edge-to-edge-ios-contract-release-tooling-checks.json",
+      "blob": "5e5f7d9ac44ef25d2ecf99716f9534ddb3c22ff6",
+      "sha256": "6db3d54c06bf50cccb53feb6b3e9c3fcb580c5a152aedfb3cb28bc8811fbc47f"
+    },
+    {
+      "path": "docs/evidence/release-tooling-2026-11-17/results.json",
+      "blob": "0c0ee6097d7791774ccf8e17211414b5964c5cf8",
+      "sha256": "b5989a742714ec4bcc448d8c9bdca5483d07e6edfa16acf9a18b06f8dac225aa"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/Podfile.final.lock",
+      "blob": "fccd5bed6e7cd7d3d838e4d7ef6c6d3992de3d91",
+      "sha256": "740d31eccd8ab9cb43ff6d7389a8412e39ca7f97db458c76701133010e509a1e"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/android-binding-model-final.json",
+      "blob": "b90c93e465a8117f333d5bcdffe90e61c5c35732",
+      "sha256": "bb3fe48480bf802b88b036fe32b4984b3ac1de0acc9e75f9cf18ab11920030eb"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/android-device-direct-gate.txt",
+      "blob": "255dae1d7f25077603307393fe2a137d1fd9286d",
+      "sha256": "431ca2eb9600fa0da15d1c20fca8d08865d4969a37b0751f12dc319922cab98b"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/android-device-direct-receipt.json",
+      "blob": "d8ce45c0cebb7780c3f0eb8aa8a1c02926c606d3",
+      "sha256": "c9dd957079af2ca8994eea8ef3d3f1b53697705a68ec85d88ce3b7f0cd038ed4"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/android-instrumentation-signatures.json",
+      "blob": "7784f668b784bd351b76214ca76788aa4ae78da9",
+      "sha256": "402ba8901240da111c3c16ab6660de581ec9dd3f721141106a3957974cf0cbd0"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/build-android.txt",
+      "blob": "07225934f4e0f2caed9b4fc1dbb623d78571b6e9",
+      "sha256": "d369627381b5992ba13f4b4f7c8a71f2b75420343bcc7dda7ec68ae5d3b5c946"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/build-ios-debug.txt",
+      "blob": "e81f8d72b88911d87e2b0b85e8afdbc535a0abca",
+      "sha256": "320829cb379872fba0055aa6719901780299637ba18f1f958c06e9cdd7e8d336"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/build-ios-release.txt",
+      "blob": "000e484c370bbb7904dc2557f43e8c4c5cf16a23",
+      "sha256": "2dfb66c245f98aaaf0bbd6e5c4d8e299a5902db308361ce56903a48f97743907"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/cleanup.json",
+      "blob": "4af3faa84aaaa2383be0941e5e948e65952e99cc",
+      "sha256": "4ff99ec06c1a848ad5a24708df023338a74e9fc5e8df14e6fc54e5d32a7ec26a"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/commands.json",
+      "blob": "ab0c7ac168314aceabcb63b23ba80e0d51404ce1",
+      "sha256": "29b64b6600a68ee868401605eca097fe2d5e4a36795c8469e5844af515d46341"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/consumer-bindings.json",
+      "blob": "d6e509b0c67245a2d45ad77830c78abec8eff615",
+      "sha256": "6fa21882da062da0cf81b3637bc6613b92b897bc19cbbda281c1383f9f634dd0"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/crypto-Debug-iphoneos-native-dependencies.txt",
+      "blob": "9289bba1b01e82e65a555ba9a5fc59a78e00757b",
+      "sha256": "adec8eb7146dc9c60f0db7f33644a0d1a6248ef71d016a2fdb5724e7a1454b21"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/crypto-Release-iphoneos-native-dependencies.txt",
+      "blob": "0705272e6604da515997cacb00797b73775e9f4c",
+      "sha256": "50877f4e9a1b8148df73b6bc3c6f091aff94cae9c5d0da335eb82cc2dc3f6cfd"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/crypto-prior-native-binding.json",
+      "blob": "a7a21648806c9581000f189cc0a3992543177627",
+      "sha256": "9fda943ee68fc5d7cfd905b7fd4844c9f4b13cfbca3a3d6217a571ddd088f9a8"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/instrumentation-direct-run.json",
+      "blob": "9279aec57bd9a4b99de18949305f7c295b91b931",
+      "sha256": "d2f0a2da268c3b6e1982443d36a0b8914c2a2d15dfb5cede3ca2d125dd629f36"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/instrumentation-install-policy.json",
+      "blob": "f007174c7e9d912bd0beddf196f984fa5b0ae201",
+      "sha256": "39d31b3c11febc5c1c83eeedc8630206423bfe8a09dfcb6ecc2a845d0e1183b0"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/instrumentation-release-run.json",
+      "blob": "378e62e303badcaf2a6183f32b16b90f27f71871",
+      "sha256": "724077d6a66d435dc3839e3ebb31a55d23809934f6f4d5dc5340d7ab0c904bbf"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/ios-bindings-filter-checked.json",
+      "blob": "620085ab1b3fc8c9ee5186587b9d3f866bdcc820",
+      "sha256": "90cf46b17c18c53e3aa9509e256b8ed88a421949cd2c59860078b645f58b2506"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/ios-bindings-final35.json",
+      "blob": "8012c3413796faa6adc0af1d3997df066b6b5a0e",
+      "sha256": "48366693ce44643c54ede0d0f07878632e542bacb7073650818c6e0222f328b1"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/ios-compiled-inputs.json",
+      "blob": "a32175f79af64d5be3b6716ad832125cf5424ce6",
+      "sha256": "b83c77019b6f2c46ae4b7146eb80f69bf47aa76e5a4a03f9138608b3be9b6966"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/ios-processes-before.json",
+      "blob": "926c25f71fceaf63cbf110d605f4dca364f28ea1",
+      "sha256": "4b6fcbe420cfc3f4cf959682550e2795b1a83c9bf0e59e2d2e25324cceaea006"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/results.json",
+      "blob": "96d7b051723c62e146e2dd4665636eb445d42d7f",
+      "sha256": "a0de6a1761f801c7068fae69451687b3c3cd4cdfd907eb53acdecf2fb97a8b41"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/secure-Debug-iphoneos-native-dependencies.txt",
+      "blob": "25e875f0e4afba5873a1c3ae0ed77eee9ba0ea23",
+      "sha256": "11a089ccd8296eba779a3f6ef6f9f7ff795fe112a21ee36d2a8120185a9890a0"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/secure-Release-iphoneos-native-dependencies.txt",
+      "blob": "f6bdb634b9ee936d3e5491a3b804daeb468e3fc5",
+      "sha256": "8ba947686ba7e44a0c0226b2f70673bcf6795050ffe92a9b4738c578f5d0f981"
+    },
+    {
+      "path": "docs/evidence/secure-store-2026-11-17/utp-failure.txt",
+      "blob": "18035f9736f3c9d169fd6049ab11589c39bde647",
+      "sha256": "07dd390728fc7ddeea914bc233c6f6e4e76353eb60e598a4cef0f27908e37d5a"
+    }
+  ],
+  "candidateRefs": {
+    "refs/heads/docs/package-standards": "057e0526a43eaa6010b3f4c4f205743d516acb4c",
+    "refs/heads/docs/secure-store": "6ab222d3aa308488eab4d2da99a175355b0c6afc",
+    "refs/heads/main": "735813d82736390a46f05e6c9b42db7e34298c59"
+  }
+}
