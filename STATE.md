@@ -39,7 +39,7 @@ build intermediates и неудачных сборок ([receipt](docs/evidence/
 Ниже — подробности проверенного CI и исходного дефекта до исправления host.
 
 2026-11-18: все четыре репозитория пакетов публичны; исходники пакетов имеют MIT,
-лицензии заимствованного кода сохранены отдельно. Текущие task-ветки:
+лицензии заимствованного кода сохранены отдельно. Проверенные commits:
 
 | Пакет | Commit | Локальные JS / Android / iOS | Remote JS / Android / iOS | Audit |
 |---|---|---|---|---|
@@ -47,6 +47,10 @@ build intermediates и неудачных сборок ([receipt](docs/evidence/
 | app-lifecycle | `96e9ed2` | PASS | PASS | FAIL |
 | edge-to-edge | `b9a27f9` | PASS | PASS | FAIL |
 | secure-store | `0ac0db7` | PASS | PASS | PASS |
+
+После проверки edge отправлен docs-only commit `e29faad`: уточнён host contract
+и ограничения simulator QA в EN/RU, runtime прежний. Его повторный CI запущен;
+таблица выше относится к проверенному `b9a27f9`.
 
 У crypto/lifecycle/edge общий блокер audit — `GHSA-fc5q-39xc-vjpf` в picomatch;
 на дату проверки исправленной опубликованной версии нет, новое исключение не добавлено.

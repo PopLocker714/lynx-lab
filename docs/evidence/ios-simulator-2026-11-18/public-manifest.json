@@ -84,14 +84,19 @@
       "sha256": "49fe24ef85e1179f4c50011816ddf0b17a69cc9509d30c1c13b2fbb665ea3cf4"
     },
     {
+      "path": "host-fix.patch",
+      "bytes": 10131,
+      "sha256": "6df6621142fe58ed7072cf394df620b628722972c6d1074a34ef03daf430ef07"
+    },
+    {
       "path": "host-source-checks.json",
       "bytes": 1951,
       "sha256": "2642027b501c8f40344f49599ff9bbda169ba07cfb12081b74b77c3842ace47a"
     },
     {
       "path": "results.json",
-      "bytes": 3939,
-      "sha256": "8555d1a573d2d670d767ee5a37b318e1c9a7e56a3cb6c83c5baf27ea29dfe5aa"
+      "bytes": 4355,
+      "sha256": "8542b9040abbb150c5c0f2877411ae8bfe115b1766ed5a3c4173792a09e4d26a"
     },
     {
       "path": "snapshots/crypto.json",

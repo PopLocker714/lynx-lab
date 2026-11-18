@@ -100,5 +100,11 @@
     "exactReplacementRules": 10,
     "inventory": "Frozen publication-v2 redactions inventory (private)",
     "images": "Twelve selected app-content frames only; no Springboard or contact sheets."
+  },
+  "sourcePatch": {
+    "file": "host-fix.patch",
+    "appliesToProbeCommit": "9874e6ce018dd46562d1c089f046533d954f5988",
+    "targetProbeCommit": "a11a4dd038aa87b1506d62121c94d73c63096e5c",
+    "scope": "Three Swift host files only; exact source diff sanitized with the frozen ten-rule inventory. Apply-check passed against baseline. Earlier source-checks and app-manifest records retain their original scope."
   }
 }

@@ -1,0 +1,240 @@
+diff --git a/ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift b/ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift
+index e52cf75..9ee7dd3 100644
+--- a/ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift
++++ b/ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift
+@@ -86,7 +86,8 @@ enum DebugDevURLSupport {
+     }
+ }
+ 
+-final class DevURLLoadFailedDelegate: NSObject, SPKContainerLifecycleProtocol {
++@MainActor
++final class DevURLLoadFailedDelegate: NSObject, @MainActor SPKContainerLifecycleProtocol {
+     private weak var navigationController: UINavigationController?
+     private let frameProvider: () -> CGRect
+     private var isPrompting = false
+@@ -115,7 +116,14 @@ final class DevURLLoadFailedDelegate: NSObject, SPKContainerLifecycleProtocol {
+             self.isPrompting = false
+             let nextScheme = DebugDevURLSupport.mainScheme(withSource: updatedURL)
+             let nextContext = DebugDevURLSupport.makeContext(delegate: self)
+-            let nextVC = SPKRouter.create(withURL: nextScheme, context: nextContext, frame: self.frameProvider())
++            let nextVC = FullWindowSparklingViewController(
++                scheme: nextScheme,
++                context: nextContext,
++                frame: self.frameProvider()
++            )
++            for case let controller as FullWindowSparklingViewController in navigationController.viewControllers {
++                controller.dispose()
++            }
+             navigationController.setViewControllers([nextVC], animated: false)
+         }
+         #endif
+diff --git a/ios/SparklingGo/SparklingGo/FullWindowSparklingViewController.swift b/ios/SparklingGo/SparklingGo/FullWindowSparklingViewController.swift
+new file mode 100644
+index 0000000..c104713
+--- /dev/null
++++ b/ios/SparklingGo/SparklingGo/FullWindowSparklingViewController.swift
+@@ -0,0 +1,163 @@
++import Sparkling
++import UIKit
++
++/// This probe hosts one full-window Lynx view. Embedded views need their own geometry contract.
++/// Sparkling delivers these callbacks on main; its delegate protocol lacks actor annotations.
++@MainActor
++final class FullWindowSparklingViewController: UIViewController, @MainActor SPKContainerLifecycleProtocol {
++    private let scheme: String
++    private let spkContext: SPKContext
++    private let initialFrame: CGRect
++    private let container = SPKContainerView()
++    private var keyboardProbe: NativeKeyboardProbe?
++    private var hasStartedLoading = false
++    private var hasAppeared = false
++    private var contentAppeared = false
++    private var isDisposed = false
++    private var isApplicationActive = UIApplication.shared.applicationState == .active
++
++    init(scheme: String, context: SPKContext, frame: CGRect) {
++        self.scheme = scheme
++        self.spkContext = context
++        self.initialFrame = frame
++        super.init(nibName: nil, bundle: nil)
++    }
++
++    required init?(coder: NSCoder) {
++        fatalError("Use init(scheme:context:frame:)")
++    }
++
++    override var prefersStatusBarHidden: Bool { true }
++
++    override func loadView() {
++        view = UIView(frame: initialFrame)
++    }
++
++    override func viewDidLoad() {
++        super.viewDidLoad()
++        view.backgroundColor = .black
++        container.frame = view.bounds
++        container.autoresizingMask = [.flexibleWidth, .flexibleHeight]
++        container.sparkContentMode = .SPKContainerViewContentModeFitSize
++        container.containerLifecycleDelegate = self
++        view.addSubview(container)
++        keyboardProbe = NativeKeyboardProbe.installIfRequested(in: self)
++
++        let center = NotificationCenter.default
++        center.addObserver(self, selector: #selector(applicationDidBecomeActive),
++                           name: UIApplication.didBecomeActiveNotification, object: nil)
++        center.addObserver(self, selector: #selector(applicationWillResignActive),
++                           name: UIApplication.willResignActiveNotification, object: nil)
++    }
++
++    override func viewDidLayoutSubviews() {
++        super.viewDidLayoutSubviews()
++        loadAfterLayoutIfReady()
++    }
++
++    private func loadAfterLayoutIfReady() {
++        guard !hasStartedLoading, !isDisposed,
++              let window = view.window, !window.isHidden,
++              !view.bounds.isEmpty else {
++            return
++        }
++
++        // SPKViewController starts loading in viewDidLoad, before window attachment.
++        // At this boundary the full-window geometry exists, so the package's load hook
++        // can seed the owning LynxView's globalProps before its first MTS render.
++        hasStartedLoading = true
++        container.frame = view.bounds
++        container.layoutIfNeeded()
++        container.load(withURL: scheme, spkContext)
++    }
++
++    override func viewDidAppear(_ animated: Bool) {
++        super.viewDidAppear(animated)
++        hasAppeared = true
++        navigationController?.setNavigationBarHidden(true, animated: false)
++        view.layoutIfNeeded()
++        loadAfterLayoutIfReady()
++        updateContentVisibility()
++    }
++
++    override func viewDidDisappear(_ animated: Bool) {
++        super.viewDidDisappear(animated)
++        hasAppeared = false
++        updateContentVisibility()
++        if isMovingFromParent || isBeingDismissed || navigationController?.isBeingDismissed == true {
++            dispose()
++        }
++    }
++
++    @objc private func applicationDidBecomeActive() {
++        isApplicationActive = true
++        updateContentVisibility()
++    }
++
++    @objc private func applicationWillResignActive() {
++        isApplicationActive = false
++        setContentVisible(false)
++    }
++
++    private func updateContentVisibility() {
++        let ready = container.kitView?.loadState == .SPKLoadStateSucceed
++        setContentVisible(hasAppeared && ready && !isDisposed && isApplicationActive)
++    }
++
++    private func setContentVisible(_ visible: Bool) {
++        guard contentAppeared != visible else { return }
++        contentAppeared = visible
++        container.hybridAppear = visible
++        container.hybridInBackground = !visible
++        if visible {
++            container.handleViewDidAppear()
++        } else {
++            container.handleViewDidDisappear()
++        }
++    }
++
++    func dispose() {
++        guard !isDisposed else { return }
++        isDisposed = true
++        setContentVisible(false)
++        NotificationCenter.default.removeObserver(self)
++        keyboardProbe?.detach()
++        keyboardProbe = nil
++        if hasStartedLoading {
++            container.kitView?.onVCWillDestory?()
++        }
++    }
++
++    deinit {
++        NotificationCenter.default.removeObserver(self)
++    }
++
++    func container(_ container: SPKContainerProtocol, didFinishLoadWithURL url: URL?) {
++        updateContentVisibility()
++        spkContext.containerLifecycleDelegate?.container?(container, didFinishLoadWithURL: url)
++    }
++
++    func container(_ container: SPKContainerProtocol, didLoadFailedWithURL url: URL?, error: Error?) {
++        spkContext.containerLifecycleDelegate?.container?(container, didLoadFailedWithURL: url, error: error)
++    }
++
++    func containerWillStartLoading(_ container: SPKContainerProtocol) {
++        spkContext.containerLifecycleDelegate?.containerWillStartLoading?(container)
++    }
++
++    func containerDidStartLoading(_ container: SPKContainerProtocol) {
++        spkContext.containerLifecycleDelegate?.containerDidStartLoading?(container)
++    }
++
++    func containerDidConstructJSRuntime(_ container: SPKContainerProtocol) {
++        spkContext.containerLifecycleDelegate?.containerDidConstructJSRuntime?(container)
++    }
++
++    func containerDidFirstScreen(_ container: SPKContainerProtocol) {
++        spkContext.containerLifecycleDelegate?.containerDidFirstScreen?(container)
++    }
++
++    func container(_ container: SPKContainerProtocol, didReceivePerformance perfDict: [AnyHashable: Any]?) {
++        spkContext.containerLifecycleDelegate?.container?(container, didReceivePerformance: perfDict)
++    }
++}
+diff --git a/ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift b/ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift
+index 0a55f9f..79729de 100644
+--- a/ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift
++++ b/ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift
+@@ -37,7 +37,7 @@ struct SPKSwiftVC: UIViewControllerRepresentable {
+         let url = DebugDevURLSupport.mainScheme()
+         let spkContext = DebugDevURLSupport.makeContext()
+         let resolved = Self.resolvedFrame(frame)
+-        let vc = SPKRouter.create(withURL: url, context: spkContext, frame: resolved)
++        let vc = FullWindowSparklingViewController(scheme: url, context: spkContext, frame: resolved)
+         let naviVC = UINavigationController(rootViewController: vc)
+         naviVC.isNavigationBarHidden = true
+         context.coordinator.loadFailedDelegate = DevURLLoadFailedDelegate(
+@@ -45,7 +45,6 @@ struct SPKSwiftVC: UIViewControllerRepresentable {
+             frameProvider: { Self.resolvedFrame(self.frame) }
+         )
+         spkContext.containerLifecycleDelegate = context.coordinator.loadFailedDelegate
+-        context.coordinator.keyboardProbe = NativeKeyboardProbe.installIfRequested(in: vc)
+         #if DEBUG
+         if ProcessInfo.processInfo.arguments.contains("--edge-geometry-probe") {
+             EdgeGeometryProbe.attach(to: naviVC.view) { view in
+@@ -65,8 +64,9 @@ struct SPKSwiftVC: UIViewControllerRepresentable {
+     }
+ 
+     static func dismantleUIViewController(_ uiViewController: UINavigationController, coordinator: Coordinator) {
+-        coordinator.keyboardProbe?.detach()
+-        coordinator.keyboardProbe = nil
++        for case let controller as FullWindowSparklingViewController in uiViewController.viewControllers {
++            controller.dispose()
++        }
+     }
+ 
+     private static func resolvedFrame(_ frame: CGRect) -> CGRect {
+@@ -78,7 +78,6 @@ struct SPKSwiftVC: UIViewControllerRepresentable {
+ 
+     final class Coordinator {
+         var loadFailedDelegate: DevURLLoadFailedDelegate?
+-        var keyboardProbe: NativeKeyboardProbe?
+     }
+ }
+ 
