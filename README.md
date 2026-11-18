@@ -1,5 +1,10 @@
 # lynx-lab
 
+> Эта ветка сохраняет исторический baseline. Актуальные проверки и стандарт —
+> [STATE.md в docs/package-standards](https://github.com/PopLocker714/lynx-lab/blob/docs/package-standards/STATE.md).
+> История очищена; [правила evidence](docs/public-evidence.ru.md), [MIT](LICENSE).
+> Прежние issues сохранены в приватном архиве; их публичный перенос ещё не выполнен.
+
 Рабочая база знаний по экосистеме **Lynx** (ByteDance/TikTok) и по нативным пакетам,
 которые мы для неё пишем.
 
