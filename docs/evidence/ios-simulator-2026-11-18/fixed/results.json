@@ -1,0 +1,467 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-18",
+  "sourceCommitFromParent": "a11a4dd038aa87b1506d62121c94d73c63096e5c",
+  "target": "iPhone 18 Pro iOS 27.0 Simulator, Release SparklingGo; no native keyboard overlay launch flag",
+  "status": "PASS",
+  "scope": "Bounded first-captured-content-frame check: all three supplied relaunch recordings show correct initial visible safe-area layout and no subsequent baseline-like inset jump within their recorded tails. No physical-device, unseen-frame, universal-host or exact physical-presentation claim.",
+  "acceptance": "After excluding pre-relaunch app content and Springboard/launch animation, first discernible newly launched app content is inset correctly and remains so in all subsequent captured frames.",
+  "method": "All original frames decoded with passthrough timestamps and demux timebase; every frame visually inspected in contact sheets, key frames at full resolution. Every decoded PNG independently compared pixel-for-pixel via RGB24 MD5 with a second ffmpeg decode.",
+  "timing": "VFR; r_frame_rate=600/1 is not a 600fps capture rate. Exact ffprobe PTS retained. Short post-content recording tails bound the conclusion.",
+  "launchTransition": "All clips include white-to-gray blank launch transition before new content. No readable app controls in those frames; not classified as zero-inset content. Its cause and aesthetic acceptability are not inferred.",
+  "baseline": {
+    "file": "../baseline/results.json",
+    "sourceCommit": "9874e6ce018dd46562d1c089f046533d954f5988",
+    "status": "FAIL",
+    "observedJumpPhysicalPixelsApprox": 186,
+    "observedJumpPointsApprox": 62,
+    "fallbackVisibleSeconds": [
+      0.128334,
+      0.126667,
+      0.12
+    ],
+    "publicDerivativeSHA256": "42691dff1afdfc74ca887f4147030d2f2af2025cc124781e5209dc74265716e4"
+  },
+  "clips": [
+    {
+      "clip": 1,
+      "video": "launch-1.mp4",
+      "stream": {
+        "width": 1206,
+        "height": 2622,
+        "r_frame_rate": "600/1",
+        "avg_frame_rate": "31200/4997",
+        "duration": "16.656667",
+        "nb_frames": "104"
+      },
+      "decodedFrameCount": 104,
+      "allDecodedFramesMatchedIndependentRGB24FrameMD5": true,
+      "status": "PASS",
+      "preRelaunchOldAppFramesExcluded": [
+        1,
+        23
+      ],
+      "firstSpringboardFrame": {
+        "index": 24,
+        "pts": "14.326667"
+      },
+      "lastBlankLaunchFrame": {
+        "index": 88,
+        "pts": "16.385000"
+      },
+      "firstDiscernibleNewAppContent": {
+        "index": 89,
+        "pts": "16.395000",
+        "currentText": "current: t=62.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "eventsText": "events:",
+        "topButtonYPhysicalPixelsApprox": 198,
+        "topButtonYPointsApprox": 66
+      },
+      "lastRecordedFrame": {
+        "index": 104,
+        "pts": "16.633333"
+      },
+      "observedNewContentTailSeconds": 0.238333,
+      "visibleFallbackPhaseObserved": false,
+      "baselineLikeInsetJumpObserved": false,
+      "laterFrames": "Correct safe-area position through final recorded frame; event line subsequently shows g1 t62 b34 k0 globalProps. Opacity changes without the baseline 62-point displacement.",
+      "pixelDiagnostic": {
+        "method": "First pixel in y=1..319 at x=400 with channel spread<10 and max channel<180. Threshold diagnostic only, not exact layout measurement.",
+        "limitation": "Clip2 frame82 reports y200 instead of198 due to pixel/threshold variation; visual inspection shows no baseline-like 186px relocation. No claim of pixel-identical images.",
+        "frames": [
+          {
+            "index": 89,
+            "pts": "16.395000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 90,
+            "pts": "16.405000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 91,
+            "pts": "16.423333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 92,
+            "pts": "16.438333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 93,
+            "pts": "16.456667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 94,
+            "pts": "16.473333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 95,
+            "pts": "16.490000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 96,
+            "pts": "16.493333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 97,
+            "pts": "16.510000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 98,
+            "pts": "16.526667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 99,
+            "pts": "16.543333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 100,
+            "pts": "16.560000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 101,
+            "pts": "16.576667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 102,
+            "pts": "16.593333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 103,
+            "pts": "16.610000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 104,
+            "pts": "16.633333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          }
+        ]
+      },
+      "keyFrames": [
+        {
+          "clip": 1,
+          "index1Based": 89,
+          "ptsSeconds": 16.395,
+          "decodedPNG_SHA256": "c5f391fda5aaaf56ff5d383adb29a1426106f44ff93e17003f5f131908f19039",
+          "preserved": true,
+          "file": "clip-1/frame-000089.png"
+        },
+        {
+          "clip": 1,
+          "index1Based": 104,
+          "ptsSeconds": 16.633333,
+          "decodedPNG_SHA256": "883f9f6c43a7fef03b725a6d79c632ab5fb009513002a71e0d44291b4f76a0fb",
+          "preserved": true,
+          "file": "clip-1/frame-000104.png"
+        }
+      ],
+      "videoAvailability": "Private archive only"
+    },
+    {
+      "clip": 2,
+      "video": "launch-2.mp4",
+      "stream": {
+        "width": 1206,
+        "height": 2622,
+        "r_frame_rate": "600/1",
+        "avg_frame_rate": "57000/1799",
+        "duration": "2.998333",
+        "nb_frames": "95"
+      },
+      "decodedFrameCount": 95,
+      "allDecodedFramesMatchedIndependentRGB24FrameMD5": true,
+      "status": "PASS",
+      "preRelaunchOldAppFramesExcluded": [
+        1,
+        14
+      ],
+      "firstSpringboardFrame": {
+        "index": 15,
+        "pts": "0.743333"
+      },
+      "lastBlankLaunchFrame": {
+        "index": 79,
+        "pts": "2.756667"
+      },
+      "firstDiscernibleNewAppContent": {
+        "index": 80,
+        "pts": "2.765000",
+        "currentText": "current: t=62.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "eventsText": "events:",
+        "topButtonYPhysicalPixelsApprox": 198,
+        "topButtonYPointsApprox": 66
+      },
+      "lastRecordedFrame": {
+        "index": 95,
+        "pts": "2.988333"
+      },
+      "observedNewContentTailSeconds": 0.223333,
+      "visibleFallbackPhaseObserved": false,
+      "baselineLikeInsetJumpObserved": false,
+      "laterFrames": "Correct safe-area position through final recorded frame; event line subsequently shows g1 t62 b34 k0 globalProps. Opacity changes without the baseline 62-point displacement.",
+      "pixelDiagnostic": {
+        "method": "First pixel in y=1..319 at x=400 with channel spread<10 and max channel<180. Threshold diagnostic only, not exact layout measurement.",
+        "limitation": "Clip2 frame82 reports y200 instead of198 due to pixel/threshold variation; visual inspection shows no baseline-like 186px relocation. No claim of pixel-identical images.",
+        "frames": [
+          {
+            "index": 80,
+            "pts": "2.765000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 81,
+            "pts": "2.776667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 82,
+            "pts": "2.793333",
+            "firstDarkNeutralPixelAtX400Y": 200
+          },
+          {
+            "index": 83,
+            "pts": "2.810000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 84,
+            "pts": "2.826667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 85,
+            "pts": "2.843333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 86,
+            "pts": "2.845000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 87,
+            "pts": "2.861667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 88,
+            "pts": "2.878333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 89,
+            "pts": "2.895000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 90,
+            "pts": "2.911667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 91,
+            "pts": "2.928333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 92,
+            "pts": "2.945000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 93,
+            "pts": "2.961667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 94,
+            "pts": "2.978333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 95,
+            "pts": "2.988333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          }
+        ]
+      },
+      "keyFrames": [
+        {
+          "clip": 2,
+          "index1Based": 80,
+          "ptsSeconds": 2.765,
+          "decodedPNG_SHA256": "f8c53a7473c806ffbae634f551e90b82aee6ada14cd8e914a9a38583df4fecf4",
+          "preserved": true,
+          "file": "clip-2/frame-000080.png"
+        },
+        {
+          "clip": 2,
+          "index1Based": 95,
+          "ptsSeconds": 2.988333,
+          "decodedPNG_SHA256": "38c517c4d1c1572c36bd2d4eaf7982cb95e1349d0c84de155b6715b606c7361f",
+          "preserved": true,
+          "file": "clip-2/frame-000095.png"
+        }
+      ],
+      "videoAvailability": "Private archive only"
+    },
+    {
+      "clip": 3,
+      "video": "launch-3.mp4",
+      "stream": {
+        "width": 1206,
+        "height": 2622,
+        "r_frame_rate": "600/1",
+        "avg_frame_rate": "3760/117",
+        "duration": "2.925000",
+        "nb_frames": "94"
+      },
+      "decodedFrameCount": 94,
+      "allDecodedFramesMatchedIndependentRGB24FrameMD5": true,
+      "status": "PASS",
+      "preRelaunchOldAppFramesExcluded": [
+        1,
+        12
+      ],
+      "firstSpringboardFrame": {
+        "index": 13,
+        "pts": "0.725000"
+      },
+      "lastBlankLaunchFrame": {
+        "index": 80,
+        "pts": "2.718333"
+      },
+      "firstDiscernibleNewAppContent": {
+        "index": 81,
+        "pts": "2.725000",
+        "currentText": "current: t=62.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "eventsText": "events:",
+        "topButtonYPhysicalPixelsApprox": 198,
+        "topButtonYPointsApprox": 66
+      },
+      "lastRecordedFrame": {
+        "index": 94,
+        "pts": "2.921667"
+      },
+      "observedNewContentTailSeconds": 0.196667,
+      "visibleFallbackPhaseObserved": false,
+      "baselineLikeInsetJumpObserved": false,
+      "laterFrames": "Correct safe-area position through final recorded frame; event line subsequently shows g1 t62 b34 k0 globalProps. Opacity changes without the baseline 62-point displacement.",
+      "pixelDiagnostic": {
+        "method": "First pixel in y=1..319 at x=400 with channel spread<10 and max channel<180. Threshold diagnostic only, not exact layout measurement.",
+        "limitation": "Clip2 frame82 reports y200 instead of198 due to pixel/threshold variation; visual inspection shows no baseline-like 186px relocation. No claim of pixel-identical images.",
+        "frames": [
+          {
+            "index": 81,
+            "pts": "2.725000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 82,
+            "pts": "2.738333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 83,
+            "pts": "2.755000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 84,
+            "pts": "2.771667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 85,
+            "pts": "2.788333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 86,
+            "pts": "2.805000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 87,
+            "pts": "2.821667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 88,
+            "pts": "2.838333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 89,
+            "pts": "2.855000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 90,
+            "pts": "2.871667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 91,
+            "pts": "2.888333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 92,
+            "pts": "2.905000",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 93,
+            "pts": "2.918333",
+            "firstDarkNeutralPixelAtX400Y": 198
+          },
+          {
+            "index": 94,
+            "pts": "2.921667",
+            "firstDarkNeutralPixelAtX400Y": 198
+          }
+        ]
+      },
+      "keyFrames": [
+        {
+          "clip": 3,
+          "index1Based": 81,
+          "ptsSeconds": 2.725,
+          "decodedPNG_SHA256": "426b643db7b61a66237b7d06264288444f0d3d756a135dd4e9c2a406c3ff03ca",
+          "preserved": true,
+          "file": "clip-3/frame-000081.png"
+        },
+        {
+          "clip": 3,
+          "index1Based": 94,
+          "ptsSeconds": 2.921667,
+          "decodedPNG_SHA256": "9d5b70873f7c4071b9a334168ddaae3a6c1254cc8321fa1cfb8927f68b69b11f",
+          "preserved": true,
+          "file": "clip-3/frame-000094.png"
+        }
+      ],
+      "videoAvailability": "Private archive only"
+    }
+  ],
+  "publicEvidence": {
+    "type": "Sanitized selected derivative of privately archived original analysis",
+    "originalVideoAndFullAnalysisHashes": "Retained only in private original archive; public-manifest.json hashes the public files themselves.",
+    "selection": "Only full-resolution app-content keyframes included; no Springboard, contact sheets or videos.",
+    "originalAnalysisCompleteness": "All original decoded frames were reviewed before selecting public keyframes."
+  }
+}

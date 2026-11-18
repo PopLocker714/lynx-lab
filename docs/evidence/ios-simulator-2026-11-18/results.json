@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-18",
+  "probeCommit": "a11a4dd038aa87b1506d62121c94d73c63096e5c",
+  "baselineProbeCommit": "9874e6ce018dd46562d1c089f046533d954f5988",
+  "configuration": "Release",
+  "buildProfile": "build-profile.json",
+  "scope": "Custom full-window Sparkling host on one iOS 27.0 simulator. Package source code unchanged. Host contract changed; not a guarantee for unmodified Sparkling or physical devices.",
+  "checks": {
+    "firstVisibleFrame": {
+      "status": "PASS",
+      "attempts": 3,
+      "evidence": "fixed/results.json",
+      "scope": "First discernible newly launched content and recorded tail only; no unseen-frame or physical presentation guarantee."
+    },
+    "baselineFirstVisibleFrame": {
+      "status": "FAIL",
+      "attempts": 3,
+      "evidence": "baseline/results.json",
+      "jumpPointsApprox": 62
+    },
+    "secureStore": {
+      "status": "PASS",
+      "checksPassed": 10,
+      "checksTotal": 10,
+      "evidence": "snapshots/secure.json"
+    },
+    "persistence": {
+      "baselineStatus": "PASS",
+      "baselineEvidence": "snapshots/persistence-baseline.json",
+      "finalExistingMarker": "observedWithoutStandaloneSnapshot",
+      "finalObservationSource": "Parent QA owner reports snapshot-i tool transcript before running final Secure Store checks showed persistence: stored marker found after three cold launches.",
+      "scope": "Existing baseline marker survived upgrade and final cold launches. No standalone final snapshot file; no new a11a4dd write followed by relaunch capture."
+    },
+    "crypto": {
+      "status": "PASS",
+      "evidence": "snapshots/crypto.json",
+      "limitation": "Native API smoke, not entropy measurement."
+    },
+    "lifecycle": {
+      "status": "PASS",
+      "evidence": "snapshots/lifecycle.json",
+      "observed": [
+        "A/B background g1 gap=false",
+        "A/B active g2 gap=false"
+      ]
+    },
+    "keyboard": {
+      "status": "PASS",
+      "evidence": [
+        "snapshots/keyboard-shown.json",
+        "snapshots/keyboard-hidden.json"
+      ],
+      "observed": {
+        "shown": {
+          "keyboard": 349,
+          "generation": 2
+        },
+        "hidden": {
+          "keyboard": 0,
+          "generation": 3
+        },
+        "safeArea": {
+          "top": 62,
+          "bottom": 34
+        }
+      },
+      "scope": "Opt-in native host input; simulator only."
+    },
+    "rotation": {
+      "status": "PASS",
+      "scope": "Settled reported inset values and portrait restoration only; no transient-frame or full visual geometry guarantee.",
+      "evidence": [
+        "snapshots/landscape.json",
+        "snapshots/portrait-restored.json"
+      ],
+      "landscape": {
+        "top": 0,
+        "right": 62,
+        "bottom": 20,
+        "left": 62,
+        "generation": 5
+      },
+      "portrait": {
+        "top": 62,
+        "right": 0,
+        "bottom": 34,
+        "left": 0,
+        "generation": 6
+      },
+      "limitations": [
+        "Landscape event history includes intermediate g4 t0/b0 before g5.",
+        "Landscape snapshot reports AX/windowed-capture fallback and clipped geometry; warnings preserved in snapshot."
+      ]
+    }
+  },
+  "sourceOnlyChecks": "host-source-checks.json retains the earlier source-review stage and its then-pending runtime checklist; runtime outcomes are recorded here. InHouse Debug URL recovery remains outside this Release QA.",
+  "privateOriginals": "Exact original evidence, historical checksums and all six videos retained in private ios-simulator-qa-originals archive. Public files have their own checksums in public-manifest.json. App-manifest.json describes hashes of private build artifacts, not public evidence hashes.",
+  "privacy": {
+    "exactReplacementRules": 10,
+    "inventory": "Frozen publication-v2 redactions inventory (private)",
+    "images": "Twelve selected app-content frames only; no Springboard or contact sheets."
+  }
+}

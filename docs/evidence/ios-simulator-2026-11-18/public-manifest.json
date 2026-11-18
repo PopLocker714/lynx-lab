@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 1,
+  "hashAlgorithm": "SHA256",
+  "scope": "Checksums of actual sanitized public files; excludes this manifest to avoid self-reference. Historical original evidence hashes remain in the private archive.",
+  "files": [
+    {
+      "path": "app-manifest.json",
+      "bytes": 4688,
+      "sha256": "f1bdcef412f5419e5674ce8cc15fd8925cb6effb4618988597255ea8af95db57"
+    },
+    {
+      "path": "baseline/clip-1/frame-000072.png",
+      "bytes": 365820,
+      "sha256": "4d2143b492a9b844ba15e5dd4687ef3ab92cde62350af2e9f1ba90bc4c2e442c"
+    },
+    {
+      "path": "baseline/clip-1/frame-000073.png",
+      "bytes": 362298,
+      "sha256": "557cb9fbc52843db29766c74e52ad26e2f8ac51af5deaade9b809d0d2c827e7f"
+    },
+    {
+      "path": "baseline/clip-2/frame-000077.png",
+      "bytes": 336381,
+      "sha256": "3c368db3ba335623746368bf2bf1539cfa05de50b7bf42cb2a73f4b1c54e60f2"
+    },
+    {
+      "path": "baseline/clip-2/frame-000078.png",
+      "bytes": 404737,
+      "sha256": "45d7b4a64784fcfeb52fde1a222a62d326fc73d6beac7aa1262b37cbea943a6b"
+    },
+    {
+      "path": "baseline/clip-3/frame-000069.png",
+      "bytes": 313649,
+      "sha256": "a2cbfb785be69583b1bcacc4cd281dd0b2fcf64d855ed0ca5981096462072da5"
+    },
+    {
+      "path": "baseline/clip-3/frame-000070.png",
+      "bytes": 411044,
+      "sha256": "2e5fa39d4d6a2966a699730a42619560e8c77ba683c2e8a6fcc392fcac0bac08"
+    },
+    {
+      "path": "baseline/results.json",
+      "bytes": 8233,
+      "sha256": "42691dff1afdfc74ca887f4147030d2f2af2025cc124781e5209dc74265716e4"
+    },
+    {
+      "path": "build-profile.json",
+      "bytes": 589,
+      "sha256": "9fb7c74ed45f4ef40e3728bb67832aeebae5fb539f4114f71b072e0a6c748713"
+    },
+    {
+      "path": "fixed/clip-1/frame-000089.png",
+      "bytes": 381596,
+      "sha256": "c5f391fda5aaaf56ff5d383adb29a1426106f44ff93e17003f5f131908f19039"
+    },
+    {
+      "path": "fixed/clip-1/frame-000104.png",
+      "bytes": 381722,
+      "sha256": "883f9f6c43a7fef03b725a6d79c632ab5fb009513002a71e0d44291b4f76a0fb"
+    },
+    {
+      "path": "fixed/clip-2/frame-000080.png",
+      "bytes": 382523,
+      "sha256": "f8c53a7473c806ffbae634f551e90b82aee6ada14cd8e914a9a38583df4fecf4"
+    },
+    {
+      "path": "fixed/clip-2/frame-000095.png",
+      "bytes": 410487,
+      "sha256": "38c517c4d1c1572c36bd2d4eaf7982cb95e1349d0c84de155b6715b606c7361f"
+    },
+    {
+      "path": "fixed/clip-3/frame-000081.png",
+      "bytes": 352642,
+      "sha256": "426b643db7b61a66237b7d06264288444f0d3d756a135dd4e9c2a406c3ff03ca"
+    },
+    {
+      "path": "fixed/clip-3/frame-000094.png",
+      "bytes": 405962,
+      "sha256": "9d5b70873f7c4071b9a334168ddaae3a6c1254cc8321fa1cfb8927f68b69b11f"
+    },
+    {
+      "path": "fixed/results.json",
+      "bytes": 15486,
+      "sha256": "49fe24ef85e1179f4c50011816ddf0b17a69cc9509d30c1c13b2fbb665ea3cf4"
+    },
+    {
+      "path": "host-source-checks.json",
+      "bytes": 1951,
+      "sha256": "2642027b501c8f40344f49599ff9bbda169ba07cfb12081b74b77c3842ace47a"
+    },
+    {
+      "path": "results.json",
+      "bytes": 3939,
+      "sha256": "8555d1a573d2d670d767ee5a37b318e1c9a7e56a3cb6c83c5baf27ea29dfe5aa"
+    },
+    {
+      "path": "snapshots/crypto.json",
+      "bytes": 5866,
+      "sha256": "c94e933aa9ed3865225d49f17a13c98a5cb0651d73d58ab9c1fe397cec2136c7"
+    },
+    {
+      "path": "snapshots/keyboard-hidden.json",
+      "bytes": 8241,
+      "sha256": "b33d0a5bf17a69701b5d40d62ce463a32d93a7815b6b94fc57f56951e176eb17"
+    },
+    {
+      "path": "snapshots/keyboard-shown.json",
+      "bytes": 30487,
+      "sha256": "53cc5e5eca99e1a55a5ff0aba1cc44c1828850f9159531f7d40b67808edfdf3d"
+    },
+    {
+      "path": "snapshots/landscape.json",
+      "bytes": 8536,
+      "sha256": "2373fe68af8021d976df232c8e92264d602e115ba42241da918441f0ce9054d5"
+    },
+    {
+      "path": "snapshots/lifecycle.json",
+      "bytes": 4947,
+      "sha256": "471d3e4eab97c11950344a262de7d9d3aa76b9e121aed4d41c05bd9d8d361e07"
+    },
+    {
+      "path": "snapshots/persistence-baseline.json",
+      "bytes": 4364,
+      "sha256": "4238b5475cc894a7074f2d1e7c5aaba6d1daa224cfba6a1e8a47abc65465d116"
+    },
+    {
+      "path": "snapshots/portrait-restored.json",
+      "bytes": 9091,
+      "sha256": "afeeea106a7d205360d26ba9acc798e384f91c435b14ec16d073fce7a7209422"
+    },
+    {
+      "path": "snapshots/secure.json",
+      "bytes": 4699,
+      "sha256": "845f04c28461e975e407fee0467f6d8e05f276360f2f16886fcca7ccaefb56a9"
+    }
+  ]
+}

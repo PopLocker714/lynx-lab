@@ -1,0 +1,194 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "index": 0,
+        "type": "Other",
+        "role": "_TtC7SwiftUIP33_ACC2C5639A7D76F611E170E831FCA49118SwiftUIApplication",
+        "subrole": "UIApplication",
+        "label": "Sparkling Template",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 874
+        },
+        "enabled": true,
+        "depth": 0,
+        "pid": 31325,
+        "hittable": false,
+        "ref": "e1",
+        "kind": "other"
+      },
+      {
+        "index": 1,
+        "parentIndex": 0,
+        "type": "Other",
+        "role": "Sparkling.SPKWrapperLynxView",
+        "subrole": "UIView",
+        "label": "lynxview",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 874
+        },
+        "enabled": true,
+        "depth": 1,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "index": 2,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Show edge-to-edge",
+        "rect": {
+          "x": 0,
+          "y": 66,
+          "width": 402,
+          "height": 39.33333333333334
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e3",
+        "kind": "button"
+      },
+      {
+        "index": 3,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Show Crypto",
+        "rect": {
+          "x": 0,
+          "y": 113.33333333333333,
+          "width": 402,
+          "height": 39.33333333333333
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "index": 4,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Show Lifecycle",
+        "rect": {
+          "x": 0,
+          "y": 160.66666666666666,
+          "width": 402,
+          "height": 39.33333333333334
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e5",
+        "kind": "button"
+      },
+      {
+        "index": 5,
+        "parentIndex": 1,
+        "type": "StaticText",
+        "role": "LynxTextView",
+        "subrole": "UIView",
+        "label": "Run Secure Store checks",
+        "rect": {
+          "x": 24,
+          "y": 228,
+          "width": 354,
+          "height": 19.333333333333343
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e6",
+        "kind": "text"
+      },
+      {
+        "index": 6,
+        "parentIndex": 1,
+        "type": "StaticText",
+        "role": "LynxTextView",
+        "subrole": "UIView",
+        "label": "persistence: stored marker found",
+        "rect": {
+          "x": 12,
+          "y": 269.3333333333333,
+          "width": 378,
+          "height": 17
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e7",
+        "kind": "text"
+      },
+      {
+        "index": 7,
+        "parentIndex": 0,
+        "type": "Toolbar",
+        "role": "_UIFloatingBarContainerView",
+        "label": "Toolbar",
+        "identifier": "Toolbar",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 874
+        },
+        "enabled": true,
+        "depth": 1,
+        "pid": 31325,
+        "hittable": true,
+        "ref": "e8",
+        "kind": "toolbar"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 8,
+      "totalNodeCount": 8,
+      "reasons": []
+    },
+    "viewport": {
+      "width": 402,
+      "height": 874
+    },
+    "presentedSurface": "absent",
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 43,
+        "p50Ms": 58,
+        "p95Ms": 107,
+        "maxMs": 1376,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 43
+        }
+      }
+    },
+    "refsGeneration": 572394
+  }
+}

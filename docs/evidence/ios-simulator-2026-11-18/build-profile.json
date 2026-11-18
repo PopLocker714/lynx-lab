@@ -1,0 +1,19 @@
+{
+  "configuration": "Release",
+  "xcodeVersion": "27.2",
+  "xcodeBuild": "27B52",
+  "sdk": "iphonesimulator27.2",
+  "architecture": "arm64",
+  "runtime": "iOS 27.0",
+  "deviceModel": "iPhone 18 Pro Simulator",
+  "sdkEvidence": {
+    "privateSourceLog": "build-first-frame-host.log",
+    "excerpts": [
+      {
+        "line": 11,
+        "text": "SDKROOT = iphonesimulator27.2"
+      }
+    ]
+  },
+  "toolchainEvidence": "Recorded baseline final-app-manifest.json and same Xcode.app path in final host build log; build logs and binaries are not copied to this public evidence directory."
+}

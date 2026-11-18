@@ -1,0 +1,238 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "index": 0,
+        "type": "Other",
+        "role": "_TtC7SwiftUIP33_ACC2C5639A7D76F611E170E831FCA49118SwiftUIApplication",
+        "subrole": "UIApplication",
+        "label": "Sparkling Template",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 874
+        },
+        "enabled": true,
+        "depth": 0,
+        "pid": 78654,
+        "hittable": false,
+        "ref": "e1",
+        "kind": "other"
+      },
+      {
+        "index": 1,
+        "parentIndex": 0,
+        "type": "Other",
+        "role": "Sparkling.SPKWrapperLynxView",
+        "subrole": "UIView",
+        "label": "lynxview",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 874
+        },
+        "enabled": true,
+        "depth": 1,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "index": 2,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Show Secure Store",
+        "rect": {
+          "x": 0,
+          "y": 66,
+          "width": 402,
+          "height": 39.33333333333334
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e3",
+        "kind": "button"
+      },
+      {
+        "index": 3,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Show edge-to-edge",
+        "rect": {
+          "x": 0,
+          "y": 113.33333333333333,
+          "width": 402,
+          "height": 39.33333333333333
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e4",
+        "kind": "button"
+      },
+      {
+        "index": 4,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Show Lifecycle",
+        "rect": {
+          "x": 0,
+          "y": 160.66666666666666,
+          "width": 402,
+          "height": 39.33333333333334
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e5",
+        "kind": "button"
+      },
+      {
+        "index": 5,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Run Crypto native checks",
+        "rect": {
+          "x": 12,
+          "y": 216,
+          "width": 378,
+          "height": 43.333333333333314
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e6",
+        "kind": "button"
+      },
+      {
+        "index": 6,
+        "parentIndex": 1,
+        "type": "Button",
+        "role": "UILynxView",
+        "subrole": "UIView",
+        "label": "Run Crypto failure injection",
+        "rect": {
+          "x": 12,
+          "y": 267.3333333333333,
+          "width": 378,
+          "height": 43.333333333333314
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "index": 7,
+        "parentIndex": 1,
+        "type": "StaticText",
+        "role": "LynxTextView",
+        "subrole": "UIView",
+        "label": "NATIVE: real bridge, no injection\nPASS views/offset/empty: Int8Array, Uint8Array, Uint8ClampedArray, Int16Array, Uint16Array, Int32Array, Uint32Array, BigInt64Array, BigUint64Array\nPASS byte lengths 1/2/3/4/31/32/65536\nPASS float/DataView rejection + byte quota\nPASS 8 distinct 32-byte samples (smoke only)\nPASS 8 distinct UUIDs v4/lowercase (smoke only)\nCRYPTO NATIVE PASS; smoke does not measure entropy",
+        "rect": {
+          "x": 12,
+          "y": 320.6666666666667,
+          "width": 378,
+          "height": 139.66666666666669
+        },
+        "enabled": true,
+        "depth": 2,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e8",
+        "kind": "text"
+      },
+      {
+        "index": 8,
+        "parentIndex": 0,
+        "type": "TextField",
+        "role": "UITextField",
+        "label": "Native keyboard QA",
+        "value": "Host layout keyboard regression",
+        "placeholder": "Native keyboard QA",
+        "identifier": "edge-keyboard-probe-input",
+        "rect": {
+          "x": 41,
+          "y": 70,
+          "width": 320,
+          "height": 44
+        },
+        "enabled": true,
+        "depth": 1,
+        "password": false,
+        "editable": true,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e9",
+        "kind": "text-field"
+      },
+      {
+        "index": 9,
+        "parentIndex": 0,
+        "type": "Toolbar",
+        "role": "_UIFloatingBarContainerView",
+        "label": "Toolbar",
+        "identifier": "Toolbar",
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 402,
+          "height": 874
+        },
+        "enabled": true,
+        "depth": 1,
+        "pid": 78654,
+        "hittable": true,
+        "ref": "e10",
+        "kind": "toolbar"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 10,
+      "totalNodeCount": 10,
+      "reasons": []
+    },
+    "viewport": {
+      "width": 402,
+      "height": 874
+    },
+    "presentedSurface": "absent",
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 85,
+        "p50Ms": 53,
+        "p95Ms": 107,
+        "maxMs": 1376,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 85
+        }
+      }
+    },
+    "refsGeneration": 572431
+  }
+}

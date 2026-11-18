@@ -4,6 +4,13 @@
 
 ## 2026-11-18
 
+- Probe `a11a4dd`: полноэкранный host загружает Lynx после attach/layout через
+  публичный SPKContainerView. Release build, строгая Swift-проверка и независимое
+  review прошли; три simulator video дают bounded first-frame PASS. Secure,
+  crypto, lifecycle, keyboard и итоговые rotation inset проверены повторно.
+- Открыт независимый очищенный `lynx-lab`; исходный GitHub repo, ветки и issues
+  сохранены приватно. 48 commit trees и 894 исходных candidate objects проверены,
+  удалены 10 точных классов локальных идентификаторов; оригиналы evidence сохранены.
 - Все четыре package-репозитория публичны. Локальные JS/native checks и remote
   JS/Android/iOS jobs прошли на task-ветках с Xcode 27.2. Audit Secure Store
   проходит; crypto/lifecycle/edge блокирует GHSA-fc5q-39xc-vjpf, без нового ignore.

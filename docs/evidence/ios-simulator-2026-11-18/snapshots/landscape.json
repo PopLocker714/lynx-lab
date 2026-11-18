@@ -1,0 +1,350 @@
+{
+  "success": true,
+  "data": {
+    "nodes": [
+      {
+        "depth": 0,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 331.0197752978485,
+          "y": 22.577514800126835
+        },
+        "index": 0,
+        "hittable": false,
+        "type": "Application",
+        "enabled": true,
+        "label": "Sparkling Template",
+        "ref": "e1",
+        "kind": "application"
+      },
+      {
+        "depth": 1,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 331.0197752978485,
+          "y": 22.577514800126835
+        },
+        "index": 1,
+        "hittable": true,
+        "parentIndex": 0,
+        "type": "Other",
+        "enabled": true,
+        "label": "Toolbar",
+        "ref": "e2",
+        "kind": "other"
+      },
+      {
+        "depth": 2,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 331.0197752978485,
+          "y": 22.577514800126835
+        },
+        "index": 2,
+        "hittable": true,
+        "parentIndex": 1,
+        "type": "Other",
+        "enabled": true,
+        "label": "Native keyboard QA",
+        "ref": "e3",
+        "kind": "other"
+      },
+      {
+        "depth": 3,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 331.0197752978485,
+          "y": 22.577514800126835
+        },
+        "index": 3,
+        "hittable": true,
+        "parentIndex": 2,
+        "type": "Other",
+        "enabled": true,
+        "label": "lynxview",
+        "ref": "e4",
+        "kind": "other"
+      },
+      {
+        "enabled": true,
+        "label": "Show Secure Store",
+        "index": 4,
+        "depth": 4,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 331.0197752978485,
+          "y": 22.577514800126835
+        },
+        "parentIndex": 3,
+        "type": "Other",
+        "hittable": true,
+        "ref": "e5",
+        "kind": "other"
+      },
+      {
+        "enabled": true,
+        "label": "Show Secure Store",
+        "index": 5,
+        "depth": 5,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 20.7558185332065,
+          "y": 22.577514800126835
+        },
+        "parentIndex": 4,
+        "type": "Button",
+        "hittable": true,
+        "ref": "e6",
+        "kind": "button"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "Show Crypto",
+        "index": 6,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 39.33333333333333,
+          "y": 51.33333333333333
+        },
+        "type": "Button",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e7",
+        "kind": "button"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "Show Lifecycle",
+        "index": 7,
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "height": 39.33333333333333,
+          "y": 98.66666666666667
+        },
+        "type": "Button",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e8",
+        "kind": "button"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "PKG edge-to-edge day 5",
+        "index": 8,
+        "rect": {
+          "width": 181.66666666666669,
+          "x": 346.3333333333333,
+          "height": 28.333333333333343,
+          "y": 150
+        },
+        "type": "StaticText",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e9",
+        "kind": "text"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "current: t=0.0 r=62 b=20 l=62.0 kb=0 g=5 globalProps",
+        "index": 9,
+        "rect": {
+          "width": 374,
+          "x": 250,
+          "height": 28.333333333333343,
+          "y": 178.33333333333334
+        },
+        "type": "StaticText",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e10",
+        "kind": "text"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "events: g1 t62 b34 k0 globalProps | g2 t62 b34 k349 globalProps | g3 t62 b34 k0 globalProps | g4 t0 b0 k0 globalProps | g5 t0 b20 k0 globalProps",
+        "index": 10,
+        "rect": {
+          "width": 859.3333333333335,
+          "x": 7.333333333333314,
+          "height": 42.66666666666666,
+          "y": 206.66666666666666
+        },
+        "type": "StaticText",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e11",
+        "kind": "text"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "refresh()",
+        "index": 11,
+        "rect": {
+          "width": 99,
+          "x": 387.6666666666667,
+          "height": 39.33333333333334,
+          "y": 253.33333333333334
+        },
+        "type": "Button",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e12",
+        "kind": "button"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "System bars are controlled by the iOS host. Style/visibility controls are Android-only.",
+        "index": 12,
+        "rect": {
+          "width": 566.3333333333334,
+          "x": 154,
+          "height": 28.333333333333314,
+          "y": 296.6666666666667
+        },
+        "type": "StaticText",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e13",
+        "kind": "text"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "Lynx input is unavailable; keyboard QA uses the native host.",
+        "index": 13,
+        "rect": {
+          "width": 406,
+          "x": 234,
+          "height": 28.333333333333314,
+          "y": 325
+        },
+        "type": "StaticText",
+        "hittable": true,
+        "parentIndex": 4,
+        "ref": "e14",
+        "kind": "text"
+      },
+      {
+        "depth": 5,
+        "enabled": true,
+        "label": "css var(--safe-area-inset-top) padding above me",
+        "index": 14,
+        "rect": {
+          "width": 338.66666666666663,
+          "x": 267.66666666666663,
+          "height": 0.263956764642046,
+          "y": 353.3333333333333
+        },
+        "type": "StaticText",
+        "hittable": false,
+        "parentIndex": 4,
+        "ref": "e15",
+        "kind": "text"
+      },
+      {
+        "value": "Host layout keyboard regression",
+        "placeholder": "Native keyboard QA",
+        "enabled": true,
+        "label": "Native keyboard QA",
+        "depth": 4,
+        "identifier": "edge-keyboard-probe-input",
+        "index": 15,
+        "type": "TextField",
+        "rect": {
+          "width": 320,
+          "x": 277,
+          "height": 29.422485199873165,
+          "y": 22.577514800126835
+        },
+        "hittable": true,
+        "parentIndex": 3,
+        "password": false,
+        "editable": true,
+        "ref": "e16",
+        "kind": "text-field"
+      },
+      {
+        "depth": 3,
+        "enabled": true,
+        "label": "Toolbar",
+        "identifier": "Toolbar",
+        "index": 16,
+        "type": "Toolbar",
+        "rect": {
+          "width": 874,
+          "x": 0,
+          "y": 22.577514800126835,
+          "height": 331.0197752978485
+        },
+        "hittable": true,
+        "parentIndex": 2,
+        "ref": "e17",
+        "kind": "toolbar"
+      }
+    ],
+    "truncated": false,
+    "appName": "com.probe.e2e",
+    "appBundleId": "com.probe.e2e",
+    "visibility": {
+      "partial": false,
+      "visibleNodeCount": 17,
+      "totalNodeCount": 17,
+      "reasons": []
+    },
+    "keyboard": {
+      "kind": "absent"
+    },
+    "viewport": {
+      "width": 874,
+      "height": 331.0197752978485
+    },
+    "presentedSurface": "unknown",
+    "snapshotQuality": {
+      "state": "healthy",
+      "backend": "tree",
+      "timing": {
+        "acquisitionMs": 32.41395950317383,
+        "presentationMs": 0.09000301361083984
+      }
+    },
+    "snapshotQualityNotes": [
+      {
+        "code": "regular-geometry-clipped",
+        "clippedNodeCount": 13,
+        "droppedNodeCount": 3
+      }
+    ],
+    "warnings": [
+      "Simulator AX snapshot unavailable (app-window-not-full-screen); used XCTest for this capture, while the app window did not fill the screen; the runner republishes a windowed capture in screen space."
+    ],
+    "snapshotDiagnostics": {
+      "stats": {
+        "count": 80,
+        "p50Ms": 54,
+        "p95Ms": 107,
+        "maxMs": 1376,
+        "slowThresholdMs": 1500,
+        "platform": "ios",
+        "backends": {
+          "xctest": 80
+        }
+      }
+    },
+    "refsGeneration": 572426
+  }
+}

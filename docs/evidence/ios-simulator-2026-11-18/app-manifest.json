@@ -1,0 +1,137 @@
+{
+  "sourceCommit": "a11a4dd038aa87b1506d62121c94d73c63096e5c",
+  "configuration": "Release",
+  "sdk": "iphonesimulator",
+  "files": [
+    {
+      "path": "Info.plist",
+      "sha256": "5da0883d88902d9367e78b9a9f3b936eb6e4812d8b7cdfa471687dcef5119208",
+      "bytes": 1477
+    },
+    {
+      "path": "LynxResources/.placeholder",
+      "sha256": "f833d0923cb161356af6ce61c969803198f42981476ba8909198097fc5ed9a39",
+      "bytes": 119
+    },
+    {
+      "path": "LynxResources/main.lynx.bundle",
+      "sha256": "9f5b6e815fe2bb4bca01f77f434238adb54e77446948551271993eba28a34cd3",
+      "bytes": 129160
+    },
+    {
+      "path": "LynxResources/second.lynx.bundle",
+      "sha256": "6ba700a56f4617f0843b55ae6a26f6626742d8c8585b1991832eb3ab320c4ba2",
+      "bytes": 97612
+    },
+    {
+      "path": "LynxResources/static/image/sparkling_icon.781d0b63.png",
+      "sha256": "50ad49246c805b0928e58aa744a68d948c92e7f72a8bf064f0187008553e5a10",
+      "bytes": 5019
+    },
+    {
+      "path": "LynxResources.bundle/Info.plist",
+      "sha256": "e152e0e23ceddfc04d3c29f7a869bf2f9d8db713dbb44bf70174610cc62994e0",
+      "bytes": 751
+    },
+    {
+      "path": "LynxResources.bundle/_CodeSignature/CodeDirectory",
+      "sha256": "9a6e3df1d81182b306a0f5c1942ae18c10f493f404ce2be10843f128cefee606",
+      "bytes": 204
+    },
+    {
+      "path": "LynxResources.bundle/_CodeSignature/CodeRequirements",
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+      "bytes": 12
+    },
+    {
+      "path": "LynxResources.bundle/_CodeSignature/CodeResources",
+      "sha256": "3a3758b9db98d8e8b8dfa5a4639b26e795225e6184204b109b7d331422b2bcbd",
+      "bytes": 1942
+    },
+    {
+      "path": "LynxResources.bundle/_CodeSignature/CodeSignature",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "LynxResources.bundle/lynx_core.js",
+      "sha256": "d5a37010101b1accdcb8ea783fe18905d4ea59de2822827af8068e0d50b6a0fe",
+      "bytes": 140456
+    },
+    {
+      "path": "PkgInfo",
+      "sha256": "82502191c9484b04d685374f9879a0066069c49b8acae7a04b01d38d07e8eca0",
+      "bytes": 8
+    },
+    {
+      "path": "SnapKit_Privacy.bundle/Info.plist",
+      "sha256": "7226bcae4f51db6003e2bddbc5ee8a7137907ae7a9d8118b9e2287f4f116b4cc",
+      "bytes": 757
+    },
+    {
+      "path": "SnapKit_Privacy.bundle/PrivacyInfo.xcprivacy",
+      "sha256": "a07418e5fe128e224cd37964bc21c503b7aa2f575e7b4927468478ad873214fe",
+      "bytes": 373
+    },
+    {
+      "path": "SnapKit_Privacy.bundle/_CodeSignature/CodeDirectory",
+      "sha256": "c27b5938785a2ea622a29ae3c1d2a6c484f8097b42e13c38191d9b5721bdbbc8",
+      "bytes": 206
+    },
+    {
+      "path": "SnapKit_Privacy.bundle/_CodeSignature/CodeRequirements",
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+      "bytes": 12
+    },
+    {
+      "path": "SnapKit_Privacy.bundle/_CodeSignature/CodeResources",
+      "sha256": "4dbd75dd6ecfc7dee138859716714fa5b2897c54f7956eb11286e43d2e8c3678",
+      "bytes": 1960
+    },
+    {
+      "path": "SnapKit_Privacy.bundle/_CodeSignature/CodeSignature",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "SparklingGo",
+      "sha256": "15f4d4cd5e6d617291c8202fded395c963fb4d02f7b182357eeea3a3b0d08606",
+      "bytes": 60963568
+    },
+    {
+      "path": "_CodeSignature/CodeResources",
+      "sha256": "cb43d2fdc06b9a13f183417eba07078ade4ee27e7187a7b5b7183b868a90f7fe",
+      "bytes": 7965
+    },
+    {
+      "path": "sparklingPageResource.bundle/Assets.car",
+      "sha256": "4161c7fa1393f7d0dd69d41042df99e256cf82808c0e7d0a3b3c8da41bbf9492",
+      "bytes": 18904
+    },
+    {
+      "path": "sparklingPageResource.bundle/Info.plist",
+      "sha256": "befc9e61b5509a51c0f2e005685fc1007766c80da7d8c1fcbaf5928a5eb64aea",
+      "bytes": 769
+    },
+    {
+      "path": "sparklingPageResource.bundle/_CodeSignature/CodeDirectory",
+      "sha256": "a60867db17949b5d95a981786a2e37648d71e43ed3241b8ab301663fe92975bf",
+      "bytes": 212
+    },
+    {
+      "path": "sparklingPageResource.bundle/_CodeSignature/CodeRequirements",
+      "sha256": "987920904eab650e75788c054aa0b0524e6a80bfc71aa32df8d237a61743f986",
+      "bytes": 12
+    },
+    {
+      "path": "sparklingPageResource.bundle/_CodeSignature/CodeResources",
+      "sha256": "8a1b11913251d3afec3b79eef45b84032ba7efc0d3adb4a899a6c1d11d3ffe26",
+      "bytes": 1938
+    },
+    {
+      "path": "sparklingPageResource.bundle/_CodeSignature/CodeSignature",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

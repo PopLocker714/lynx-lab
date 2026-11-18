@@ -1,0 +1,28 @@
+{
+  "removed": [
+    {
+      "path": "ios/build-simulator-keyboard",
+      "allocatedBytes": 7076286464
+    },
+    {
+      "path": "evidence-local/ios-keyboard-2026-11-18/SparklingGo.app",
+      "allocatedBytes": 61706240
+    },
+    {
+      "path": "evidence-local/ios-keyboard-2026-11-18/SparklingGo-signed.app",
+      "allocatedBytes": 61411328
+    }
+  ],
+  "allocatedBytesRemoved": 7199404032,
+  "freeBytesBefore": 47279419392,
+  "freeBytesAfter": 54505652224,
+  "retained": [
+    "final/SparklingGo.app",
+    "first-frame-fixed/SparklingGo.app",
+    "source commits, raw evidence and all recordings",
+    "Matching final simulator dSYM"
+  ],
+  "simulatorSessionClosed": true,
+  "ownProbeUninstalled": true,
+  "devicePanelClosedAndSimulatorShutDown": true
+}

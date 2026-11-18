@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-18",
+  "commit": "a11a4dd038aa87b1506d62121c94d73c63096e5c",
+  "baseline": "9874e6ce018dd46562d1c089f046533d954f5988",
+  "sourceHashes": {
+    "ios/SparklingGo/SparklingGo/FullWindowSparklingViewController.swift": "bf1efca8bc6f37bac137c4264a68ce10bb9088eaa8c15b3b21978ee07b995f75",
+    "ios/SparklingGo/SparklingGo/SparklingSwiftVC.swift": "a192ed465de7f0487bb9e4f5171944f9a3a17d7d0a8e2f11ee08df47f35bad1b",
+    "ios/SparklingGo/SparklingGo/DebugDevURLSupport.swift": "2e48aad6a90770448ff08a768226603accf1682240d454a3187a30349af218f5"
+  },
+  "syntaxParse": "passed",
+  "typecheck": {
+    "profiles": [
+      "Release conditional compilation",
+      "DEBUG conditional compilation with Objective-C bridging header"
+    ],
+    "target": "arm64-apple-ios15.6-simulator",
+    "swiftLanguageVersion": "5",
+    "warningsAsErrors": true,
+    "frameworks": "Existing Release-iphonesimulator frameworks from the preceding probe build",
+    "exitCodes": {
+      "release": 0,
+      "debug": 0
+    },
+    "logs": [
+      "host-typecheck-release.log",
+      "host-typecheck-debug.log"
+    ],
+    "limitations": "Not a native build or runtime test. Optional Sparkling_DebugTool framework is absent from the Release products used for this typecheck; canImport-gated InHouse implementation was not typechecked."
+  },
+  "diffCheck": "passed",
+  "independentReview": "Parent reports fresh read-only review with no findings; later source-only change adds one actor-contract comment.",
+  "nativeBuildRun": false,
+  "devicesUsed": [],
+  "remainingValidation": [
+    "Parent Release native build",
+    "Three cold-launch videos with initial safe-area values and no62ptjump",
+    "Keyboard show/hide and background/foreground",
+    "Rotation and four-package smoke",
+    "Debug URL recovery in InHouse host"
+  ],
+  "temporaryResources": "Each swiftc typecheck module cache was created privately and removed in finally; no active processes or ports."
+}

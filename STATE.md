@@ -7,6 +7,37 @@ bun: 1.4.0
 
 # Состояние проекта
 
+2026-11-18, итог повторного simulator QA: probe `a11a4dd` использует публичный
+`SPKContainerView` и загружает шаблон после присоединения полноэкранного host к окну
+и layout. Прежний `SPKViewController` начинал загрузку в `viewDidLoad`, до получения
+safe-area. Новый Release прошёл три видеопрогона: первый различимый новый контент
+сразу имеет `top=62/bottom=34/g1`, прежний сдвиг на 62 pt не наблюдается.
+Это ограниченный PASS записанных кадров iOS 27 Simulator, а не гарантия любого
+Sparkling host, вложенного view или физического устройства.
+Secure Store 10/10, crypto, lifecycle A/B, keyboard `0 → 349 → 0` и восстановление
+итоговых inset после landscape → portrait прошли. Пакетный runtime не менялся.
+[Evidence и ограничения](docs/evidence/ios-simulator-2026-11-18/results.json).
+
+Лаборатория теперь публична: новый независимый `PopLocker714/lynx-lab`, MIT.
+Старый репозиторий сохранён приватным как `lynx-lab-private-archive`, включая
+рабочие ветки, 13 issues и 6 comments; issues публично не переносились.
+Очистка охватывает историю, device/signing identifiers и локальный home-prefix;
+оригинальные evidence и соответствие очищенным копиям сохранены приватно.
+[Правила evidence](docs/public-evidence.ru.md),
+[проверка публикации](docs/evidence/public-history-2026-11-18/results.json).
+Продолжать документацию следует в чистом `lynx-lab-public-standards`; старые
+worktree сохраняют сырую историю, их origin push отключён. `main` публичной
+лаборатории сохраняет исторический baseline со ссылкой на эту task-ветку.
+
+Открыто: first-frame Android и физический iOS, physical Release keyboard,
+minimum OS, OIDC/trusted publishing и audit трёх пакетов. Ни один пакет не
+объявлен stable; package main/version/npm publication не выполнялись.
+Сессия симулятора закрыта, свой probe удалён, симулятор выключен. После сохранения
+обеих сборок до/после исправления и matching dSYM удалены ещё 6.71 ГиБ собственных
+build intermediates и неудачных сборок ([receipt](docs/evidence/ios-simulator-cleanup-2026-11-18/results.json)).
+
+Ниже — подробности проверенного CI и исходного дефекта до исправления host.
+
 2026-11-18: все четыре репозитория пакетов публичны; исходники пакетов имеют MIT,
 лицензии заимствованного кода сохранены отдельно. Текущие task-ветки:
 

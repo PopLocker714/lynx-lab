@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-18",
+  "sourceCommitFromParent": "9874e6c",
+  "target": "iPhone 18 Pro iOS 27.0 Simulator, Release SparklingGo; no native keyboard overlay launch flag",
+  "status": "FAIL",
+  "scope": "Three recorded cold relaunches show an actual visible zero-inset-to-corrected jump. This is not merely an unverified earliest frame. No physical-device or universal host claim.",
+  "method": "Every original video frame was decoded with passthrough timestamps. Full sequences inspected in contact sheets; key before/after frames read at full resolution. All261 PNG pixels independently matched ffmpeg rgb24 framemd5.",
+  "timing": "VFR: r_frame_rate=600/1 is not a600fps capture rate. Exact per-frame ffprobe PTS retained; no inference of unseen frames or absolute presentation time.",
+  "decodingNote": "First two image2 extractions warned about timestamp rounding; all frame counts and independent RGB24 MD5 comparisons passed. Third used -enc_time_base demux.",
+  "clips": [
+    {
+      "clip": 1,
+      "video": "first-frame-1.mp4",
+      "stream": {
+        "width": 1206,
+        "height": 2622,
+        "r_frame_rate": "600/1",
+        "avg_frame_rate": "2580/89",
+        "duration": "2.966667",
+        "nb_frames": "86"
+      },
+      "decodedFrameCount": 86,
+      "allDecodedFramesMatchedIndependentRGB24FrameMD5": true,
+      "status": "FAIL",
+      "preRelaunchOldAppFramesExcluded": [
+        1,
+        8
+      ],
+      "lastWhiteFrame": {
+        "index": 64,
+        "pts": "2.591667"
+      },
+      "firstDiscernibleNewAppContent": {
+        "index": 65,
+        "pts": "2.608333",
+        "observation": "Low-opacity content begins fading in. Top button is at the unpadded position; no assertion that all text is readable at this frame."
+      },
+      "lastClearlyReadableFallbackFrame": {
+        "index": 72,
+        "pts": "2.721667",
+        "currentText": "current: t=0.0 r=0 b=0 l=0.0 kb=0 g=-1 fallback",
+        "eventsText": "events:",
+        "topButtonYPhysicalPixelsApprox": 12
+      },
+      "firstCorrectedFrame": {
+        "index": 73,
+        "pts": "2.736667",
+        "currentText": "current: t=62.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "eventsText": "events: g0 t0 b0 k0 native | g1 t62 b34 k0 globalProps",
+        "topButtonYPhysicalPixelsApprox": 198
+      },
+      "observedUnpaddedContentSpanSeconds": 0.128334,
+      "buttonVerticalJumpPhysicalPixelsApprox": 186,
+      "buttonVerticalJumpPointsApprox": 62,
+      "laterFrames": "Remain at the corrected position through the last recorded frame; fade opacity continues changing.",
+      "keyFrames": [
+        {
+          "clip": 1,
+          "index1Based": 72,
+          "ptsSeconds": 2.721667,
+          "decodedPNG_SHA256": "4d2143b492a9b844ba15e5dd4687ef3ab92cde62350af2e9f1ba90bc4c2e442c",
+          "preserved": true,
+          "file": "clip-1/frame-000072.png"
+        },
+        {
+          "clip": 1,
+          "index1Based": 73,
+          "ptsSeconds": 2.736667,
+          "decodedPNG_SHA256": "557cb9fbc52843db29766c74e52ad26e2f8ac51af5deaade9b809d0d2c827e7f",
+          "preserved": true,
+          "file": "clip-1/frame-000073.png"
+        }
+      ],
+      "videoAvailability": "Private archive only"
+    },
+    {
+      "clip": 2,
+      "video": "first-frame-2.mp4",
+      "stream": {
+        "width": 1206,
+        "height": 2622,
+        "r_frame_rate": "600/1",
+        "avg_frame_rate": "18200/599",
+        "duration": "2.995000",
+        "nb_frames": "91"
+      },
+      "decodedFrameCount": 91,
+      "allDecodedFramesMatchedIndependentRGB24FrameMD5": true,
+      "status": "FAIL",
+      "preRelaunchOldAppFramesExcluded": [
+        1,
+        11
+      ],
+      "lastWhiteFrame": {
+        "index": 69,
+        "pts": "2.621667"
+      },
+      "firstDiscernibleNewAppContent": {
+        "index": 70,
+        "pts": "2.638333",
+        "observation": "Low-opacity content begins fading in. Top button is at the unpadded position; no assertion that all text is readable at this frame."
+      },
+      "lastClearlyReadableFallbackFrame": {
+        "index": 77,
+        "pts": "2.751667",
+        "currentText": "current: t=0.0 r=0 b=0 l=0.0 kb=0 g=-1 fallback",
+        "eventsText": "events:",
+        "topButtonYPhysicalPixelsApprox": 12
+      },
+      "firstCorrectedFrame": {
+        "index": 78,
+        "pts": "2.765000",
+        "currentText": "current: t=62.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "eventsText": "events: g0 t0 b0 k0 native | g1 t62 b34 k0 globalProps",
+        "topButtonYPhysicalPixelsApprox": 198
+      },
+      "observedUnpaddedContentSpanSeconds": 0.126667,
+      "buttonVerticalJumpPhysicalPixelsApprox": 186,
+      "buttonVerticalJumpPointsApprox": 62,
+      "laterFrames": "Remain at the corrected position through the last recorded frame; fade opacity continues changing.",
+      "keyFrames": [
+        {
+          "clip": 2,
+          "index1Based": 77,
+          "ptsSeconds": 2.751667,
+          "decodedPNG_SHA256": "3c368db3ba335623746368bf2bf1539cfa05de50b7bf42cb2a73f4b1c54e60f2",
+          "preserved": true,
+          "file": "clip-2/frame-000077.png"
+        },
+        {
+          "clip": 2,
+          "index1Based": 78,
+          "ptsSeconds": 2.765,
+          "decodedPNG_SHA256": "45d7b4a64784fcfeb52fde1a222a62d326fc73d6beac7aa1262b37cbea943a6b",
+          "preserved": true,
+          "file": "clip-2/frame-000078.png"
+        }
+      ],
+      "videoAvailability": "Private archive only"
+    },
+    {
+      "clip": 3,
+      "video": "first-frame-3.mp4",
+      "stream": {
+        "width": 1206,
+        "height": 2622,
+        "r_frame_rate": "600/1",
+        "avg_frame_rate": "2800/99",
+        "duration": "2.970000",
+        "nb_frames": "84"
+      },
+      "decodedFrameCount": 84,
+      "allDecodedFramesMatchedIndependentRGB24FrameMD5": true,
+      "status": "FAIL",
+      "preRelaunchOldAppFramesExcluded": [
+        1,
+        4
+      ],
+      "lastWhiteFrame": {
+        "index": 61,
+        "pts": "2.603333"
+      },
+      "firstDiscernibleNewAppContent": {
+        "index": 62,
+        "pts": "2.620000",
+        "observation": "Low-opacity content begins fading in. Top button is at the unpadded position; no assertion that all text is readable at this frame."
+      },
+      "lastClearlyReadableFallbackFrame": {
+        "index": 69,
+        "pts": "2.733333",
+        "currentText": "current: t=0.0 r=0 b=0 l=0.0 kb=0 g=-1 fallback",
+        "eventsText": "events:",
+        "topButtonYPhysicalPixelsApprox": 12
+      },
+      "firstCorrectedFrame": {
+        "index": 70,
+        "pts": "2.740000",
+        "currentText": "current: t=62.0 r=0 b=34 l=0.0 kb=0 g=1 globalProps",
+        "eventsText": "events: g0 t0 b0 k0 native | g1 t62 b34 k0 globalProps",
+        "topButtonYPhysicalPixelsApprox": 198
+      },
+      "observedUnpaddedContentSpanSeconds": 0.12,
+      "buttonVerticalJumpPhysicalPixelsApprox": 186,
+      "buttonVerticalJumpPointsApprox": 62,
+      "laterFrames": "Remain at the corrected position through the last recorded frame; fade opacity continues changing.",
+      "keyFrames": [
+        {
+          "clip": 3,
+          "index1Based": 69,
+          "ptsSeconds": 2.733333,
+          "decodedPNG_SHA256": "a2cbfb785be69583b1bcacc4cd281dd0b2fcf64d855ed0ca5981096462072da5",
+          "preserved": true,
+          "file": "clip-3/frame-000069.png"
+        },
+        {
+          "clip": 3,
+          "index1Based": 70,
+          "ptsSeconds": 2.74,
+          "decodedPNG_SHA256": "2e5fa39d4d6a2966a699730a42619560e8c77ba683c2e8a6fcc392fcac0bac08",
+          "preserved": true,
+          "file": "clip-3/frame-000070.png"
+        }
+      ],
+      "videoAvailability": "Private archive only"
+    }
+  ],
+  "publicEvidence": {
+    "type": "Sanitized selected derivative of privately archived original analysis",
+    "originalVideoAndFullAnalysisHashes": "Retained only in private original archive; public-manifest.json hashes the public files themselves.",
+    "selection": "Only full-resolution app-content keyframes included; no Springboard, contact sheets or videos.",
+    "originalAnalysisCompleteness": "All original decoded frames were reviewed before selecting public keyframes."
+  }
+}

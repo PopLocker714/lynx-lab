@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-18",
+  "publicRepository": {
+    "url": "https://github.com/PopLocker714/lynx-lab",
+    "id": 1462955990,
+    "visibility": "public",
+    "fork": false,
+    "license": "MIT"
+  },
+  "privateArchive": {
+    "retained": true,
+    "anonymousHTTPStatus": 404,
+    "issues": 13,
+    "comments": 6,
+    "qaFiles": 446,
+    "qaBytes": 43056437,
+    "originalGitBundleVerified": true
+  },
+  "candidateVerification": {
+    "commits": 48,
+    "storedObjects": 894,
+    "exactRedactionRules": 10,
+    "redactedPaths": 125,
+    "redactedBlobVersions": 139,
+    "withheldResearchPaths": 22,
+    "pngOCR": 95,
+    "imageMetadataEntries": 1023,
+    "XMPChunks": 3,
+    "independentReview": "PASS",
+    "treeTopologyMetadataChecks": "PASS",
+    "knownIdentifierMatches": 0,
+    "recognizableCredentialPatternMatches": 0
+  },
+  "publicationVerification": {
+    "storedObjectsIncludingMetadataCommits": 904,
+    "knownIdentifierMatches": 0,
+    "onlyApprovedMetadataAdded": true,
+    "anonymousPublicHTTPStatus": 200,
+    "oldUnsanitizedCommitOnNewRepositoryHTTPStatus": 422,
+    "publicHeadsAtOpening": {
+      "main": "b4fd009791b954d02c58b8c714aee3551c06bf59",
+      "docs/package-standards": "ead614559838a414cc25ef4a4c1d74413865dec1"
+    }
+  },
+  "limits": [
+    "Pattern and OCR checks cannot prove absence of every possible secret.",
+    "Historical artifact hashes refer to privately retained originals; public derivatives have separate manifests.",
+    "Original issues/comments remain private pending a separate migration decision.",
+    "Later documentation commits are separate from the opening refs recorded here."
+  ]
+}
