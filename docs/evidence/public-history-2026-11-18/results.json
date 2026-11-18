@@ -45,7 +45,7 @@
   "limits": [
     "Pattern and OCR checks cannot prove absence of every possible secret.",
     "Historical artifact hashes refer to privately retained originals; public derivatives have separate manifests.",
-    "Original issues/comments remain private pending a separate migration decision.",
+    "At repository opening, issues/comments had not been migrated. Subsequent authorized migration is recorded in ../public-issues-2026-11-18/results.json; private originals remain retained.",
     "Later documentation commits are separate from the opening refs recorded here."
   ]
 }

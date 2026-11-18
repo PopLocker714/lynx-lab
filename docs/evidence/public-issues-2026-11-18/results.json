@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-18",
+  "publicRepository": "https://github.com/PopLocker714/lynx-lab",
+  "privateOriginalsRetained": true,
+  "verification": {
+    "issues": 13,
+    "open": 12,
+    "closed": 1,
+    "comments": 6,
+    "preservedIssueNumbers": true,
+    "titlesBodiesLabelsStatesMatchPreparedPlan": true,
+    "commentsMatchInOriginalOrder": true,
+    "originalSourceIssuesUnchanged": true,
+    "originalSourceCommentsUnchanged": true,
+    "anonymousReadback": "PASS",
+    "originalDatesAndAuthors": "Retained in provenance notes; native GitHub created_at timestamps reflect migration.",
+    "exactPrivateIdentifierMatches": 0,
+    "recognizableCredentialPatternMatches": 0
+  },
+  "issues": [
+    {
+      "sourceNumber": 1,
+      "destinationNumber": 1,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/1"
+    },
+    {
+      "sourceNumber": 2,
+      "destinationNumber": 2,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/2"
+    },
+    {
+      "sourceNumber": 3,
+      "destinationNumber": 3,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/3"
+    },
+    {
+      "sourceNumber": 4,
+      "destinationNumber": 4,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/4"
+    },
+    {
+      "sourceNumber": 5,
+      "destinationNumber": 5,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/5"
+    },
+    {
+      "sourceNumber": 6,
+      "destinationNumber": 6,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/6"
+    },
+    {
+      "sourceNumber": 7,
+      "destinationNumber": 7,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/7"
+    },
+    {
+      "sourceNumber": 8,
+      "destinationNumber": 8,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/8"
+    },
+    {
+      "sourceNumber": 9,
+      "destinationNumber": 9,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/9"
+    },
+    {
+      "sourceNumber": 10,
+      "destinationNumber": 10,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/10"
+    },
+    {
+      "sourceNumber": 11,
+      "destinationNumber": 11,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/11"
+    },
+    {
+      "sourceNumber": 12,
+      "destinationNumber": 12,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/12"
+    },
+    {
+      "sourceNumber": 13,
+      "destinationNumber": 13,
+      "url": "https://github.com/PopLocker714/lynx-lab/issues/13"
+    }
+  ],
+  "commentURLs": [
+    "https://github.com/PopLocker714/lynx-lab/issues/13#issuecomment-6984431803",
+    "https://github.com/PopLocker714/lynx-lab/issues/13#issuecomment-6984432297",
+    "https://github.com/PopLocker714/lynx-lab/issues/13#issuecomment-6984432845",
+    "https://github.com/PopLocker714/lynx-lab/issues/13#issuecomment-6984433443",
+    "https://github.com/PopLocker714/lynx-lab/issues/13#issuecomment-6984434021",
+    "https://github.com/PopLocker714/lynx-lab/issues/13#issuecomment-6984434683"
+  ],
+  "copiedLabels": [
+    "pkg:notify",
+    "pkg:other",
+    "pkg:permissions",
+    "блокер",
+    "набросок",
+    "спайк",
+    "спека готова"
+  ],
+  "limits": [
+    "Historical plans and implementation discussions retain their original wording and status; current readiness is recorded in STATE.md.",
+    "Exact identifier and credential-pattern checks do not prove absence of every possible sensitive value."
+  ]
+}

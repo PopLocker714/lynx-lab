@@ -20,7 +20,11 @@ Secure Store 10/10, crypto, lifecycle A/B, keyboard `0 → 349 → 0` и вос�
 
 Лаборатория теперь публична: новый независимый `PopLocker714/lynx-lab`, MIT.
 Старый репозиторий сохранён приватным как `lynx-lab-private-archive`, включая
-рабочие ветки, 13 issues и 6 comments; issues публично не переносились.
+рабочие ветки и оригиналы обсуждений. [13 issues](https://github.com/PopLocker714/lynx-lab/issues?q=is%3Aissue)
+и [6 комментариев crypto](https://github.com/PopLocker714/lynx-lab/issues/13) перенесены
+публично после проверки содержимого: номера, метки и состояния сохранены.
+Исходные даты и авторство указаны в примечаниях; даты создания копий в GitHub новые.
+[Проверка переноса](docs/evidence/public-issues-2026-11-18/results.json).
 Очистка охватывает историю, device/signing identifiers и локальный home-prefix;
 оригинальные evidence и соответствие очищенным копиям сохранены приватно.
 [Правила evidence](docs/public-evidence.ru.md),

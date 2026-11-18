@@ -4,6 +4,10 @@
 
 ## 2026-11-18
 
+- Публично перенесены 13 issues и 6 комментариев crypto: номера, тексты, метки
+  и состояния сверены анонимным чтением GitHub API. Исходные даты/авторство
+  отмечены в копиях; приватные оригиналы сохранены без изменений.
+
 - Probe `a11a4dd`: полноэкранный host загружает Lynx после attach/layout через
   публичный SPKContainerView. Release build, строгая Swift-проверка и независимое
   review прошли; три simulator video дают bounded first-frame PASS. Secure,
